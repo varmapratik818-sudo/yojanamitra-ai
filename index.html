@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14532d">
+<title>YojanaMitra AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f7f3;color:#183323}
+header{background:#14532d;color:white;padding:24px 18px;border-radius:0 0 24px 24px}
+header h1{margin:0 0 8px;font-size:27px}
+header p{margin:0;line-height:1.5}
+main{max-width:600px;margin:auto;padding:16px}
+.panel{background:white;padding:17px;border-radius:16px;margin:14px 0;box-shadow:0 3px 12px #18332310}
+label{display:block;font-weight:bold;margin:13px 0 7px}
+select,input,button{width:100%;padding:13px;border-radius:10px;font-size:16px}
+select,input{border:1px solid #cbd5ce;background:white}
+button{border:0;background:#166534;color:white;font-weight:bold;margin-top:15px}
+button:active{opacity:.8}
+.card{background:white;border:1px solid #dbe7dc;border-radius:14px;padding:15px;margin:12px 0}
+.card h3{margin:0 0 9px}
+.tag{font-size:12px;background:#dcfce7;padding:5px 8px;border-radius:20px}
+a{color:#166534;font-weight:bold}
+.small{font-size:13px;line-height:1.5;color:#52645a}
+footer{text-align:center;padding:20px;font-size:12px;color:#52645a}
+</style>
+</head>
+<body>
+<header>
+<h1>🌱 YojanaMitra AI</h1>
+<p>Sarkari yojana samjho, apni zaroorat ke hisaab se jaankari pao.</p>
+<p>मराठी • हिंदी • English</p>
+</header>
+
+<main>
+<section class="panel">
+<h2>🔎 Scheme Finder</h2>
+<p>Apni zaroorat chuno aur relevant official websites dekho.</p>
+
+<label for="lang">Language / भाषा</label>
+<select id="lang">
+<option value="hi">Hindi</option>
+<option value="mr">मराठी</option>
+<option value="en">English</option>
+</select>
+
+<label for="state">State / राज्य</label>
+<select id="state">
+<option value="Maharashtra">Maharashtra</option>
+<option value="Other">Other Indian state</option>
+</select>
+
+<label for="purpose">Kis liye yojana chahiye?</label>
+<select id="purpose">
+<option value="student">Student / Scholarship</option>
+<option value="farmer">Farmer / शेतकरी</option>
+<option value="business">Business / Self-employment</option>
+<option value="women">Women / महिला</option>
+<option value="general">Other benefits</option>
+</select>
+
+<label for="age">Age group</label>
+<select id="age">
+<option value="any">Select later</option>
+<option value="under18">Below 18</option>
+<option value="18to25">18–25</option>
+<option value="26to59">26–59</option>
+<option value="60plus">60+</option>
+</select>
+
+<button onclick="findSchemes()">Find Schemes</button>
+</section>
+
+<section id="results" aria-live="polite">
+<div class="panel">
+<h3>📌 Official scheme portals</h3>
+<p>Apni eligibility verify karne ke liye official government websites use karein.</p>
+</div>
+</section>
+
+<section class="panel">
+<h3>🤖 Ask YojanaMitra</h3>
+<p>Yeh starter version abhi AI chatbot nahi hai. Neeche apna sawaal likhkar official scheme finder khol sakte hain.</p>
+<label for="question">Aapko kya jaanna hai?</label>
+<input id="question" placeholder="Jaise: Maharashtra student scholarship">
+<button onclick="searchQuestion()">Search Official Schemes</button>
+<p class="small">Yeh search myScheme portal kholega. Kisi benefit ki guarantee nahi hai.</p>
+</section>
+
+<section class="panel">
+<h3>⚠️ Important</h3>
+<p class="small">YojanaMitra AI ek independent information project hai, government website nahi. Scheme rules, eligibility, deadlines aur documents official portal se verify karein. Apna Aadhaar number, OTP, bank details ya private documents yahan enter na karein.</p>
+</section>
+</main>
+
+<footer>YojanaMitra AI • Independent public-information helper</footer>
+
+<script>
+function findSchemes(){
+ const purpose=document.getElementById('purpose').value;
+ const state=document.getElementById('state').value;
+ const lang=document.getElementById('lang').value;
+ const age=document.getElementById('age').value;
+ const results=document.getElementById('results');
+
+ const labels={
+ student:{hi:'Student aur Scholarship Yojana',mr:'विद्यार्थी व शिष्यवृत्ती योजना',en:'Student and Scholarship Schemes'},
+ farmer:{hi:'Kisan aur Agriculture Yojana',mr:'शेतकरी व कृषी योजना',en:'Farmer and Agriculture Schemes'},
+ business:{hi:'Business aur Self-employment Yojana',mr:'व्यवसाय व स्वयंरोजगार योजना',en:'Business and Self-employment Schemes'},
+ women:{hi:'Mahila Yojana',mr:'महिला योजना',en:'Women-focused Schemes'},
+ general:{hi:'Sarkari Yojana Finder',mr:'शासकीय योजना शोधा',en:'Government Scheme Finder'}
+ };
+
+ let links='';
+ if(state==='Maharashtra'){
+ links+='<div class="card"><span class="tag">Official Maharashtra portal</span><h3>MahaDBT</h3><p>Scholarships aur eligible benefit schemes ki details check karein.</p><a href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">Open MahaDBT ↗</a></div>';
+ }
+ links+='<div class="card"><span class="tag">Government portal</span><h3>myScheme</h3><p>Central aur state schemes ko eligibility ke hisaab se explore karein.</p><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Open myScheme ↗</a></div>';
+ links+='<div class="card"><h3>Next step</h3><p>Apni category ke hisaab se scheme search karein. Final eligibility official rules par depend karti hai.</p><a href="https://www.india.gov.in/" target="_blank" rel="noopener">India Government Portal ↗</a></div>';
+
+ results.innerHTML='<div class="panel"><h2>'+labels[purpose][lang]+'</h2><p>State: '+(state==='Maharashtra'?'Maharashtra':'Other state')+' • Age group: '+age+'</p><p class="small">Yeh suggestions hain, confirmed eligibility nahi.</p></div>'+links;
+ results.scrollIntoView({behavior:'smooth'});
+}
+function searchQuestion(){
+ const q=document.getElementById('question').value.trim();
+ if(!q){alert('Please enter your question first.');return;}
+ window.open('https://www.myscheme.gov.in/','_blank','noopener');
+}
+</script>
+</body>
+</html>
