@@ -1,132 +1,227 @@
+
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#14532d">
-<title>YojanaMitra AI</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123d2b">
+<title>YojanaMitra AI | Government Schemes & Jobs</title>
 <style>
+:root{--green:#14532d;--light:#f1f7f2;--blue:#eaf2ff}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f3f7f3;color:#183323}
-header{background:#14532d;color:white;padding:24px 18px;border-radius:0 0 24px 24px}
-header h1{margin:0 0 8px;font-size:27px}
-header p{margin:0;line-height:1.5}
-main{max-width:600px;margin:auto;padding:16px}
-.panel{background:white;padding:17px;border-radius:16px;margin:14px 0;box-shadow:0 3px 12px #18332310}
-label{display:block;font-weight:bold;margin:13px 0 7px}
-select,input,button{width:100%;padding:13px;border-radius:10px;font-size:16px}
-select,input{border:1px solid #cbd5ce;background:white}
-button{border:0;background:#166534;color:white;font-weight:bold;margin-top:15px}
+body{margin:0;font-family:Arial,sans-serif;background:var(--light);color:#183323}
+header{background:linear-gradient(135deg,#123d2b,#16804a);color:white;padding:24px 17px 28px;border-radius:0 0 24px 24px}
+header h1{margin:0 0 9px;font-size:27px}
+header p{line-height:1.5;margin:5px 0}
+main{max-width:760px;margin:auto;padding:13px}
+.panel{background:white;padding:17px;border-radius:16px;margin:13px 0;box-shadow:0 3px 12px #1833230b}
+h2{font-size:21px;margin:0 0 10px}
+h3{font-size:17px;margin:0 0 9px}
+p{line-height:1.55}
+label{display:block;font-weight:bold;margin:12px 0 6px}
+input,select,button{width:100%;padding:13px;border-radius:10px;font-size:15px}
+input,select{border:1px solid #cbd5ce;background:white;color:#183323}
+button{border:0;background:var(--green);color:white;font-weight:bold;cursor:pointer;margin-top:12px}
+button.secondary{background:#e5efe7;color:var(--green)}
 button:active{opacity:.8}
-.card{background:white;border:1px solid #dbe7dc;border-radius:14px;padding:15px;margin:12px 0}
-.card h3{margin:0 0 9px}
-.tag{font-size:12px;background:#dcfce7;padding:5px 8px;border-radius:20px}
-a{color:#166534;font-weight:bold}
-.small{font-size:13px;line-height:1.5;color:#52645a}
-footer{text-align:center;padding:20px;font-size:12px;color:#52645a}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{background:white;border:1px solid #dbe7dc;border-radius:13px;padding:14px;text-align:left;min-height:100px;color:#183323;margin:0}
+.tile span{display:block;font-size:25px;margin-bottom:8px}
+.tile strong{font-size:14px}
+.card{background:white;border:1px solid #dbe7dc;border-radius:13px;padding:14px;margin:10px 0}
+.card p{font-size:14px;margin:8px 0}
+.tag{display:inline-block;font-size:11px;background:#dcfce7;color:#14532d;padding:5px 8px;border-radius:20px}
+a{color:#166534;font-weight:bold;overflow-wrap:anywhere}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.small{font-size:12px;line-height:1.6;color:#52645a}
+#results{scroll-margin-top:12px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:5px 0 10px}
+nav button{white-space:nowrap;width:auto;margin:0;padding:10px 13px}
+.hidden{display:none}
+footer{text-align:center;padding:22px 15px;font-size:12px;color:#52645a}
+hr{border:0;border-top:1px solid #e3ebe4;margin:15px 0}
+@media(min-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 </style>
 </head>
 <body>
 <header>
-<h1>🌱 YojanaMitra AI</h1>
-<p>Sarkari yojana samjho, apni zaroorat ke hisaab se jaankari pao.</p>
-<p>मराठी • हिंदी • English</p>
+  <h1>🇮🇳 YojanaMitra AI</h1>
+  <p>Government Schemes + Sarkari Naukri + Online Forms</p>
+  <p>सरकारी योजनाएँ • सरकारी नोकरी • शिष्यवृत्ती</p>
+  <p class="small" style="color:#e0f2e5">Hindi • मराठी • English | One public information portal</p>
 </header>
 
 <main>
 <section class="panel">
-<h2>🔎 Scheme Finder</h2>
-<p>Apni zaroorat chuno aur relevant official websites dekho.</p>
-
-<label for="lang">Language / भाषा</label>
-<select id="lang">
-<option value="hi">Hindi</option>
-<option value="mr">मराठी</option>
-<option value="en">English</option>
-</select>
-
-<label for="state">State / राज्य</label>
-<select id="state">
-<option value="Maharashtra">Maharashtra</option>
-<option value="Other">Other Indian state</option>
-</select>
-
-<label for="purpose">Kis liye yojana chahiye?</label>
-<select id="purpose">
-<option value="student">Student / Scholarship</option>
-<option value="farmer">Farmer / शेतकरी</option>
-<option value="business">Business / Self-employment</option>
-<option value="women">Women / महिला</option>
-<option value="general">Other benefits</option>
-</select>
-
-<label for="age">Age group</label>
-<select id="age">
-<option value="any">Select later</option>
-<option value="under18">Below 18</option>
-<option value="18to25">18–25</option>
-<option value="26to59">26–59</option>
-<option value="60plus">60+</option>
-</select>
-
-<button onclick="findSchemes()">Find Schemes</button>
+  <h2>🔎 Kya dhoondhna hai?</h2>
+  <div class="grid">
+    <button class="tile" onclick="showSection('schemes')"><span>🏛️</span><strong>Government Schemes</strong></button>
+    <button class="tile" onclick="showSection('jobs')"><span>💼</span><strong>Sarkari Jobs</strong></button>
+    <button class="tile" onclick="showSection('forms')"><span>📝</span><strong>Apply Online</strong></button>
+    <button class="tile" onclick="showSection('exams')"><span>🎓</span><strong>Admit Card & Results</strong></button>
+    <button class="tile" onclick="showSection('scholarships')"><span>📚</span><strong>Scholarships</strong></button>
+    <button class="tile" onclick="showSection('assistant')"><span>🤖</span><strong>AI Assistant</strong></button>
+  </div>
 </section>
 
-<section id="results" aria-live="polite">
-<div class="panel">
-<h3>📌 Official scheme portals</h3>
-<p>Apni eligibility verify karne ke liye official government websites use karein.</p>
-</div>
+<section class="panel" id="finder">
+  <h2>Find schemes and jobs</h2>
+  <label for="state">State / Union Territory</label>
+  <select id="state">
+    <option value="all">All India / Central Government</option>
+    <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+    <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+    <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+    <option>Himachal Pradesh</option><option>Jharkhand</option>
+    <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+    <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+    <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
+    <option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+    <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
+    <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+    <option>Andaman and Nicobar Islands</option><option>Chandigarh</option>
+    <option>Dadra and Nagar Haveli and Daman and Diu</option>
+    <option>Delhi</option><option>Jammu and Kashmir</option>
+    <option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option>
+  </select>
+
+  <label for="category">Category</label>
+  <select id="category">
+    <option value="all">All categories</option>
+    <option value="student">Student / Scholarship</option>
+    <option value="farmer">Farmer / Agriculture</option>
+    <option value="women">Women / Family</option>
+    <option value="business">Business / Self-employment</option>
+    <option value="pension">Pension / Senior Citizen</option>
+    <option value="health">Health / Housing</option>
+    <option value="job">Government Jobs</option>
+  </select>
+
+  <label for="keyword">Search by name or need</label>
+  <input id="keyword" placeholder="e.g. scholarship, farmer, police job">
+  <button onclick="searchPortal()">Search now</button>
+  <div class="small">Search results are starting points. Check current rules and eligibility on official websites.</div>
+</section>
+
+<section class="panel" id="results" aria-live="polite">
+  <h2>🌐 Official Government Portals</h2>
+  <div id="resultList"></div>
+</section>
+
+<section class="panel" id="schemes">
+  <h2>🏛️ Government Schemes — All India</h2>
+  <p>Central schemes aur state-wise schemes explore karne ke liye official directories.</p>
+  <div id="schemeCards"></div>
+</section>
+
+<section class="panel" id="jobs">
+  <h2>💼 Sarkari Naukri</h2>
+  <p>Recruitment notices, vacancies aur application portals ke official links.</p>
+  <div id="jobCards"></div>
+</section>
+
+<section class="panel" id="forms">
+  <h2>📝 Online Form & Recruitment</h2>
+  <div id="formCards"></div>
+  <p class="small">Apply karne se pehle official notification mein age limit, qualification, fee, reservation rules aur last date check karein.</p>
+</section>
+
+<section class="panel" id="exams">
+  <h2>🎓 Admit Card, Results & Exams</h2>
+  <div id="examCards"></div>
+</section>
+
+<section class="panel" id="scholarships">
+  <h2>📚 Scholarship & Education</h2>
+  <div id="scholarCards"></div>
+</section>
+
+<section class="panel" id="assistant">
+  <h2>🤖 Ask YojanaMitra AI</h2>
+  <p>Apna sawaal likhein. Is starter version mein real AI abhi connect nahi hai; button official directories kholega.</p>
+  <label for="question">Aapko kya jaanna hai?</label>
+  <input id="question" placeholder="e.g. Maharashtra student scholarship">
+  <button onclick="askAssistant()">Find official information</button>
+  <p id="assistantNote" class="small" aria-live="polite"></p>
 </section>
 
 <section class="panel">
-<h3>🤖 Ask YojanaMitra</h3>
-<p>Yeh starter version abhi AI chatbot nahi hai. Neeche apna sawaal likhkar official scheme finder khol sakte hain.</p>
-<label for="question">Aapko kya jaanna hai?</label>
-<input id="question" placeholder="Jaise: Maharashtra student scholarship">
-<button onclick="searchQuestion()">Search Official Schemes</button>
-<p class="small">Yeh search myScheme portal kholega. Kisi benefit ki guarantee nahi hai.</p>
-</section>
-
-<section class="panel">
-<h3>⚠️ Important</h3>
-<p class="small">YojanaMitra AI ek independent information project hai, government website nahi. Scheme rules, eligibility, deadlines aur documents official portal se verify karein. Apna Aadhaar number, OTP, bank details ya private documents yahan enter na karein.</p>
+  <h3>🔐 Safety & Verification</h3>
+  <p class="small">YojanaMitra AI independent information project hai, government website nahi. Humari taraf se kisi scheme, job ya benefit ki guarantee nahi hai. Apply sirf official portal par karein. Aadhaar, OTP, password aur bank details is website par enter na karein.</p>
+  <p class="small">Har link ka status aur scheme ki availability official source par dobara check karein. Kuch schemes band ho sakti hain ya unki dates badal sakti hain.</p>
 </section>
 </main>
 
-<footer>YojanaMitra AI • Independent public-information helper</footer>
+<footer>YojanaMitra AI • Independent public-information helper<br>Not affiliated with any government department.</footer>
 
 <script>
-function findSchemes(){
- const purpose=document.getElementById('purpose').value;
- const state=document.getElementById('state').value;
- const lang=document.getElementById('lang').value;
- const age=document.getElementById('age').value;
- const results=document.getElementById('results');
+const portals = [
+ {title:"myScheme",category:["student","farmer","women","business","pension","health"],desc:"Central aur State Government schemes ko explore karein.",url:"https://www.myscheme.gov.in/",tag:"Scheme directory"},
+ {title:"India.gov.in Schemes",category:["student","farmer","women","business","pension","health"],desc:"Government schemes aur department information.",url:"https://www.india.gov.in/my-government/schemes",tag:"Government directory"},
+ {title:"National Government Services Portal",category:["all"],desc:"Government ki online public services.",url:"https://services.india.gov.in/",tag:"Government services"},
+ {title:"MahaDBT",category:["student","farmer"],desc:"Maharashtra scholarships aur listed benefit schemes.",url:"https://mahadbt.maharashtra.gov.in/",tag:"Maharashtra"},
+ {title:"National Scholarship Portal",category:["student"],desc:"Scholarship schemes aur student application information.",url:"https://scholarships.gov.in/",tag:"Scholarships"},
+ {title:"PM-KISAN",category:["farmer"],desc:"Farmer scheme ki eligibility aur official updates.",url:"https://pmkisan.gov.in/",tag:"Farmer"},
+ {title:"National Career Service",category:["job"],desc:"Employment services aur job-seeker resources.",url:"https://www.ncs.gov.in/",tag:"Employment"},
+ {title:"UPSC",category:["job"],desc:"Civil services aur anya UPSC recruitment notices.",url:"https://upsc.gov.in/",tag:"Recruitment"},
+ {title:"Staff Selection Commission",category:["job"],desc:"SSC exams, notifications aur application links.",url:"https://ssc.gov.in/",tag:"Recruitment"},
+ {title:"MPSC",category:["job"],desc:"Maharashtra Public Service Commission notices.",url:"https://mpsc.gov.in/",tag:"Maharashtra jobs"},
+ {title:"Maharashtra Police",category:["job"],desc:"Police recruitment ki official information.",url:"https://www.mahapolice.gov.in/",tag:"Maharashtra jobs"},
+ {title:"Railway Recruitment",category:["job"],desc:"Railway recruitment information aur regional RRB links.",url:"https://indianrailways.gov.in/",tag:"Railway"},
+ {title:"IBPS",category:["job"],desc:"Banking recruitment examinations aur notifications.",url:"https://www.ibps.in/",tag:"Bank jobs"},
+ {title:"Employment News",category:["job"],desc:"Government employment news aur vacancy announcements.",url:"https://employmentnews.gov.in/",tag:"Job news"},
+ {title:"Mahaswayam",category:["job","business"],desc:"Maharashtra employment, skill aur self-employment services.",url:"https://www.mahaswayam.gov.in/",tag:"Maharashtra"},
+ {title:"National Health Authority",category:["health"],desc:"Ayushman Bharat aur health programme information.",url:"https://nha.gov.in/",tag:"Health"},
+ {title:"PMAY Urban",category:["health"],desc:"Urban housing mission ki official information.",url:"https://pmay-urban.gov.in/",tag:"Housing"},
+ {title:"Startup India",category:["business"],desc:"Entrepreneurship aur startup support information.",url:"https://www.startupindia.gov.in/",tag:"Business"}
+];
 
- const labels={
- student:{hi:'Student aur Scholarship Yojana',mr:'विद्यार्थी व शिष्यवृत्ती योजना',en:'Student and Scholarship Schemes'},
- farmer:{hi:'Kisan aur Agriculture Yojana',mr:'शेतकरी व कृषी योजना',en:'Farmer and Agriculture Schemes'},
- business:{hi:'Business aur Self-employment Yojana',mr:'व्यवसाय व स्वयंरोजगार योजना',en:'Business and Self-employment Schemes'},
- women:{hi:'Mahila Yojana',mr:'महिला योजना',en:'Women-focused Schemes'},
- general:{hi:'Sarkari Yojana Finder',mr:'शासकीय योजना शोधा',en:'Government Scheme Finder'}
- };
-
- let links='';
- if(state==='Maharashtra'){
- links+='<div class="card"><span class="tag">Official Maharashtra portal</span><h3>MahaDBT</h3><p>Scholarships aur eligible benefit schemes ki details check karein.</p><a href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">Open MahaDBT ↗</a></div>';
+function safeText(s){
+ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+}
+function card(p){
+ return `<article class="card"><span class="tag">${safeText(p.tag)}</span><h3>${safeText(p.title)}</h3><p>${safeText(p.desc)}</p><a href="${p.url}" target="_blank" rel="noopener noreferrer">Open official website ↗</a></article>`;
+}
+function draw(id,items){
+ document.getElementById(id).innerHTML=items.map(card).join("") || "<p>No matching links. Try another search.</p>";
+}
+function init(){
+ draw("schemeCards",portals.filter(p=>p.category.some(c=>["student","farmer","women","business","pension","health"].includes(c))));
+ draw("jobCards",portals.filter(p=>p.category.includes("job")));
+ draw("formCards",portals.filter(p=>p.category.includes("job")||p.title==="MahaDBT"||p.title==="National Scholarship Portal"||p.title==="myScheme"));
+ draw("examCards",portals.filter(p=>p.category.includes("job")));
+ draw("scholarCards",portals.filter(p=>p.category.includes("student")));
+ searchPortal();
+}
+function searchPortal(){
+ const cat=document.getElementById("category").value;
+ const state=document.getElementById("state").value;
+ const q=document.getElementById("keyword").value.trim().toLowerCase();
+ let items=portals.filter(p=>{
+   const categoryMatch=cat==="all"||p.category.includes(cat);
+   const stateMatch=state==="all"||state!=="Maharashtra"||p.title==="MahaDBT"||p.title==="MPSC"||p.title==="Maharashtra Police"||p.title==="Mahaswayam"||p.category.includes(cat)||p.title==="myScheme"||p.title==="India.gov.in Schemes"||p.title==="National Government Services Portal";
+   const text=(p.title+" "+p.desc+" "+p.tag+" "+p.category.join(" ")).toLowerCase();
+   return categoryMatch&&stateMatch&&(!q||text.includes(q));
+ });
+ if(state!=="all"){
+   items=items.filter(p=>p.title==="myScheme"||p.title==="India.gov.in Schemes"||p.title==="National Government Services Portal"||p.title==="National Career Service"||p.title==="MahaDBT"||p.title==="MPSC"||p.title==="Maharashtra Police"||p.title==="Mahaswayam"||p.category.includes(cat));
  }
- links+='<div class="card"><span class="tag">Government portal</span><h3>myScheme</h3><p>Central aur state schemes ko eligibility ke hisaab se explore karein.</p><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Open myScheme ↗</a></div>';
- links+='<div class="card"><h3>Next step</h3><p>Apni category ke hisaab se scheme search karein. Final eligibility official rules par depend karti hai.</p><a href="https://www.india.gov.in/" target="_blank" rel="noopener">India Government Portal ↗</a></div>';
-
- results.innerHTML='<div class="panel"><h2>'+labels[purpose][lang]+'</h2><p>State: '+(state==='Maharashtra'?'Maharashtra':'Other state')+' • Age group: '+age+'</p><p class="small">Yeh suggestions hain, confirmed eligibility nahi.</p></div>'+links;
- results.scrollIntoView({behavior:'smooth'});
+ document.getElementById("resultList").innerHTML=
+ `<p class="small">Selected region: ${safeText(state==="all"?"All India / Central Government":state)}. These are useful official starting links, not a complete live vacancy or scheme database.</p>`+
+ items.map(card).join("")+
+ `<article class="card"><h3>More schemes and services</h3><p>Use the government directories to find additional state and department-specific schemes.</p><div class="links"><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">myScheme ↗</a><a href="https://www.india.gov.in/my-government/schemes" target="_blank" rel="noopener">India.gov.in ↗</a></div></article>`;
+ document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
 }
-function searchQuestion(){
- const q=document.getElementById('question').value.trim();
- if(!q){alert('Please enter your question first.');return;}
- window.open('https://www.myscheme.gov.in/','_blank','noopener');
+function showSection(id){
+ document.getElementById(id).scrollIntoView({behavior:"smooth",block:"start"});
 }
+function askAssistant(){
+ const q=document.getElementById("question").value.trim();
+ if(!q){alert("Please enter your question first.");return;}
+ document.getElementById("assistantNote").textContent="AI chat abhi connect nahi hai. Neeche official scheme directories open karein aur apne sawaal ke hisaab se search karein.";
+ window.open("https://www.myscheme.gov.in/","_blank","noopener");
+}
+init();
 </script>
 </body>
 </html>
