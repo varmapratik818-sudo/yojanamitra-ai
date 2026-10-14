@@ -1,0 +1,34 @@
+
+name: Update Vacancy Links
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-vacancies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run vacancy link collector
+        run: python scripts/update_vacancies.py
+
+      - name: Save updated vacancy data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add vacancies.json
+          git diff --cached --quiet || git commit -m "Update vacancy links"
+          git push
