@@ -3,268 +3,508 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10213d">
 <title>YojanaMitra AI | Jobs, Forms & Schemes</title>
-<meta name="description" content="Government schemes, jobs, application forms, scholarships and exam results in one place.">
+<meta name="description" content="Government jobs, schemes, scholarships, forms and recruitment links in one place.">
+
 <style>
-:root{--navy:#10213d;--blue:#2459d3;--bg:#f3f6fc;--text:#17243b;--muted:#627087;--line:#e2e8f2}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-header{background:linear-gradient(135deg,#10213d,#2459d3);color:white;padding:25px 16px 28px}
-.wrap{max-width:1000px;margin:auto}
-.brand{font-size:25px;font-weight:850;letter-spacing:-.5px}
-.brand span{color:#ffd166}
-.tagline{margin-top:7px;color:#e2eaff;font-size:14px;line-height:1.6}
-main{max-width:1000px;margin:auto;padding:16px}
-.searchbox{background:white;border:1px solid var(--line);border-radius:17px;padding:14px;margin-top:-2px;box-shadow:0 5px 18px #10213d0b}
-label{display:block;font-size:13px;font-weight:700;margin:8px 0}
-input,select,button{font:inherit}
-input,select{width:100%;padding:13px;border:1px solid #d5ddeb;border-radius:10px;background:white;color:var(--text);outline-color:var(--blue)}
-.filters{display:grid;grid-template-columns:1fr;gap:10px}
-button{cursor:pointer}
-.categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}
-.category{background:white;border:1px solid var(--line);border-radius:14px;padding:14px 10px;text-align:left;color:var(--text);min-height:104px}
-.category .emoji{font-size:25px;display:block;margin-bottom:7px}
-.category strong{display:block;font-size:14px}
-.category small{display:block;color:var(--muted);font-size:12px;margin-top:4px;line-height:1.4}
-.category.active{border:2px solid var(--blue);background:#edf3ff}
-.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 12px}
-h2{font-size:19px;margin:0}
-#count{font-size:12px;color:var(--muted)}
-.cards{display:grid;grid-template-columns:1fr;gap:12px}
-.card{background:white;border:1px solid var(--line);border-radius:15px;padding:16px;display:flex;flex-direction:column;gap:9px}
-.cardtop{display:flex;gap:12px;align-items:flex-start}
-.cardicon{width:43px;height:43px;flex:0 0 43px;border-radius:12px;background:#edf3ff;display:grid;place-items:center;font-size:22px}
-.card h3{font-size:16px;margin:0 0 4px}
-.card p{font-size:13px;color:var(--muted);line-height:1.55;margin:0}
-.tag{font-size:11px;font-weight:750;color:#2459d3;background:#edf3ff;border-radius:20px;padding:5px 9px;align-self:flex-start}
-.linkbtn{display:block;text-align:center;text-decoration:none;background:var(--blue);color:white;font-weight:750;padding:11px;border-radius:10px;margin-top:3px}
-.secondary{background:#eef2f9;color:#17325f}
-.notice{background:#fff8e7;border:1px solid #f0dfa9;padding:13px;border-radius:12px;font-size:12px;line-height:1.6;color:#5f4b16;margin:16px 0}
-.assistant{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:20px}
-.assistant p{color:var(--muted);font-size:13px;line-height:1.6}
-#askBtn{width:100%;border:0;border-radius:10px;background:var(--navy);color:white;padding:12px;font-weight:750;margin-top:10px}
-#answer{font-size:14px;line-height:1.7;white-space:pre-line;margin-top:12px}
-#answer a{color:var(--blue);font-weight:700}
-.empty{background:white;padding:20px;border-radius:12px;color:var(--muted);text-align:center}
-footer{text-align:center;padding:24px 16px;color:var(--muted);font-size:12px;line-height:1.7}
-footer a{color:var(--blue)}
-@media(min-width:600px){
- .filters{grid-template-columns:2fr 1fr}
- .categories{grid-template-columns:repeat(3,minmax(0,1fr))}
- .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
- header{padding:32px 22px}
- main{padding:22px}
+:root {
+  --navy:#10213d;
+  --blue:#2459d3;
+  --bg:#f3f6fc;
+  --text:#17243b;
+  --muted:#627087;
+  --line:#e2e8f2;
 }
-@media(min-width:850px){.categories{grid-template-columns:repeat(6,minmax(0,1fr))}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+header {
+  background:linear-gradient(135deg,#10213d,#2459d3);
+  color:white;
+  padding:27px 16px;
+}
+.wrap, main { max-width:1000px; margin:auto; }
+.brand { font-size:27px; font-weight:850; }
+.brand span { color:#ffd166; }
+.tagline { margin-top:7px; font-size:14px; line-height:1.7; color:#e2eaff; }
+main { padding:16px; }
+.searchbox,.assistant {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+}
+label { display:block; font-size:13px; font-weight:700; margin:10px 0 7px; }
+input,select,button { font:inherit; }
+input,select {
+  width:100%;
+  padding:12px;
+  border:1px solid #d5ddeb;
+  border-radius:10px;
+  background:white;
+  color:var(--text);
+}
+.filters { display:grid; grid-template-columns:1fr; gap:8px; }
+.categories {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin:16px 0;
+}
+button { cursor:pointer; }
+.category {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:13px 10px;
+  text-align:left;
+  color:var(--text);
+  min-height:100px;
+}
+.category .emoji { display:block; font-size:24px; margin-bottom:6px; }
+.category strong { display:block; font-size:14px; }
+.category small { display:block; color:var(--muted); margin-top:4px; font-size:12px; }
+.category.active { border:2px solid var(--blue); background:#edf3ff; }
+.sectionhead {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:23px 0 12px;
+}
+h2 { font-size:19px; margin:0; }
+#count { font-size:12px; color:var(--muted); }
+.cards { display:grid; grid-template-columns:1fr; gap:12px; }
+.card {
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:15px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+.cardtop { display:flex; gap:11px; align-items:flex-start; }
+.cardicon {
+  width:43px; height:43px; flex:0 0 43px;
+  border-radius:12px; background:#edf3ff;
+  display:grid; place-items:center; font-size:22px;
+}
+.card h3 { font-size:16px; margin:0 0 5px; overflow-wrap:anywhere; }
+.card p { font-size:13px; color:var(--muted); line-height:1.55; margin:0; }
+.tag {
+  font-size:11px; font-weight:750; color:#2459d3;
+  background:#edf3ff; border-radius:20px;
+  padding:5px 9px; align-self:flex-start;
+}
+.meta { font-size:12px; color:var(--muted); line-height:1.6; }
+.linkbtn {
+  display:block; text-align:center; text-decoration:none;
+  background:var(--blue); color:white; font-weight:750;
+  padding:11px; border-radius:10px; margin-top:2px;
+}
+.secondary { background:#eef2f9; color:#17325f; }
+.notice {
+  background:#fff8e7; border:1px solid #f0dfa9;
+  padding:13px; border-radius:12px; font-size:12px;
+  line-height:1.65; color:#5f4b16; margin:16px 0;
+}
+.assistant { margin-top:22px; }
+.assistant p { color:var(--muted); font-size:13px; line-height:1.6; }
+#askBtn {
+  width:100%; border:0; border-radius:10px;
+  background:var(--navy); color:white; padding:12px;
+  font-weight:750; margin-top:10px;
+}
+#answer { font-size:14px; line-height:1.7; white-space:pre-line; margin-top:12px; }
+#answer a { color:var(--blue); font-weight:700; }
+.empty {
+  background:white; padding:22px; border-radius:12px;
+  color:var(--muted); text-align:center; grid-column:1/-1;
+}
+.status { font-size:12px; color:var(--muted); margin-top:9px; }
+footer { text-align:center; padding:24px 16px; color:var(--muted); font-size:12px; line-height:1.7; }
+@media(min-width:600px) {
+  .filters { grid-template-columns:2fr 1fr; }
+  .categories { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  main { padding:22px; }
+}
+@media(min-width:850px) {
+  .categories { grid-template-columns:repeat(6,minmax(0,1fr)); }
+  .cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
 </style>
 </head>
+
 <body>
 <header>
- <div class="wrap">
-  <div class="brand">Yojana<span>Mitra</span> AI</div>
-  <div class="tagline">Sarkari Naukri • Online Forms • Government Schemes<br>सरकारी जानकारी, एक ही जगह पर</div>
- </div>
+  <div class="wrap">
+    <div class="brand">Yojana<span>Mitra</span> AI</div>
+    <div class="tagline">
+      Sarkari Naukri • Online Forms • Government Schemes<br>
+      सरकारी जानकारी, एक ही जगह पर
+    </div>
+  </div>
 </header>
 
 <main>
- <section class="searchbox">
-  <label for="search">Kya dhoondhna hai?</label>
-  <input id="search" type="search" placeholder="Jaise: railway job, scholarship, pension..." autocomplete="off">
-  <div class="filters">
-   <div>
-    <label for="state">Apna State / UT chunein</label>
-    <select id="state">
-     <option value="all">All India</option>
-     <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
-     <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
-     <option>Goa</option><option>Gujarat</option><option>Haryana</option>
-     <option>Himachal Pradesh</option><option>Jharkhand</option>
-     <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
-     <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
-     <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
-     <option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
-     <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
-     <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
-     <option>Andaman and Nicobar Islands</option><option>Chandigarh</option>
-     <option>Dadra and Nagar Haveli and Daman and Diu</option>
-     <option>Delhi</option><option>Jammu and Kashmir</option>
-     <option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option>
-    </select>
-   </div>
-   <div>
-    <label for="language">Language</label>
-    <select id="language">
-     <option value="hi">Hindi</option>
-     <option value="mr">Marathi</option>
-     <option value="en">English</option>
-    </select>
-   </div>
+  <section class="searchbox">
+    <label for="search">Kya dhoondhna hai?</label>
+    <input id="search" type="search"
+      placeholder="Railway job, scholarship, pension..."
+      autocomplete="off">
+
+    <div class="filters">
+      <div>
+        <label for="state">Apna State / UT chunein</label>
+        <select id="state">
+          <option value="all">All India</option>
+          <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+          <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+          <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+          <option>Himachal Pradesh</option><option>Jharkhand</option>
+          <option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option>
+          <option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option>
+          <option>Mizoram</option><option>Nagaland</option><option>Odisha</option>
+          <option>Punjab</option><option>Rajasthan</option><option>Sikkim</option>
+          <option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option>
+          <option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+          <option>Andaman and Nicobar Islands</option><option>Chandigarh</option>
+          <option>Dadra and Nagar Haveli and Daman and Diu</option>
+          <option>Delhi</option><option>Jammu and Kashmir</option>
+          <option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option>
+        </select>
+      </div>
+      <div>
+        <label for="language">Language</label>
+        <select id="language">
+          <option value="hi">Hindi</option>
+          <option value="mr">Marathi</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+    <div id="loadStatus" class="status">Vacancy data load ho raha hai...</div>
+  </section>
+
+  <section class="categories" aria-label="Main categories">
+    <button class="category active" data-cat="all">
+      <span class="emoji">🏠</span><strong>Sabhi Options</strong><small>All services</small>
+    </button>
+    <button class="category" data-cat="jobs">
+      <span class="emoji">💼</span><strong>Sarkari Naukri</strong><small>Jobs & recruitment</small>
+    </button>
+    <button class="category" data-cat="forms">
+      <span class="emoji">📝</span><strong>Online Forms</strong><small>Apply & services</small>
+    </button>
+    <button class="category" data-cat="schemes">
+      <span class="emoji">🏛️</span><strong>Sarkari Yojana</strong><small>Government schemes</small>
+    </button>
+    <button class="category" data-cat="scholarship">
+      <span class="emoji">🎓</span><strong>Scholarship</strong><small>Student support</small>
+    </button>
+    <button class="category" data-cat="results">
+      <span class="emoji">📋</span><strong>Admit Card & Results</strong><small>Exam updates</small>
+    </button>
+  </section>
+
+  <div class="sectionhead">
+    <h2 id="heading">Useful Government Portals</h2>
+    <span id="count"></span>
   </div>
- </section>
+  <section id="cards" class="cards" aria-live="polite"></section>
 
- <section class="categories" aria-label="Main categories">
-  <button class="category active" data-cat="all"><span class="emoji">🏠</span><strong>Sabhi Options</strong><small>All services</small></button>
-  <button class="category" data-cat="jobs"><span class="emoji">💼</span><strong>Sarkari Naukri</strong><small>Vacancy & recruitment</small></button>
-  <button class="category" data-cat="forms"><span class="emoji">📝</span><strong>Online Forms</strong><small>Apply & services</small></button>
-  <button class="category" data-cat="schemes"><span class="emoji">🏛️</span><strong>Sarkari Yojana</strong><small>Eligibility & benefits</small></button>
-  <button class="category" data-cat="scholarship"><span class="emoji">🎓</span><strong>Scholarship</strong><small>Student support</small></button>
-  <button class="category" data-cat="results"><span class="emoji">📋</span><strong>Admit Card & Results</strong><small>Exam updates</small></button>
- </section>
+  <section class="assistant">
+    <h2>🤖 YojanaMitra Quick Help</h2>
+    <p>Apni zaroorat likhein. Yeh basic keyword-based helper hai, abhi connected generative AI chatbot nahi.</p>
+    <label for="question">Aapko kis cheez mein help chahiye?</label>
+    <input id="question" type="text" placeholder="Jaise: 12th pass job, scholarship, pension">
+    <button id="askBtn" type="button">Help dhoondhein</button>
+    <div id="answer" aria-live="polite"></div>
+  </section>
 
- <div class="sectionhead">
-  <h2 id="heading">Useful Government Portals</h2>
-  <span id="count"></span>
- </div>
- <section id="cards" class="cards" aria-live="polite"></section>
-
- <section class="assistant">
-  <h2>🤖 YojanaMitra Quick Help</h2>
-  <p>Apni zaroorat likhein. Yeh basic helper aapko relevant official portal dhoondhne mein madad karega. Yeh abhi connected generative AI chatbot nahi hai.</p>
-  <label for="question">Aapko kis cheez mein help chahiye?</label>
-  <input id="question" type="text" placeholder="Jaise: 12th pass job, student scholarship...">
-  <button id="askBtn" type="button">Help dhoondhein</button>
-  <div id="answer" aria-live="polite"></div>
- </section>
-
- <div class="notice">
-  <strong>Important:</strong> Yeh website government ki official website nahi hai. Yahan diye gaye links official portals tak pahunchne ke liye hain. Vacancy, last date, fees, eligibility aur scheme status official website par verify karein. Aadhaar number, OTP, bank PIN ya password yahan enter na karein.
- </div>
+  <div class="notice">
+    <strong>Important:</strong> YojanaMitra AI government ki official website nahi hai.
+    Vacancy ka link milne ka matlab vacancy abhi active hai, aisa nahi hai.
+    Last date, eligibility, fees aur notification official source par verify karein.
+    Aadhaar, OTP, bank PIN ya password yahan enter na karein.
+  </div>
 </main>
 
 <footer>
- YojanaMitra AI • Public information directory<br>
- Government portals ke links sambandhit departments ke control mein hain.
+  YojanaMitra AI • Public information directory<br>
+  Official portals aur notifications sambandhit departments ke control mein hain.
 </footer>
 
 <script>
+"use strict";
+
 const portals = [
- {title:"myScheme — Government Schemes",cat:"schemes",icon:"🏛️",desc:"Central aur state government schemes khojein. Eligibility aur apply karne ke tareeke verify karein.",url:"https://www.myscheme.gov.in/",tags:"scheme yojana pension farmer kisan women mahila senior citizen",state:"all"},
- {title:"India.gov.in",cat:"schemes",icon:"🇮🇳",desc:"Bharat Sarkar ki services, departments aur official information.",url:"https://www.india.gov.in/",tags:"central government india government services yojana",state:"all"},
- {title:"MahaDBT — Maharashtra",cat:"schemes",icon:"🌾",desc:"Maharashtra ke DBT benefits aur sambandhit scheme applications.",url:"https://mahadbt.maharashtra.gov.in/",tags:"maharashtra maha dbt farmer student scholarship benefits",state:"Maharashtra"},
- {title:"National Career Service",cat:"jobs",icon:"💼",desc:"Job search, career services aur employment-related information.",url:"https://www.ncs.gov.in/",tags:"job naukri employment private government career",state:"all"},
- {title:"UPSC",cat:"jobs",icon:"🏢",desc:"Civil Services aur anya UPSC recruitment ki official notifications.",url:"https://upsc.gov.in/",tags:"upsc civil services ias ips exam vacancy recruitment",state:"all"},
- {title:"SSC",cat:"jobs",icon:"📑",desc:"SSC examinations, recruitment notices aur candidate updates.",url:"https://ssc.gov.in/",tags:"ssc cgl chsl mts gd constable staff selection job",state:"all"},
- {title:"Railway Recruitment Board",cat:"jobs",icon:"🚆",desc:"Railway recruitment ke liye RRB websites aur official notices check karein.",url:"https://www.rrbcdg.gov.in/",tags:"railway railway job rrb group d alp technician ntpc",state:"all"},
- {title:"IBPS — Banking Recruitment",cat:"jobs",icon:"🏦",desc:"Participating banks ki recruitment aur banking examinations.",url:"https://www.ibps.in/",tags:"bank bank job po clerk ibps banking",state:"all"},
- {title:"MPSC — Maharashtra",cat:"jobs",icon:"📘",desc:"Maharashtra Public Service Commission ki recruitment aur exam notices.",url:"https://mpsc.gov.in/",tags:"mpsc maharashtra state service police government job",state:"Maharashtra"},
- {title:"National Scholarship Portal",cat:"scholarship",icon:"🎓",desc:"Scholarship schemes aur application updates ke liye official portal.",url:"https://scholarships.gov.in/",tags:"scholarship student college school education fees scholarship",state:"all"},
- {title:"UGC Scholarships",cat:"scholarship",icon:"📚",desc:"Higher education scholarships aur fellowship information.",url:"https://www.ugc.gov.in/",tags:"ugc university scholarship fellowship research student",state:"all"},
- {title:"National Government Services Portal",cat:"forms",icon:"📝",desc:"Government services aur online application services khojein.",url:"https://services.india.gov.in/",tags:"online form apply application certificate service form",state:"all"},
- {title:"UMANG",cat:"forms",icon:"📲",desc:"Kai government services ko ek platform par access karein.",url:"https://web.umang.gov.in/",tags:"umang online service form government application",state:"all"},
+ {title:"myScheme — Government Schemes",cat:"schemes",icon:"🏛️",desc:"Central aur state government schemes, eligibility aur benefits khojein.",url:"https://www.myscheme.gov.in/",tags:"scheme yojana pension farmer kisan women mahila benefits",state:"all"},
+ {title:"India.gov.in",cat:"schemes",icon:"🇮🇳",desc:"Government departments, services aur official information.",url:"https://www.india.gov.in/",tags:"central government services yojana",state:"all"},
+ {title:"MahaDBT — Maharashtra",cat:"schemes",icon:"🌾",desc:"Maharashtra ke DBT benefits aur scheme applications.",url:"https://mahadbt.maharashtra.gov.in/",tags:"maharashtra maha dbt farmer student scholarship",state:"Maharashtra"},
+ {title:"National Career Service",cat:"jobs",icon:"💼",desc:"Job search, career guidance aur employment services.",url:"https://www.ncs.gov.in/",tags:"job naukri employment career",state:"all"},
+ {title:"UPSC",cat:"jobs",icon:"🏢",desc:"UPSC recruitment notifications aur examination information.",url:"https://upsc.gov.in/",tags:"upsc civil services ias ips exam vacancy recruitment",state:"all"},
+ {title:"SSC",cat:"jobs",icon:"📑",desc:"SSC exams, recruitment notices aur candidate updates.",url:"https://ssc.gov.in/",tags:"ssc cgl chsl mts gd constable staff selection job",state:"all"},
+ {title:"Railway Recruitment Board",cat:"jobs",icon:"🚆",desc:"Railway recruitment ke liye official RRB information.",url:"https://www.rrbcdg.gov.in/",tags:"railway job rrb group d alp technician ntpc",state:"all"},
+ {title:"IBPS — Banking Recruitment",cat:"jobs",icon:"🏦",desc:"Bank recruitment aur banking examinations.",url:"https://www.ibps.in/",tags:"bank job po clerk ibps banking",state:"all"},
+ {title:"MPSC — Maharashtra",cat:"jobs",icon:"📘",desc:"Maharashtra Public Service Commission exam information.",url:"https://mpsc.gov.in/",tags:"mpsc maharashtra state service police government job",state:"Maharashtra"},
+ {title:"National Scholarship Portal",cat:"scholarship",icon:"🎓",desc:"Scholarship schemes aur application information.",url:"https://scholarships.gov.in/",tags:"scholarship student college school education fees",state:"all"},
+ {title:"UGC",cat:"scholarship",icon:"📚",desc:"Higher education, scholarships aur fellowship information.",url:"https://www.ugc.gov.in/",tags:"ugc university scholarship fellowship research student",state:"all"},
+ {title:"Government Services Portal",cat:"forms",icon:"📝",desc:"Government services aur online application information.",url:"https://services.india.gov.in/",tags:"online form apply application certificate service",state:"all"},
+ {title:"UMANG",cat:"forms",icon:"📲",desc:"Kai government services ek platform par access karein.",url:"https://web.umang.gov.in/",tags:"umang online service form government application",state:"all"},
  {title:"DigiLocker",cat:"forms",icon:"🗂️",desc:"Digital documents aur eligible issued certificates access karein.",url:"https://www.digilocker.gov.in/",tags:"document certificate marksheet licence digilocker",state:"all"},
- {title:"National Testing Agency",cat:"results",icon:"🧾",desc:"NTA exams, notices aur official candidate links.",url:"https://www.nta.ac.in/",tags:"nta admit card result exam entrance neet jee",state:"all"},
- {title:"Results Portal",cat:"results",icon:"📋",desc:"Government examination results ke liye official result services.",url:"https://results.gov.in/",tags:"result results exam score marks",state:"all"}
+ {title:"National Testing Agency",cat:"results",icon:"🧾",desc:"NTA exams aur candidate notifications.",url:"https://www.nta.ac.in/",tags:"nta admit card result exam entrance neet jee",state:"all"},
+ {title:"Government Results Portal",cat:"results",icon:"📋",desc:"Government examination results ke links aur information.",url:"https://results.gov.in/",tags:"result results exam score marks",state:"all"}
 ];
 
 const catNames = {
- all:"Useful Government Portals",jobs:"Sarkari Naukri Portals",
- forms:"Online Forms & Services",schemes:"Government Schemes",
- scholarship:"Scholarship Portals",results:"Admit Card & Results"
+ all:"Useful Government Portals",
+ jobs:"Sarkari Naukri & Vacancies",
+ forms:"Online Forms & Services",
+ schemes:"Government Schemes",
+ scholarship:"Scholarship Portals",
+ results:"Admit Card & Results"
 };
+
 let activeCat = "all";
+let vacancies = [];
 
-function getText(key){
- const lang=document.getElementById("language").value;
- const words={
-  hi:{open:"Official Website Kholein",all:"Koi result nahi mila. Search badal kar dekhein."},
-  mr:{open:"अधिकृत वेबसाइट उघडा",all:"परिणाम सापडला नाही. शोध बदलून पाहा."},
-  en:{open:"Open Official Website",all:"No results found. Try a different search."}
- };
- return (words[lang]||words.hi)[key];
+function safeUrl(value) {
+  try {
+    const u = new URL(String(value || ""), location.href);
+    if (u.protocol === "https:" || u.protocol === "http:") return u.href;
+  } catch (e) {}
+  return "";
 }
 
-function render(){
- const query=document.getElementById("search").value.trim().toLowerCase();
- const state=document.getElementById("state").value;
- const list=portals.filter(p=>{
-  const text=(p.title+" "+p.desc+" "+p.tags+" "+p.cat).toLowerCase();
-  const matchesQuery=!query||text.includes(query);
-  const matchesCat=activeCat==="all"||p.cat===activeCat;
-  const matchesState=state==="all"||p.state==="all"||p.state===state;
-  return matchesQuery&&matchesCat&&matchesState;
- });
- document.getElementById("heading").textContent=catNames[activeCat];
- document.getElementById("count").textContent=list.length+" portals";
- const container=document.getElementById("cards");
- container.replaceChildren();
- if(!list.length){
-  const empty=document.createElement("div");
-  empty.className="empty";
-  empty.textContent=getText("all");
-  container.appendChild(empty);
-  return;
- }
- list.forEach(p=>{
-  const card=document.createElement("article");
-  card.className="card";
-  const top=document.createElement("div");
-  top.className="cardtop";
-  const ico=document.createElement("div");
-  ico.className="cardicon";
-  ico.textContent=p.icon;
-  const info=document.createElement("div");
-  const title=document.createElement("h3");
-  title.textContent=p.title;
-  const desc=document.createElement("p");
-  desc.textContent=p.desc;
-  info.append(title,desc);
-  top.append(ico,info);
-  const tag=document.createElement("span");
-  tag.className="tag";
-  tag.textContent=p.state==="Maharashtra"?"Maharashtra":"All India";
-  const link=document.createElement("a");
-  link.className="linkbtn";
-  link.href=p.url;
-  link.target="_blank";
-  link.rel="noopener noreferrer";
-  link.textContent=getText("open");
-  card.append(top,tag,link);
-  container.appendChild(card);
- });
+function normalCategory(item) {
+  const raw = String(item.category || item.cat || item.type || item.kind || "").toLowerCase();
+  const text = (raw + " " + (item.title || item.name || item.post || "")).toLowerCase();
+
+  if (/scholar|student|fellowship/.test(text)) return "scholarship";
+  if (/result|admit|hall ticket|answer key/.test(text)) return "results";
+  if (/scheme|yojana|pension|benefit/.test(text)) return "schemes";
+  if (/form|certificate|service|application/.test(text)) return "forms";
+  return "jobs";
 }
 
-document.querySelectorAll(".category").forEach(btn=>{
- btn.addEventListener("click",()=>{
-  activeCat=btn.dataset.cat;
-  document.querySelectorAll(".category").forEach(b=>b.classList.toggle("active",b===btn));
+function normalizeVacancy(item, index) {
+  if (!item || typeof item !== "object") return null;
+
+  const title = item.title || item.name || item.post ||
+                item.vacancy || item.notification || item.exam || "";
+  const url = safeUrl(
+    item.apply_url || item.official_url || item.notification_url ||
+    item.url || item.link || item.href || item.source_url || ""
+  );
+
+  if (!title || !url) return null;
+
+  return {
+    title: String(title),
+    cat: normalCategory(item),
+    icon: "📢",
+    desc: String(item.description || item.details || item.summary ||
+                  "Official source par notification aur eligibility verify karein."),
+    url,
+    tags: String(item.tags || item.state || "") + " " + title,
+    state: String(item.state || item.location || "all"),
+    lastDate: String(item.last_date || item.lastDate || item.deadline || ""),
+    source: safeUrl(item.source_url || item.notification_url || item.official_url || item.url || item.link || ""),
+    isVacancy: true,
+    id: String(item.id || index)
+  };
+}
+
+function extractItems(data) {
+  if (Array.isArray(data)) return data;
+  if (!data || typeof data !== "object") return [];
+
+  for (const key of ["vacancies","jobs","items","results","data","notifications"]) {
+    if (Array.isArray(data[key])) return data[key];
+  }
+  return [];
+}
+
+async function loadVacancies() {
+  const status = document.getElementById("loadStatus");
+  try {
+    const response = await fetch("./vacancies.json?v=" + Date.now(), {cache:"no-store"});
+    if (!response.ok) throw new Error("Vacancy file not found");
+
+    const data = await response.json();
+    vacancies = extractItems(data)
+      .map(normalizeVacancy)
+      .filter(Boolean);
+
+    status.textContent = vacancies.length
+      ? vacancies.length + " vacancy records loaded. Active status official source par verify karein."
+      : "Vacancy file mili, lekin compatible title aur URL wala data nahi mila.";
+  } catch (error) {
+    vacancies = [];
+    status.textContent = "Automatic vacancy data abhi load nahi hua. Neeche official portals available hain.";
+  }
   render();
- });
-});
-document.getElementById("search").addEventListener("input",render);
-document.getElementById("state").addEventListener("change",render);
-document.getElementById("language").addEventListener("change",render);
+}
 
-document.getElementById("askBtn").addEventListener("click",()=>{
- const q=document.getElementById("question").value.trim().toLowerCase();
- const answer=document.getElementById("answer");
- let target="https://www.myscheme.gov.in/";
- let message="Schemes aur eligibility ke liye myScheme par apni state aur details select karein.";
- if(!q){answer.textContent="Pehle apni zaroorat likhein.";return;}
- if(/job|naukri|vacancy|recruitment|railway|ssc|upsc|police|bank|mpsc/.test(q)){
-  target="https://www.ncs.gov.in/";
-  message="Job search se shuru karein. UPSC, SSC, Railway, Bank aur state recruitment ke official portals bhi upar milenge. Last date aur notification zaroor verify karein.";
- }else if(/scholar|student|college|school|fees|education/.test(q)){
-  target="https://scholarships.gov.in/";
-  message="Scholarship portal par current schemes, eligibility aur application dates check karein.";
- }else if(/admit|result|exam|syllabus|hall ticket|marks/.test(q)){
-  target="https://www.nta.ac.in/";
-  message="Exam ke admit card aur results sambandhit exam ki official website par verify karein.";
- }else if(/form|certificate|document|apply|application/.test(q)){
-  target="https://services.india.gov.in/";
-  message="Government services portal par apni service ya application form search karein.";
- }else if(/maharashtra|maha|dbt|farmer|kisan|pension|yojana|scheme|benefit/.test(q)){
-  target="https://www.myscheme.gov.in/";
-  message="myScheme par state, category aur eligibility select karke matching schemes dekhein. Maharashtra DBT ka link bhi upar diya gaya hai.";
- }
- const link=document.createElement("a");
- link.href=target;link.target="_blank";link.rel="noopener noreferrer";
- link.textContent="Official portal kholein";
- answer.replaceChildren(document.createTextNode(message+" "),link);
+function getText(key) {
+  const lang = document.getElementById("language").value;
+  const words = {
+    hi:{open:"Official Website Kholein",empty:"Koi result nahi mila. Search badal kar dekhein.",apply:"Notification / Apply Link",last:"Last date",source:"Source"},
+    mr:{open:"अधिकृत वेबसाइट उघडा",empty:"परिणाम सापडला नाही. शोध बदला.",apply:"सूचना / अर्ज लिंक",last:"शेवटची तारीख",source:"स्रोत"},
+    en:{open:"Open Official Website",empty:"No results found. Try another search.",apply:"Notification / Apply Link",last:"Last date",source:"Source"}
+  };
+  return (words[lang] || words.hi)[key];
+}
+
+function render() {
+  const query = document.getElementById("search").value.trim().toLowerCase();
+  const state = document.getElementById("state").value;
+  const allItems = [...portals, ...vacancies];
+
+  const list = allItems.filter(p => {
+    const text = (p.title + " " + p.desc + " " + p.tags + " " + p.cat).toLowerCase();
+    const matchesQuery = !query || text.includes(query);
+    const matchesCat = activeCat === "all" || p.cat === activeCat;
+    const itemState = String(p.state || "all").toLowerCase();
+    const matchesState = state === "all" || itemState === "all" ||
+                         itemState.includes(state.toLowerCase());
+    return matchesQuery && matchesCat && matchesState;
+  });
+
+  document.getElementById("heading").textContent = catNames[activeCat];
+  document.getElementById("count").textContent = list.length + " results";
+
+  const container = document.getElementById("cards");
+  container.replaceChildren();
+
+  if (!list.length) {
+    const empty = document.createElement("div");
+    empty.className = "empty";
+    empty.textContent = getText("empty");
+    container.appendChild(empty);
+    return;
+  }
+
+  list.forEach(p => {
+    const card = document.createElement("article");
+    card.className = "card";
+
+    const top = document.createElement("div");
+    top.className = "cardtop";
+
+    const icon = document.createElement("div");
+    icon.className = "cardicon";
+    icon.textContent = p.icon || "📄";
+
+    const info = document.createElement("div");
+    const title = document.createElement("h3");
+    title.textContent = p.title;
+
+    const desc = document.createElement("p");
+    desc.textContent = p.desc;
+
+    info.append(title, desc);
+    top.append(icon, info);
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = p.isVacancy ? "Vacancy record — verify status" :
+      (p.state === "Maharashtra" ? "Maharashtra" : "Official portal");
+
+    card.append(top, tag);
+
+    if (p.lastDate) {
+      const date = document.createElement("div");
+      date.className = "meta";
+      date.textContent = getText("last") + ": " + p.lastDate;
+      card.appendChild(date);
+    }
+
+    const link = document.createElement("a");
+    link.className = "linkbtn";
+    link.href = p.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = p.isVacancy ? getText("apply") : getText("open");
+    card.appendChild(link);
+
+    if (p.isVacancy && p.source && p.source !== p.url) {
+      const source = document.createElement("a");
+      source.className = "linkbtn secondary";
+      source.href = p.source;
+      source.target = "_blank";
+      source.rel = "noopener noreferrer";
+      source.textContent = getText("source");
+      card.appendChild(source);
+    }
+
+    container.appendChild(card);
+  });
+}
+
+document.querySelectorAll(".category").forEach(button => {
+  button.addEventListener("click", () => {
+    activeCat = button.dataset.cat;
+    document.querySelectorAll(".category").forEach(b => {
+      b.classList.toggle("active", b === button);
+    });
+    render();
+  });
+});
+
+document.getElementById("search").addEventListener("input", render);
+document.getElementById("state").addEventListener("change", render);
+document.getElementById("language").addEventListener("change", render);
+
+document.getElementById("askBtn").addEventListener("click", () => {
+  const q = document.getElementById("question").value.trim().toLowerCase();
+  const answer = document.getElementById("answer");
+  if (!q) {
+    answer.textContent = "Pehle apni zaroorat likhein.";
+    return;
+  }
+
+  let target = "https://www.myscheme.gov.in/";
+  let message = "Schemes aur eligibility ke liye myScheme par details check karein.";
+
+  if (/job|naukri|vacancy|recruitment|railway|ssc|upsc|police|bank|mpsc/.test(q)) {
+    target = "https://www.ncs.gov.in/";
+    message = "Job search se shuru karein. Relevant recruitment ki notification aur last date official website par verify karein.";
+  } else if (/scholar|student|college|school|fees|education/.test(q)) {
+    target = "https://scholarships.gov.in/";
+    message = "Scholarship portal par current schemes, eligibility aur application dates check karein.";
+  } else if (/admit|result|exam|syllabus|hall ticket|marks/.test(q)) {
+    target = "https://www.nta.ac.in/";
+    message = "Exam ke admit card aur result sambandhit exam ki official website par verify karein.";
+  } else if (/form|certificate|document|apply|application/.test(q)) {
+    target = "https://services.india.gov.in/";
+    message = "Government services portal par apni service ya form search karein.";
+  } else if (/maharashtra|maha|dbt|farmer|kisan/.test(q)) {
+    target = "https://mahadbt.maharashtra.gov.in/";
+    message = "Maharashtra DBT portal par relevant benefits aur application details check karein.";
+  }
+
+  const link = document.createElement("a");
+  link.href = target;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "Official portal kholein";
+
+  answer.replaceChildren(document.createTextNode(message + " "), link);
 });
 
 render();
+loadVacancies();
 </script>
 </body>
 </html>
