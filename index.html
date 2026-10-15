@@ -1,74 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123c69">
+<meta name="description" content="Find government schemes, jobs, scholarships and official public service portals in India.">
+<title>YojanaMitra AI | Government Help</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f2f6fb;color:#172b45;line-height:1.6}
+header{background:#123c69;color:white;padding:24px 16px}
+header h1{margin:0;font-size:27px}
+header p{margin:6px 0 16px}
+.wrap{max-width:1000px;margin:auto;padding:16px}
+.search{display:flex;gap:8px;flex-wrap:wrap}
+input{flex:1;min-width:180px;padding:13px;border:0;border-radius:9px;font-size:16px}
+button{padding:11px 15px;border:0;border-radius:8px;background:#1768b2;color:white;font-weight:bold;cursor:pointer}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+nav a,.link{display:inline-block;text-decoration:none;background:#e2edfb;color:#123c69;padding:9px 12px;border-radius:8px;font-weight:bold}
+h2{font-size:22px;margin-bottom:8px}
+.intro,.card{background:white;border-radius:13px;padding:16px;margin:12px 0;box-shadow:0 2px 8px #142b4510}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.card h3{margin:0 0 7px;font-size:18px}
+.card p{margin:6px 0 12px}
+.card a{margin:4px 5px 0 0}
+.tag{font-size:12px;color:#526982}
+section{scroll-margin-top:12px}
+#helpbox{background:#e8f3ff;border-radius:12px;padding:16px}
+footer{background:#102b50;color:white;padding:24px 16px;margin-top:28px}
+footer a{color:white}
+footer section{padding:12px 0}
+small{color:#d6e3f5}
+.hidden{display:none}
+</style>
+</head>
+<body>
 
-<!-- YojanaMitra AI: Website Information Pages -->
-<footer style="background:#102b50;color:white;padding:28px 16px;margin-top:30px;border-radius:16px;font-family:Arial,sans-serif">
-  <h2 style="margin-top:0">YojanaMitra AI</h2>
-  <p>Government schemes, scholarships, jobs and useful official portals — all in one place.</p>
-  <p style="font-size:13px;color:#d6e3f5">
-    YojanaMitra AI is an independent information website.
-    It is not affiliated with any government department.
-    Always verify information on official portals.
-  </p>
-  <hr style="border-color:#49617d">
-  <nav style="display:flex;flex-wrap:wrap;gap:16px">
-    <a href="#about-us" style="color:#fff">About Us</a>
-    <a href="#contact-us" style="color:#fff">Contact Us</a>
-    <a href="#privacy-policy" style="color:#fff">Privacy Policy</a>
-    <a href="#disclaimer" style="color:#fff">Disclaimer</a>
-  </nav>
-  <p style="font-size:12px;margin-bottom:0">© 2026 YojanaMitra AI</p>
+<header>
+<div class="wrap">
+<h1>YojanaMitra AI</h1>
+<p>Government schemes, jobs, scholarships and useful official portals — all in one place.</p>
+<div class="search">
+<input id="search" type="search" placeholder="Search jobs, schemes, scholarships...">
+<button onclick="searchItems()">Search</button>
+</div>
+</div>
+</header>
+
+<main class="wrap">
+<nav>
+<a href="#schemes">Schemes</a>
+<a href="#jobs">Government Jobs</a>
+<a href="#scholarships">Scholarships</a>
+<a href="#services">Public Services</a>
+<a href="#quickhelp">Quick Help</a>
+</nav>
+
+<div class="intro">
+<h2>Welcome to YojanaMitra AI</h2>
+<p>Find useful government information and open official websites to verify eligibility, documents, application dates and benefits.</p>
+<p><strong>Important:</strong> We are an independent information website, not a government department.</p>
+</div>
+
+<section id="schemes">
+<h2>Government Schemes</h2>
+<div class="grid">
+<div class="card searchable">
+<h3>PM-KISAN</h3>
+<p>Information for eligible farmer families and scheme instalments.</p>
+<a class="link" href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>Ayushman Bharat PM-JAY</h3>
+<p>Health coverage scheme information and beneficiary services.</p>
+<a class="link" href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>PM Vishwakarma</h3>
+<p>Information for eligible traditional artisans and craftspeople.</p>
+<a class="link" href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>PM SVANidhi</h3>
+<p>Scheme information for eligible street vendors.</p>
+<a class="link" href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>Pradhan Mantri Awas Yojana</h3>
+<p>Housing scheme information. Check the relevant rural or urban portal.</p>
+<a class="link" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal</a>
+<a class="link" href="https://pmayg.nic.in/" target="_blank" rel="noopener">Rural Portal</a>
+</div>
+<div class="card searchable">
+<h3>myScheme</h3>
+<p>Explore government schemes and check possible eligibility.</p>
+<a class="link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes</a>
+</div>
+</div>
+</section>
+
+<section id="jobs">
+<h2>Government Jobs</h2>
+<p>Open official recruitment portals to check current notifications and deadlines.</p>
+<div class="grid">
+<div class="card searchable">
+<h3>UPSC Recruitment</h3>
+<p>Central government examinations and recruitment notices.</p>
+<a class="link" href="https://upsc.gov.in/recruitment/recruitment-advertisement" target="_blank" rel="noopener">View Notices</a>
+</div>
+<div class="card searchable">
+<h3>SSC Recruitment</h3>
+<p>Staff Selection Commission examinations and vacancies.</p>
+<a class="link" href="https://ssc.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>Railway Recruitment</h3>
+<p>Railway recruitment boards and notices.</p>
+<a class="link" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>MPSC Maharashtra</h3>
+<p>Maharashtra Public Service Commission examinations.</p>
+<a class="link" href="https://mpsc.gov.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>IBPS Banking Jobs</h3>
+<p>Bank recruitment examinations and notifications.</p>
+<a class="link" href="https://www.ibps.in/" target="_blank" rel="noopener">Official Website</a>
+</div>
+<div class="card searchable">
+<h3>National Career Service</h3>
+<p>Search jobs and career opportunities.</p>
+<a class="link" href="https://www.ncs.gov.in/" target="_blank" rel="noopener">Search Jobs</a>
+</div>
+</div>
+<div class="card">
+<h3>Latest Vacancy Links</h3>
+<p id="vacancyStatus">Checking the vacancy links file...</p>
+<div id="vacancyList"></div>
+</div>
+</section>
+
+<section id="scholarships">
+<h2>Scholarships</h2>
+<div class="grid">
+<div class="card searchable">
+<h3>National Scholarship Portal</h3>
+<p>Check scholarship schemes, application instructions and status.</p>
+<a class="link" href="https://scholarships.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+<div class="card searchable">
+<h3>MahaDBT Maharashtra</h3>
+<p>Maharashtra scholarships and other benefit schemes.</p>
+<a class="link" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Public Services</h2>
+<div class="grid">
+<div class="card searchable">
+<h3>ABHA Health ID</h3>
+<p>Official Ayushman Bharat Health Account information and services.</p>
+<a class="link" href="https://abha.abdm.gov.in/" target="_blank" rel="noopener">ABHA Portal</a>
+</div>
+<div class="card searchable">
+<h3>Aaple Sarkar</h3>
+<p>Maharashtra government services and applications.</p>
+<a class="link" href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+<div class="card searchable">
+<h3>DigiLocker</h3>
+<p>Access eligible digital documents and certificates.</p>
+<a class="link" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+<div class="card searchable">
+<h3>UMANG</h3>
+<p>Access supported government services in one place.</p>
+<a class="link" href="https://web.umang.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+<div class="card searchable">
+<h3>India.gov.in</h3>
+<p>National portal for government information and services.</p>
+<a class="link" href="https://www.india.gov.in/" target="_blank" rel="noopener">Official Portal</a>
+</div>
+</div>
+</section>
+
+<section id="quickhelp">
+<h2>Quick Help</h2>
+<div id="helpbox">
+<p>Type a topic to get a suggested official portal.</p>
+<input id="question" type="text" placeholder="Example: farmer scheme, job, scholarship">
+<button onclick="getHelp()">Find Help</button>
+<div id="answer" aria-live="polite"></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<h2>YojanaMitra AI</h2>
+<p>Government schemes, scholarships, jobs and useful official portals — all in one place.</p>
+<small>Independent information website. Not affiliated with any government department. Verify all details on official portals.</small>
+<hr>
+<nav>
+<a href="#about-us">About Us</a>
+<a href="#contact-us">Contact Us</a>
+<a href="#privacy-policy">Privacy Policy</a>
+<a href="#disclaimer">Disclaimer</a>
+</nav>
+<section id="about-us">
+<h3>About Us</h3>
+<p>YojanaMitra AI helps visitors discover government schemes, scholarships, job notifications and public-service portals. Information may change; always confirm details with the responsible department.</p>
+</section>
+<section id="contact-us">
+<h3>Contact Us</h3>
+<p>For corrections and suggestions: varmapratik818@gmail.com</p>
+<p>Please do not email Aadhaar numbers, bank details or passwords.</p>
+</section>
+<section id="privacy-policy">
+<h3>Privacy Policy</h3>
+<p>This website links to external portals that have their own privacy practices. Hosting providers may process technical information such as access logs. If analytics, advertising or cookies are added, this policy should be updated to describe the services actually used.</p>
+</section>
+<section id="disclaimer">
+<h3>Disclaimer</h3>
+<p>This is an independent information website, not a government website. We do not guarantee that all details are complete or current. Verify eligibility, deadlines, fees and benefits on official portals before applying.</p>
+</section>
+<p><small>© 2026 YojanaMitra AI</small></p>
+</div>
 </footer>
 
-<section id="about-us" style="padding:24px 16px;line-height:1.7">
-  <h2>About Us</h2>
-  <p>Welcome to YojanaMitra AI, an independent information platform
-  designed to help people discover government schemes, scholarships,
-  job notifications and useful public-service portals.</p>
-  <p>Our aim is to present information in a simple and accessible format
-  and provide links to relevant official sources wherever possible.</p>
-  <p>We are not a government website. Scheme eligibility, documents,
-  deadlines and benefits may change. Please confirm details with the
-  relevant official department before applying.</p>
-</section>
+<script>
+function searchItems(){
+  const q=document.getElementById("search").value.toLowerCase().trim();
+  document.querySelectorAll(".searchable").forEach(card=>{
+    card.classList.toggle("hidden",!!q&&!card.innerText.toLowerCase().includes(q));
+  });
+  const first=document.querySelector("#schemes");
+  if(q) first.scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("search").addEventListener("keydown",e=>{
+  if(e.key==="Enter")searchItems();
+});
 
-<section id="contact-us" style="padding:24px 16px;line-height:1.7">
-  <h2>Contact Us</h2>
-  <p>Have a correction, suggestion or question about information published
-  on YojanaMitra AI? You can contact the website owner by email.</p>
-  <p><strong>Email:</strong> varmapratik818@gmail.com</p>
-  <p>Please do not email Aadhaar numbers, bank details or other sensitive
-  personal information.</p>
-</section>
+function getHelp(){
+  const q=document.getElementById("question").value.toLowerCase();
+  let msg="Try myScheme for schemes or India.gov.in for general government information.";
+  let url="https://www.myscheme.gov.in/";
+  if(q.includes("job")||q.includes("vacancy")||q.includes("recruit")){
+    msg="For job listings, check the National Career Service and official recruitment portals.";
+    url="https://www.ncs.gov.in/";
+  }else if(q.includes("scholar")||q.includes("student")||q.includes("education")){
+    msg="For scholarships, check the National Scholarship Portal.";
+    url="https://scholarships.gov.in/";
+  }else if(q.includes("farmer")||q.includes("kisan")||q.includes("agriculture")){
+    msg="For PM-KISAN information, visit its official website.";
+    url="https://pmkisan.gov.in/";
+  }else if(q.includes("health")||q.includes("ayushman")||q.includes("abha")){
+    msg="For health scheme information, visit the official PM-JAY portal.";
+    url="https://pmjay.gov.in/";
+  }else if(q.includes("maharashtra")||q.includes("mahadbt")||q.includes("aaple sarkar")){
+    msg="For Maharashtra services, check Aaple Sarkar or MahaDBT.";
+    url="https://aaplesarkar.mahaonline.gov.in/";
+  }
+  document.getElementById("answer").innerHTML="";
+  const p=document.createElement("p");p.textContent=msg;
+  const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";a.className="link";a.textContent="Open Suggested Official Portal";
+  document.getElementById("answer").append(p,a);
+}
 
-<section id="privacy-policy" style="padding:24px 16px;line-height:1.7">
-  <h2>Privacy Policy</h2>
-  <p>YojanaMitra AI aims to respect visitors' privacy. This website provides
-  information and links to external websites. Those websites may have
-  their own privacy policies and data practices.</p>
-  <p>When you visit this website, your browser or hosting provider may
-  process technical information such as IP address, device details and
-  access logs to operate and protect the website.</p>
-  <p>If analytics, advertising services or cookies are enabled in the
-  future, they may collect or use information according to their
-  settings and applicable policies. We will update this policy to
-  describe the services actually used on this website.</p>
-  <p>We do not ask visitors to submit Aadhaar numbers, bank passwords
-  or other sensitive details through this information website.</p>
-  <p>External links are provided for convenience. Please read the privacy
-  policies of external services before sharing your information.</p>
-  <p>For privacy-related questions, contact the website owner using the
-  email listed on our Contact Us section.</p>
-</section>
-
-<section id="disclaimer" style="padding:24px 16px;line-height:1.7">
-  <h2>Disclaimer</h2>
-  <p>YojanaMitra AI is an independent information website and is not
-  affiliated with, endorsed by or operated by any government authority.</p>
-  <p>We try to provide useful information, but we do not guarantee that
-  every detail is complete, accurate or current. Rules, eligibility,
-  benefits, fees and application dates may change without notice.</p>
-  <p>Always verify information and submit applications through the
-  relevant official government portal. Final decisions about eligibility
-  and benefits are made by the responsible authority.</p>
-  <p>External websites are operated by their respective owners.
-  YojanaMitra AI is not responsible for their content or services.</p>
-</section>
+fetch("./vacancies.json")
+.then(r=>{if(!r.ok)throw Error("Vacancy file unavailable");return r.json();})
+.then(data=>{
+  const list=document.getElementById("vacancyList");
+  const entries=Array.isArray(data.vacancies)?data.vacancies:[];
+  if(!entries.length)throw Error("No vacancy links available");
+  list.innerHTML="";
+  entries.forEach(v=>{
+    if(!v.title||!v.url)return;
+    const p=document.createElement("p");
+    const a=document.createElement("a");
+    a.href=v.url;a.target="_blank";a.rel="noopener";a.textContent=v.source? v.source+" — "+v.title:v.title;
+    p.appendChild(a);list.appendChild(p);
+  });
+  document.getElementById("vacancyStatus").textContent="Recruitment portal links. Check each official notice for current vacancies and deadlines.";
+})
+.catch(()=>{
+  document.getElementById("vacancyStatus").textContent="The vacancy links file could not be loaded. Use the official recruitment portals listed above.";
+});
+</script>
+</body>
+</html>
