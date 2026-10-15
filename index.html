@@ -5,329 +5,709 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#172554">
-<meta name="description" content="YojanaMitra AI - Sarkari naukri, Maharashtra yojana, sukha anudan, kisan madad aur scholarship ki information directory.">
+<meta name="description" content="YojanaMitra AI - Maharashtra government schemes, jobs, farmer support, scholarships and Ayushman Bharat Card information.">
 <title>YojanaMitra AI | Sarkari Madad Ek Jagah</title>
+
 <style>
-:root{
- --navy:#172554;--blue:#2563eb;--ink:#18233d;--muted:#667085;
- --bg:#f5f7fc;--line:#e7ebf3;--white:#fff;--green:#0f9f76;
- --orange:#f59e0b;--purple:#7c3aed;--pink:#e84a8a;--teal:#0891b2;
+:root {
+  --navy:#172554;
+  --blue:#2563eb;
+  --ink:#18233d;
+  --muted:#667085;
+  --bg:#f5f7fc;
+  --line:#e7ebf3;
+  --white:#fff;
+  --green:#0f9f76;
+  --orange:#f59e0b;
+  --purple:#7c3aed;
+  --pink:#e84a8a;
+  --teal:#0891b2;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:var(--bg);color:var(--ink);
- font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-a{color:inherit}
-button,input,select{font:inherit}
-button,a,input,select{outline-offset:3px}
-.topnote{background:#fff7e6;color:#7c4a03;text-align:center;
- padding:9px 14px;font-size:12px;border-bottom:1px solid #f5dfae}
-.header{background:var(--navy);color:white;padding:16px 0 28px;
- position:relative;overflow:hidden}
-.header:after{content:"";position:absolute;width:300px;height:300px;
- right:-100px;top:-150px;border-radius:50%;background:#ffffff0b}
-.wrap{width:min(1120px,calc(100% - 30px));margin:auto}
-.nav{display:flex;align-items:center;justify-content:space-between;
- gap:16px;position:relative;z-index:1}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-.logo{width:45px;height:45px;border-radius:15px;display:grid;
- place-items:center;background:linear-gradient(135deg,#ff9933 0 33%,white 33% 66%,#138808 66%);
- color:var(--navy);font-size:24px;box-shadow:0 5px 18px #0002}
-.brand strong{display:block;font-size:20px;letter-spacing:-.5px}
-.brand small{display:block;color:#d4def5;font-size:11px;margin-top:2px}
-.navlinks{display:flex;gap:18px;flex-wrap:wrap}
-.navlinks a{font-size:12px;color:#e1e8ff;text-decoration:none}
-.navlinks a:hover{color:#ffcf76}
-.hero{position:relative;z-index:1;padding:38px 0 12px;max-width:780px}
-.eyebrow{font-size:11px;letter-spacing:1.5px;font-weight:800;color:#ffca76}
-.hero h1{font-size:clamp(30px,5vw,48px);line-height:1.12;
- letter-spacing:-1.4px;margin:12px 0}
-.hero h1 span{color:#ffca76}
-.hero p{color:#dce5fb;line-height:1.7;max-width:620px;font-size:14px}
-.searchbox{display:flex;gap:9px;background:white;padding:7px;
- border-radius:15px;max-width:700px;margin-top:22px;box-shadow:0 12px 35px #07132f35}
-.searchbox input{flex:1;min-width:0;border:0;padding:12px;color:var(--ink);
- background:transparent;font-size:14px}
-.searchbox button{border:0;background:var(--blue);color:white;
- border-radius:10px;padding:0 18px;font-weight:750;cursor:pointer}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.stat{background:#ffffff12;border:1px solid #ffffff22;border-radius:11px;
- padding:10px 13px;font-size:11px;color:#e6edff}
-.stat b{color:white;font-size:15px;display:block;margin-bottom:2px}
-main{padding:22px 0 45px}
-.quicknav{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
- gap:10px;margin:0 0 28px}
-.quick{background:white;border:1px solid var(--line);border-radius:15px;
- text-decoration:none;padding:15px 8px;text-align:center;transition:.18s}
-.quick:hover,.service:hover{transform:translateY(-3px);box-shadow:0 10px 24px #1b2b4b0e}
-.qicon{width:43px;height:43px;display:grid;place-items:center;
- border-radius:14px;margin:0 auto 9px;font-size:22px}
-.quick b{display:block;font-size:12px}
-.quick small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
-.orange{background:#fff0d9;color:#a85d00}
-.green{background:#dcfce9;color:#08764f}
-.blue{background:#e0ebff;color:#2455c5}
-.purple{background:#eee5ff;color:#6d37c4}
-.pink{background:#ffe5ef;color:#bd2866}
-.teal{background:#d9f6fb;color:#08768c}
-.section{margin-top:30px}
-.sectionhead{display:flex;justify-content:space-between;align-items:end;
- gap:12px;margin-bottom:14px}
-.kicker{color:var(--blue);font-size:10px;letter-spacing:1.5px;font-weight:850}
-.section h2{font-size:22px;letter-spacing:-.5px;margin:5px 0}
-.sub{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
-.count{font-size:11px;color:var(--muted);white-space:nowrap}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.service{background:white;border:1px solid var(--line);border-radius:17px;
- padding:18px;min-height:195px;display:flex;flex-direction:column;
- transition:.18s;box-shadow:0 3px 12px #1b2b4b05}
-.service-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.service-icon{width:45px;height:45px;display:grid;place-items:center;
- border-radius:14px;font-size:23px;flex-shrink:0}
-.pill{font-size:9px;font-weight:800;padding:6px 8px;border-radius:20px;
- background:#f1f4fa;color:#556179}
-.service h3{font-size:16px;line-height:1.35;margin:13px 0 7px}
-.service p{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 16px;flex:1}
-.action{display:inline-flex;align-items:center;justify-content:center;gap:7px;
- text-decoration:none;border:0;background:#eef3ff;color:#234db0;
- border-radius:10px;padding:11px 12px;font-weight:800;font-size:12px;cursor:pointer}
-.action:hover{background:#dfe9ff}
-.action.primary{background:var(--blue);color:white}
-.action.primary:hover{background:#174ac5}
-.notice{border:1px solid #f4d99c;background:#fff9e9;color:#77521a;
- border-radius:14px;padding:15px 17px;font-size:12px;line-height:1.7;margin:18px 0}
-.notice strong{color:#704200}
-.feature{border-radius:20px;padding:23px;display:grid;
- grid-template-columns:1fr auto;gap:20px;align-items:center;
- background:linear-gradient(115deg,#fff0d7,#fffaf1);border:1px solid #f5dfb8}
-.feature h2{margin:7px 0;font-size:23px}
-.feature p{font-size:12px;color:#6e5b42;line-height:1.7;max-width:650px}
-.feature-icon{font-size:46px;background:#ffffffb8;border-radius:18px;
- width:82px;height:82px;display:grid;place-items:center}
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.step{background:white;border:1px solid var(--line);border-radius:14px;padding:16px}
-.step b{display:block;font-size:13px;margin:9px 0 5px}
-.step p{font-size:11px;line-height:1.65;color:var(--muted);margin:0}
-.num{width:31px;height:31px;border-radius:10px;background:#e4edff;
- color:#2352bc;display:grid;place-items:center;font-weight:900}
-.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
-.toolbar input,.toolbar select{background:white;border:1px solid var(--line);
- border-radius:10px;padding:11px 12px;font-size:12px;color:var(--ink)}
-.toolbar input{flex:1;min-width:180px}
-.toolbar select{min-width:135px}
-.helpbox{background:linear-gradient(120deg,#172554,#243f86);
- color:white;border-radius:20px;padding:22px;margin-top:30px}
-.helpbox h2{margin:0 0 8px}
-.helpbox p{font-size:12px;color:#dbe5ff;line-height:1.7}
-.helpcontrols{display:flex;gap:9px;flex-wrap:wrap}
-.helpcontrols input{flex:1;min-width:180px;border:0;border-radius:10px;padding:12px}
-.helpcontrols button{border:0;background:#ffbd59;color:#342000;border-radius:10px;
- padding:12px 17px;font-weight:850;cursor:pointer}
-#helpAnswer{white-space:pre-line;font-size:12px;line-height:1.7}
-.empty{background:white;border:1px dashed #ccd5e4;border-radius:14px;
- padding:25px;text-align:center;color:var(--muted);font-size:13px;grid-column:1/-1}
-footer{background:#101b3b;color:#e0e7ff;padding:28px 0}
-.footrow{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer p,footer a{font-size:11px;color:#c2cce8;line-height:1.8}
-footer a{margin-right:13px}
-footer .fine{border-top:1px solid #ffffff20;padding-top:13px;margin-top:17px}
-.hidden{display:none!important}
-@media(max-width:800px){
- .quicknav{grid-template-columns:repeat(3,minmax(0,1fr))}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .navlinks{display:none}
- .hero{padding-top:30px}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:20px; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 }
-@media(max-width:520px){
- .wrap{width:calc(100% - 22px)}
- .brand strong{font-size:17px}
- .brand small{font-size:10px}
- .logo{width:40px;height:40px}
- .hero h1{font-size:33px}
- .searchbox{gap:3px}
- .searchbox input{padding:10px 7px;font-size:12px}
- .searchbox button{padding:0 12px;font-size:12px}
- .quicknav{gap:7px}
- .quick{padding:12px 5px}
- .qicon{width:38px;height:38px;font-size:20px}
- .quick b{font-size:11px}
- .grid{grid-template-columns:1fr}
- .service{min-height:0}
- .feature{grid-template-columns:1fr;padding:18px}
- .feature-icon{display:none}
- .steps{grid-template-columns:1fr}
- .section h2{font-size:20px}
- .sectionhead{align-items:start}
+a { color:inherit; }
+button,input,select { font:inherit; }
+.wrap { width:min(1120px,calc(100% - 30px)); margin:auto; }
+.topnote {
+  background:#fff7e6;color:#7c4a03;text-align:center;
+  padding:9px 14px;font-size:12px;border-bottom:1px solid #f5dfae;
+}
+.header {
+  background:var(--navy);color:white;padding:16px 0 28px;
+  position:relative;overflow:hidden;
+}
+.header:after {
+  content:"";position:absolute;width:300px;height:300px;
+  right:-100px;top:-150px;border-radius:50%;background:#ffffff0b;
+}
+.nav {
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;position:relative;z-index:1;
+}
+.brand { display:flex;align-items:center;gap:11px;text-decoration:none; }
+.logo {
+  width:45px;height:45px;border-radius:15px;display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#ff9933 0 33%,white 33% 66%,#138808 66%);
+  color:var(--navy);font-size:24px;box-shadow:0 5px 18px #0002;
+}
+.brand strong { display:block;font-size:20px;letter-spacing:-.5px; }
+.brand small { display:block;color:#d4def5;font-size:11px;margin-top:2px; }
+.navlinks { display:flex;gap:18px;flex-wrap:wrap; }
+.navlinks a { font-size:12px;color:#e1e8ff;text-decoration:none; }
+.navlinks a:hover { color:#ffcf76; }
+.hero { position:relative;z-index:1;padding:38px 0 12px;max-width:780px; }
+.eyebrow,.kicker {
+  font-size:11px;letter-spacing:1.5px;font-weight:850;
+}
+.eyebrow { color:#ffca76; }
+.hero h1 {
+  font-size:clamp(30px,5vw,48px);line-height:1.12;
+  letter-spacing:-1.4px;margin:12px 0;
+}
+.hero h1 span { color:#ffca76; }
+.hero p { color:#dce5fb;line-height:1.7;max-width:620px;font-size:14px; }
+.searchbox {
+  display:flex;gap:9px;background:white;padding:7px;border-radius:15px;
+  max-width:700px;margin-top:22px;box-shadow:0 12px 35px #07132f35;
+}
+.searchbox input {
+  flex:1;min-width:0;border:0;padding:12px;color:var(--ink);
+  background:transparent;font-size:14px;
+}
+.searchbox button {
+  border:0;background:var(--blue);color:white;border-radius:10px;
+  padding:0 18px;font-weight:750;cursor:pointer;
+}
+.stats { display:flex;gap:10px;flex-wrap:wrap;margin-top:18px; }
+.stat {
+  background:#ffffff12;border:1px solid #ffffff22;border-radius:11px;
+  padding:10px 13px;font-size:11px;color:#e6edff;
+}
+.stat b { color:white;font-size:15px;display:block;margin-bottom:2px; }
+main { padding:22px 0 45px; }
+.notice {
+  border:1px solid #f4d99c;background:#fff9e9;color:#77521a;
+  border-radius:14px;padding:15px 17px;font-size:12px;
+  line-height:1.7;margin:0 0 20px;
+}
+.quicknav {
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  gap:10px;margin:0 0 28px;
+}
+.quick {
+  background:white;border:1px solid var(--line);border-radius:15px;
+  text-decoration:none;padding:15px 8px;text-align:center;transition:.18s;
+}
+.quick:hover,.service:hover {
+  transform:translateY(-3px);box-shadow:0 10px 24px #1b2b4b0e;
+}
+.qicon {
+  width:43px;height:43px;display:grid;place-items:center;
+  border-radius:14px;margin:0 auto 9px;font-size:22px;
+}
+.quick b { display:block;font-size:12px; }
+.quick small { display:block;font-size:10px;color:var(--muted);margin-top:5px; }
+.orange { background:#fff0d9;color:#a85d00; }
+.green { background:#dcfce9;color:#08764f; }
+.blue { background:#e0ebff;color:#2455c5; }
+.purple { background:#eee5ff;color:#6d37c4; }
+.pink { background:#ffe5ef;color:#bd2866; }
+.teal { background:#d9f6fb;color:#08768c; }
+.section { margin-top:30px; }
+.sectionhead {
+  display:flex;justify-content:space-between;align-items:end;
+  gap:12px;margin-bottom:14px;
+}
+.kicker { color:var(--blue);font-size:10px; }
+.section h2 { font-size:22px;letter-spacing:-.5px;margin:5px 0; }
+.sub { font-size:12px;color:var(--muted);line-height:1.6;margin:0; }
+.count { font-size:11px;color:var(--muted); }
+.grid {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+}
+.service {
+  background:white;border:1px solid var(--line);border-radius:17px;
+  padding:18px;min-height:195px;display:flex;flex-direction:column;
+  transition:.18s;box-shadow:0 3px 12px #1b2b4b05;
+}
+.service-top {
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+}
+.service-icon {
+  width:45px;height:45px;display:grid;place-items:center;
+  border-radius:14px;font-size:23px;flex-shrink:0;
+}
+.pill {
+  font-size:9px;font-weight:800;padding:6px 8px;border-radius:20px;
+  background:#f1f4fa;color:#556179;
+}
+.service h3 { font-size:16px;line-height:1.35;margin:13px 0 7px; }
+.service p {
+  font-size:12px;line-height:1.65;color:var(--muted);
+  margin:0 0 16px;flex:1;
+}
+.action {
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  text-decoration:none;border:0;background:#eef3ff;color:#234db0;
+  border-radius:10px;padding:11px 12px;font-weight:800;
+  font-size:12px;cursor:pointer;
+}
+.action:hover { background:#dfe9ff; }
+.action.primary { background:var(--blue);color:white; }
+.action.primary:hover { background:#174ac5; }
+.feature {
+  border-radius:20px;padding:23px;display:grid;
+  grid-template-columns:1fr auto;gap:20px;align-items:center;
+  background:linear-gradient(115deg,#fff0d7,#fffaf1);
+  border:1px solid #f5dfb8;
+}
+.feature h2 { margin:7px 0;font-size:23px; }
+.feature p { font-size:12px;color:#6e5b42;line-height:1.7;max-width:650px; }
+.feature-icon {
+  font-size:46px;background:#ffffffb8;border-radius:18px;
+  width:82px;height:82px;display:grid;place-items:center;
+}
+.steps { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px; }
+.step { background:white;border:1px solid var(--line);border-radius:14px;padding:16px; }
+.step b { display:block;font-size:13px;margin:9px 0 5px; }
+.step p { font-size:11px;line-height:1.65;color:var(--muted);margin:0; }
+.num {
+  width:31px;height:31px;border-radius:10px;background:#e4edff;
+  color:#2352bc;display:grid;place-items:center;font-weight:900;
+}
+.toolbar { display:flex;gap:9px;flex-wrap:wrap;margin:15px 0; }
+.toolbar input,.toolbar select {
+  background:white;border:1px solid var(--line);border-radius:10px;
+  padding:11px 12px;font-size:12px;color:var(--ink);
+}
+.toolbar input { flex:1;min-width:180px; }
+.toolbar select { min-width:135px; }
+.helpbox {
+  background:linear-gradient(120deg,#172554,#243f86);
+  color:white;border-radius:20px;padding:22px;margin-top:30px;
+}
+.helpbox h2 { margin:0 0 8px; }
+.helpbox p { font-size:12px;color:#dbe5ff;line-height:1.7; }
+.helpcontrols { display:flex;gap:9px;flex-wrap:wrap; }
+.helpcontrols input {
+  flex:1;min-width:180px;border:0;border-radius:10px;padding:12px;
+}
+.helpcontrols button {
+  border:0;background:#ffbd59;color:#342000;border-radius:10px;
+  padding:12px 17px;font-weight:850;cursor:pointer;
+}
+#helpAnswer { white-space:pre-line;font-size:12px;line-height:1.7; }
+.empty {
+  background:white;border:1px dashed #ccd5e4;border-radius:14px;
+  padding:25px;text-align:center;color:var(--muted);
+  font-size:13px;grid-column:1/-1;
+}
+.hidden { display:none!important; }
+footer { background:#101b3b;color:#e0e7ff;padding:28px 0; }
+.footrow { display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap; }
+footer p,footer a { font-size:11px;color:#c2cce8;line-height:1.8; }
+footer a { margin-right:13px; }
+footer .fine { border-top:1px solid #ffffff20;padding-top:13px;margin-top:17px; }
+
+@media(max-width:800px) {
+  .quicknav { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .navlinks { display:none; }
+  .hero { padding-top:30px; }
+}
+@media(max-width:520px) {
+  .wrap { width:calc(100% - 22px); }
+  .brand strong { font-size:17px; }
+  .brand small { font-size:10px; }
+  .logo { width:40px;height:40px; }
+  .hero h1 { font-size:33px; }
+  .searchbox { gap:3px; }
+  .searchbox input { padding:10px 7px;font-size:12px; }
+  .searchbox button { padding:0 12px;font-size:12px; }
+  .quicknav { gap:7px; }
+  .quick { padding:12px 5px; }
+  .qicon { width:38px;height:38px;font-size:20px; }
+  .quick b { font-size:11px; }
+  .grid { grid-template-columns:1fr; }
+  .service { min-height:0; }
+  .feature { grid-template-columns:1fr;padding:18px; }
+  .feature-icon { display:none; }
+  .steps { grid-template-columns:1fr; }
+  .section h2 { font-size:20px; }
+  .sectionhead { align-items:start; }
 }
 </style>
 </head>
+
 <body>
-<div class="topnote">⚠️ YojanaMitra AI ek private information directory hai — official government website nahi.</div>
+<div class="topnote">
+  ⚠️ YojanaMitra AI ek private information directory hai — official government website nahi.
+</div>
 
 <header class="header">
- <div class="wrap">
-  <nav class="nav">
-   <a class="brand" href="#">
-    <span class="logo">🇮🇳</span>
-    <span><strong>YojanaMitra AI</strong><small>Sarkari madad • Ek jagah</small></span>
-   </a>
-   <div class="navlinks">
-    <a href="#jobs">Naukri</a><a href="#sukha">Sukha Anudan</a>
-    <a href="#kisan">Kisan</a><a href="#scholarship">Scholarship</a>
-    <a href="#services">Services</a>
-   </div>
-  </nav>
-  <div class="hero">
-   <div class="eyebrow">YOJANA • NAUKRI • ANUDAN • SEVA</div>
-   <h1>Sahi yojana.<br><span>Sahi jankari.</span></h1>
-   <p>Sarkari naukri, Maharashtra ki yojana, sukha anudan, kisan madad aur scholarship ke useful official portals ek hi jagah dhoondhein.</p>
-   <div class="searchbox">
-    <input id="search" type="search" placeholder="Yojana, naukri, anudan ya scholarship search karein..." aria-label="Search services">
-    <button id="searchBtn">Search ↗</button>
-   </div>
-   <div class="stats">
-    <div class="stat"><b>🌾 Kisan</b>Relief & subsidy</div>
-    <div class="stat"><b>💼 Naukri</b>Official portals</div>
-    <div class="stat"><b>🎓 Students</b>Scholarships</div>
-   </div>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#">
+        <span class="logo">🇮🇳</span>
+        <span>
+          <strong>YojanaMitra AI</strong>
+          <small>Sarkari madad • Ek jagah</small>
+        </span>
+      </a>
+      <div class="navlinks">
+        <a href="#jobs">Naukri</a>
+        <a href="#sukha">Sukha Anudan</a>
+        <a href="#kisan">Kisan</a>
+        <a href="#scholarship">Scholarship</a>
+        <a href="#services">Services</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="eyebrow">YOJANA • NAUKRI • ANUDAN • SEVA</div>
+      <h1>Sahi yojana.<br><span>Sahi jankari.</span></h1>
+      <p>
+        Sarkari naukri, Maharashtra ki yojana, sukha anudan, kisan madad,
+        Ayushman Bharat Card aur scholarship ke useful portals ek hi jagah dhoondhein.
+      </p>
+
+      <div class="searchbox">
+        <input id="search" type="search"
+          placeholder="Ayushman card, yojana, naukri ya scholarship search karein..."
+          aria-label="Search services">
+        <button id="searchBtn">Search ↗</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>🌾 Kisan</b>Relief & subsidy</div>
+        <div class="stat"><b>💼 Naukri</b>Official portals</div>
+        <div class="stat"><b>🏥 Health</b>Ayushman Card</div>
+        <div class="stat"><b>🎓 Students</b>Scholarships</div>
+      </div>
+    </div>
   </div>
- </div>
 </header>
 
 <main class="wrap">
- <div class="notice"><strong>Important:</strong> Yahan di gayi jankari guidance ke liye hai. Eligibility, application dates, approved relief amount aur payment status official department se verify karein. Kisi agent ko OTP, password ya bina receipt paise na dein.</div>
+  <div class="notice">
+    <strong>Important:</strong> Yahan di gayi jankari guidance ke liye hai.
+    Eligibility, application dates, approved relief amount aur payment status
+    official department se verify karein. Kisi agent ko OTP, password ya bina receipt paise na dein.
+  </div>
 
- <nav class="quicknav" aria-label="Main categories">
-  <a class="quick" href="#jobs"><span class="qicon blue">💼</span><b>Sarkari Naukri</b><small>Recruitment portals</small></a>
-  <a class="quick" href="#sukha"><span class="qicon orange">🌾</span><b>Sukha Anudan</b><small>Fasal nuksan</small></a>
-  <a class="quick" href="#kisan"><span class="qicon green">🚜</span><b>Kisan Yojana</b><small>Subsidy & support</small></a>
-  <a class="quick" href="#scholarship"><span class="qicon purple">🎓</span><b>Scholarship</b><small>Student schemes</small></a>
-  <a class="quick" href="#mahila"><span class="qicon pink">👩</span><b>Mahila Yojana</b><small>Women welfare</small></a>
-  <a class="quick" href="#services"><span class="qicon teal">🏛️</span><b>Online Services</b><small>Citizen portals</small></a>
- </nav>
+  <nav class="quicknav" aria-label="Main categories">
+    <a class="quick" href="#jobs"><span class="qicon blue">💼</span><b>Sarkari Naukri</b><small>Recruitment portals</small></a>
+    <a class="quick" href="#sukha"><span class="qicon orange">🌾</span><b>Sukha Anudan</b><small>Fasal nuksan</small></a>
+    <a class="quick" href="#kisan"><span class="qicon green">🚜</span><b>Kisan Yojana</b><small>Subsidy & support</small></a>
+    <a class="quick" href="#health"><span class="qicon teal">🏥</span><b>Ayushman Card</b><small>Health coverage</small></a>
+    <a class="quick" href="#mahila"><span class="qicon pink">👩</span><b>Mahila Yojana</b><small>Women welfare</small></a>
+    <a class="quick" href="#scholarship"><span class="qicon purple">🎓</span><b>Scholarship</b><small>Student schemes</small></a>
+  </nav>
 
- <section id="sukha" class="section">
-  <div class="feature">
-   <div>
-    <div class="kicker">MAHARASHTRA • FARMER SUPPORT</div>
-    <h2>🌵 Sukha Anudan aur Fasal Nuksan</h2>
-    <p>Baarish kam hone ya fasal nuksan ki sthiti mein local survey, government order, affected area aur eligibility check karna zaroori hai. Har kisan ko automatic payment milna guaranteed nahi hai.</p>
-    <a class="action primary" href="https://rnr.maharashtra.gov.in/en/" target="_blank" rel="noopener noreferrer">Relief information dekhein ↗</a>
-   </div>
-   <div class="feature-icon">🌾</div>
-  </div>
-  <div class="grid" style="margin-top:14px">
-   <article class="service"><div class="service-top"><span class="service-icon orange">📋</span><span class="pill">CROP LOSS</span></div><h3>Fasal Nuksan / Panchnama</h3><p>Talathi, Krishi Sahayak ya Tahsil office se survey aur fasal nuksan record ki process poochhein.</p><a class="action" href="https://mh.disastermanagement.mahait.org/" target="_blank" rel="noopener noreferrer">Disaster portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon green">💳</span><span class="pill">RELIEF</span></div><h3>Anudan aur Payment</h3><p>Beneficiary record, sanctioned assistance aur payment status ki applicability local administration se verify karein.</p><a class="action" href="https://rnr.maharashtra.gov.in/en/relief-and-rehabilitation-dbt/" target="_blank" rel="noopener noreferrer">Relief & rehabilitation ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon blue">🛡️</span><span class="pill">INSURANCE</span></div><h3>Fasal Bima Claim</h3><p>Policy, notified crop, loss-reporting deadline aur claim conditions official portal par check karein.</p><a class="action" href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer">PM Fasal Bima ↗</a></article>
-  </div>
-  <div class="section">
-   <div class="sectionhead"><div><div class="kicker">STEP-BY-STEP</div><h2>Kisan ko kya karna chahiye?</h2></div></div>
-   <div class="steps">
-    <div class="step"><span class="num">01</span><b>Survey ki sthiti poochhein</b><p>Talathi ya Krishi Sahayak se apne gaon ke crop-loss survey ke baare mein poochhein.</p></div>
-    <div class="step"><span class="num">02</span><b>Order aur beneficiary list</b><p>Tahsil office se confirm karein ki aapke gaon par relief order lagu hai aur record mein naam hai.</p></div>
-    <div class="step"><span class="num">03</span><b>Documents aur payment</b><p>Aadhaar, bank details, 7/12, 8A aur survey/beneficiary details jahan applicable hon, verify karein.</p></div>
-   </div>
-  </div>
- </section>
+  <!-- SUKHA ANUDAN -->
+  <section id="sukha" class="section">
+    <div class="feature">
+      <div>
+        <div class="kicker">MAHARASHTRA • FARMER SUPPORT</div>
+        <h2>🌵 Sukha Anudan aur Fasal Nuksan</h2>
+        <p>
+          Baarish kam hone ya fasal nuksan ki sthiti mein local survey,
+          government order, affected area aur eligibility check karna zaroori hai.
+          Har kisan ko automatic payment milna guaranteed nahi hai.
+        </p>
+        <a class="action primary" href="https://rnr.maharashtra.gov.in/en/"
+           target="_blank" rel="noopener noreferrer">Relief information dekhein ↗</a>
+      </div>
+      <div class="feature-icon">🌾</div>
+    </div>
 
- <section id="kisan" class="section">
-  <div class="sectionhead"><div><div class="kicker">FARMER SUPPORT</div><h2>🚜 Kisan Yojana aur Subsidy</h2><p class="sub">Income support, agriculture equipment aur crop insurance ke portals.</p></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon green">🌱</span><span class="pill">CENTRAL</span></div><h3>PM-KISAN</h3><p>Eligible farmer families ke liye scheme, registration aur beneficiary status.</p><a class="action" href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon orange">🚜</span><span class="pill">MAHARASHTRA</span></div><h3>MahaDBT Farmer</h3><p>Available farm equipment, irrigation aur agriculture subsidy schemes ki eligibility.</p><a class="action" href="https://mahadbt.maharashtra.gov.in/Farmer/" target="_blank" rel="noopener noreferrer">Farmer portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon blue">🛡️</span><span class="pill">INSURANCE</span></div><h3>PM Fasal Bima Yojana</h3><p>Fasal insurance, notified crops aur claim rules ki jankari.</p><a class="action" href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon green">🌿</span><span class="pill">STATE</span></div><h3>Maharashtra Agriculture</h3><p>Krishi schemes, advisories aur department announcements.</p><a class="action" href="https://krishi.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Krishi website ↗</a></article>
-  </div>
- </section>
+    <div class="grid" style="margin-top:14px">
+      <article class="service">
+        <div class="service-top"><span class="service-icon orange">📋</span><span class="pill">CROP LOSS</span></div>
+        <h3>Fasal Nuksan / Panchnama</h3>
+        <p>Talathi, Krishi Sahayak ya Tahsil office se survey aur fasal nuksan record ki process poochhein.</p>
+        <a class="action" href="https://mh.disastermanagement.mahait.org/" target="_blank" rel="noopener noreferrer">Disaster portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon green">💳</span><span class="pill">RELIEF</span></div>
+        <h3>Anudan aur Payment</h3>
+        <p>Beneficiary record, sanctioned assistance aur payment status ki applicability local administration se verify karein.</p>
+        <a class="action" href="https://rnr.maharashtra.gov.in/en/relief-and-rehabilitation-dbt/" target="_blank" rel="noopener noreferrer">Relief & rehabilitation ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">🛡️</span><span class="pill">INSURANCE</span></div>
+        <h3>Fasal Bima Claim</h3>
+        <p>Policy, notified crop, loss-reporting deadline aur claim conditions official portal par check karein.</p>
+        <a class="action" href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer">PM Fasal Bima ↗</a>
+      </article>
+    </div>
 
- <section id="jobs" class="section">
-  <div class="sectionhead"><div><div class="kicker">CAREER & RECRUITMENT</div><h2>💼 Sarkari Naukri aur Bharti</h2><p class="sub">Official portals aur vacancies.json se milne wale recruitment links.</p></div><span class="count" id="jobCount">Loading...</span></div>
-  <div class="grid" id="vacancyCards"><div class="empty">Vacancy links load ho rahe hain...</div></div>
-  <p class="sub" style="margin-top:10px">Vacancy list ko final notice na samjhein. Active status, qualification, fees aur last date official notification mein verify karein.</p>
-  <div class="toolbar">
-   <input id="jobSearch" type="search" placeholder="Naukri ya department search karein...">
-   <select id="jobFilter" aria-label="Filter jobs"><option value="all">All job links</option><option value="maharashtra">Maharashtra</option><option value="central">Central / India</option></select>
-  </div>
-  <div class="grid" id="staticJobs">
-   <article class="service job" data-name="upsc union public service commission civil services" data-state="central"><div class="service-top"><span class="service-icon blue">🏛️</span><span class="pill">CENTRAL</span></div><h3>UPSC</h3><p>Civil Services aur anya recruitment notifications.</p><a class="action" href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer">Open UPSC ↗</a></article>
-   <article class="service job" data-name="ssc staff selection commission" data-state="central"><div class="service-top"><span class="service-icon purple">📝</span><span class="pill">CENTRAL</span></div><h3>SSC</h3><p>Staff Selection Commission examinations and notices.</p><a class="action" href="https://ssc.gov.in/" target="_blank" rel="noopener noreferrer">Open SSC ↗</a></article>
-   <article class="service job" data-name="railway rrb recruitment" data-state="central"><div class="service-top"><span class="service-icon orange">🚆</span><span class="pill">CENTRAL</span></div><h3>Railway Recruitment</h3><p>Railway Recruitment Board official information.</p><a class="action" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener noreferrer">Open RRB ↗</a></article>
-   <article class="service job" data-name="mpsc maharashtra public service commission" data-state="maharashtra"><div class="service-top"><span class="service-icon blue">📑</span><span class="pill">MAHARASHTRA</span></div><h3>MPSC Bharti</h3><p>State service examinations and advertisements.</p><a class="action" href="https://mpsc.gov.in/" target="_blank" rel="noopener noreferrer">Open MPSC ↗</a></article>
-   <article class="service job" data-name="national career service jobs employment" data-state="central"><div class="service-top"><span class="service-icon green">💼</span><span class="pill">JOBS PORTAL</span></div><h3>National Career Service</h3><p>Job search, employment services and career resources.</p><a class="action" href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer">Open NCS ↗</a></article>
-   <article class="service job" data-name="india post gds postal recruitment" data-state="central"><div class="service-top"><span class="service-icon pink">📮</span><span class="pill">CENTRAL</span></div><h3>India Post / GDS</h3><p>Postal recruitment information and official notifications.</p><a class="action" href="https://indiapostgdsonline.gov.in/" target="_blank" rel="noopener noreferrer">Open India Post ↗</a></article>
-   <article class="service job" data-name="ibps bank banking recruitment" data-state="central"><div class="service-top"><span class="service-icon teal">🏦</span><span class="pill">BANKING</span></div><h3>IBPS Banking Jobs</h3><p>Banking recruitment and examination notifications.</p><a class="action" href="https://www.ibps.in/" target="_blank" rel="noopener noreferrer">Open IBPS ↗</a></article>
-   <article class="service job" data-name="maharashtra police bharti" data-state="maharashtra"><div class="service-top"><span class="service-icon purple">👮</span><span class="pill">MAHARASHTRA</span></div><h3>Maharashtra Police</h3><p>Police recruitment information and official notices.</p><a class="action" href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener noreferrer">Police website ↗</a></article>
-  </div>
- </section>
+    <div class="section">
+      <div class="sectionhead">
+        <div><div class="kicker">STEP-BY-STEP</div><h2>Kisan ko kya karna chahiye?</h2></div>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="num">01</span><b>Survey ki sthiti poochhein</b><p>Talathi ya Krishi Sahayak se apne gaon ke crop-loss survey ke baare mein poochhein.</p></div>
+        <div class="step"><span class="num">02</span><b>Order aur beneficiary list</b><p>Tahsil office se confirm karein ki aapke gaon par relief order lagu hai aur record mein naam hai.</p></div>
+        <div class="step"><span class="num">03</span><b>Documents aur payment</b><p>Aadhaar, bank details, 7/12, 8A aur survey/beneficiary details jahan applicable hon, verify karein.</p></div>
+      </div>
+    </div>
+  </section>
 
- <section id="maharashtra" class="section">
-  <div class="sectionhead"><div><div class="kicker">STATE SERVICES</div><h2>🏛️ Maharashtra Government</h2><p class="sub">State departments, citizen services aur public information.</p></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon blue">🏛️</span><span class="pill">STATE</span></div><h3>Maharashtra Government</h3><p>Government departments, announcements aur state information.</p><a class="action" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Official website ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon teal">🧾</span><span class="pill">CITIZEN</span></div><h3>Aaple Sarkar</h3><p>Certificates, citizen services aur application-related services.</p><a class="action" href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">Open portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon orange">🛣️</span><span class="pill">DEPARTMENT</span></div><h3>Public Works Department</h3><p>Maharashtra PWD department notices and information.</p><a class="action" href="https://pwd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">PWD website ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon green">🌳</span><span class="pill">DEPARTMENT</span></div><h3>Forest Department</h3><p>Forest department announcements and recruitment information.</p><a class="action" href="https://mahaforest.gov.in/" target="_blank" rel="noopener noreferrer">Forest website ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon blue">💧</span><span class="pill">DEPARTMENT</span></div><h3>Water Resources</h3><p>Water resources department information and notices.</p><a class="action" href="https://wrd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">WRD website ↗</a></article>
-  </div>
- </section>
+  <!-- KISAN YOJANA -->
+  <section id="kisan" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">FARMER SUPPORT</div>
+        <h2>🚜 Kisan Yojana aur Subsidy</h2>
+        <p class="sub">Income support, agriculture equipment aur crop insurance ke portals.</p>
+      </div>
+    </div>
 
- <section id="central" class="section">
-  <div class="sectionhead"><div><div class="kicker">CENTRAL SCHEMES</div><h2>🇮🇳 Central Government Yojana</h2></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon orange">🏠</span><span class="pill">HOUSING</span></div><h3>PM Awas Yojana</h3><p>Housing schemes ki details aur eligibility verify karein.</p><a class="action" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener noreferrer">PMAY Urban ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon green">🏥</span><span class="pill">HEALTH</span></div><h3>Ayushman Bharat</h3><p>Health coverage aur beneficiary-related information.</p><a class="action" href="https://beneficiary.nha.gov.in/" target="_blank" rel="noopener noreferrer">Beneficiary portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon purple">👴</span><span class="pill">PENSION</span></div><h3>National Social Assistance</h3><p>Social assistance aur pension programme information.</p><a class="action" href="https://nsap.nic.in/" target="_blank" rel="noopener noreferrer">NSAP website ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon teal">📁</span><span class="pill">DOCUMENTS</span></div><h3>DigiLocker</h3><p>Digital documents aur available certificates ki services.</p><a class="action" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener noreferrer">DigiLocker ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon blue">📱</span><span class="pill">SERVICES</span></div><h3>UMANG</h3><p>Multiple government services ke liye digital platform.</p><a class="action" href="https://web.umang.gov.in/" target="_blank" rel="noopener noreferrer">UMANG ↗</a></article>
-  </div>
- </section>
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon green">🌱</span><span class="pill">CENTRAL</span></div>
+        <h3>PM-KISAN</h3>
+        <p>Eligible farmer families ke liye scheme, registration aur beneficiary status.</p>
+        <a class="action" href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon orange">🚜</span><span class="pill">MAHARASHTRA</span></div>
+        <h3>MahaDBT Farmer</h3>
+        <p>Available farm equipment, irrigation aur agriculture subsidy schemes ki eligibility.</p>
+        <a class="action" href="https://mahadbt.maharashtra.gov.in/Farmer/" target="_blank" rel="noopener noreferrer">Farmer portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">🛡️</span><span class="pill">INSURANCE</span></div>
+        <h3>PM Fasal Bima Yojana</h3>
+        <p>Fasal insurance, notified crops aur claim rules ki jankari.</p>
+        <a class="action" href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon green">🌿</span><span class="pill">STATE</span></div>
+        <h3>Maharashtra Agriculture</h3>
+        <p>Krishi schemes, advisories aur department announcements.</p>
+        <a class="action" href="https://krishi.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Krishi website ↗</a>
+      </article>
+    </div>
+  </section>
 
- <section id="mahila" class="section">
-  <div class="sectionhead"><div><div class="kicker">WOMEN & FAMILY</div><h2>👩 Mahila Yojana</h2><p class="sub">Women welfare schemes ki current eligibility official portal par check karein.</p></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon pink">👩‍👧</span><span class="pill">MAHARASHTRA</span></div><h3>Mukhyamantri Majhi Ladki Bahin</h3><p>Scheme eligibility, application rules aur payment updates.</p><a class="action" href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Government portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon purple">🤝</span><span class="pill">WELFARE</span></div><h3>Women & Child Development</h3><p>Women aur child welfare programmes ki department information.</p><a class="action" href="https://womenchild.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Department website ↗</a></article>
-  </div>
- </section>
+  <!-- AYUSHMAN BHARAT CARD -->
+  <section id="health" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">HEALTH • PM-JAY</div>
+        <h2>🏥 Ayushman Bharat Card</h2>
+        <p class="sub">Beneficiary eligibility aur card-related services ke liye official portal.</p>
+      </div>
+    </div>
 
- <section id="scholarship" class="section">
-  <div class="sectionhead"><div><div class="kicker">EDUCATION SUPPORT</div><h2>🎓 Scholarship aur Students</h2><p class="sub">State aur central scholarship portals ek jagah.</p></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon purple">🎓</span><span class="pill">MAHARASHTRA</span></div><h3>MahaDBT Scholarship</h3><p>Available scholarships, eligibility aur application status.</p><a class="action" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">MahaDBT portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon blue">📚</span><span class="pill">CENTRAL</span></div><h3>National Scholarship Portal</h3><p>Central scholarship schemes aur student application information.</p><a class="action" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">NSP portal ↗</a></article>
-  </div>
- </section>
+    <div class="grid">
+      <article class="service">
+        <div class="service-top">
+          <span class="service-icon green">🏥</span>
+          <span class="pill">PM-JAY</span>
+        </div>
+        <h3>Ayushman Bharat Card</h3>
+        <p>
+          Apni beneficiary eligibility check karein aur card-related options dekhein.
+          Eligibility aur available benefits official portal par verify karein.
+        </p>
+        <a class="action primary"
+           href="https://beneficiary.nha.gov.in/"
+           target="_blank" rel="noopener noreferrer">
+          Check Eligibility / Card ↗
+        </a>
+      </article>
 
- <section id="services" class="section">
-  <div class="sectionhead"><div><div class="kicker">USEFUL LINKS</div><h2>🔗 Zaroori Online Services</h2></div></div>
-  <div class="grid">
-   <article class="service"><div class="service-top"><span class="service-icon teal">🇮🇳</span><span class="pill">GOVERNMENT</span></div><h3>National Portal of India</h3><p>Government information, schemes aur public services.</p><a class="action" href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">Open portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon green">🩺</span><span class="pill">HEALTH</span></div><h3>ABHA Health ID</h3><p>Digital health account aur health ID services.</p><a class="action" href="https://abha.abdm.gov.in/" target="_blank" rel="noopener noreferrer">ABHA portal ↗</a></article>
-   <article class="service"><div class="service-top"><span class="service-icon orange">📋</span><span class="pill">EXAMS</span></div><h3>National Testing Agency</h3><p>Examinations aur official exam-related updates.</p><a class="action" href="https://www.nta.ac.in/" target="_blank" rel="noopener noreferrer">NTA website ↗</a></article>
-  </div>
- </section>
+      <article class="service">
+        <div class="service-top">
+          <span class="service-icon blue">📖</span>
+          <span class="pill">OFFICIAL INFO</span>
+        </div>
+        <h3>Ayushman Bharat PM-JAY</h3>
+        <p>
+          Scheme ki official information, coverage aur programme details
+          National Health Authority ki website par dekhein.
+        </p>
+        <a class="action"
+           href="https://nha.gov.in/"
+           target="_blank" rel="noopener noreferrer">
+          National Health Authority ↗
+        </a>
+      </article>
+    </div>
 
- <section class="helpbox">
-  <div class="kicker" style="color:#ffca76">YOJANAMITRA QUICK HELP</div>
-  <h2>🤖 Aapko kis cheez ki madad chahiye?</h2>
-  <p>Jaise: sukha anudan, kisan, Ladki Bahin, scholarship, MPSC ya police job. Yeh keyword-based help hai, live AI chatbot nahi.</p>
-  <div class="helpcontrols"><input id="question" placeholder="Apna sawal ya yojana ka naam likhein..."><button id="helpButton">Madad dhoondhein ↗</button></div>
-  <p id="helpAnswer" aria-live="polite"></p>
- </section>
+    <div class="notice" style="margin-top:14px">
+      <strong>Note:</strong> Ayushman Bharat PM-JAY eligibility sabhi logon ke liye
+      automatic nahi hoti. Beneficiary status aur applicable rules official portal
+      ya authorised help centre se verify karein. YojanaMitra AI card issue nahi karta.
+    </div>
+  </section>
+
+  <!-- JOBS -->
+  <section id="jobs" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">CAREER & RECRUITMENT</div>
+        <h2>💼 Sarkari Naukri aur Bharti</h2>
+        <p class="sub">Official portals aur vacancies.json se milne wale recruitment links.</p>
+      </div>
+      <span class="count" id="jobCount">Loading...</span>
+    </div>
+
+    <div class="grid" id="vacancyCards">
+      <div class="empty">Vacancy links load ho rahe hain...</div>
+    </div>
+
+    <p class="sub" style="margin-top:10px">
+      Vacancy list ko final notice na samjhein. Active status, qualification,
+      fees aur last date official notification mein verify karein.
+    </p>
+
+    <div class="toolbar">
+      <input id="jobSearch" type="search" placeholder="Naukri ya department search karein...">
+      <select id="jobFilter" aria-label="Filter jobs">
+        <option value="all">All job links</option>
+        <option value="maharashtra">Maharashtra</option>
+        <option value="central">Central / India</option>
+      </select>
+    </div>
+
+    <div class="grid" id="staticJobs">
+      <article class="service job" data-name="upsc union public service commission civil services" data-state="central">
+        <div class="service-top"><span class="service-icon blue">🏛️</span><span class="pill">CENTRAL</span></div>
+        <h3>UPSC</h3><p>Civil Services aur anya recruitment notifications.</p>
+        <a class="action" href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer">Open UPSC ↗</a>
+      </article>
+      <article class="service job" data-name="ssc staff selection commission" data-state="central">
+        <div class="service-top"><span class="service-icon purple">📝</span><span class="pill">CENTRAL</span></div>
+        <h3>SSC</h3><p>Staff Selection Commission examinations and notices.</p>
+        <a class="action" href="https://ssc.gov.in/" target="_blank" rel="noopener noreferrer">Open SSC ↗</a>
+      </article>
+      <article class="service job" data-name="railway rrb recruitment" data-state="central">
+        <div class="service-top"><span class="service-icon orange">🚆</span><span class="pill">CENTRAL</span></div>
+        <h3>Railway Recruitment</h3><p>Railway Recruitment Board official information.</p>
+        <a class="action" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener noreferrer">Open RRB ↗</a>
+      </article>
+      <article class="service job" data-name="mpsc maharashtra public service commission" data-state="maharashtra">
+        <div class="service-top"><span class="service-icon blue">📑</span><span class="pill">MAHARASHTRA</span></div>
+        <h3>MPSC Bharti</h3><p>State service examinations and advertisements.</p>
+        <a class="action" href="https://mpsc.gov.in/" target="_blank" rel="noopener noreferrer">Open MPSC ↗</a>
+      </article>
+      <article class="service job" data-name="national career service jobs employment" data-state="central">
+        <div class="service-top"><span class="service-icon green">💼</span><span class="pill">JOBS PORTAL</span></div>
+        <h3>National Career Service</h3><p>Job search, employment services and career resources.</p>
+        <a class="action" href="https://www.ncs.gov.in/" target="_blank" rel="noopener noreferrer">Open NCS ↗</a>
+      </article>
+      <article class="service job" data-name="india post gds postal recruitment" data-state="central">
+        <div class="service-top"><span class="service-icon pink">📮</span><span class="pill">CENTRAL</span></div>
+        <h3>India Post / GDS</h3><p>Postal recruitment information and official notifications.</p>
+        <a class="action" href="https://indiapostgdsonline.gov.in/" target="_blank" rel="noopener noreferrer">Open India Post ↗</a>
+      </article>
+      <article class="service job" data-name="ibps bank banking recruitment" data-state="central">
+        <div class="service-top"><span class="service-icon teal">🏦</span><span class="pill">BANKING</span></div>
+        <h3>IBPS Banking Jobs</h3><p>Banking recruitment and examination notifications.</p>
+        <a class="action" href="https://www.ibps.in/" target="_blank" rel="noopener noreferrer">Open IBPS ↗</a>
+      </article>
+      <article class="service job" data-name="maharashtra police bharti" data-state="maharashtra">
+        <div class="service-top"><span class="service-icon purple">👮</span><span class="pill">MAHARASHTRA</span></div>
+        <h3>Maharashtra Police</h3><p>Police recruitment information and official notices.</p>
+        <a class="action" href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener noreferrer">Police website ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- MAHARASHTRA SERVICES -->
+  <section id="maharashtra" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">STATE SERVICES</div>
+        <h2>🏛️ Maharashtra Government</h2>
+        <p class="sub">State departments, citizen services aur public information.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">🏛️</span><span class="pill">STATE</span></div>
+        <h3>Maharashtra Government</h3><p>Government departments, announcements aur state information.</p>
+        <a class="action" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Official website ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon teal">🧾</span><span class="pill">CITIZEN</span></div>
+        <h3>Aaple Sarkar</h3><p>Certificates, citizen services aur application-related services.</p>
+        <a class="action" href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">Open portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon orange">🛣️</span><span class="pill">DEPARTMENT</span></div>
+        <h3>Public Works Department</h3><p>Maharashtra PWD department notices and information.</p>
+        <a class="action" href="https://pwd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">PWD website ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon green">🌳</span><span class="pill">DEPARTMENT</span></div>
+        <h3>Forest Department</h3><p>Forest department announcements and recruitment information.</p>
+        <a class="action" href="https://mahaforest.gov.in/" target="_blank" rel="noopener noreferrer">Forest website ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">💧</span><span class="pill">DEPARTMENT</span></div>
+        <h3>Water Resources</h3><p>Water resources department information and notices.</p>
+        <a class="action" href="https://wrd.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">WRD website ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CENTRAL SCHEMES -->
+  <section id="central" class="section">
+    <div class="sectionhead">
+      <div><div class="kicker">CENTRAL SCHEMES</div><h2>🇮🇳 Central Government Yojana</h2></div>
+    </div>
+
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon orange">🏠</span><span class="pill">HOUSING</span></div>
+        <h3>PM Awas Yojana</h3><p>Housing schemes ki details aur eligibility verify karein.</p>
+        <a class="action" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener noreferrer">PMAY Urban ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon purple">👴</span><span class="pill">PENSION</span></div>
+        <h3>National Social Assistance</h3><p>Social assistance aur pension programme information.</p>
+        <a class="action" href="https://nsap.nic.in/" target="_blank" rel="noopener noreferrer">NSAP website ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon teal">📁</span><span class="pill">DOCUMENTS</span></div>
+        <h3>DigiLocker</h3><p>Digital documents aur available certificates ki services.</p>
+        <a class="action" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener noreferrer">DigiLocker ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">📱</span><span class="pill">SERVICES</span></div>
+        <h3>UMANG</h3><p>Multiple government services ke liye digital platform.</p>
+        <a class="action" href="https://web.umang.gov.in/" target="_blank" rel="noopener noreferrer">UMANG ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- WOMEN SCHEMES -->
+  <section id="mahila" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">WOMEN & FAMILY</div>
+        <h2>👩 Mahila Yojana</h2>
+        <p class="sub">Women welfare schemes ki current eligibility official portal par check karein.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon pink">👩‍👧</span><span class="pill">MAHARASHTRA</span></div>
+        <h3>Mukhyamantri Majhi Ladki Bahin</h3><p>Scheme eligibility, application rules aur payment updates.</p>
+        <a class="action" href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Government portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon purple">🤝</span><span class="pill">WELFARE</span></div>
+        <h3>Women & Child Development</h3><p>Women aur child welfare programmes ki department information.</p>
+        <a class="action" href="https://womenchild.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Department website ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIPS -->
+  <section id="scholarship" class="section">
+    <div class="sectionhead">
+      <div>
+        <div class="kicker">EDUCATION SUPPORT</div>
+        <h2>🎓 Scholarship aur Students</h2>
+        <p class="sub">State aur central scholarship portals ek jagah.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon purple">🎓</span><span class="pill">MAHARASHTRA</span></div>
+        <h3>MahaDBT Scholarship</h3><p>Available scholarships, eligibility aur application status.</p>
+        <a class="action" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">MahaDBT portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon blue">📚</span><span class="pill">CENTRAL</span></div>
+        <h3>National Scholarship Portal</h3><p>Central scholarship schemes aur student application information.</p>
+        <a class="action" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">NSP portal ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- OTHER ONLINE SERVICES -->
+  <section id="services" class="section">
+    <div class="sectionhead">
+      <div><div class="kicker">USEFUL LINKS</div><h2>🔗 Zaroori Online Services</h2></div>
+    </div>
+
+    <div class="grid">
+      <article class="service">
+        <div class="service-top"><span class="service-icon teal">🇮🇳</span><span class="pill">GOVERNMENT</span></div>
+        <h3>National Portal of India</h3><p>Government information, schemes aur public services.</p>
+        <a class="action" href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">Open portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon green">🩺</span><span class="pill">HEALTH ID</span></div>
+        <h3>ABHA Health ID</h3><p>Digital health account aur health ID services. Yeh Ayushman Bharat PM-JAY card se alag hai.</p>
+        <a class="action" href="https://abha.abdm.gov.in/" target="_blank" rel="noopener noreferrer">ABHA portal ↗</a>
+      </article>
+      <article class="service">
+        <div class="service-top"><span class="service-icon orange">📋</span><span class="pill">EXAMS</span></div>
+        <h3>National Testing Agency</h3><p>Examinations aur official exam-related updates.</p>
+        <a class="action" href="https://www.nta.ac.in/" target="_blank" rel="noopener noreferrer">NTA website ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- QUICK HELP -->
+  <section class="helpbox">
+    <div class="kicker" style="color:#ffca76">YOJANAMITRA QUICK HELP</div>
+    <h2>🤖 Aapko kis cheez ki madad chahiye?</h2>
+    <p>
+      Jaise: Ayushman card, sukha anudan, kisan, Ladki Bahin, scholarship,
+      MPSC ya police job. Yeh keyword-based help hai, live AI chatbot nahi.
+    </p>
+    <div class="helpcontrols">
+      <input id="question" placeholder="Apna sawal ya yojana ka naam likhein...">
+      <button id="helpButton">Madad dhoondhein ↗</button>
+    </div>
+    <p id="helpAnswer" aria-live="polite"></p>
+  </section>
 </main>
 
 <footer>
- <div class="wrap">
-  <div class="footrow">
-   <div><strong>🇮🇳 YojanaMitra AI</strong><p>Sarkari madad ki jankari, ek jagah.</p></div>
-   <div><a href="#jobs">Naukri</a><a href="#sukha">Sukha Anudan</a><a href="#kisan">Kisan</a><a href="#scholarship">Scholarship</a></div>
+  <div class="wrap">
+    <div class="footrow">
+      <div>
+        <strong>🇮🇳 YojanaMitra AI</strong>
+        <p>Sarkari madad ki jankari, ek jagah.</p>
+      </div>
+      <div>
+        <a href="#jobs">Naukri</a>
+        <a href="#sukha">Sukha Anudan</a>
+        <a href="#kisan">Kisan</a>
+        <a href="#health">Ayushman Card</a>
+        <a href="#scholarship">Scholarship</a>
+      </div>
+    </div>
+    <div class="fine">
+      <p>
+        YojanaMitra AI ek independent information directory hai. Yeh government
+        department se affiliated nahi hai. Scheme approval, payment, vacancy status
+        aur application decisions sambandhit government department karta hai.
+        Personal details sirf verified official portals par submit karein.
+      </p>
+      <p id="lastUpdated">Vacancy data status: checking...</p>
+    </div>
   </div>
-  <div class="fine">
-   <p>YojanaMitra AI ek independent information directory hai. Yeh government department se affiliated nahi hai. Scheme approval, payment, vacancy status aur application decisions sambandhit government department karta hai. Personal details sirf verified official portals par submit karein.</p>
-   <p id="lastUpdated">Vacancy data status: checking...</p>
-  </div>
- </div>
 </footer>
 
 <script>
@@ -336,130 +716,196 @@ const search = $("search");
 const jobSearch = $("jobSearch");
 const jobFilter = $("jobFilter");
 
-function runSearch(value){
- const q = (value || "").toLowerCase().trim();
- document.querySelectorAll(".service").forEach(card=>{
-   if(card.classList.contains("job")) return;
-   const match = !q || card.innerText.toLowerCase().includes(q);
-   card.classList.toggle("hidden",!match);
- });
- if(q){
-   const matchSection = [...document.querySelectorAll("main .section")]
-     .find(section=>section.querySelector(".service:not(.hidden)") ||
-       section.innerText.toLowerCase().includes(q));
-   if(matchSection) matchSection.scrollIntoView({behavior:"smooth",block:"start"});
- }
-}
-$("searchBtn").addEventListener("click",()=>runSearch(search.value));
-search.addEventListener("keydown",e=>{if(e.key==="Enter")runSearch(search.value)});
-search.addEventListener("input",()=>{if(!search.value.trim())runSearch("")});
+function runSearch(value) {
+  const q = (value || "").toLowerCase().trim();
+  const cards = [...document.querySelectorAll("main .service")];
 
-function filterStaticJobs(){
- const q=(jobSearch.value||"").toLowerCase().trim();
- const state=jobFilter.value;
- document.querySelectorAll(".job").forEach(card=>{
-   const text=(card.innerText+" "+card.dataset.name).toLowerCase();
-   const stateMatch=state==="all"||card.dataset.state===state;
-   card.classList.toggle("hidden",!(text.includes(q)&&stateMatch));
- });
-}
-if(jobSearch) jobSearch.addEventListener("input",filterStaticJobs);
-if(jobFilter) jobFilter.addEventListener("change",filterStaticJobs);
+  cards.forEach(card => {
+    const text = (card.innerText + " " + (card.dataset.name || "")).toLowerCase();
+    card.classList.toggle("hidden", !!q && !text.includes(q));
+  });
 
-function normalizeVacancies(data){
- if(Array.isArray(data)) return data;
- if(data && Array.isArray(data.vacancies)) return data.vacancies;
- if(data && Array.isArray(data.jobs)) return data.jobs;
- if(data && Array.isArray(data.results)) return data.results;
- return [];
-}
-function field(obj,keys){
- for(const key of keys){
-  if(obj && typeof obj[key]==="string" && obj[key].trim()) return obj[key].trim();
- }
- return "";
-}
-function makeVacancyCard(item){
- const title=field(item,["title","name","post","job_title","source"])||"Official recruitment link";
- const url=field(item,["url","link","href"]);
- const source=field(item,["source","department","organization","organisation"]);
- const desc=field(item,["description","details","summary"])||"Official portal par notice, eligibility aur last date verify karein.";
- const card=document.createElement("article");
- card.className="service vacancy";
- const top=document.createElement("div");top.className="service-top";
- const icon=document.createElement("span");icon.className="service-icon blue";icon.textContent="📢";
- const pill=document.createElement("span");pill.className="pill";pill.textContent=source||"OFFICIAL LINK";
- top.append(icon,pill);
- const h=document.createElement("h3");h.textContent=title;
- const p=document.createElement("p");p.textContent=desc;
- const a=document.createElement("a");a.className="action";a.textContent="Official link ↗";
- if(url && /^https?:\/\//i.test(url)){
-  a.href=url;a.target="_blank";a.rel="noopener noreferrer";
- }else{
-  a.href="https://www.ncs.gov.in/";a.target="_blank";a.rel="noopener noreferrer";
-  a.textContent="Check official portal ↗";
- }
- card.append(top,h,p,a);
- card.dataset.search=(title+" "+source+" "+desc).toLowerCase();
- return card;
-}
-function filterDynamicJobs(){
- const q=(jobSearch?.value||"").toLowerCase().trim();
- const state=jobFilter?.value||"all";
- document.querySelectorAll(".vacancy").forEach(card=>{
-  const text=card.dataset.search||card.innerText.toLowerCase();
-  const stateMatch=state==="all" ||
-    (state==="maharashtra" && /maharashtra|mpsc|maha|police|forest|pwd|water resources/i.test(text)) ||
-    (state==="central" && !/maharashtra|mpsc|maha|state police/i.test(text));
-  card.classList.toggle("hidden",!(text.includes(q)&&stateMatch));
- });
-}
-async function loadVacancies(){
- const container=$("vacancyCards");
- try{
-  const response=await fetch("./vacancies.json",{cache:"no-store"});
-  if(!response.ok) throw new Error("Vacancy JSON unavailable");
-  const data=await response.json();
-  const items=normalizeVacancies(data);
-  container.innerHTML="";
-  if(!items.length){
-   container.innerHTML='<div class="empty">Abhi vacancy data available nahi hai. Neeche official recruitment portals use karein.</div>';
-   $("jobCount").textContent="Official portals below";
-   $("lastUpdated").textContent="Vacancy data load hua, lekin records nahi mile. Official notices verify karein.";
-   return;
+  if (q) {
+    const first = cards.find(card => !card.classList.contains("hidden"));
+    if (first) first.scrollIntoView({behavior:"smooth",block:"center"});
   }
-  items.slice(0,30).forEach(item=>container.appendChild(makeVacancyCard(item)));
-  $("jobCount").textContent=items.length+" links loaded";
-  $("lastUpdated").textContent="Vacancy data last checked: "+new Date().toLocaleString("en-IN")+". Official notice final maanein.";
-  filterDynamicJobs();
- }catch(error){
-  container.innerHTML='<div class="empty">Vacancy list abhi load nahi hui. Internet check karein ya neeche diye official portals kholein.</div>';
-  $("jobCount").textContent="Official portals below";
-  $("lastUpdated").textContent="Vacancy data load nahi ho saka. Official recruitment portals se latest status verify karein.";
- }
 }
-function getHelp(){
- const q=$("question").value.toLowerCase().trim();
- const answer=$("helpAnswer");
- if(!q){answer.textContent="Pehle apna sawal ya yojana ka naam likhein.";return;}
- search.value=q;runSearch(q);
- let msg="Matching sections dekhein aur eligibility/details sambandhit official website par verify karein.";
- if(/sukha|drought|anudan|fasal nuksan|crop loss|panchnama/.test(q))
-  msg="Sukha Anudan section dekhein. Talathi/Krishi Sahayak/Tahsil office se survey, applicable government order aur beneficiary record verify karein.";
- else if(/kisan|farmer|pm.kisan|mahadbt|fasal bima/.test(q))
-  msg="Kisan Yojana section mein PM-KISAN, MahaDBT Farmer aur Fasal Bima ke official links hain.";
- else if(/ladki|bahin|mahila|women/.test(q))
-  msg="Mahila Yojana section mein Majhi Ladki Bahin aur Women & Child Development links hain.";
- else if(/scholarship|student|student/.test(q))
-  msg="Scholarship section mein MahaDBT aur National Scholarship Portal ke links hain.";
- else if(/job|naukri|bharti|police|mpsc|upsc|ssc|railway/.test(q))
-  msg="Sarkari Naukri section mein vacancies.json links aur official recruitment portals diye gaye hain. Last date official notice par verify karein.";
- answer.textContent=msg;
+
+$("searchBtn").addEventListener("click", () => runSearch(search.value));
+search.addEventListener("keydown", e => {
+  if (e.key === "Enter") runSearch(search.value);
+});
+search.addEventListener("input", () => {
+  if (!search.value.trim()) runSearch("");
+});
+
+function filterJobs() {
+  const q = (jobSearch.value || "").toLowerCase().trim();
+  const state = jobFilter.value;
+
+  document.querySelectorAll(".job,.vacancy").forEach(card => {
+    const text = (
+      card.innerText + " " +
+      (card.dataset.name || "") + " " +
+      (card.dataset.search || "")
+    ).toLowerCase();
+
+    let stateMatch = state === "all";
+    if (state === "maharashtra") {
+      stateMatch = /maharashtra|mpsc|maha|police|forest|pwd|water resources/i.test(text);
+    }
+    if (state === "central") {
+      stateMatch = !/maharashtra|mpsc|maha|state police/i.test(text);
+    }
+
+    card.classList.toggle("hidden", !(text.includes(q) && stateMatch));
+  });
 }
-$("helpButton").addEventListener("click",getHelp);
-$("question").addEventListener("keydown",e=>{if(e.key==="Enter")getHelp()});
-if(jobSearch) jobSearch.addEventListener("input",filterDynamicJobs);
-if(jobFilter) jobFilter.addEventListener("change",filterDynamicJobs);
+
+jobSearch.addEventListener("input", filterJobs);
+jobFilter.addEventListener("change", filterJobs);
+
+function normalizeVacancies(data) {
+  if (Array.isArray(data)) return data;
+  if (data && Array.isArray(data.vacancies)) return data.vacancies;
+  if (data && Array.isArray(data.jobs)) return data.jobs;
+  if (data && Array.isArray(data.results)) return data.results;
+  return [];
+}
+
+function field(obj, keys) {
+  for (const key of keys) {
+    if (obj && typeof obj[key] === "string" && obj[key].trim()) {
+      return obj[key].trim();
+    }
+  }
+  return "";
+}
+
+function makeVacancyCard(item) {
+  const title = field(item, ["title","name","post","job_title","source"]) || "Official recruitment link";
+  const url = field(item, ["url","link","href"]);
+  const source = field(item, ["source","department","organization","organisation"]);
+  const desc = field(item, ["description","details","summary"]) ||
+    "Official portal par notice, eligibility aur last date verify karein.";
+
+  const card = document.createElement("article");
+  card.className = "service vacancy";
+
+  const top = document.createElement("div");
+  top.className = "service-top";
+
+  const icon = document.createElement("span");
+  icon.className = "service-icon blue";
+  icon.textContent = "📢";
+
+  const pill = document.createElement("span");
+  pill.className = "pill";
+  pill.textContent = source || "OFFICIAL LINK";
+
+  top.append(icon,pill);
+
+  const h = document.createElement("h3");
+  h.textContent = title;
+
+  const p = document.createElement("p");
+  p.textContent = desc;
+
+  const a = document.createElement("a");
+  a.className = "action";
+  a.textContent = "Official link ↗";
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+
+  if (url && /^https?:\/\//i.test(url)) {
+    a.href = url;
+  } else {
+    a.href = "https://www.ncs.gov.in/";
+    a.textContent = "Check official portal ↗";
+  }
+
+  card.append(top,h,p,a);
+  card.dataset.search = (title + " " + source + " " + desc).toLowerCase();
+  return card;
+}
+
+async function loadVacancies() {
+  const container = $("vacancyCards");
+
+  try {
+    const response = await fetch("./vacancies.json", {cache:"no-store"});
+    if (!response.ok) throw new Error("Vacancy JSON unavailable");
+
+    const data = await response.json();
+    const items = normalizeVacancies(data);
+
+    container.innerHTML = "";
+
+    if (!items.length) {
+      container.innerHTML =
+        '<div class="empty">Abhi vacancy data available nahi hai. Neeche official recruitment portals use karein.</div>';
+      $("jobCount").textContent = "Official portals below";
+      $("lastUpdated").textContent =
+        "Vacancy file mein records nahi mile. Official notices verify karein.";
+      return;
+    }
+
+    items.slice(0,30).forEach(item => {
+      container.appendChild(makeVacancyCard(item));
+    });
+
+    $("jobCount").textContent = items.length + " links loaded";
+    $("lastUpdated").textContent =
+      "Vacancy data last checked: " +
+      new Date().toLocaleString("en-IN") +
+      ". Official notice final maanein.";
+
+    filterJobs();
+  } catch (error) {
+    container.innerHTML =
+      '<div class="empty">Vacancy list abhi load nahi hui. Internet check karein ya neeche diye official portals kholein.</div>';
+    $("jobCount").textContent = "Official portals below";
+    $("lastUpdated").textContent =
+      "Vacancy data load nahi ho saka. Official recruitment portals se latest status verify karein.";
+  }
+}
+
+function getHelp() {
+  const q = $("question").value.toLowerCase().trim();
+  const answer = $("helpAnswer");
+
+  if (!q) {
+    answer.textContent = "Pehle apna sawal ya yojana ka naam likhein.";
+    return;
+  }
+
+  search.value = q;
+  runSearch(q);
+
+  let msg = "Matching services dekhein aur eligibility/details official website par verify karein.";
+
+  if (/ayushman|pm.?jay|health card|beneficiary card/.test(q)) {
+    msg = "Ayushman Bharat Card section kholein aur official beneficiary portal par eligibility check karein. Card eligibility official portal par verify hoti hai.";
+  } else if (/sukha|drought|anudan|fasal nuksan|crop loss|panchnama/.test(q)) {
+    msg = "Sukha Anudan section dekhein. Talathi, Krishi Sahayak ya Tahsil office se survey, applicable government order aur beneficiary record verify karein.";
+  } else if (/kisan|farmer|pm.?kisan|mahadbt|fasal bima/.test(q)) {
+    msg = "Kisan Yojana section mein PM-KISAN, MahaDBT Farmer aur Fasal Bima ke official links hain.";
+  } else if (/ladki|bahin|mahila|women/.test(q)) {
+    msg = "Mahila Yojana section mein Majhi Ladki Bahin aur Women & Child Development links hain.";
+  } else if (/scholarship|student/.test(q)) {
+    msg = "Scholarship section mein MahaDBT aur National Scholarship Portal ke links hain.";
+  } else if (/job|naukri|bharti|police|mpsc|upsc|ssc|railway/.test(q)) {
+    msg = "Sarkari Naukri section mein vacancies.json links aur official recruitment portals diye gaye hain. Last date official notice par verify karein.";
+  }
+
+  answer.textContent = msg;
+}
+
+$("helpButton").addEventListener("click", getHelp);
+$("question").addEventListener("keydown", e => {
+  if (e.key === "Enter") getHelp();
+});
+
 loadVacancies();
 </script>
 </body>
