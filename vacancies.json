@@ -1,139 +1,1294 @@
 {
-  "updatedAt": "2026-10-15T02:56:15.827084+00:00",
-  "notice": "Links are collected from official portals where accessible. This does not confirm that a vacancy is open or that its deadline is current. Verify every notice on the official website.",
+  "updatedAt": "2026-10-16T02:58:48.644657+00:00",
+  "notice": "Official portal links are provided for verification. A listed link does not guarantee an active vacancy. Check the official notification for eligibility and deadlines.",
   "vacancies": [
     {
       "source": "UPSC",
-      "title": "UPSC Official Recruitment Portal",
+      "title": "UPSC - Official Recruitment Portal",
       "url": "https://upsc.gov.in/recruitment/recruitment-advertisement",
-      "status": "Portal link - check for latest notices",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:56:16.737117+00:00"
     },
     {
       "source": "SSC",
-      "title": "SSC Official Recruitment Portal",
+      "title": "SSC - Official Recruitment Portal",
       "url": "https://ssc.gov.in/",
-      "status": "Portal link - check for latest notices",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:56:42.819450+00:00"
     },
     {
       "source": "Railway Recruitment Board",
-      "title": "Railway Recruitment Board Official Recruitment Portal",
+      "title": "Railway Recruitment Board - Official Recruitment Portal",
       "url": "https://www.rrbcdg.gov.in/",
-      "status": "Portal link - check for latest notices",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:56:44.364024+00:00"
     },
     {
       "source": "MPSC Maharashtra",
-      "title": "MPSC Maharashtra Official Recruitment Portal",
+      "title": "MPSC Maharashtra - Official Recruitment Portal",
       "url": "https://mpsc.gov.in/",
-      "status": "Portal link - check for latest notices",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:10.148821+00:00"
     },
     {
-      "source": "IBPS",
-      "title": "IBPS Official Recruitment Portal",
+      "source": "Maharashtra PWD",
+      "title": "Archive",
+      "url": "https://pwd.maharashtra.gov.in/en/past-notices/recruitments",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:10.939321+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "महाराष्ट्र राज्य पोलीस",
+      "url": "https://www.mahapolice.gov.in/maharashtra-police/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "महाराष्ट्र पोलीस मुख्यालय",
+      "url": "https://www.mahapolice.gov.in/maharashtra-police-head-quarter/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "महाराष्ट्र पोलिसांचे पदक्रम",
+      "url": "https://www.mahapolice.gov.in/hierarchy-of-maharashtra-police/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पोलीस क्रम",
+      "url": "https://www.mahapolice.gov.in/uploads/external_links/policeRank.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पोलीस ध्वज आणि स्टार-बक्कल",
+      "url": "https://www.mahapolice.gov.in/uploads/external_links/policeFlags.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पदके आणि सजावटी",
+      "url": "https://www.mahapolice.gov.in/uploads/external_links/policeMedal.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "स्मार्ट पोलिस ठाणी",
+      "url": "https://www.mahapolice.gov.in/smart-police-stations/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "सेवाप्रवेश नियम व शासन निर्णय",
+      "url": "https://www.mahapolice.gov.in/police-recruINDEXGR.php",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "तृतीय पंथीयांकरिता",
+      "url": "https://www.mahapolice.gov.in/police-recruINDEXGR_trans.php",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "सर्वसाधारण सूचना",
+      "url": "https://www.mahapolice.gov.in/pdfs/recruitment/3 SUDHARIT FINAL CANDIDATE INSTRUCTION 12.11.2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "घटकनिहाय जाहिरात",
+      "url": "https://www.mahapolice.gov.in/police-recru-adv.php",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "घटकनिहाय रिक्त पदे",
+      "url": "https://www.mahapolice.gov.in/police-recru-vacancy.php",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "घटकनिहाय भरती निकाल",
+      "url": "https://www.mahapolice.gov.in/police-recruitment.php",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पोलिस पाटील संपर्क",
+      "url": "https://www.mahapolice.gov.in/police-patil/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पोलिसांना गोळीबारासाठी असलेले आधुनिक मैदान",
+      "url": "https://www.mahapolice.gov.in/modern-police-firing-range/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "Maharashtra Police Recruitment",
+      "title": "पोलिस वृंद परिषद",
+      "url": "https://www.mahapolice.gov.in/police-vrunda-parishad/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:15.510521+00:00"
+    },
+    {
+      "source": "India Post Vacancies",
+      "title": "Department of Posts Government of India Ministry of Communications",
+      "url": "https://www.indiapost.gov.in/",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:17.679807+00:00"
+    },
+    {
+      "source": "India Post Vacancies",
+      "title": "Gazette Notifications",
+      "url": "https://www.indiapost.gov.in/documents/gazzettenotifications",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:17.679807+00:00"
+    },
+    {
+      "source": "India Post Vacancies",
+      "title": "Recruitment Rules",
+      "url": "https://www.indiapost.gov.in/documents/recruitmentrules",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:17.679807+00:00"
+    },
+    {
+      "source": "India Post Vacancies",
+      "title": "Recruitments",
+      "url": "https://www.indiapost.gov.in/vacancies/recruitments",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:17.679807+00:00"
+    },
+    {
+      "source": "India Post Vacancies",
+      "title": "Online GDS Recruitment",
+      "url": "https://www.indiapost.gov.in/vacancies/online-gds",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:17.679807+00:00"
+    },
+    {
+      "source": "India Post GDS",
+      "title": "India Post GDS - Official Recruitment Portal",
+      "url": "https://www.indiapost.gov.in/gdsonlineengagement",
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:19.599234+00:00"
+    },
+    {
+      "source": "India Post Payments Bank",
+      "title": "India Post Payments Bank - Official Recruitment Portal",
+      "url": "https://www.ippbonline.com/en/web/ippb/current-openings",
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:20.639456+00:00"
+    },
+    {
+      "source": "IBPS Banking Recruitment",
+      "title": "IBPS Banking Recruitment - Official Recruitment Portal",
       "url": "https://www.ibps.in/",
-      "status": "Portal link - check for latest notices",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:20.734972+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Classified Jobs",
-      "url": "https://www.ncs.gov.in/latest-update",
+      "url": "https://ncs.gov.in/latest-update",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
-      "title": "Search for Jobs",
-      "url": "https://www.ncs.gov.in/",
+      "title": "Registration Flowchart",
+      "url": "https://ncs.gov.in/assets/pdf/Jobseeker registration flowchart 1.pdf",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
-      "title": "For Jobseekers",
-      "url": "https://www.ncs.gov.in/job-listing",
+      "title": "Find Domestic Jobs",
+      "url": "https://ncs.gov.in/job-listing",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
-      "title": "International Jobs",
-      "url": "https://www.ncs.gov.in/e-migrate",
+      "title": "Find International Jobs E-migrate",
+      "url": "https://ncs.gov.in/e-migrate",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Jobs in Health Sector",
-      "url": "https://www.ncs.gov.in/job-listing?functionalAreas=Healthcare,Healthcare%20%26%20Medical",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Healthcare,Healthcare%20%26%20Medical",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
-      "title": "Government Jobs",
-      "url": "https://www.ncs.gov.in/job-listing?isGovernmentJob=true",
+      "title": "Jobs in Government sector",
+      "url": "https://ncs.gov.in/job-listing?isGovernmentJob=true",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Jobs for Differently Abled",
-      "url": "https://www.ncs.gov.in/job-listing?pwdCandidateWelcome=true",
+      "url": "https://ncs.gov.in/job-listing?pwdCandidateWelcome=true",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Jobs for Ex-Servicemen",
-      "url": "https://www.ncs.gov.in/job-listing?exServicemanPreferred=true",
+      "url": "https://ncs.gov.in/job-listing?exServicemanPreferred=true",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Find Candidates",
+      "url": "https://ncs.gov.in/jobseeker-list",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Post New Jobs",
-      "url": "https://www.ncs.gov.in/home/job-post",
+      "url": "https://ncs.gov.in/home/job-post",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Participate in Job Fairs and Events",
-      "url": "https://www.ncs.gov.in/home/job-fair/jobFairs",
+      "url": "https://ncs.gov.in/home/job-fair/jobFairs",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Post New Jobs",
-      "url": "https://www.ncs.gov.in/login/employer",
+      "url": "https://ncs.gov.in/login/employer",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Participate in a Job Fairs and Events",
       "url": "https://www.ncs.gov.in/_layouts/15/ncsp/calendar.aspx",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Internships",
+      "url": "https://ncs.gov.in/Pmis-jobList",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Job Fairs",
-      "url": "https://www.ncs.gov.in/job-fair-list",
+      "url": "https://ncs.gov.in/job-fair-list",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "IT & Communication",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=IT%20and%20ITES,Telecom,IT%20Support%20%26%20BPO",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Transportation and Storage",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Logistics,Logistics%20%26%20Warehousing",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Education",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Education,Tutors%20and%20Teacher%20Aides",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Operations & Support",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Operations%20and%20Maintenance,Admin%20Back%20Office,Office%20%26%20Administration",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Manufacturing",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Production%20and%20Manufacturing,Manufacturing%20General,Manufacturing%20%26%20Production,Capital%20Goods%20Manufacturing,Electronics%20Manufacturing,Electrical%20Manufacturing",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Finance and Insurance",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=BFSI",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Power and Energy",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Mining%20and%20Quarrying,Oil%20Gas%20%26%20Energy,Water%20Supply%20Waste%20Mgmt",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "National Career Service",
+      "title": "Hospitality",
+      "url": "https://ncs.gov.in/job-listing?functionalAreas=Tourism%20and%20Hospitality,Hospitality%20%26%20Food%20Service",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
     },
     {
       "source": "National Career Service",
       "title": "Jobs for Women",
-      "url": "https://www.ncs.gov.in/job-listing?genderPreference=FEMALE",
+      "url": "https://ncs.gov.in/job-listing?genderPreference=FEMALE",
       "status": "Official link - verify notice",
-      "checkedAt": "2026-10-15T02:56:15.827084+00:00"
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:21.691602+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-14-10-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/4-Advertisement-14-10-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/MahaHomeHackathon-Website-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-for_CFO_0001.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-for_CAO_0001.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Intranet_Advertisement_removed.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-Security-Supervisory-Officer-14-08-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/4-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-publication-28-07-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-27-07-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/recruitment_CAO_0372026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisement_03072026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/recruitment_manager_0372026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/cancellation-advertisement-filling-vacant-posts.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisementOFmh01an0915_4-6-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ManagerRecruitment_02062026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ID-Card-Advertisement-18-05-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-for-Consultant.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ID-Card-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Corrigendum_MahaSTRIDE_Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Legal_Advisor_police_advertisement_23-04-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Legal_Directors_advertisement_23-04-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ontractual-Recruitment-15-04-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/I-D-Card-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-7-4-26.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Stationery-advertisement-2026-2027.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-2026-2027-18-02-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-20-01-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-GST-Auditor-17-11-25.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Vehicle-Tender-Notice-Advertisement-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-TSS-25-09-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-mahait-29-08-25.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-paneling-retired.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/RTS-chief-office-advertisement_removed.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/PTC-JALNA-advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-appointment-09-07-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-02-07-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-30-06-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Deputation-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement Notice.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_DFSL.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisement published on the website to fill the posts.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Sofa Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement for filling the post of Director.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement of Legal Advisor.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ID Card Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement 12345.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement for appointment.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Stationery Advertisement 21-03-2025 to 25-03-2025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Stationery_Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/AdvertisementforMAHAIT.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_24022025.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Cleaning Material Advertisement 2025-2026.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Purchase_Telephone.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Published_for_Specialist_Medical_Officer.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Recruitment_of_Retired_Officers.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisementforretiregovtofficerspune.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Readvertisement_Notice_Tourism_Cultural_Affairs.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Stenographers .pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Regarding_publication_of_advertisement_for_calling_for_price_list.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_English.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Assistant_Professor.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Website_Advertisement_GST_Auditor_07_to_17_11_2024.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/MSIC_KONKAN_BENCH_RETIRE_OFFICER_RECRUITMENT_ADVERTISEMENT_2024.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_for_the_posts_of_deputation_in_the_training_institute_Divisional_Administrative_Training_Institute_Nashik.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Honda_City_Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-TSS-1.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Vacancy-Circular-for-Technical-Member.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/DITScrap_Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Notification.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-6.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-State-level-Selection-Committee.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/10-Computer-Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/AdvertisementforContractualPostofMaharashtraStateWorkersInsuranceSociety.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisement_10_07_2024.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Upper_Grade_Stenographer.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Recruitment_Advertisement_2024_New_0001_3_5.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Heavy_Duty_Printer.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Notification_10062024.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Internet_Services_ESIS_Hospital_Pune20240524.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Datils_Advertisement_of_Legal_Advisor.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/yashada_advertisement_0001.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/10-Computer_Advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Main_File_Computer_Advertisement-2.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisement_11_01_2024.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_28_12_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_Notice_20_12_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_12_12_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/advertisement2_01_12_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Sindhi_Academy_Advertisement_2023_FINAL.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_01_12_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_TS9.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_of_GST_Auditor2.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-Bolero-2Vehicles.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-Ertiga-1Vehicles.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_of_GST_Auditor.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_20_09_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/CR_25_of_2022_advertisement.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_of_Computer_Technician.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_31_08_23.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_for_Vehicle_sales.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/ADVERTISEMENT .pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement_for_clerk.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-21_08_2023.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Government",
+      "title": "+अधिक",
+      "url": "https://maharashtra.gov.in/Site/Upload/PDF/Advertisement-3.pdf",
+      "status": "Official link - verify notice",
+      "type": "official_link",
+      "checkedAt": "2026-10-16T02:57:24.864755+00:00"
+    },
+    {
+      "source": "Maharashtra Forest Department",
+      "title": "Maharashtra Forest Department - Official Recruitment Portal",
+      "url": "https://mahaforest.gov.in/",
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:32.825494+00:00"
+    },
+    {
+      "source": "Maharashtra Water Resources Department",
+      "title": "Maharashtra Water Resources Department - Official Recruitment Portal",
+      "url": "https://wrd.maharashtra.gov.in/",
+      "status": "Official portal - check for notices",
+      "type": "portal",
+      "checkedAt": "2026-10-16T02:57:58.369918+00:00"
     }
   ]
 }
