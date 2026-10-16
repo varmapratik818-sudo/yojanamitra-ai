@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://varmapratik818-sudo.github.io/yojanamitra-ai/sitemap.xml
