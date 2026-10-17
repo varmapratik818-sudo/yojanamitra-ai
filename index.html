@@ -1,64 +1,48 @@
-<!-- YOJANAMITRA AI: CATEGORY, ADMIN LOGIN & APPLICATION PANEL -->
-<section id="yojana-panel" style="padding:20px;margin:20px auto;max-width:900px;background:#f4f8ff;border-radius:16px;color:#172b4d">
 
+<!-- YOJANAMITRA AI -->
+<section id="yojana-panel" style="padding:20px;margin:20px auto;max-width:900px;background:#f4f8ff;border-radius:16px;color:#172b4d;font-family:Arial,sans-serif">
   <h2>YojanaMitra AI</h2>
   <p>Apni zaroorat ka form category aur search se chunein.</p>
 
   <label for="ymCategory">Form Category</label>
   <select id="ymCategory" style="width:100%;padding:12px;margin:8px 0">
     <option value="">Sabhi Categories</option>
-    <option value="Government Scheme">Government Scheme</option>
-    <option value="Scholarship">Scholarship</option>
-    <option value="Government Job">Government Job</option>
-    <option value="Certificate">Certificate / Other Service</option>
+    <option>Government Scheme</option>
+    <option>Scholarship</option>
+    <option>Government Job</option>
+    <option>Certificate / Other Service</option>
   </select>
 
   <label for="ymSearch">Form Search</label>
-  <input id="ymSearch" placeholder="Jaise PM-KISAN, Scholarship, Job..."
+  <input id="ymSearch" placeholder="PM-KISAN, Scholarship, Job..."
     style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
 
   <label for="ymForm">Form Select Karein</label>
-  <select id="ymForm" style="width:100%;padding:12px;margin:8px 0">
-    <option value="PM-KISAN">PM-KISAN</option>
-    <option value="Ayushman Bharat">Ayushman Bharat</option>
-    <option value="PM Vishwakarma">PM Vishwakarma</option>
-    <option value="PMAY">PMAY Housing Scheme</option>
-    <option value="Ladki Bahin Yojana">Maharashtra Ladki Bahin Yojana</option>
-    <option value="Scholarship - MahaDBT">Scholarship - MahaDBT</option>
-    <option value="Scholarship - NSP">Scholarship - NSP</option>
-    <option value="Government Job Application">Government Job Application</option>
-    <option value="Certificate / Other Service">Certificate / Other Service</option>
-  </select>
+  <select id="ymForm" style="width:100%;padding:12px;margin:8px 0"></select>
+  <p id="ymSelectionMessage">Form select karein.</p>
 
-  <p id="ymSelectionMessage">Selected form: PM-KISAN</p>
-  <p>Form bharwane ke liye administrator se sampark karein. Yeh selection abhi application submit nahi karta.</p>
-
-  <hr style="margin:24px 0">
+  <p>Form bharwane ke liye administrator se sampark karein.</p>
+  <hr>
 
   <h3>Admin Login</h3>
-  <p>Sirf authorized administrator customer application record bhar aur dekh sakta hai.</p>
-
   <label for="ymEmail">Admin Email</label>
-  <input id="ymEmail" type="email" placeholder="Admin email"
-    autocomplete="username" style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+  <input id="ymEmail" type="email" autocomplete="username"
+    placeholder="Admin email"
+    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
 
   <label for="ymPassword">Password</label>
-  <input id="ymPassword" type="password" placeholder="Firebase Auth password"
-    autocomplete="current-password" style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+  <input id="ymPassword" type="password" autocomplete="current-password"
+    placeholder="Firebase Auth password"
+    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
 
-  <button id="ymLogin" type="button" style="padding:12px 18px;background:#123c69;color:white;border:0;border-radius:8px">
-    Admin Login
-  </button>
-  <button id="ymLogout" type="button" hidden style="padding:12px 18px;margin-left:8px">
-    Logout
-  </button>
-
-  <p id="ymStatus" role="status">Admin login ke baad application panel khulega.</p>
+  <button id="ymLogin" type="button">Admin Login</button>
+  <button id="ymLogout" type="button" hidden>Logout</button>
+  <p id="ymStatus" role="status">Admin login karein.</p>
 
   <div id="ymAdminPanel" hidden>
-    <hr style="margin:24px 0">
+    <hr>
     <h3>Customer Application Entry</h3>
-    <p>Customer ki permission lekar details bharein. Aadhaar number, OTP, bank password ya doosri unnecessary sensitive details yahan na daalein.</p>
+    <p>Customer ki permission lekar details bharein. Aadhaar, OTP aur bank password save na karein.</p>
 
     <form id="ymApplicationForm">
       <label for="ymCustomerName">Customer Name</label>
@@ -66,7 +50,7 @@
         style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
 
       <label for="ymPhone">Customer Mobile Number</label>
-      <input id="ymPhone" type="tel" maxlength="15" placeholder="Contact number"
+      <input id="ymPhone" type="tel" maxlength="15"
         style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
 
       <label for="ymAdminCategory">Category</label>
@@ -83,7 +67,6 @@
 
       <label for="ymDetails">Required Details / Document Checklist</label>
       <textarea id="ymDetails" rows="4" maxlength="4000"
-        placeholder="Application ke liye zaroori non-sensitive details..."
         style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box"></textarea>
 
       <label for="ymApplicationStatus">Record Status</label>
@@ -93,19 +76,13 @@
         <option>Completed</option>
       </select>
 
-      <button id="ymSave" type="submit"
-        style="padding:12px 18px;background:#137547;color:white;border:0;border-radius:8px">
-        Save Application
-      </button>
-      <button type="button" id="ymPrint"
-        style="padding:12px 18px;margin:8px;background:#123c69;color:white;border:0;border-radius:8px">
-        Print / PDF
-      </button>
+      <button id="ymSave" type="submit">Save Application</button>
+      <button id="ymPrint" type="button">Print / PDF</button>
     </form>
 
-    <hr style="margin:24px 0">
+    <hr>
     <h3>Saved Customer Records</h3>
-    <button id="ymLoadRecords" type="button" style="padding:10px 14px">Refresh Records</button>
+    <button id="ymLoadRecords" type="button">Refresh Records</button>
     <div id="ymRecords" style="margin-top:12px;overflow-wrap:anywhere"></div>
   </div>
 </section>
@@ -117,13 +94,22 @@
   outline:2px solid #3678bb;
 }
 #ymRecords article {
-  background:white;border:1px solid #d5dfed;border-radius:10px;
-  padding:12px;margin:10px 0;
+  background:white;
+  border:1px solid #d5dfed;
+  border-radius:10px;
+  padding:12px;
+  margin:10px 0;
+}
+@media print {
+  body * { visibility:hidden; }
+  #yojana-panel, #yojana-panel * { visibility:visible; }
+  #yojana-panel { position:absolute;left:0;top:0;width:95%;max-width:none; }
+  #ymLogin,#ymLogout,#ymSave,#ymPrint,#ymLoadRecords { display:none!important; }
 }
 </style>
 
 <script type="module">
-import { initializeApp } from
+import { initializeApp, getApps, getApp } from
   "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
 import {
@@ -131,11 +117,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
 import {
-  getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp
+  getFirestore, collection, addDoc, getDocs, query,
+  orderBy, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cA",
+  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cwA",
   authDomain: "yojanamitraai.firebaseapp.com",
   projectId: "yojanamitraai",
   storageBucket: "yojanamitraai.firebasestorage.app",
@@ -144,23 +131,22 @@ const firebaseConfig = {
 };
 
 const ADMIN_EMAIL = "varmapratik818@gmail.com";
-const app = initializeApp(firebaseConfig);
+const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 const $ = id => document.getElementById(id);
 const status = message => $("ymStatus").textContent = message;
 
 const formOptions = [
-  {category:"Government Scheme", name:"PM-KISAN"},
-  {category:"Government Scheme", name:"Ayushman Bharat"},
-  {category:"Government Scheme", name:"PM Vishwakarma"},
-  {category:"Government Scheme", name:"PMAY"},
-  {category:"Government Scheme", name:"Ladki Bahin Yojana"},
-  {category:"Scholarship", name:"Scholarship - MahaDBT"},
-  {category:"Scholarship", name:"Scholarship - NSP"},
-  {category:"Government Job", name:"Government Job Application"},
-  {category:"Certificate / Other Service", name:"Certificate / Other Service"}
+  {category:"Government Scheme",name:"PM-KISAN"},
+  {category:"Government Scheme",name:"Ayushman Bharat"},
+  {category:"Government Scheme",name:"PM Vishwakarma"},
+  {category:"Government Scheme",name:"PMAY Housing Scheme"},
+  {category:"Government Scheme",name:"Maharashtra Ladki Bahin Yojana"},
+  {category:"Scholarship",name:"Scholarship - MahaDBT"},
+  {category:"Scholarship",name:"Scholarship - NSP"},
+  {category:"Government Job",name:"Government Job Application"},
+  {category:"Certificate / Other Service",name:"Certificate / Other Service"}
 ];
 
 function updateFormOptions() {
@@ -171,7 +157,6 @@ function updateFormOptions() {
     item.name.toLowerCase().includes(search)
   );
   const select = $("ymForm");
-  const previous = select.value;
   select.replaceChildren();
 
   matches.forEach(item => {
@@ -181,30 +166,46 @@ function updateFormOptions() {
     select.appendChild(option);
   });
 
-  if (matches.some(item => item.name === previous)) select.value = previous;
   $("ymSelectionMessage").textContent = matches.length
     ? "Selected form: " + select.value
     : "Is search ke liye form nahi mila.";
+  if (!matches.length) {
+    $("ymAdminForm").value = "";
+  } else {
+    $("ymAdminForm").value = select.value;
+  }
 }
 
 $("ymCategory").addEventListener("change", updateFormOptions);
 $("ymSearch").addEventListener("input", updateFormOptions);
 $("ymForm").addEventListener("change", () => {
   $("ymSelectionMessage").textContent = "Selected form: " + $("ymForm").value;
+  $("ymAdminForm").value = $("ymForm").value;
 });
 
 $("ymLogin").addEventListener("click", async () => {
   const email = $("ymEmail").value.trim().toLowerCase();
   const password = $("ymPassword").value;
+
   if (email !== ADMIN_EMAIL.toLowerCase()) {
     status("Is email ko admin access nahi diya gaya hai.");
     return;
   }
+  if (!email || !password) {
+    status("Admin email aur password bharein.");
+    return;
+  }
+
+  $("ymLogin").disabled = true;
+  status("Login ho raha hai...");
   try {
     await signInWithEmailAndPassword(auth, email, password);
     $("ymPassword").value = "";
   } catch (error) {
-    status("Login fail hua: " + error.message);
+    console.error("Firebase login error:", error.code, error.message);
+    status("Login fail hua: " + error.code + " — " + error.message);
+  } finally {
+    $("ymLogin").disabled = false;
   }
 });
 
@@ -212,31 +213,37 @@ $("ymLogout").addEventListener("click", async () => {
   try {
     await signOut(auth);
     $("ymRecords").replaceChildren();
+    status("Logout ho gaya.");
   } catch (error) {
     status("Logout error: " + error.message);
   }
 });
 
 onAuthStateChanged(auth, user => {
-  const isAdmin = !!user && user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
-  if (user && !isAdmin) signOut(auth).catch(() => {});
+  const isAdmin = !!user &&
+    user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+
   $("ymAdminPanel").hidden = !isAdmin;
   $("ymLogout").hidden = !isAdmin;
   $("ymLogin").hidden = isAdmin;
   $("ymEmail").hidden = isAdmin;
   $("ymPassword").hidden = isAdmin;
 
-  if (isAdmin) {
-    status("Admin login successful. Ab customer form bhar sakte hain.");
-  } else if (!user) {
+  if (user && !isAdmin) {
+    status("Admin access allowed nahi hai.");
+    signOut(auth).catch(console.error);
+  } else if (isAdmin) {
+    status("Admin login successful.");
+  } else {
     status("Admin login karein.");
   }
 });
 
 $("ymApplicationForm").addEventListener("submit", async event => {
   event.preventDefault();
-  if (!auth.currentUser ||
-      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+  const user = auth.currentUser;
+
+  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
     status("Pehle authorized admin login karein.");
     return;
   }
@@ -244,6 +251,7 @@ $("ymApplicationForm").addEventListener("submit", async event => {
   const name = $("ymCustomerName").value.trim();
   const phone = $("ymPhone").value.trim();
   const selectedForm = $("ymAdminForm").value.trim();
+
   if (!name || !selectedForm) {
     status("Customer name aur application form zaroori hain.");
     return;
@@ -259,22 +267,22 @@ $("ymApplicationForm").addEventListener("submit", async event => {
       details: $("ymDetails").value.trim(),
       applicationStatus: $("ymApplicationStatus").value,
       createdAt: serverTimestamp(),
-      createdBy: auth.currentUser.uid
+      createdBy: user.uid
     });
     status("Application save ho gayi.");
     $("ymApplicationForm").reset();
     await loadRecords();
   } catch (error) {
-    status("Save nahi hua: " + error.message +
-      ". Firestore security rules aur admin login check karein.");
+    console.error("Firestore save error:", error);
+    status("Save nahi hua: " + error.code + " — " + error.message);
   } finally {
     $("ymSave").disabled = false;
   }
 });
 
 async function loadRecords() {
-  if (!auth.currentUser ||
-      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+  const user = auth.currentUser;
+  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
     status("Records dekhne ke liye admin login zaroori hai.");
     return;
   }
@@ -298,6 +306,7 @@ async function loadRecords() {
       const article = document.createElement("article");
       const heading = document.createElement("strong");
       heading.textContent = data.customerName || "Unnamed customer";
+
       const details = document.createElement("p");
       details.textContent =
         "Form: " + (data.formName || "") +
@@ -305,13 +314,14 @@ async function loadRecords() {
         " | Status: " + (data.applicationStatus || "") +
         " | Phone: " + (data.customerPhone || "") +
         " | Details: " + (data.details || "");
+
       article.append(heading, details);
       container.appendChild(article);
     });
     status("Saved records load ho gaye.");
   } catch (error) {
-    status("Records load nahi hue: " + error.message +
-      ". Firestore rules check karein.");
+    console.error("Firestore read error:", error);
+    status("Records load nahi hue: " + error.code + " — " + error.message);
   }
 }
 
