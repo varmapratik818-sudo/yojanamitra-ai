@@ -1,402 +1,322 @@
+<!-- YOJANAMITRA AI: CATEGORY, ADMIN LOGIN & APPLICATION PANEL -->
+<section id="yojana-panel" style="padding:20px;margin:20px auto;max-width:900px;background:#f4f8ff;border-radius:16px;color:#172b4d">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123c69">
-<meta name="description" content="YojanaMitra AI - Government schemes, jobs, scholarships and public services.">
-<meta name="google-site-verification" content="11xK-dGzs-naRboqw3PQ4KUnrI2F6SRsnpcmBevuZbU" />
-<title>YojanaMitra AI | Government Help</title>
+  <h2>YojanaMitra AI</h2>
+  <p>Apni zaroorat ka form category aur search se chunein.</p>
+
+  <label for="ymCategory">Form Category</label>
+  <select id="ymCategory" style="width:100%;padding:12px;margin:8px 0">
+    <option value="">Sabhi Categories</option>
+    <option value="Government Scheme">Government Scheme</option>
+    <option value="Scholarship">Scholarship</option>
+    <option value="Government Job">Government Job</option>
+    <option value="Certificate">Certificate / Other Service</option>
+  </select>
+
+  <label for="ymSearch">Form Search</label>
+  <input id="ymSearch" placeholder="Jaise PM-KISAN, Scholarship, Job..."
+    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+  <label for="ymForm">Form Select Karein</label>
+  <select id="ymForm" style="width:100%;padding:12px;margin:8px 0">
+    <option value="PM-KISAN">PM-KISAN</option>
+    <option value="Ayushman Bharat">Ayushman Bharat</option>
+    <option value="PM Vishwakarma">PM Vishwakarma</option>
+    <option value="PMAY">PMAY Housing Scheme</option>
+    <option value="Ladki Bahin Yojana">Maharashtra Ladki Bahin Yojana</option>
+    <option value="Scholarship - MahaDBT">Scholarship - MahaDBT</option>
+    <option value="Scholarship - NSP">Scholarship - NSP</option>
+    <option value="Government Job Application">Government Job Application</option>
+    <option value="Certificate / Other Service">Certificate / Other Service</option>
+  </select>
+
+  <p id="ymSelectionMessage">Selected form: PM-KISAN</p>
+  <p>Form bharwane ke liye administrator se sampark karein. Yeh selection abhi application submit nahi karta.</p>
+
+  <hr style="margin:24px 0">
+
+  <h3>Admin Login</h3>
+  <p>Sirf authorized administrator customer application record bhar aur dekh sakta hai.</p>
+
+  <label for="ymEmail">Admin Email</label>
+  <input id="ymEmail" type="email" placeholder="Admin email"
+    autocomplete="username" style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+  <label for="ymPassword">Password</label>
+  <input id="ymPassword" type="password" placeholder="Firebase Auth password"
+    autocomplete="current-password" style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+  <button id="ymLogin" type="button" style="padding:12px 18px;background:#123c69;color:white;border:0;border-radius:8px">
+    Admin Login
+  </button>
+  <button id="ymLogout" type="button" hidden style="padding:12px 18px;margin-left:8px">
+    Logout
+  </button>
+
+  <p id="ymStatus" role="status">Admin login ke baad application panel khulega.</p>
+
+  <div id="ymAdminPanel" hidden>
+    <hr style="margin:24px 0">
+    <h3>Customer Application Entry</h3>
+    <p>Customer ki permission lekar details bharein. Aadhaar number, OTP, bank password ya doosri unnecessary sensitive details yahan na daalein.</p>
+
+    <form id="ymApplicationForm">
+      <label for="ymCustomerName">Customer Name</label>
+      <input id="ymCustomerName" required maxlength="100"
+        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+      <label for="ymPhone">Customer Mobile Number</label>
+      <input id="ymPhone" type="tel" maxlength="15" placeholder="Contact number"
+        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+      <label for="ymAdminCategory">Category</label>
+      <select id="ymAdminCategory" style="width:100%;padding:12px;margin:8px 0">
+        <option>Government Scheme</option>
+        <option>Scholarship</option>
+        <option>Government Job</option>
+        <option>Certificate / Other Service</option>
+      </select>
+
+      <label for="ymAdminForm">Application Form</label>
+      <input id="ymAdminForm" required maxlength="150"
+        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+
+      <label for="ymDetails">Required Details / Document Checklist</label>
+      <textarea id="ymDetails" rows="4" maxlength="4000"
+        placeholder="Application ke liye zaroori non-sensitive details..."
+        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box"></textarea>
+
+      <label for="ymApplicationStatus">Record Status</label>
+      <select id="ymApplicationStatus" style="width:100%;padding:12px;margin:8px 0">
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+      </select>
+
+      <button id="ymSave" type="submit"
+        style="padding:12px 18px;background:#137547;color:white;border:0;border-radius:8px">
+        Save Application
+      </button>
+      <button type="button" id="ymPrint"
+        style="padding:12px 18px;margin:8px;background:#123c69;color:white;border:0;border-radius:8px">
+        Print / PDF
+      </button>
+    </form>
+
+    <hr style="margin:24px 0">
+    <h3>Saved Customer Records</h3>
+    <button id="ymLoadRecords" type="button" style="padding:10px 14px">Refresh Records</button>
+    <div id="ymRecords" style="margin-top:12px;overflow-wrap:anywhere"></div>
+  </div>
+</section>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#f0f6ff;color:#1c2d42;line-height:1.6}
-
-header{
-background:linear-gradient(135deg,#092957,#1768b2,#1595c7);
-color:white;text-align:center;padding:30px 15px;
-border-radius:0 0 25px 25px
+#yojana-panel input:focus,
+#yojana-panel select:focus,
+#yojana-panel textarea:focus {
+  outline:2px solid #3678bb;
 }
-header h1{font-size:clamp(28px,7vw,40px);margin:5px}
-header p{max-width:700px;margin:10px auto 20px}
-.search{display:flex;gap:8px;max-width:650px;margin:auto}
-.search input{flex:1;min-width:0;padding:13px;border:2px solid #d5e7ff;border-radius:10px;font-size:16px}
-button{padding:12px 18px;border:none;border-radius:10px;background:linear-gradient(135deg,#ff9933,#f07816);color:white;font-weight:bold;cursor:pointer}
-
-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;padding:15px}
-nav a{background:white;border:1px solid #d5e5fa;border-radius:10px;padding:9px 13px;color:#123c69;text-decoration:none;font-weight:bold}
-
-.flag-box{text-align:center;padding:25px 15px 20px}
-.india-flag{
-width:180px;height:120px;margin:auto;position:relative;
-overflow:hidden;box-shadow:0 5px 15px #123c6930;
-transform-origin:left center;animation:flagWave 3s ease-in-out infinite;
-background:linear-gradient(to bottom,#ff9933 0%,#ff9933 33.333%,#ffffff 33.333%,#ffffff 66.666%,#138808 66.666%,#138808 100%);
-}
-.flag-chakra{position:absolute;width:31px;height:31px;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2}
-.flag-chakra svg{display:block;width:100%;height:100%}
-.flag-caption{font-weight:bold;color:#123c69;margin-top:12px}
-
-@keyframes flagWave{
-0%,100%{transform:perspective(500px) rotateY(-5deg) skewY(0deg)}
-25%{transform:perspective(500px) rotateY(3deg) skewY(1deg)}
-50%{transform:perspective(500px) rotateY(6deg) skewY(0deg)}
-75%{transform:perspective(500px) rotateY(-2deg) skewY(-1deg)}
-}
-
-main{max-width:1100px;margin:auto;padding:15px}
-.hero{background:white;border:1px solid #d5e8ff;border-radius:17px;padding:20px}
-section{margin:28px 0;scroll-margin-top:15px}
-h2{color:#123c69;border-left:5px solid #ff9933;padding-left:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:16px}
-.card{background:white;border:1px solid #e0e9f4;border-radius:16px;padding:17px;box-shadow:0 5px 18px #123c6910;overflow-wrap:anywhere}
-.card h3{color:#123c69;margin-top:0}
-.benefits{background:#eef8f1;border:1px solid #d3edda;border-radius:10px;padding:12px;margin:12px 0}
-.benefits strong{color:#176b3a}
-.benefits ul{padding-left:20px;margin-bottom:0}
-.card a,.link{display:inline-block;background:#123c69;color:white;text-decoration:none;padding:9px 12px;border-radius:8px;margin-top:5px}
-.notice{background:#fff5e7;border-left:4px solid #ff9933;padding:12px;border-radius:8px}
-.helpbox{background:white;padding:18px;border:1px solid #e0e9f4;border-radius:15px}
-.helpbox label{display:block;font-weight:bold;margin:10px 0 5px}
-.helpbox select,.helpbox textarea{width:100%;padding:12px;border:1px solid #ccd9e8;border-radius:9px;font:inherit}
-#helpResult{display:none;background:#eef8f1;padding:14px;border-radius:10px;margin-top:14px}
-footer{background:linear-gradient(145deg,#081f40,#123c69);color:white;padding:25px 18px;margin-top:35px;border-radius:20px 20px 0 0}
-footer a{color:white;margin-right:12px}
-footer details{margin-top:15px}
-footer summary{cursor:pointer;font-weight:bold}
-.small{font-size:13px;color:#63748a}
-
-@media(max-width:500px){
-header h1{font-size:29px}
-.search{flex-direction:column}
-.search button{width:100%}
-.card{padding:14px}
-.india-flag{width:150px;height:100px}
-.flag-chakra{width:27px;height:27px}
-}
-@media(prefers-reduced-motion:reduce){
-*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+#ymRecords article {
+  background:white;border:1px solid #d5dfed;border-radius:10px;
+  padding:12px;margin:10px 0;
 }
 </style>
-</head>
 
-<body>
-<header>
-<h1>YojanaMitra AI 🇮🇳</h1>
-<p>Government Schemes, Jobs, Scholarships aur Public Services ki jaankari ek jagah.</p>
-<form class="search" id="searchForm">
-<input id="searchInput" type="search" placeholder="Yojana, job ya scholarship search karein" aria-label="Search">
-<button type="submit">Search</button>
-</form>
-</header>
+<script type="module">
+import { initializeApp } from
+  "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-<nav>
-<a href="#schemes">Yojana</a>
-<a href="#jobs">Jobs</a>
-<a href="#scholarships">Scholarships</a>
-<a href="#services">Services</a>
-<a href="#quickhelp">Quick Help</a>
-<a href="#about">About</a>
-</nav>
+import {
+  getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
-<div class="flag-box">
-<div class="india-flag" role="img" aria-label="Animated Indian tricolour flag">
-<div class="flag-chakra">
-<svg viewBox="0 0 100 100" role="img" aria-label="Ashoka Chakra">
-<circle cx="50" cy="50" r="43" fill="none" stroke="#000080" stroke-width="3.5"/>
-<circle cx="50" cy="50" r="5" fill="#000080"/>
-<defs><line id="spoke" x1="50" y1="50" x2="50" y2="9" stroke="#000080" stroke-width="2.2"/></defs>
-<g>
-<use href="#spoke"/><use href="#spoke" transform="rotate(15 50 50)"/>
-<use href="#spoke" transform="rotate(30 50 50)"/><use href="#spoke" transform="rotate(45 50 50)"/>
-<use href="#spoke" transform="rotate(60 50 50)"/><use href="#spoke" transform="rotate(75 50 50)"/>
-<use href="#spoke" transform="rotate(90 50 50)"/><use href="#spoke" transform="rotate(105 50 50)"/>
-<use href="#spoke" transform="rotate(120 50 50)"/><use href="#spoke" transform="rotate(135 50 50)"/>
-<use href="#spoke" transform="rotate(150 50 50)"/><use href="#spoke" transform="rotate(165 50 50)"/>
-<use href="#spoke" transform="rotate(180 50 50)"/><use href="#spoke" transform="rotate(195 50 50)"/>
-<use href="#spoke" transform="rotate(210 50 50)"/><use href="#spoke" transform="rotate(225 50 50)"/>
-<use href="#spoke" transform="rotate(240 50 50)"/><use href="#spoke" transform="rotate(255 50 50)"/>
-<use href="#spoke" transform="rotate(270 50 50)"/><use href="#spoke" transform="rotate(285 50 50)"/>
-<use href="#spoke" transform="rotate(300 50 50)"/><use href="#spoke" transform="rotate(315 50 50)"/>
-<use href="#spoke" transform="rotate(330 50 50)"/><use href="#spoke" transform="rotate(345 50 50)"/>
-</g>
-</svg>
-</div>
-</div>
-<div class="flag-caption">🇮🇳 Proud to Be Indian</div>
-</div>
+import {
+  getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-<main>
-<div class="hero">
-<h2>Welcome to YojanaMitra AI</h2>
-<p>Government schemes ke fayde padhein, jobs aur scholarships explore karein, aur official websites se eligibility aur application details verify karein.</p>
-</div>
+const firebaseConfig = {
+  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cA",
+  authDomain: "yojanamitraai.firebaseapp.com",
+  projectId: "yojanamitraai",
+  storageBucket: "yojanamitraai.firebasestorage.app",
+  messagingSenderId: "868498347281",
+  appId: "1:868498347281:web:c78bdb845970123372a8b0"
+};
 
-<section id="schemes">
-<h2>🏛️ Government Schemes</h2>
-<div class="grid searchable">
+const ADMIN_EMAIL = "varmapratik818@gmail.com";
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-<article class="card" data-search="pm kisan farmer agriculture income support">
-<h3>🌾 PM-KISAN Samman Nidhi</h3>
-<p>Eligible farmer families ke liye income support.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>₹6,000 per year, scheme rules ke mutabik.</li><li>Aam taur par 3 instalments mein payment.</li><li>Eligibility, land records aur exclusions apply hote hain.</li></ul></div>
-<a href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
+const $ = id => document.getElementById(id);
+const status = message => $("ymStatus").textContent = message;
 
-<article class="card" data-search="ayushman bharat pm jay health hospital">
-<h3>🏥 Ayushman Bharat PM-JAY</h3>
-<p>Eligible families ke liye health cover.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Covered hospitalisation ke liye up to ₹5 lakh per eligible family per year.</li><li>Participating hospitals mein covered services ka cashless treatment.</li><li>Beneficiary eligibility aur scheme rules apply.</li></ul></div>
-<a href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
+const formOptions = [
+  {category:"Government Scheme", name:"PM-KISAN"},
+  {category:"Government Scheme", name:"Ayushman Bharat"},
+  {category:"Government Scheme", name:"PM Vishwakarma"},
+  {category:"Government Scheme", name:"PMAY"},
+  {category:"Government Scheme", name:"Ladki Bahin Yojana"},
+  {category:"Scholarship", name:"Scholarship - MahaDBT"},
+  {category:"Scholarship", name:"Scholarship - NSP"},
+  {category:"Government Job", name:"Government Job Application"},
+  {category:"Certificate / Other Service", name:"Certificate / Other Service"}
+];
 
-<article class="card" data-search="pm vishwakarma artisans craftspeople training toolkit loan">
-<h3>🛠️ PM Vishwakarma</h3>
-<p>Traditional artisans aur craftspeople ke liye support.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Eligible beneficiaries ke liye skill training aur stipend.</li><li>Toolkit incentive scheme rules ke mutabik.</li><li>Loan support aur marketing assistance conditions ke saath.</li></ul></div>
-<a href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
+function updateFormOptions() {
+  const category = $("ymCategory").value;
+  const search = $("ymSearch").value.trim().toLowerCase();
+  const matches = formOptions.filter(item =>
+    (!category || item.category === category) &&
+    item.name.toLowerCase().includes(search)
+  );
+  const select = $("ymForm");
+  const previous = select.value;
+  select.replaceChildren();
 
-<article class="card" data-search="pm svanidhi street vendors business loan">
-<h3>🛍️ PM SVANidhi</h3>
-<p>Eligible street vendors ke business ke liye support.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Working-capital loan support as per current rules.</li><li>Eligible borrowers ke liye interest subsidy ho sakti hai.</li><li>Digital-payment incentives ki conditions apply ho sakti hain.</li></ul></div>
-<a href="https://pmsvanidhi.mohua.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
+  matches.forEach(item => {
+    const option = document.createElement("option");
+    option.value = item.name;
+    option.textContent = item.name;
+    select.appendChild(option);
+  });
 
-<article class="card" data-search="pmay awas yojana housing urban rural home">
-<h3>🏠 Pradhan Mantri Awas Yojana</h3>
-<p>Eligible households ke liye housing assistance.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Housing support applicable scheme component ke mutabik.</li><li>Urban aur rural schemes ke rules alag ho sakte hain.</li><li>Assistance aur eligibility verify karein.</li></ul></div>
-<a href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal ↗</a>
-<a href="https://pmayg.nic.in/" target="_blank" rel="noopener">Rural Portal ↗</a>
-</article>
+  if (matches.some(item => item.name === previous)) select.value = previous;
+  $("ymSelectionMessage").textContent = matches.length
+    ? "Selected form: " + select.value
+    : "Is search ke liye form nahi mila.";
+}
 
-<article class="card" data-search="myscheme government scheme eligibility discovery">
-<h3>🔎 myScheme Portal</h3>
-<p>Apne details ke mutabik schemes discover karein.</p>
-<div class="benefits"><strong>Kaise help karta hai</strong><ul><li>Age, state aur occupation ke basis par schemes explore karein.</li><li>Eligibility aur benefits ki information dekhein.</li><li>Available official application links tak pahunchein.</li></ul></div>
-<p class="small">Yeh discovery portal hai, khud financial benefit scheme nahi.</p>
-<a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Explore Schemes ↗</a>
-</article>
-
-<article class="card" data-search="maharashtra ladki bahin women financial assistance">
-<h3>👩 Maharashtra Ladki Bahin Yojana</h3>
-<p>Maharashtra ki eligible women ke liye financial assistance.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Financial assistance current state rules ke mutabik.</li><li>Age, income aur other conditions apply.</li><li>Application aur payment status official portal par verify karein.</li></ul></div>
-<a href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-</div>
-</section>
-
-<section id="jobs">
-<h2>💼 Government Jobs</h2>
-<p>Vacancy, dates aur eligibility official notification se verify karein.</p>
-<div class="grid searchable">
-
-<article class="card" data-search="ssc staff selection commission central government jobs">
-<h3>Staff Selection Commission (SSC)</h3><p>Central government recruitment notices.</p>
-<div class="benefits"><strong>Kya check karein</strong><ul><li>Qualification aur age limit.</li><li>Application dates aur exam pattern.</li><li>Official notices aur admit-card updates.</li></ul></div>
-<a href="https://ssc.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-<article class="card" data-search="upsc civil services examination government jobs">
-<h3>UPSC</h3><p>Civil services aur central recruitment information.</p>
-<div class="benefits"><strong>Kya check karein</strong><ul><li>Exam calendar aur notifications.</li><li>Eligibility aur syllabus.</li><li>Results aur official announcements.</li></ul></div>
-<a href="https://upsc.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-<article class="card" data-search="maharashtra mpsc state government recruitment">
-<h3>Maharashtra Public Service Commission</h3><p>Maharashtra state recruitment information.</p>
-<div class="benefits"><strong>Kya check karein</strong><ul><li>Recruitment notifications.</li><li>Qualifications aur reservation rules.</li><li>Exam schedule aur results.</li></ul></div>
-<a href="https://mpsc.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-<article class="card" data-search="national career service employment job search">
-<h3>National Career Service</h3><p>Employment aur career-related services.</p>
-<div class="benefits"><strong>Useful features</strong><ul><li>Job-search services.</li><li>Employer aur vacancy details.</li><li>Career guidance information.</li></ul></div>
-<a href="https://www.ncs.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-</div>
-<p class="notice">Job ke liye fee dene se pehle official notification verify karein. Guaranteed government job ka wada karne walon se savdhan rahein.</p>
-</section>
-
-<section id="scholarships">
-<h2>🎓 Scholarships &amp; Education</h2>
-<div class="grid searchable">
-
-<article class="card" data-search="national scholarship portal nsp students scholarship">
-<h3>📚 National Scholarship Portal</h3><p>Listed scholarships ki information aur application access.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Eligible students ke liye scholarships explore karein.</li><li>Requirements aur deadlines check karein.</li><li>Supported applications ka status track karein.</li></ul></div>
-<a href="https://scholarships.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card" data-search="mahadbt maharashtra scholarship fees students">
-<h3>🎒 MahaDBT Maharashtra</h3><p>Maharashtra ki listed scholarship aur benefit schemes.</p>
-<div class="benefits"><strong>Fayde</strong><ul><li>Eligible students ke liye scholarship aur fee-support schemes.</li><li>Documents aur application status check karein.</li><li>Department-wise eligibility dekhein.</li></ul></div>
-<a href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card" data-search="more scholarships students eligibility">
-<h3>🔍 More Scholarships</h3><p>Course aur state ke hisaab se schemes search karein.</p>
-<div class="benefits"><strong>Apply karne se pehle</strong><ul><li>Required education documents ready rakhein.</li><li>Course aur academic-year conditions check karein.</li><li>Official portal par deadline verify karein.</li></ul></div>
-<a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes ↗</a>
-</article>
-
-</div>
-</section>
-
-<section id="services">
-<h2>📄 Public Services</h2>
-<div class="grid searchable">
-
-<article class="card" data-search="aadhaar uidai update enrolment status">
-<h3>🪪 Aadhaar Services</h3><p>Aadhaar-related official information aur services.</p>
-<div class="benefits"><strong>Useful for</strong><ul><li>Available Aadhaar services.</li><li>Update aur enrolment guidance.</li><li>Official support information.</li></ul></div>
-<a href="https://uidai.gov.in/" target="_blank" rel="noopener">UIDAI Official ↗</a>
-</article>
-
-<article class="card" data-search="passport seva application appointment">
-<h3>🛂 Passport Seva</h3><p>Passport application aur appointment services.</p>
-<div class="benefits"><strong>Useful for</strong><ul><li>Application steps aur documents.</li><li>Appointment services.</li><li>Official instructions.</li></ul></div>
-<a href="https://www.passportindia.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-<article class="card" data-search="digilocker digital documents certificates">
-<h3>📱 DigiLocker</h3><p>Supported digital documents aur certificates access karein.</p>
-<div class="benefits"><strong>Useful for</strong><ul><li>Supported issued documents access karein.</li><li>Eligible documents digitally available rakhein.</li><li>Official document services check karein.</li></ul></div>
-<a href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-<article class="card" data-search="india government national portal public services">
-<h3>🇮🇳 National Portal of India</h3><p>Government departments aur public-service information.</p>
-<div class="benefits"><strong>Useful for</strong><ul><li>Government department links.</li><li>Public-service information.</li><li>Official portals locate karna.</li></ul></div>
-<a href="https://www.india.gov.in/" target="_blank" rel="noopener">Official Website ↗</a>
-</article>
-
-</div>
-</section>
-
-<section id="quickhelp">
-<h2>🤖 Quick Help</h2>
-<p>Topic select karke relevant official portal ka link paayein. Yeh simple helper hai, live AI chatbot nahi.</p>
-<div class="helpbox">
-<label for="helpTopic">Aapko kis cheez mein help chahiye?</label>
-<select id="helpTopic">
-<option value="scheme">Government Scheme</option>
-<option value="job">Government Job</option>
-<option value="scholarship">Scholarship</option>
-<option value="aadhaar">Aadhaar Service</option>
-<option value="housing">Housing Scheme</option>
-<option value="health">Health Scheme</option>
-<option value="maharashtra">Maharashtra Scheme</option>
-</select>
-<label for="helpDetails">Apni details (optional)</label>
-<textarea id="helpDetails" rows="3" placeholder="Example: student, farmer, job seeker..."></textarea>
-<button type="button" id="helpButton" style="margin-top:12px">Find Helpful Links</button>
-<div id="helpResult" aria-live="polite"></div>
-</div>
-</section>
-
-<section id="about">
-<h2>ℹ️ About YojanaMitra AI</h2>
-<div class="card">
-<p>YojanaMitra AI ek independent information directory hai jo government schemes, jobs, scholarships aur public services ki information dhoondhne mein madad karta hai.</p>
-<p>Application approval ya benefit milne ki guarantee nahi di jaati. Latest details official website par verify karein.</p>
-<p><strong>Contact:</strong> <a class="link" href="mailto:varmapratik818@gmail.com">varmapratik818@gmail.com</a></p>
-</div>
-</section>
-
-<p class="notice"><strong>Important:</strong> YojanaMitra AI government ki official website nahi hai aur kisi department se affiliated nahi hai. Scheme benefits, eligibility aur deadlines badal sakte hain. Apply karne se pehle official portal par details verify karein.</p>
-</main>
-
-<footer>
-<h2 style="color:white">YojanaMitra AI 🇮🇳</h2>
-<p>Government information ko aasaan tareeke se explore karein.</p>
-<a href="#about">About Us</a>
-<a href="mailto:varmapratik818@gmail.com">Contact Us</a>
-
-<details id="privacy">
-<summary>Privacy Policy</summary>
-<p>Is version mein account registration ya server-side personal-details form nahi hai. Search aur Quick Help browser mein kaam karte hain. Agar future mein analytics, advertising, cookies ya third-party services add ki jaati hain, toh policy update karni hogi. External websites ki apni privacy policies hoti hain.</p>
-</details>
-
-<details id="disclaimer">
-<summary>Disclaimer</summary>
-<p>Yeh independent information directory hai, official government portal nahi. Scheme aur job details badal sakti hain. Official website par verify karein aur guaranteed jobs ya benefits ka wada karne walon se savdhan rahein.</p>
-</details>
-
-<p class="small" style="color:#e3edf8;border-top:1px solid #ffffff30;padding-top:12px">© <span id="year"></span> YojanaMitra AI. All rights reserved.</p>
-</footer>
-
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
-
-document.getElementById("searchForm").addEventListener("submit",function(event){
- event.preventDefault();
- const query=document.getElementById("searchInput").value.trim().toLowerCase();
- const cards=document.querySelectorAll(".card[data-search]");
- let count=0;
-
- cards.forEach(function(card){
-  const text=(card.innerText+" "+card.dataset.search).toLowerCase();
-  const found=!query||text.includes(query);
-  card.style.display=found?"":"none";
-  if(found)count++;
- });
-
- let message=document.getElementById("searchMessage");
- if(!message){
-  message=document.createElement("p");
-  message.id="searchMessage";
-  message.className="notice";
-  document.querySelector("nav").insertAdjacentElement("afterend",message);
- }
- message.textContent=query?(count+" matching cards found."):"Showing all items.";
- message.scrollIntoView({behavior:"smooth",block:"nearest"});
+$("ymCategory").addEventListener("change", updateFormOptions);
+$("ymSearch").addEventListener("input", updateFormOptions);
+$("ymForm").addEventListener("change", () => {
+  $("ymSelectionMessage").textContent = "Selected form: " + $("ymForm").value;
 });
 
-document.getElementById("helpButton").addEventListener("click",function(){
- const choices={
-  scheme:["Explore government schemes","https://www.myscheme.gov.in/"],
-  job:["Government job information","https://www.ncs.gov.in/"],
-  scholarship:["National Scholarship Portal","https://scholarships.gov.in/"],
-  aadhaar:["UIDAI Aadhaar services","https://uidai.gov.in/"],
-  housing:["PM Awas Yojana Urban","https://pmay-urban.gov.in/"],
-  health:["Ayushman Bharat PM-JAY","https://pmjay.gov.in/"],
-  maharashtra:["MahaDBT Maharashtra","https://mahadbt.maharashtra.gov.in/"]
- };
-
- const choice=choices[document.getElementById("helpTopic").value];
- const details=document.getElementById("helpDetails").value.trim();
- const result=document.getElementById("helpResult");
-
- result.replaceChildren();
-
- const title=document.createElement("strong");
- title.textContent=choice[0];
- result.appendChild(title);
-
- const p=document.createElement("p");
- p.textContent=details
- ? "Aapki note: "+details+". Official website par eligibility aur latest rules check karein."
- : "Official website par eligibility aur application instructions check karein.";
- result.appendChild(p);
-
- const a=document.createElement("a");
- a.className="link";
- a.href=choice[1];
- a.target="_blank";
- a.rel="noopener";
- a.textContent="Open Official Website ↗";
- result.appendChild(a);
-
- result.style.display="block";
+$("ymLogin").addEventListener("click", async () => {
+  const email = $("ymEmail").value.trim().toLowerCase();
+  const password = $("ymPassword").value;
+  if (email !== ADMIN_EMAIL.toLowerCase()) {
+    status("Is email ko admin access nahi diya gaya hai.");
+    return;
+  }
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    $("ymPassword").value = "";
+  } catch (error) {
+    status("Login fail hua: " + error.message);
+  }
 });
+
+$("ymLogout").addEventListener("click", async () => {
+  try {
+    await signOut(auth);
+    $("ymRecords").replaceChildren();
+  } catch (error) {
+    status("Logout error: " + error.message);
+  }
+});
+
+onAuthStateChanged(auth, user => {
+  const isAdmin = !!user && user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+  if (user && !isAdmin) signOut(auth).catch(() => {});
+  $("ymAdminPanel").hidden = !isAdmin;
+  $("ymLogout").hidden = !isAdmin;
+  $("ymLogin").hidden = isAdmin;
+  $("ymEmail").hidden = isAdmin;
+  $("ymPassword").hidden = isAdmin;
+
+  if (isAdmin) {
+    status("Admin login successful. Ab customer form bhar sakte hain.");
+  } else if (!user) {
+    status("Admin login karein.");
+  }
+});
+
+$("ymApplicationForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  if (!auth.currentUser ||
+      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+    status("Pehle authorized admin login karein.");
+    return;
+  }
+
+  const name = $("ymCustomerName").value.trim();
+  const phone = $("ymPhone").value.trim();
+  const selectedForm = $("ymAdminForm").value.trim();
+  if (!name || !selectedForm) {
+    status("Customer name aur application form zaroori hain.");
+    return;
+  }
+
+  $("ymSave").disabled = true;
+  try {
+    await addDoc(collection(db, "customerApplications"), {
+      customerName: name,
+      customerPhone: phone,
+      category: $("ymAdminCategory").value,
+      formName: selectedForm,
+      details: $("ymDetails").value.trim(),
+      applicationStatus: $("ymApplicationStatus").value,
+      createdAt: serverTimestamp(),
+      createdBy: auth.currentUser.uid
+    });
+    status("Application save ho gayi.");
+    $("ymApplicationForm").reset();
+    await loadRecords();
+  } catch (error) {
+    status("Save nahi hua: " + error.message +
+      ". Firestore security rules aur admin login check karein.");
+  } finally {
+    $("ymSave").disabled = false;
+  }
+});
+
+async function loadRecords() {
+  if (!auth.currentUser ||
+      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+    status("Records dekhne ke liye admin login zaroori hai.");
+    return;
+  }
+
+  const container = $("ymRecords");
+  container.replaceChildren();
+  try {
+    const recordsQuery = query(
+      collection(db, "customerApplications"),
+      orderBy("createdAt", "desc")
+    );
+    const snapshot = await getDocs(recordsQuery);
+
+    if (snapshot.empty) {
+      container.textContent = "Abhi koi saved record nahi hai.";
+      return;
+    }
+
+    snapshot.forEach(docSnap => {
+      const data = docSnap.data();
+      const article = document.createElement("article");
+      const heading = document.createElement("strong");
+      heading.textContent = data.customerName || "Unnamed customer";
+      const details = document.createElement("p");
+      details.textContent =
+        "Form: " + (data.formName || "") +
+        " | Category: " + (data.category || "") +
+        " | Status: " + (data.applicationStatus || "") +
+        " | Phone: " + (data.customerPhone || "") +
+        " | Details: " + (data.details || "");
+      article.append(heading, details);
+      container.appendChild(article);
+    });
+    status("Saved records load ho gaye.");
+  } catch (error) {
+    status("Records load nahi hue: " + error.message +
+      ". Firestore rules check karein.");
+  }
+}
+
+$("ymLoadRecords").addEventListener("click", loadRecords);
+$("ymPrint").addEventListener("click", () => window.print());
+
+updateFormOptions();
 </script>
-</body>
-</html>
