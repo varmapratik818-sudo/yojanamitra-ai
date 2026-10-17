@@ -1,128 +1,224 @@
 
-<!-- YOJANAMITRA AI -->
-<section id="yojana-panel" style="padding:20px;margin:20px auto;max-width:900px;background:#f4f8ff;border-radius:16px;color:#172b4d;font-family:Arial,sans-serif">
-  <h2>YojanaMitra AI</h2>
-  <p>Apni zaroorat ka form category aur search se chunein.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123c69">
+  <meta name="description" content="YojanaMitra AI - Government schemes, scholarships, jobs and application records.">
+  <title>YojanaMitra AI</title>
 
-  <label for="ymCategory">Form Category</label>
-  <select id="ymCategory" style="width:100%;padding:12px;margin:8px 0">
-    <option value="">Sabhi Categories</option>
-    <option>Government Scheme</option>
-    <option>Scholarship</option>
-    <option>Government Job</option>
-    <option>Certificate / Other Service</option>
-  </select>
+  <style>
+    * { box-sizing: border-box; }
 
-  <label for="ymSearch">Form Search</label>
-  <input id="ymSearch" placeholder="PM-KISAN, Scholarship, Job..."
-    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+    body {
+      margin: 0;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      background: #eef3f9;
+      color: #172b4d;
+    }
 
-  <label for="ymForm">Form Select Karein</label>
-  <select id="ymForm" style="width:100%;padding:12px;margin:8px 0"></select>
-  <p id="ymSelectionMessage">Form select karein.</p>
+    .panel {
+      max-width: 900px;
+      margin: 12px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 3px 14px #00000012;
+    }
 
-  <p>Form bharwane ke liye administrator se sampark karein.</p>
+    h1, h2, h3 { color: #123c69; }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #c7d2e2;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    button {
+      padding: 12px 16px;
+      margin: 10px 6px 4px 0;
+      border: 0;
+      border-radius: 7px;
+      background: #123c69;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
+
+    .green { background: #137547; }
+    .orange { background: #8a4b08; }
+    .notice {
+      padding: 12px;
+      margin: 12px 0;
+      background: #f1f6ff;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    article {
+      padding: 14px;
+      margin: 12px 0;
+      border: 1px solid #d5dfed;
+      border-radius: 8px;
+      background: #fff;
+      overflow-wrap: anywhere;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .no-print, button { display: none !important; }
+      .panel { box-shadow: none; margin: 0; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="panel">
+  <h1>YojanaMitra AI</h1>
+  <p>Government schemes, scholarships, jobs aur application records.</p>
+
+  <section class="no-print">
+    <h2>Form Search</h2>
+
+    <label for="ymCategory">Form Category</label>
+    <select id="ymCategory">
+      <option value="">Sabhi Categories</option>
+      <option>Government Scheme</option>
+      <option>Scholarship</option>
+      <option>Government Job</option>
+      <option>Certificate / Other Service</option>
+    </select>
+
+    <label for="ymSearch">Form Search</label>
+    <input id="ymSearch" placeholder="PM-KISAN, Scholarship, Job...">
+
+    <label for="ymForm">Form Select Karein</label>
+    <select id="ymForm"></select>
+    <p id="ymSelectionMessage" class="notice"></p>
+    <p>Application bharwane ke liye administrator se sampark karein.</p>
+  </section>
+
   <hr>
 
-  <h3>Admin Login</h3>
-  <label for="ymEmail">Admin Email</label>
-  <input id="ymEmail" type="email" autocomplete="username"
-    placeholder="Admin email"
-    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+  <section class="no-print">
+    <h2>Admin Login</h2>
 
-  <label for="ymPassword">Password</label>
-  <input id="ymPassword" type="password" autocomplete="current-password"
-    placeholder="Firebase Auth password"
-    style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+    <label for="ymEmail">Admin Email</label>
+    <input id="ymEmail" type="email" autocomplete="username"
+      placeholder="Admin email">
 
-  <button id="ymLogin" type="button">Admin Login</button>
-  <button id="ymLogout" type="button" hidden>Logout</button>
-  <p id="ymStatus" role="status">Admin login karein.</p>
+    <label for="ymPassword">Password</label>
+    <input id="ymPassword" type="password"
+      autocomplete="current-password" placeholder="Admin password">
 
-  <div id="ymAdminPanel" hidden>
+    <button id="ymLogin" type="button">Admin Login</button>
+    <button id="ymLogout" type="button" hidden>Logout</button>
+    <button id="ymVerify" type="button" hidden>Verification Email Bhejein</button>
+    <button id="ymRefreshAuth" type="button" hidden>
+      Email Verify Karne Ke Baad Check Karein
+    </button>
+
+    <p id="ymStatus" class="notice" role="status" aria-live="polite">
+      Admin login karein.
+    </p>
+  </section>
+
+  <section id="ymAdminPanel" hidden>
     <hr>
-    <h3>Customer Application Entry</h3>
-    <p>Customer ki permission lekar details bharein. Aadhaar, OTP aur bank password save na karein.</p>
+    <h2>Customer Application Entry</h2>
+    <p>
+      Customer ki permission lekar hi details bharein.
+      Aadhaar, OTP, bank password ya unnecessary sensitive details save na karein.
+    </p>
 
     <form id="ymApplicationForm">
-      <label for="ymCustomerName">Customer Name</label>
-      <input id="ymCustomerName" required maxlength="100"
-        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+      <label for="ymCustomerName">Customer Name *</label>
+      <input id="ymCustomerName" required maxlength="100">
 
       <label for="ymPhone">Customer Mobile Number</label>
       <input id="ymPhone" type="tel" maxlength="15"
-        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+        placeholder="Contact number">
 
       <label for="ymAdminCategory">Category</label>
-      <select id="ymAdminCategory" style="width:100%;padding:12px;margin:8px 0">
+      <select id="ymAdminCategory">
         <option>Government Scheme</option>
         <option>Scholarship</option>
         <option>Government Job</option>
         <option>Certificate / Other Service</option>
       </select>
 
-      <label for="ymAdminForm">Application Form</label>
+      <label for="ymAdminForm">Application Form *</label>
       <input id="ymAdminForm" required maxlength="150"
-        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box">
+        placeholder="PM-KISAN etc.">
 
       <label for="ymDetails">Required Details / Document Checklist</label>
       <textarea id="ymDetails" rows="4" maxlength="4000"
-        style="width:100%;padding:12px;margin:8px 0;box-sizing:border-box"></textarea>
+        placeholder="Required non-sensitive details"></textarea>
 
       <label for="ymApplicationStatus">Record Status</label>
-      <select id="ymApplicationStatus" style="width:100%;padding:12px;margin:8px 0">
+      <select id="ymApplicationStatus">
         <option>Pending</option>
         <option>In Progress</option>
         <option>Completed</option>
       </select>
 
-      <button id="ymSave" type="submit">Save Application</button>
+      <button id="ymSave" class="green" type="submit">
+        Save Application
+      </button>
       <button id="ymPrint" type="button">Print / PDF</button>
     </form>
 
     <hr>
-    <h3>Saved Customer Records</h3>
+    <h2>Saved Customer Records</h2>
     <button id="ymLoadRecords" type="button">Refresh Records</button>
-    <div id="ymRecords" style="margin-top:12px;overflow-wrap:anywhere"></div>
-  </div>
-</section>
-
-<style>
-#yojana-panel input:focus,
-#yojana-panel select:focus,
-#yojana-panel textarea:focus {
-  outline:2px solid #3678bb;
-}
-#ymRecords article {
-  background:white;
-  border:1px solid #d5dfed;
-  border-radius:10px;
-  padding:12px;
-  margin:10px 0;
-}
-@media print {
-  body * { visibility:hidden; }
-  #yojana-panel, #yojana-panel * { visibility:visible; }
-  #yojana-panel { position:absolute;left:0;top:0;width:95%;max-width:none; }
-  #ymLogin,#ymLogout,#ymSave,#ymPrint,#ymLoadRecords { display:none!important; }
-}
-</style>
+    <div id="ymRecords"></div>
+  </section>
+</main>
 
 <script type="module">
-import { initializeApp, getApps, getApp } from
+import { initializeApp } from
   "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
 import {
-  getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  sendEmailVerification,
+  reload
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
 import {
-  getFirestore, collection, addDoc, getDocs, query,
-  orderBy, serverTimestamp
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cwA",
+  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cw",
   authDomain: "yojanamitraai.firebaseapp.com",
   projectId: "yojanamitraai",
   storageBucket: "yojanamitraai.firebasestorage.app",
@@ -131,57 +227,110 @@ const firebaseConfig = {
 };
 
 const ADMIN_EMAIL = "varmapratik818@gmail.com";
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const $ = id => document.getElementById(id);
-const status = message => $("ymStatus").textContent = message;
+
+function status(message) {
+  $("ymStatus").textContent = message;
+}
 
 const formOptions = [
-  {category:"Government Scheme",name:"PM-KISAN"},
-  {category:"Government Scheme",name:"Ayushman Bharat"},
-  {category:"Government Scheme",name:"PM Vishwakarma"},
-  {category:"Government Scheme",name:"PMAY Housing Scheme"},
-  {category:"Government Scheme",name:"Maharashtra Ladki Bahin Yojana"},
-  {category:"Scholarship",name:"Scholarship - MahaDBT"},
-  {category:"Scholarship",name:"Scholarship - NSP"},
-  {category:"Government Job",name:"Government Job Application"},
-  {category:"Certificate / Other Service",name:"Certificate / Other Service"}
+  {category: "Government Scheme", name: "PM-KISAN"},
+  {category: "Government Scheme", name: "Ayushman Bharat"},
+  {category: "Government Scheme", name: "PM Vishwakarma"},
+  {category: "Government Scheme", name: "PMAY Housing Scheme"},
+  {category: "Government Scheme", name: "Ladki Bahin Yojana"},
+  {category: "Scholarship", name: "Scholarship - MahaDBT"},
+  {category: "Scholarship", name: "Scholarship - NSP"},
+  {category: "Government Job", name: "Government Job Application"},
+  {category: "Certificate / Other Service", name: "Certificate / Other Service"}
 ];
 
 function updateFormOptions() {
   const category = $("ymCategory").value;
   const search = $("ymSearch").value.trim().toLowerCase();
+
   const matches = formOptions.filter(item =>
     (!category || item.category === category) &&
     item.name.toLowerCase().includes(search)
   );
+
   const select = $("ymForm");
   select.replaceChildren();
 
-  matches.forEach(item => {
+  for (const item of matches) {
     const option = document.createElement("option");
     option.value = item.name;
     option.textContent = item.name;
     select.appendChild(option);
-  });
+  }
 
   $("ymSelectionMessage").textContent = matches.length
     ? "Selected form: " + select.value
     : "Is search ke liye form nahi mila.";
-  if (!matches.length) {
-    $("ymAdminForm").value = "";
-  } else {
-    $("ymAdminForm").value = select.value;
-  }
 }
 
 $("ymCategory").addEventListener("change", updateFormOptions);
 $("ymSearch").addEventListener("input", updateFormOptions);
+
 $("ymForm").addEventListener("change", () => {
-  $("ymSelectionMessage").textContent = "Selected form: " + $("ymForm").value;
-  $("ymAdminForm").value = $("ymForm").value;
+  $("ymSelectionMessage").textContent =
+    "Selected form: " + $("ymForm").value;
 });
+
+function showAdminPanel(isAdmin) {
+  $("ymAdminPanel").hidden = !isAdmin;
+  $("ymLogout").hidden = !isAdmin;
+  $("ymLogin").hidden = isAdmin;
+  $("ymEmail").hidden = isAdmin;
+  $("ymPassword").hidden = isAdmin;
+}
+
+async function refreshAuthStatus() {
+  const user = auth.currentUser;
+
+  if (!user) {
+    showAdminPanel(false);
+    $("ymVerify").hidden = true;
+    $("ymRefreshAuth").hidden = true;
+    status("Admin login karein.");
+    return;
+  }
+
+  if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+    showAdminPanel(false);
+    status("Is email ko admin access nahi diya gaya hai.");
+    await signOut(auth);
+    return;
+  }
+
+  try {
+    await reload(user);
+    await user.getIdToken(true);
+  } catch (error) {
+    status("Account status check nahi hua: " + error.message);
+    return;
+  }
+
+  if (!auth.currentUser?.emailVerified) {
+    showAdminPanel(false);
+    $("ymVerify").hidden = false;
+    $("ymRefreshAuth").hidden = false;
+    status(
+      "Email abhi verified nahi hai. Verification Email Bhejein dabayein. " +
+      "Email ke link par click karne ke baad wapas aakar check karein."
+    );
+    return;
+  }
+
+  $("ymVerify").hidden = true;
+  $("ymRefreshAuth").hidden = false;
+  showAdminPanel(true);
+  status("Admin login successful. Email verified hai.");
+}
 
 $("ymLogin").addEventListener("click", async () => {
   const email = $("ymEmail").value.trim().toLowerCase();
@@ -191,56 +340,73 @@ $("ymLogin").addEventListener("click", async () => {
     status("Is email ko admin access nahi diya gaya hai.");
     return;
   }
-  if (!email || !password) {
-    status("Admin email aur password bharein.");
+
+  if (!password) {
+    status("Password bharein.");
     return;
   }
 
   $("ymLogin").disabled = true;
   status("Login ho raha hai...");
+
   try {
     await signInWithEmailAndPassword(auth, email, password);
     $("ymPassword").value = "";
+    await refreshAuthStatus();
   } catch (error) {
-    console.error("Firebase login error:", error.code, error.message);
     status("Login fail hua: " + error.code + " — " + error.message);
   } finally {
     $("ymLogin").disabled = false;
   }
 });
 
+$("ymVerify").addEventListener("click", async () => {
+  const user = auth.currentUser;
+
+  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
+    status("Pehle admin login karein.");
+    return;
+  }
+
+  try {
+    await reload(user);
+
+    if (user.emailVerified) {
+      await user.getIdToken(true);
+      await refreshAuthStatus();
+      return;
+    }
+
+    await sendEmailVerification(user);
+    status(
+      "Verification email bhej diya gaya hai. Apna email inbox kholein, " +
+      "Firebase ka verification link click karein, phir yahan wapas aayein."
+    );
+  } catch (error) {
+    status("Verification email nahi bheja gaya: " +
+      error.code + " — " + error.message);
+  }
+});
+
+$("ymRefreshAuth").addEventListener("click", refreshAuthStatus);
+
 $("ymLogout").addEventListener("click", async () => {
   try {
     await signOut(auth);
     $("ymRecords").replaceChildren();
-    status("Logout ho gaya.");
+    status("Logout successful.");
   } catch (error) {
     status("Logout error: " + error.message);
   }
 });
 
-onAuthStateChanged(auth, user => {
-  const isAdmin = !!user &&
-    user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
-
-  $("ymAdminPanel").hidden = !isAdmin;
-  $("ymLogout").hidden = !isAdmin;
-  $("ymLogin").hidden = isAdmin;
-  $("ymEmail").hidden = isAdmin;
-  $("ymPassword").hidden = isAdmin;
-
-  if (user && !isAdmin) {
-    status("Admin access allowed nahi hai.");
-    signOut(auth).catch(console.error);
-  } else if (isAdmin) {
-    status("Admin login successful.");
-  } else {
-    status("Admin login karein.");
-  }
+onAuthStateChanged(auth, async () => {
+  await refreshAuthStatus();
 });
 
 $("ymApplicationForm").addEventListener("submit", async event => {
   event.preventDefault();
+
   const user = auth.currentUser;
 
   if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
@@ -248,8 +414,20 @@ $("ymApplicationForm").addEventListener("submit", async event => {
     return;
   }
 
+  try {
+    await reload(user);
+    await user.getIdToken(true);
+  } catch (error) {
+    status("Login status check nahi hua: " + error.message);
+    return;
+  }
+
+  if (!user.emailVerified) {
+    status("Pehle admin email verify karein.");
+    return;
+  }
+
   const name = $("ymCustomerName").value.trim();
-  const phone = $("ymPhone").value.trim();
   const selectedForm = $("ymAdminForm").value.trim();
 
   if (!name || !selectedForm) {
@@ -258,10 +436,12 @@ $("ymApplicationForm").addEventListener("submit", async event => {
   }
 
   $("ymSave").disabled = true;
+  status("Application save ho rahi hai...");
+
   try {
     await addDoc(collection(db, "customerApplications"), {
       customerName: name,
-      customerPhone: phone,
+      customerPhone: $("ymPhone").value.trim(),
       category: $("ymAdminCategory").value,
       formName: selectedForm,
       details: $("ymDetails").value.trim(),
@@ -269,6 +449,7 @@ $("ymApplicationForm").addEventListener("submit", async event => {
       createdAt: serverTimestamp(),
       createdBy: user.uid
     });
+
     status("Application save ho gayi.");
     $("ymApplicationForm").reset();
     await loadRecords();
@@ -282,22 +463,33 @@ $("ymApplicationForm").addEventListener("submit", async event => {
 
 async function loadRecords() {
   const user = auth.currentUser;
+
   if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
     status("Records dekhne ke liye admin login zaroori hai.");
     return;
   }
 
-  const container = $("ymRecords");
-  container.replaceChildren();
   try {
+    await reload(user);
+    await user.getIdToken(true);
+
+    if (!user.emailVerified) {
+      status("Records dekhne se pehle admin email verify karein.");
+      return;
+    }
+
     const recordsQuery = query(
       collection(db, "customerApplications"),
       orderBy("createdAt", "desc")
     );
+
     const snapshot = await getDocs(recordsQuery);
+    const container = $("ymRecords");
+    container.replaceChildren();
 
     if (snapshot.empty) {
       container.textContent = "Abhi koi saved record nahi hai.";
+      status("Koi saved record nahi mila.");
       return;
     }
 
@@ -305,9 +497,9 @@ async function loadRecords() {
       const data = docSnap.data();
       const article = document.createElement("article");
       const heading = document.createElement("strong");
-      heading.textContent = data.customerName || "Unnamed customer";
-
       const details = document.createElement("p");
+
+      heading.textContent = data.customerName || "Unnamed customer";
       details.textContent =
         "Form: " + (data.formName || "") +
         " | Category: " + (data.category || "") +
@@ -318,7 +510,8 @@ async function loadRecords() {
       article.append(heading, details);
       container.appendChild(article);
     });
-    status("Saved records load ho gaye.");
+
+    status("Saved customer records load ho gaye.");
   } catch (error) {
     console.error("Firestore read error:", error);
     status("Records load nahi hue: " + error.code + " — " + error.message);
@@ -330,3 +523,5 @@ $("ymPrint").addEventListener("click", () => window.print());
 
 updateFormOptions();
 </script>
+</body>
+</html>
