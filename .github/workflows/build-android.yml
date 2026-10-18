@@ -1,8 +1,11 @@
 
-name: Build YojanaMitra AI APK
+name: Build YojanaMitra AI Android APK
 
 on:
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -12,26 +15,53 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Show website files
-        run: |
-          echo "YojanaMitra AI source files:"
-          ls -la
-          test -f index.html
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Prepare website package
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Prepare website files
         run: |
-          mkdir -p app-package
-          cp index.html app-package/
+          mkdir -p www
+          cp index.html www/
           if [ -f maharashtra-guide.html ]; then
-            cp maharashtra-guide.html app-package/
+            cp maharashtra-guide.html www/
           fi
           if [ -f vacancies.json ]; then
-            cp vacancies.json app-package/
+            cp vacancies.json www/
           fi
-          echo "Website files prepared."
 
-      - name: Upload website package
+      - name: Install Capacitor
+        run: |
+          npm init -y
+          npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+
+      - name: Configure Android app
+        run: |
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.yojanamitraai.app",
+            "appName": "YojanaMitra AI",
+            "webDir": "www"
+          }
+          EOF
+          npx cap add android
+          npx cap sync android
+
+      - name: Build APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: yojanamitra-ai-website
-          path: app-package/
+          name: yojanamitra-ai-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
