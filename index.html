@@ -64,6 +64,7 @@
 
     .green { background: #137547; }
     .orange { background: #8a4b08; }
+
     .notice {
       padding: 12px;
       margin: 12px 0;
@@ -113,6 +114,7 @@
 
     <label for="ymForm">Form Select Karein</label>
     <select id="ymForm"></select>
+
     <p id="ymSelectionMessage" class="notice"></p>
     <p>Application bharwane ke liye administrator se sampark karein.</p>
   </section>
@@ -123,8 +125,8 @@
     <h2>Admin Login</h2>
 
     <label for="ymEmail">Admin Email</label>
-    <input id="ymEmail" type="email" autocomplete="username"
-      placeholder="Admin email">
+    <input id="ymEmail" type="email"
+      autocomplete="username" placeholder="Admin email">
 
     <label for="ymPassword">Password</label>
     <input id="ymPassword" type="password"
@@ -132,7 +134,11 @@
 
     <button id="ymLogin" type="button">Admin Login</button>
     <button id="ymLogout" type="button" hidden>Logout</button>
-    <button id="ymVerify" type="button" hidden>Verification Email Bhejein</button>
+
+    <button id="ymVerify" type="button" hidden>
+      Verification Email Bhejein
+    </button>
+
     <button id="ymRefreshAuth" type="button" hidden>
       Email Verify Karne Ke Baad Check Karein
     </button>
@@ -145,6 +151,7 @@
   <section id="ymAdminPanel" hidden>
     <hr>
     <h2>Customer Application Entry</h2>
+
     <p>
       Customer ki permission lekar hi details bharein.
       Aadhaar, OTP, bank password ya unnecessary sensitive details save na karein.
@@ -184,11 +191,13 @@
       <button id="ymSave" class="green" type="submit">
         Save Application
       </button>
+
       <button id="ymPrint" type="button">Print / PDF</button>
     </form>
 
     <hr>
     <h2>Saved Customer Records</h2>
+
     <button id="ymLoadRecords" type="button">Refresh Records</button>
     <div id="ymRecords"></div>
   </section>
@@ -217,8 +226,14 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
+/*
+  IMPORTANT:
+  Firebase Console > Project settings > General
+  mein Web API Key ko verify karein.
+  Key bilkul wahi honi chahiye jo Firebase Console mein hai.
+*/
 const firebaseConfig = {
-  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cw",
+  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cwA",
   authDomain: "yojanamitraai.firebaseapp.com",
   projectId: "yojanamitraai",
   storageBucket: "yojanamitraai.firebasestorage.app",
@@ -231,6 +246,7 @@ const ADMIN_EMAIL = "varmapratik818@gmail.com";
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+
 const $ = id => document.getElementById(id);
 
 function status(message) {
@@ -238,15 +254,18 @@ function status(message) {
 }
 
 const formOptions = [
-  {category: "Government Scheme", name: "PM-KISAN"},
-  {category: "Government Scheme", name: "Ayushman Bharat"},
-  {category: "Government Scheme", name: "PM Vishwakarma"},
-  {category: "Government Scheme", name: "PMAY Housing Scheme"},
-  {category: "Government Scheme", name: "Ladki Bahin Yojana"},
-  {category: "Scholarship", name: "Scholarship - MahaDBT"},
-  {category: "Scholarship", name: "Scholarship - NSP"},
-  {category: "Government Job", name: "Government Job Application"},
-  {category: "Certificate / Other Service", name: "Certificate / Other Service"}
+  { category: "Government Scheme", name: "PM-KISAN" },
+  { category: "Government Scheme", name: "Ayushman Bharat" },
+  { category: "Government Scheme", name: "PM Vishwakarma" },
+  { category: "Government Scheme", name: "PMAY Housing Scheme" },
+  { category: "Government Scheme", name: "Ladki Bahin Yojana" },
+  { category: "Scholarship", name: "Scholarship - MahaDBT" },
+  { category: "Scholarship", name: "Scholarship - NSP" },
+  { category: "Government Job", name: "Government Job Application" },
+  {
+    category: "Certificate / Other Service",
+    name: "Certificate / Other Service"
+  }
 ];
 
 function updateFormOptions() {
@@ -261,11 +280,18 @@ function updateFormOptions() {
   const select = $("ymForm");
   select.replaceChildren();
 
-  for (const item of matches) {
+  if (matches.length === 0) {
     const option = document.createElement("option");
-    option.value = item.name;
-    option.textContent = item.name;
+    option.value = "";
+    option.textContent = "Koi form nahi mila";
     select.appendChild(option);
+  } else {
+    for (const item of matches) {
+      const option = document.createElement("option");
+      option.value = item.name;
+      option.textContent = item.name;
+      select.appendChild(option);
+    }
   }
 
   $("ymSelectionMessage").textContent = matches.length
@@ -277,8 +303,9 @@ $("ymCategory").addEventListener("change", updateFormOptions);
 $("ymSearch").addEventListener("input", updateFormOptions);
 
 $("ymForm").addEventListener("change", () => {
-  $("ymSelectionMessage").textContent =
-    "Selected form: " + $("ymForm").value;
+  $("ymSelectionMessage").textContent = $("ymForm").value
+    ? "Selected form: " + $("ymForm").value
+    : "Is search ke liye form nahi mila.";
 });
 
 function showAdminPanel(isAdmin) {
@@ -302,6 +329,8 @@ async function refreshAuthStatus() {
 
   if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
     showAdminPanel(false);
+    $("ymVerify").hidden = true;
+    $("ymRefreshAuth").hidden = true;
     status("Is email ko admin access nahi diya gaya hai.");
     await signOut(auth);
     return;
@@ -319,6 +348,7 @@ async function refreshAuthStatus() {
     showAdminPanel(false);
     $("ymVerify").hidden = false;
     $("ymRefreshAuth").hidden = false;
+
     status(
       "Email abhi verified nahi hai. Verification Email Bhejein dabayein. " +
       "Email ke link par click karne ke baad wapas aakar check karein."
@@ -354,6 +384,7 @@ $("ymLogin").addEventListener("click", async () => {
     $("ymPassword").value = "";
     await refreshAuthStatus();
   } catch (error) {
+    console.error("Firebase login error:", error);
     status("Login fail hua: " + error.code + " — " + error.message);
   } finally {
     $("ymLogin").disabled = false;
@@ -371,20 +402,24 @@ $("ymVerify").addEventListener("click", async () => {
   try {
     await reload(user);
 
-    if (user.emailVerified) {
-      await user.getIdToken(true);
+    if (auth.currentUser?.emailVerified) {
+      await auth.currentUser.getIdToken(true);
       await refreshAuthStatus();
       return;
     }
 
     await sendEmailVerification(user);
+
     status(
       "Verification email bhej diya gaya hai. Apna email inbox kholein, " +
       "Firebase ka verification link click karein, phir yahan wapas aayein."
     );
   } catch (error) {
-    status("Verification email nahi bheja gaya: " +
-      error.code + " — " + error.message);
+    console.error("Email verification error:", error);
+    status(
+      "Verification email nahi bheja gaya: " +
+      error.code + " — " + error.message
+    );
   }
 });
 
@@ -422,7 +457,7 @@ $("ymApplicationForm").addEventListener("submit", async event => {
     return;
   }
 
-  if (!user.emailVerified) {
+  if (!auth.currentUser?.emailVerified) {
     status("Pehle admin email verify karein.");
     return;
   }
@@ -473,7 +508,7 @@ async function loadRecords() {
     await reload(user);
     await user.getIdToken(true);
 
-    if (!user.emailVerified) {
+    if (!auth.currentUser?.emailVerified) {
       status("Records dekhne se pehle admin email verify karein.");
       return;
     }
@@ -500,6 +535,7 @@ async function loadRecords() {
       const details = document.createElement("p");
 
       heading.textContent = data.customerName || "Unnamed customer";
+
       details.textContent =
         "Form: " + (data.formName || "") +
         " | Category: " + (data.category || "") +
@@ -519,7 +555,10 @@ async function loadRecords() {
 }
 
 $("ymLoadRecords").addEventListener("click", loadRecords);
-$("ymPrint").addEventListener("click", () => window.print());
+
+$("ymPrint").addEventListener("click", () => {
+  window.print();
+});
 
 updateFormOptions();
 </script>
