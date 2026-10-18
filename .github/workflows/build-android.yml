@@ -1,0 +1,37 @@
+
+name: Build YojanaMitra AI APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show website files
+        run: |
+          echo "YojanaMitra AI source files:"
+          ls -la
+          test -f index.html
+
+      - name: Prepare website package
+        run: |
+          mkdir -p app-package
+          cp index.html app-package/
+          if [ -f maharashtra-guide.html ]; then
+            cp maharashtra-guide.html app-package/
+          fi
+          if [ -f vacancies.json ]; then
+            cp vacancies.json app-package/
+          fi
+          echo "Website files prepared."
+
+      - name: Upload website package
+        uses: actions/upload-artifact@v4
+        with:
+          name: yojanamitra-ai-website
+          path: app-package/
