@@ -2,565 +2,783 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#123c69">
-  <meta name="description" content="YojanaMitra AI - Government schemes, scholarships, jobs and application records.">
-  <title>YojanaMitra AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#123c69">
+<meta name="description" content="YojanaMitra AI: Government schemes, scholarships, jobs and application assistance.">
+<title>YojanaMitra AI</title>
 
-  <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 16px;
-      font-family: Arial, sans-serif;
-      background: #eef3f9;
-      color: #172b4d;
-    }
-
-    .panel {
-      max-width: 900px;
-      margin: 12px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 3px 14px #00000012;
-    }
-
-    h1, h2, h3 { color: #123c69; }
-
-    label {
-      display: block;
-      margin-top: 12px;
-      font-weight: 600;
-    }
-
-    input, select, textarea {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border: 1px solid #c7d2e2;
-      border-radius: 7px;
-      font: inherit;
-    }
-
-    button {
-      padding: 12px 16px;
-      margin: 10px 6px 4px 0;
-      border: 0;
-      border-radius: 7px;
-      background: #123c69;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    button:disabled {
-      opacity: .6;
-      cursor: wait;
-    }
-
-    .green { background: #137547; }
-    .orange { background: #8a4b08; }
-
-    .notice {
-      padding: 12px;
-      margin: 12px 0;
-      background: #f1f6ff;
-      border-radius: 8px;
-      overflow-wrap: anywhere;
-    }
-
-    article {
-      padding: 14px;
-      margin: 12px 0;
-      border: 1px solid #d5dfed;
-      border-radius: 8px;
-      background: #fff;
-      overflow-wrap: anywhere;
-    }
-
-    [hidden] { display: none !important; }
-
-    @media print {
-      body { background: white; padding: 0; }
-      .no-print, button { display: none !important; }
-      .panel { box-shadow: none; margin: 0; }
-    }
-  </style>
+<style>
+:root{
+ --blue:#123c69;--blue2:#1d5793;--saffron:#ef922f;
+ --green:#137547;--bg:#f3f6fb;--ink:#182b45;
+ --muted:#687990;--line:#e0e7f0;--white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+button,input,select,textarea{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:var(--blue2);overflow-wrap:anywhere}
+[hidden]{display:none!important}
+.topbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+.top-inner{max-width:1160px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:var(--blue);color:white;font-size:23px}
+.brand h1{font-size:19px;margin:0;color:var(--blue)}
+.brand p{font-size:11px;margin:4px 0 0;color:var(--muted)}
+.lang{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px;max-width:140px}
+.nav{max-width:1160px;margin:auto;display:flex;gap:8px;padding:0 18px 12px;overflow-x:auto}
+.nav a{text-decoration:none;white-space:nowrap;font-size:13px;font-weight:700;color:var(--blue);background:#f0f5fc;padding:9px 12px;border-radius:9px}
+main{max-width:1160px;margin:auto;padding:20px 18px 40px}
+.hero{background:linear-gradient(120deg,#123c69,#1d5793);color:white;padding:27px;border-radius:22px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:170px;height:170px;border:28px solid #ffffff12;border-radius:50%;right:-55px;top:-60px}
+.hero h2{font-size:clamp(25px,5vw,39px);line-height:1.15;margin:0 0 12px;max-width:690px}
+.hero p{color:#e1eafa;line-height:1.6;max-width:650px}
+.hero .flag{color:#ffd19a;font-weight:700;font-size:12px;letter-spacing:1px}
+.searchbar{display:flex;gap:8px;max-width:720px;margin-top:18px}
+.searchbar input{flex:1;min-width:0}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cbd6e4;border-radius:10px;background:#fff;color:var(--ink)}
+button.primary,.primary{background:var(--blue);color:white;border:0}
+button.secondary{background:#e9f1fc;color:var(--blue);border:1px solid #d6e3f5}
+button.success{background:var(--green);color:white;border:0}
+button.warning{background:#8a4b08;color:white;border:0}
+button{padding:11px 14px;border-radius:10px;border:1px solid var(--line);font-weight:700}
+button:disabled{opacity:.55;cursor:wait}
+.section{margin-top:30px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.section-head h2{font-size:22px;margin:0;color:var(--blue)}
+.section-head p{margin:6px 0 0;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;min-width:0;box-shadow:0 3px 12px #16375a08}
+.card h3{font-size:16px;margin:9px 0;color:var(--blue)}
+.card p{font-size:13px;line-height:1.6;color:var(--muted)}
+.card .emoji{font-size:25px}
+.card a{font-size:13px;font-weight:700}
+.card .tag{display:inline-block;font-size:11px;background:#edf3fb;color:var(--blue);padding:5px 8px;border-radius:20px}
+.quick{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:18px}
+.quick a{text-align:center;text-decoration:none;color:var(--blue);background:white;border:1px solid var(--line);padding:15px 8px;border-radius:14px;font-size:13px;font-weight:700}
+.quick span{display:block;font-size:24px;margin-bottom:7px}
+.notice{background:#fff7e9;border:1px solid #f2d5a9;color:#74440b;border-radius:12px;padding:13px;line-height:1.6;font-size:13px;overflow-wrap:anywhere}
+.muted{color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.field label{display:block;font-weight:700;font-size:13px;margin:0 0 6px}
+.field.full{grid-column:1/-1}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.panel{background:white;border:1px solid var(--line);padding:20px;border-radius:16px;margin-top:18px}
+.panel h2{margin-top:0;color:var(--blue)}
+.status{background:#eef4fc;border-radius:10px;padding:12px;line-height:1.5;font-size:13px;overflow-wrap:anywhere}
+.record{border:1px solid var(--line);padding:14px;border-radius:12px;margin:12px 0;overflow-wrap:anywhere}
+.record h3{margin:0 0 8px;color:var(--blue)}
+.record p{font-size:13px;line-height:1.6;white-space:pre-wrap}
+.footer{margin-top:30px;padding:20px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.7}
+.empty{padding:20px;background:#fff;border:1px dashed #cbd6e4;border-radius:12px;color:var(--muted);text-align:center}
+@media(max-width:760px){
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+ main{padding:14px 12px 30px}
+ .top-inner{padding:10px 12px}
+ .nav{padding:0 12px 10px}
+ .brand h1{font-size:16px}
+ .brand p{font-size:10px}
+ .logo{width:38px;height:38px}
+ .hero{padding:21px 17px;border-radius:17px}
+ .searchbar{flex-direction:column}
+ .grid{grid-template-columns:1fr}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .panel{padding:15px}
+}
+@media print{
+ .topbar,.no-print,.footer,button{display:none!important}
+ body{background:white}
+ main{padding:0}
+ .panel,.card{box-shadow:none;break-inside:avoid}
+}
+</style>
 </head>
-
 <body>
-<main class="panel">
-  <h1>YojanaMitra AI</h1>
-  <p>Government schemes, scholarships, jobs aur application records.</p>
 
-  <section class="no-print">
-    <h2>Form Search</h2>
+<header class="topbar">
+ <div class="top-inner">
+  <div class="brand">
+   <div class="logo">🇮🇳</div>
+   <div>
+    <h1>YojanaMitra AI</h1>
+    <p data-i18n="tagline">Your Government Service Guide</p>
+   </div>
+  </div>
+  <select class="lang" id="ymLanguage" aria-label="Language">
+   <option value="hi">हिंदी</option>
+   <option value="mr">मराठी</option>
+   <option value="en">English</option>
+  </select>
+ </div>
+ <nav class="nav no-print">
+  <a href="#home" data-i18n="navHome">Home</a>
+  <a href="#schemes" data-i18n="navSchemes">Schemes</a>
+  <a href="#jobs" data-i18n="navJobs">Jobs</a>
+  <a href="#scholarships" data-i18n="navScholarships">Scholarships</a>
+  <a href="#assistant" data-i18n="navAI">AI Assistant</a>
+  <a href="#admin" data-i18n="navAdmin">Admin</a>
+ </nav>
+</header>
 
-    <label for="ymCategory">Form Category</label>
-    <select id="ymCategory">
-      <option value="">Sabhi Categories</option>
-      <option>Government Scheme</option>
-      <option>Scholarship</option>
-      <option>Government Job</option>
-      <option>Certificate / Other Service</option>
-    </select>
+<main>
+<section class="hero" id="home">
+ <div class="flag">MAHARASHTRA • INDIA</div>
+ <h2 data-i18n="heroTitle">Government schemes and services, in one place.</h2>
+ <p data-i18n="heroDesc">Find official scheme portals, scholarship resources, recruitment websites and application assistance.</p>
+ <div class="searchbar no-print">
+  <input id="ymGlobalSearch" type="search" data-placeholder="searchPlaceholder" placeholder="Search schemes, jobs or services...">
+  <button id="ymSearchBtn" class="primary" data-i18n="searchBtn">Search</button>
+ </div>
+ <p id="ymSearchMessage" aria-live="polite"></p>
+</section>
 
-    <label for="ymSearch">Form Search</label>
-    <input id="ymSearch" placeholder="PM-KISAN, Scholarship, Job...">
+<div class="quick no-print">
+ <a href="#schemes"><span>🏛️</span><span data-i18n="quickSchemes">Government Schemes</span></a>
+ <a href="#jobs"><span>💼</span><span data-i18n="quickJobs">Latest Job Portals</span></a>
+ <a href="#scholarships"><span>🎓</span><span data-i18n="quickScholar">Scholarships</span></a>
+ <a href="#services"><span>📝</span><span data-i18n="quickServices">Application Services</span></a>
+</div>
 
-    <label for="ymForm">Form Select Karein</label>
-    <select id="ymForm"></select>
+<section class="section" id="schemes">
+ <div class="section-head">
+  <div><h2 data-i18n="schemeTitle">Government Schemes</h2><p data-i18n="schemeDesc">Official portals and scheme information resources.</p></div>
+ </div>
+ <div class="grid" id="ymSchemeCards">
+  <article class="card" data-search="pm kisan farmer agriculture scheme">
+   <div class="emoji">🌾</div><span class="tag">Central Government</span>
+   <h3>PM-KISAN</h3><p data-i18n="pmKisanDesc">Farmer scheme information and beneficiary services.</p>
+   <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="ayushman bharat health hospital card">
+   <div class="emoji">🏥</div><span class="tag">Health</span>
+   <h3>Ayushman Bharat</h3><p data-i18n="ayushmanDesc">Official national health scheme information.</p>
+   <a href="https://pmjay.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="pm vishwakarma artisan skill">
+   <div class="emoji">🛠️</div><span class="tag">Skills</span>
+   <h3>PM Vishwakarma</h3><p data-i18n="vishwakarmaDesc">Information for eligible traditional artisans.</p>
+   <a href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="pmay housing awas ghar">
+   <div class="emoji">🏠</div><span class="tag">Housing</span>
+   <h3>PMAY / Housing</h3><p data-i18n="housingDesc">Official housing scheme resources.</p>
+   <a href="https://pmaymis.gov.in/" target="_blank" rel="noopener noreferrer">PMAY-Urban ↗</a>
+  </article>
+  <article class="card" data-search="ladki bahin maharashtra women scheme">
+   <div class="emoji">👩</div><span class="tag">Maharashtra</span>
+   <h3>Ladki Bahin Yojana</h3><p data-i18n="ladkiDesc">Check current information through the state portal.</p>
+   <a href="https://womenchild.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Women & Child Dept ↗</a>
+  </article>
+  <article class="card" data-search="my scheme eligibility all india government">
+   <div class="emoji">🔎</div><span class="tag">All India</span>
+   <h3>myScheme</h3><p data-i18n="mySchemeDesc">Discover schemes and explore eligibility information.</p>
+   <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+ </div>
+</section>
 
-    <p id="ymSelectionMessage" class="notice"></p>
-    <p>Application bharwane ke liye administrator se sampark karein.</p>
-  </section>
+<section class="section" id="jobs">
+ <div class="section-head">
+  <div><h2 data-i18n="jobsTitle">Government Jobs</h2><p data-i18n="jobsDesc">Official recruitment portals. Check each notice for dates and eligibility.</p></div>
+ </div>
+ <div class="grid" id="ymJobCards">
+  <article class="card" data-search="upsc civil services central government">
+   <div class="emoji">🏛️</div><h3>UPSC</h3><p data-i18n="upscDesc">Central government competitive examinations.</p>
+   <a href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="ssc staff selection commission cgl chsl">
+   <div class="emoji">📋</div><h3>SSC</h3><p data-i18n="sscDesc">Staff Selection Commission recruitment.</p>
+   <a href="https://ssc.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="maharashtra public service commission mpsc">
+   <div class="emoji">📘</div><h3>MPSC</h3><p data-i18n="mpscDesc">Maharashtra Public Service Commission notices.</p>
+   <a href="https://mpsc.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="india post office gds postal recruitment">
+   <div class="emoji">📮</div><h3>India Post / GDS</h3><p data-i18n="postDesc">Postal recruitment and official notifications.</p>
+   <a href="https://indiapostgdsonline.gov.in/" target="_blank" rel="noopener noreferrer">GDS portal ↗</a>
+  </article>
+  <article class="card" data-search="maharashtra police bharti recruitment">
+   <div class="emoji">👮</div><h3>Maharashtra Police</h3><p data-i18n="policeDesc">Police recruitment information and notices.</p>
+   <a href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="maharashtra rojgar employment mahaswayam">
+   <div class="emoji">💼</div><h3>Mahaswayam</h3><p data-i18n="mahaswayamDesc">Maharashtra employment and skill resources.</p>
+   <a href="https://rojgar.mahaswayam.gov.in/" target="_blank" rel="noopener noreferrer">Employment portal ↗</a>
+  </article>
+ </div>
+ <p class="notice" data-i18n="jobsNotice">These are official portal links, not a verified live vacancy feed. Check current advertisements, closing dates and eligibility on the relevant department website.</p>
+</section>
 
+<section class="section" id="scholarships">
+ <div class="section-head">
+  <div><h2 data-i18n="scholarTitle">Scholarships</h2><p data-i18n="scholarDesc">Government scholarship application resources.</p></div>
+ </div>
+ <div class="grid">
+  <article class="card" data-search="mahadbt scholarship maharashtra students">
+   <div class="emoji">🎓</div><h3>MahaDBT</h3><p data-i18n="mahadbtDesc">Maharashtra scholarships and benefit schemes.</p>
+   <a href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="national scholarship portal nsp india">
+   <div class="emoji">📚</div><h3>National Scholarship Portal</h3><p data-i18n="nspDesc">Central scholarship information and applications.</p>
+   <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+  <article class="card" data-search="aaple sarkar certificate mahaonline">
+   <div class="emoji">📄</div><h3>Aaple Sarkar</h3><p data-i18n="aapleDesc">Maharashtra government services and certificates.</p>
+   <a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">Official portal ↗</a>
+  </article>
+ </div>
+</section>
+
+<section class="section" id="services">
+ <div class="section-head">
+  <div><h2 data-i18n="servicesTitle">Application Assistance</h2><p data-i18n="servicesDesc">Use the administrator service to record and track customer applications.</p></div>
+ </div>
+ <div class="card">
+  <div class="emoji">📝</div>
+  <h3 data-i18n="serviceCardTitle">Form Filling & Document Checklist</h3>
+  <p data-i18n="serviceCardDesc">The administrator can record the selected scheme, required documents and application progress after obtaining the customer's permission.</p>
+  <a href="#admin" data-i18n="goAdmin">Go to Admin Panel ↓</a>
+ </div>
+</section>
+
+<section class="section" id="assistant">
+ <div class="section-head">
+  <div><h2 data-i18n="aiTitle">AI Yojana Assistant</h2><p data-i18n="aiDesc">Ask a question about government schemes or documents.</p></div>
+ </div>
+ <div class="panel">
+  <p class="notice" data-i18n="aiNotice">AI is not connected yet. To enable real AI answers, configure a secure HTTPS backend endpoint. Never put a private AI API key in this HTML file.</p>
+  <label for="ymAiQuestion" data-i18n="questionLabel">Your question</label>
+  <textarea id="ymAiQuestion" rows="3" maxlength="1500" data-placeholder="aiPlaceholder" placeholder="Example: What documents should I check for a scholarship?"></textarea>
+  <div class="actions no-print">
+   <button id="ymAskAI" class="primary" data-i18n="askAI">Ask Assistant</button>
+   <button id="ymClearAI" class="secondary" data-i18n="clear">Clear</button>
+  </div>
+  <div id="ymAiAnswer" class="status" role="status" aria-live="polite" data-i18n="aiNotReady">AI is not configured. No AI answer has been generated.</div>
+ </div>
+</section>
+
+<section class="section" id="admin">
+ <div class="section-head">
+  <div><h2 data-i18n="adminTitle">Administrator</h2><p data-i18n="adminDesc">Secure access to customer application records.</p></div>
+ </div>
+ <div class="panel no-print">
+  <label for="ymEmail" data-i18n="adminEmail">Admin Email</label>
+  <input id="ymEmail" type="email" autocomplete="username" placeholder="Admin email">
+  <label for="ymPassword" data-i18n="password">Password</label>
+  <input id="ymPassword" type="password" autocomplete="current-password" placeholder="Password">
+  <div class="actions">
+   <button id="ymLogin" class="primary" data-i18n="login">Admin Login</button>
+   <button id="ymLogout" class="secondary" hidden data-i18n="logout">Logout</button>
+   <button id="ymVerify" class="secondary" hidden data-i18n="sendVerify">Send Verification Email</button>
+   <button id="ymRefreshAuth" class="secondary" hidden data-i18n="checkVerify">Check Verification</button>
+  </div>
+  <p id="ymStatus" class="status" role="status" aria-live="polite">Admin login karein.</p>
+ </div>
+
+ <div id="ymAdminPanel" class="panel" hidden>
+  <h2 data-i18n="newApplication">New Customer Application</h2>
+  <p class="notice" data-i18n="privacyNotice">Customer permission is required. Do not save Aadhaar numbers, OTPs, bank passwords or unnecessary sensitive information.</p>
+  <form id="ymApplicationForm">
+   <div class="form-grid">
+    <div class="field">
+     <label for="ymCustomerName" data-i18n="customerName">Customer Name *</label>
+     <input id="ymCustomerName" required maxlength="100">
+    </div>
+    <div class="field">
+     <label for="ymPhone" data-i18n="phone">Mobile Number</label>
+     <input id="ymPhone" type="tel" maxlength="15" autocomplete="off">
+    </div>
+    <div class="field">
+     <label for="ymAdminCategory" data-i18n="category">Category</label>
+     <select id="ymAdminCategory">
+      <option value="Government Scheme">Government Scheme</option>
+      <option value="Scholarship">Scholarship</option>
+      <option value="Government Job">Government Job</option>
+      <option value="Certificate / Other Service">Certificate / Other Service</option>
+     </select>
+    </div>
+    <div class="field">
+     <label for="ymAdminForm" data-i18n="applicationForm">Application Form *</label>
+     <input id="ymAdminForm" required maxlength="150" placeholder="PM-KISAN etc.">
+    </div>
+    <div class="field">
+     <label for="ymApplicationStatus" data-i18n="recordStatus">Record Status</label>
+     <select id="ymApplicationStatus">
+      <option value="Pending">Pending</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Completed">Completed</option>
+     </select>
+    </div>
+    <div class="field full">
+     <label for="ymDetails" data-i18n="details">Required Details / Document Checklist</label>
+     <textarea id="ymDetails" rows="4" maxlength="4000"></textarea>
+    </div>
+   </div>
+   <div class="actions">
+    <button id="ymSave" class="success" type="submit" data-i18n="save">Save Application</button>
+    <button id="ymPrint" class="secondary" type="button" data-i18n="print">Print / Save PDF</button>
+   </div>
+  </form>
   <hr>
+  <div class="section-head">
+   <div><h2 data-i18n="recordsTitle">Customer Records</h2></div>
+   <button id="ymLoadRecords" class="secondary no-print" data-i18n="refresh">Refresh Records</button>
+  </div>
+  <div id="ymRecords"><p class="muted" data-i18n="recordsHelp">Log in and refresh to load saved records.</p></div>
+ </div>
+</section>
 
-  <section class="no-print">
-    <h2>Admin Login</h2>
-
-    <label for="ymEmail">Admin Email</label>
-    <input id="ymEmail" type="email"
-      autocomplete="username" placeholder="Admin email">
-
-    <label for="ymPassword">Password</label>
-    <input id="ymPassword" type="password"
-      autocomplete="current-password" placeholder="Admin password">
-
-    <button id="ymLogin" type="button">Admin Login</button>
-    <button id="ymLogout" type="button" hidden>Logout</button>
-
-    <button id="ymVerify" type="button" hidden>
-      Verification Email Bhejein
-    </button>
-
-    <button id="ymRefreshAuth" type="button" hidden>
-      Email Verify Karne Ke Baad Check Karein
-    </button>
-
-    <p id="ymStatus" class="notice" role="status" aria-live="polite">
-      Admin login karein.
-    </p>
-  </section>
-
-  <section id="ymAdminPanel" hidden>
-    <hr>
-    <h2>Customer Application Entry</h2>
-
-    <p>
-      Customer ki permission lekar hi details bharein.
-      Aadhaar, OTP, bank password ya unnecessary sensitive details save na karein.
-    </p>
-
-    <form id="ymApplicationForm">
-      <label for="ymCustomerName">Customer Name *</label>
-      <input id="ymCustomerName" required maxlength="100">
-
-      <label for="ymPhone">Customer Mobile Number</label>
-      <input id="ymPhone" type="tel" maxlength="15"
-        placeholder="Contact number">
-
-      <label for="ymAdminCategory">Category</label>
-      <select id="ymAdminCategory">
-        <option>Government Scheme</option>
-        <option>Scholarship</option>
-        <option>Government Job</option>
-        <option>Certificate / Other Service</option>
-      </select>
-
-      <label for="ymAdminForm">Application Form *</label>
-      <input id="ymAdminForm" required maxlength="150"
-        placeholder="PM-KISAN etc.">
-
-      <label for="ymDetails">Required Details / Document Checklist</label>
-      <textarea id="ymDetails" rows="4" maxlength="4000"
-        placeholder="Required non-sensitive details"></textarea>
-
-      <label for="ymApplicationStatus">Record Status</label>
-      <select id="ymApplicationStatus">
-        <option>Pending</option>
-        <option>In Progress</option>
-        <option>Completed</option>
-      </select>
-
-      <button id="ymSave" class="green" type="submit">
-        Save Application
-      </button>
-
-      <button id="ymPrint" type="button">Print / PDF</button>
-    </form>
-
-    <hr>
-    <h2>Saved Customer Records</h2>
-
-    <button id="ymLoadRecords" type="button">Refresh Records</button>
-    <div id="ymRecords"></div>
-  </section>
+<footer class="footer">
+ <strong>YojanaMitra AI</strong><br>
+ <span data-i18n="footerDisclaimer">Independent information and application assistance service. Not a government website. Scheme eligibility and final decisions belong to the relevant department.</span>
+ <p>Always verify application dates, eligibility, fees and notices on official government portals.</p>
+</footer>
 </main>
 
-<script type="module">
-import { initializeApp } from
-  "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
-  sendEmailVerification,
-  reload
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-  query,
-  orderBy,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
-
-/*
-  IMPORTANT:
-  Firebase Console > Project settings > General
-  mein Web API Key ko verify karein.
-  Key bilkul wahi honi chahiye jo Firebase Console mein hai.
-*/
-const firebaseConfig = {
-  apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cwA",
-  authDomain: "yojanamitraai.firebaseapp.com",
-  projectId: "yojanamitraai",
-  storageBucket: "yojanamitraai.firebasestorage.app",
-  messagingSenderId: "868498347281",
-  appId: "1:868498347281:web:c78bdb845970123372a8b0"
+<script>
+/* UI translations */
+const translations = {
+ en:{
+  tagline:"Your Government Service Guide",navHome:"Home",navSchemes:"Schemes",navJobs:"Jobs",navScholarships:"Scholarships",navAI:"AI Assistant",navAdmin:"Admin",
+  heroTitle:"Government schemes and services, in one place.",heroDesc:"Find official scheme portals, scholarship resources, recruitment websites and application assistance.",searchPlaceholder:"Search schemes, jobs or services...",searchBtn:"Search",
+  quickSchemes:"Government Schemes",quickJobs:"Job Portals",quickScholar:"Scholarships",quickServices:"Application Services",
+  schemeTitle:"Government Schemes",schemeDesc:"Official portals and scheme information resources.",
+  pmKisanDesc:"Farmer scheme information and beneficiary services.",ayushmanDesc:"Official national health scheme information.",vishwakarmaDesc:"Information for eligible traditional artisans.",housingDesc:"Official housing scheme resources.",ladkiDesc:"Check current information through the state portal.",mySchemeDesc:"Discover schemes and explore eligibility information.",
+  jobsTitle:"Government Jobs",jobsDesc:"Official recruitment portals. Check each notice for dates and eligibility.",upscDesc:"Central government competitive examinations.",sscDesc:"Staff Selection Commission recruitment.",mpscDesc:"Maharashtra Public Service Commission notices.",postDesc:"Postal recruitment and official notifications.",policeDesc:"Police recruitment information and notices.",mahaswayamDesc:"Maharashtra employment and skill resources.",
+  jobsNotice:"These are official portal links, not a verified live vacancy feed. Check current advertisements, closing dates and eligibility on the relevant department website.",
+  scholarTitle:"Scholarships",scholarDesc:"Government scholarship application resources.",mahadbtDesc:"Maharashtra scholarships and benefit schemes.",nspDesc:"Central scholarship information and applications.",aapleDesc:"Maharashtra government services and certificates.",
+  servicesTitle:"Application Assistance",servicesDesc:"Use the administrator service to record and track customer applications.",serviceCardTitle:"Form Filling & Document Checklist",serviceCardDesc:"The administrator can record the selected scheme, required documents and application progress after obtaining the customer's permission.",goAdmin:"Go to Admin Panel ↓",
+  aiTitle:"AI Yojana Assistant",aiDesc:"Ask a question about government schemes or documents.",aiNotice:"AI is not connected yet. To enable real AI answers, configure a secure HTTPS backend endpoint. Never put a private AI API key in this HTML file.",questionLabel:"Your question",aiPlaceholder:"Example: What documents should I check for a scholarship?",askAI:"Ask Assistant",clear:"Clear",aiNotReady:"AI is not configured. No AI answer has been generated.",
+  adminTitle:"Administrator",adminDesc:"Secure access to customer application records.",adminEmail:"Admin Email",password:"Password",login:"Admin Login",logout:"Logout",sendVerify:"Send Verification Email",checkVerify:"Check Verification",
+  newApplication:"New Customer Application",privacyNotice:"Customer permission is required. Do not save Aadhaar numbers, OTPs, bank passwords or unnecessary sensitive information.",customerName:"Customer Name *",phone:"Mobile Number",category:"Category",applicationForm:"Application Form *",recordStatus:"Record Status",details:"Required Details / Document Checklist",save:"Save Application",print:"Print / Save PDF",recordsTitle:"Customer Records",refresh:"Refresh Records",recordsHelp:"Log in and refresh to load saved records.",
+  footerDisclaimer:"Independent information and application assistance service. Not a government website. Scheme eligibility and final decisions belong to the relevant department.",
+  noSearch:"No matching cards found.",searchResults:"Matching cards are highlighted by the search filter.",loginFirst:"Please log in as the authorized administrator.",loginOK:"Admin login successful. Email verified.",loginPrompt:"Please log in.",wrongAdmin:"This email is not authorized as the administrator.",enterPassword:"Please enter your password.",loggingIn:"Signing in...",verifyNeeded:"Verify your admin email to access records.",verifySent:"Verification email sent. Open its link, then return and check verification.",verifyFailed:"Could not send verification email: ",loginFailed:"Login failed: ",logoutOK:"Logged out.",saveWorking:"Saving application...",saveOK:"Application saved.",saveFailed:"Could not save: ",loadWorking:"Loading records...",loadOK:"Customer records loaded.",loadNone:"No saved records yet.",loadFailed:"Could not load records: ",nameRequired:"Customer name and application form are required.",aiMissing:"AI is not connected. Configure a secure backend before using this feature.",aiWorking:"Contacting the configured AI service...",aiFailed:"AI service could not provide an answer: ",aiEmpty:"The AI service returned no answer.",recordsLogin:"Log in and refresh to load saved records."
+ },
+ hi:{
+  tagline:"आपकी सरकारी सेवा मार्गदर्शिका",navHome:"होम",navSchemes:"योजनाएँ",navJobs:"नौकरियाँ",navScholarships:"छात्रवृत्ति",navAI:"AI सहायक",navAdmin:"एडमिन",
+  heroTitle:"सरकारी योजनाएँ और सेवाएँ, एक ही जगह।",heroDesc:"सरकारी योजनाओं, छात्रवृत्ति, भर्ती पोर्टल और आवेदन सहायता के लिंक खोजें।",searchPlaceholder:"योजना, नौकरी या सेवा खोजें...",searchBtn:"खोजें",
+  quickSchemes:"सरकारी योजनाएँ",quickJobs:"नौकरी पोर्टल",quickScholar:"छात्रवृत्ति",quickServices:"आवेदन सेवाएँ",
+  schemeTitle:"सरकारी योजनाएँ",schemeDesc:"आधिकारिक पोर्टल और योजना संबंधी जानकारी।",pmKisanDesc:"किसान योजना और लाभार्थी सेवाएँ।",ayushmanDesc:"राष्ट्रीय स्वास्थ्य योजना की आधिकारिक जानकारी।",vishwakarmaDesc:"पात्र पारंपरिक कारीगरों के लिए जानकारी।",housingDesc:"आधिकारिक आवास योजना संसाधन।",ladkiDesc:"राज्य पोर्टल पर वर्तमान जानकारी जाँचें।",mySchemeDesc:"योजनाएँ खोजें और पात्रता की जानकारी देखें।",
+  jobsTitle:"सरकारी नौकरियाँ",jobsDesc:"आधिकारिक भर्ती पोर्टल। तिथि और पात्रता नोटिस में जाँचें।",upscDesc:"केंद्र सरकार की प्रतियोगी परीक्षाएँ।",sscDesc:"कर्मचारी चयन आयोग की भर्ती।",mpscDesc:"महाराष्ट्र लोक सेवा आयोग के नोटिस।",postDesc:"डाक विभाग की भर्ती और नोटिस।",policeDesc:"पुलिस भर्ती की जानकारी और नोटिस।",mahaswayamDesc:"महाराष्ट्र रोजगार और कौशल संसाधन।",jobsNotice:"ये आधिकारिक पोर्टल लिंक हैं, सत्यापित लाइव वैकेंसी फीड नहीं। तारीख और पात्रता संबंधित विभाग की वेबसाइट पर जाँचें।",
+  scholarTitle:"छात्रवृत्ति",scholarDesc:"सरकारी छात्रवृत्ति आवेदन संसाधन।",mahadbtDesc:"महाराष्ट्र छात्रवृत्ति और लाभ योजनाएँ।",nspDesc:"केंद्रीय छात्रवृत्ति की जानकारी और आवेदन।",aapleDesc:"महाराष्ट्र सरकारी सेवाएँ और प्रमाणपत्र।",
+  servicesTitle:"आवेदन सहायता",servicesDesc:"एडमिन सेवा से ग्राहक आवेदन दर्ज करें और उनकी प्रगति देखें।",serviceCardTitle:"फॉर्म भरना और दस्तावेज़ सूची",serviceCardDesc:"ग्राहक की अनुमति के बाद एडमिन योजना, आवश्यक दस्तावेज़ और आवेदन की प्रगति दर्ज कर सकता है।",goAdmin:"एडमिन पैनल खोलें ↓",
+  aiTitle:"AI योजना सहायक",aiDesc:"सरकारी योजनाओं या दस्तावेज़ों के बारे में प्रश्न पूछें।",aiNotice:"AI अभी कनेक्ट नहीं है। असली AI जवाब के लिए सुरक्षित HTTPS बैकएंड जोड़ें। निजी AI API key को HTML में न रखें।",questionLabel:"आपका प्रश्न",aiPlaceholder:"उदाहरण: छात्रवृत्ति के लिए कौन से दस्तावेज़ चाहिए?",askAI:"सहायक से पूछें",clear:"साफ़ करें",aiNotReady:"AI कॉन्फ़िगर नहीं है। कोई AI जवाब नहीं बनाया गया।",
+  adminTitle:"एडमिन",adminDesc:"ग्राहक आवेदन रिकॉर्ड का सुरक्षित प्रबंधन।",adminEmail:"एडमिन ईमेल",password:"पासवर्ड",login:"एडमिन लॉगिन",logout:"लॉगआउट",sendVerify:"वेरिफिकेशन ईमेल भेजें",checkVerify:"वेरिफिकेशन जाँचें",
+  newApplication:"नया ग्राहक आवेदन",privacyNotice:"ग्राहक की अनुमति आवश्यक है। आधार नंबर, OTP, बैंक पासवर्ड या अनावश्यक संवेदनशील जानकारी सेव न करें।",customerName:"ग्राहक का नाम *",phone:"मोबाइल नंबर",category:"श्रेणी",applicationForm:"आवेदन फॉर्म *",recordStatus:"रिकॉर्ड स्थिति",details:"ज़रूरी जानकारी / दस्तावेज़ सूची",save:"आवेदन सेव करें",print:"प्रिंट / PDF सेव करें",recordsTitle:"ग्राहक रिकॉर्ड",refresh:"रिकॉर्ड रिफ्रेश करें",recordsHelp:"रिकॉर्ड देखने के लिए लॉगिन करके रिफ्रेश करें।",
+  footerDisclaimer:"स्वतंत्र जानकारी और आवेदन सहायता सेवा। यह सरकारी वेबसाइट नहीं है। पात्रता और अंतिम निर्णय संबंधित विभाग का है।",
+  noSearch:"कोई मिलता-जुलता कार्ड नहीं मिला।",searchResults:"खोज के अनुसार कार्ड फ़िल्टर किए गए हैं।",loginFirst:"अधिकृत एडमिन के रूप में लॉगिन करें।",loginOK:"एडमिन लॉगिन सफल। ईमेल सत्यापित है।",loginPrompt:"कृपया लॉगिन करें।",wrongAdmin:"इस ईमेल को एडमिन अनुमति नहीं है।",enterPassword:"पासवर्ड भरें।",loggingIn:"लॉगिन हो रहा है...",verifyNeeded:"रिकॉर्ड देखने से पहले एडमिन ईमेल सत्यापित करें।",verifySent:"वेरिफिकेशन ईमेल भेजा गया। लिंक खोलकर यहाँ वापस आएँ।",verifyFailed:"वेरिफिकेशन ईमेल नहीं भेजा: ",loginFailed:"लॉगिन विफल: ",logoutOK:"लॉगआउट सफल।",saveWorking:"आवेदन सेव हो रहा है...",saveOK:"आवेदन सेव हो गया।",saveFailed:"सेव नहीं हुआ: ",loadWorking:"रिकॉर्ड लोड हो रहे हैं...",loadOK:"ग्राहक रिकॉर्ड लोड हो गए।",loadNone:"अभी कोई रिकॉर्ड नहीं है।",loadFailed:"रिकॉर्ड लोड नहीं हुए: ",nameRequired:"ग्राहक का नाम और आवेदन फॉर्म ज़रूरी हैं।",aiMissing:"AI कनेक्ट नहीं है। उपयोग से पहले सुरक्षित बैकएंड जोड़ें।",aiWorking:"AI सेवा से संपर्क हो रहा है...",aiFailed:"AI सेवा जवाब नहीं दे सकी: ",aiEmpty:"AI सेवा से कोई जवाब नहीं मिला।",recordsLogin:"रिकॉर्ड देखने के लिए लॉगिन करके रिफ्रेश करें।"
+ },
+ mr:{
+  tagline:"तुमचे सरकारी सेवा मार्गदर्शक",navHome:"मुख्यपृष्ठ",navSchemes:"योजना",navJobs:"नोकऱ्या",navScholarships:"शिष्यवृत्ती",navAI:"AI सहाय्यक",navAdmin:"ॲडमिन",
+  heroTitle:"सरकारी योजना आणि सेवा, एकाच ठिकाणी.",heroDesc:"अधिकृत योजना पोर्टल, शिष्यवृत्ती, भरती वेबसाइट आणि अर्ज सहाय्य शोधा.",searchPlaceholder:"योजना, नोकरी किंवा सेवा शोधा...",searchBtn:"शोधा",
+  quickSchemes:"सरकारी योजना",quickJobs:"नोकरी पोर्टल",quickScholar:"शिष्यवृत्ती",quickServices:"अर्ज सेवा",
+  schemeTitle:"सरकारी योजना",schemeDesc:"अधिकृत पोर्टल आणि योजनांची माहिती.",pmKisanDesc:"शेतकरी योजना आणि लाभार्थी सेवा.",ayushmanDesc:"राष्ट्रीय आरोग्य योजनेची अधिकृत माहिती.",vishwakarmaDesc:"पात्र पारंपरिक कारागिरांसाठी माहिती.",housingDesc:"अधिकृत गृहनिर्माण योजना संसाधने.",ladkiDesc:"राज्य पोर्टलवर सध्याची माहिती तपासा.",mySchemeDesc:"योजना शोधा आणि पात्रतेची माहिती पहा.",
+  jobsTitle:"सरकारी नोकऱ्या",jobsDesc:"अधिकृत भरती पोर्टल. तारखा व पात्रता संबंधित जाहिरातीत तपासा.",upscDesc:"केंद्र सरकारच्या स्पर्धा परीक्षा.",sscDesc:"कर्मचारी निवड आयोग भरती.",mpscDesc:"महाराष्ट्र लोकसेवा आयोगाच्या सूचना.",postDesc:"टपाल विभाग भरती आणि अधिकृत सूचना.",policeDesc:"पोलीस भरतीची माहिती आणि सूचना.",mahaswayamDesc:"महाराष्ट्र रोजगार आणि कौशल्य संसाधने.",jobsNotice:"हे अधिकृत पोर्टल दुवे आहेत; पडताळलेली थेट भरती यादी नाही. तारखा व पात्रता संबंधित विभागाच्या वेबसाइटवर तपासा.",
+  scholarTitle:"शिष्यवृत्ती",scholarDesc:"सरकारी शिष्यवृत्ती अर्ज संसाधने.",mahadbtDesc:"महाराष्ट्र शिष्यवृत्ती आणि लाभ योजना.",nspDesc:"केंद्रीय शिष्यवृत्तीची माहिती आणि अर्ज.",aapleDesc:"महाराष्ट्र सरकारी सेवा आणि प्रमाणपत्रे.",
+  servicesTitle:"अर्ज सहाय्य",servicesDesc:"ॲडमिन सेवेद्वारे ग्राहकांचे अर्ज नोंदवा आणि प्रगती तपासा.",serviceCardTitle:"अर्ज भरणे आणि कागदपत्रांची यादी",serviceCardDesc:"ग्राहकाची परवानगी घेऊन ॲडमिन योजना, आवश्यक कागदपत्रे आणि अर्जाची प्रगती नोंदवू शकतो.",goAdmin:"ॲडमिन पॅनेल उघडा ↓",
+  aiTitle:"AI योजना सहाय्यक",aiDesc:"सरकारी योजना किंवा कागदपत्रांबद्दल प्रश्न विचारा.",aiNotice:"AI अजून जोडलेले नाही. खऱ्या AI उत्तरांसाठी सुरक्षित HTTPS बॅकएंड जोडा. खाजगी AI API key HTML मध्ये ठेवू नका.",questionLabel:"तुमचा प्रश्न",aiPlaceholder:"उदाहरण: शिष्यवृत्तीसाठी कोणती कागदपत्रे तपासावीत?",askAI:"सहाय्यकाला विचारा",clear:"पुसून टाका",aiNotReady:"AI कॉन्फिगर केलेले नाही. AI उत्तर तयार झालेले नाही.",
+  adminTitle:"ॲडमिन",adminDesc:"ग्राहक अर्ज नोंदींचे सुरक्षित व्यवस्थापन.",adminEmail:"ॲडमिन ईमेल",password:"पासवर्ड",login:"ॲडमिन लॉगिन",logout:"लॉगआउट",sendVerify:"पडताळणी ईमेल पाठवा",checkVerify:"पडताळणी तपासा",
+  newApplication:"नवीन ग्राहक अर्ज",privacyNotice:"ग्राहकाची परवानगी आवश्यक आहे. आधार क्रमांक, OTP, बँक पासवर्ड किंवा अनावश्यक संवेदनशील माहिती सेव्ह करू नका.",customerName:"ग्राहकाचे नाव *",phone:"मोबाईल क्रमांक",category:"वर्ग",applicationForm:"अर्जाचा फॉर्म *",recordStatus:"नोंदीची स्थिती",details:"आवश्यक माहिती / कागदपत्रांची यादी",save:"अर्ज सेव्ह करा",print:"प्रिंट / PDF सेव्ह करा",recordsTitle:"ग्राहक नोंदी",refresh:"नोंदी रिफ्रेश करा",recordsHelp:"नोंदी पाहण्यासाठी लॉगिन करून रिफ्रेश करा.",
+  footerDisclaimer:"स्वतंत्र माहिती आणि अर्ज सहाय्य सेवा. ही सरकारी वेबसाइट नाही. पात्रता आणि अंतिम निर्णय संबंधित विभागाचा आहे.",
+  noSearch:"जुळणारे कार्ड सापडले नाही.",searchResults:"शोधानुसार कार्ड फिल्टर केले आहेत.",loginFirst:"अधिकृत ॲडमिन म्हणून लॉगिन करा.",loginOK:"ॲडमिन लॉगिन यशस्वी. ईमेल पडताळलेला आहे.",loginPrompt:"कृपया लॉगिन करा.",wrongAdmin:"या ईमेलला ॲडमिन परवानगी नाही.",enterPassword:"पासवर्ड भरा.",loggingIn:"लॉगिन सुरू आहे...",verifyNeeded:"नोंदी पाहण्यापूर्वी ॲडमिन ईमेल पडताळा.",verifySent:"पडताळणी ईमेल पाठवला. दुवा उघडून परत या.",verifyFailed:"पडताळणी ईमेल पाठवता आला नाही: ",loginFailed:"लॉगिन अयशस्वी: ",logoutOK:"लॉगआउट यशस्वी.",saveWorking:"अर्ज सेव्ह होत आहे...",saveOK:"अर्ज सेव्ह झाला.",saveFailed:"सेव्ह झाला नाही: ",loadWorking:"नोंदी लोड होत आहेत...",loadOK:"ग्राहक नोंदी लोड झाल्या.",loadNone:"अजून नोंदी नाहीत.",loadFailed:"नोंदी लोड झाल्या नाहीत: ",nameRequired:"ग्राहकाचे नाव आणि अर्जाचा फॉर्म आवश्यक आहे.",aiMissing:"AI जोडलेले नाही. वापरण्यापूर्वी सुरक्षित बॅकएंड जोडा.",aiWorking:"AI सेवेशी संपर्क सुरू आहे...",aiFailed:"AI सेवा उत्तर देऊ शकली नाही: ",aiEmpty:"AI सेवेकडून उत्तर मिळाले नाही.",recordsLogin:"नोंदी पाहण्यासाठी लॉगिन करून रिफ्रेश करा."
+ }
 };
 
-const ADMIN_EMAIL = "varmapratik818@gmail.com";
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-const $ = id => document.getElementById(id);
-
-function status(message) {
-  $("ymStatus").textContent = message;
+let language = "hi";
+function tr(key) {
+ return translations[language]?.[key] || translations.en[key] || key;
 }
-
-const formOptions = [
-  { category: "Government Scheme", name: "PM-KISAN" },
-  { category: "Government Scheme", name: "Ayushman Bharat" },
-  { category: "Government Scheme", name: "PM Vishwakarma" },
-  { category: "Government Scheme", name: "PMAY Housing Scheme" },
-  { category: "Government Scheme", name: "Ladki Bahin Yojana" },
-  { category: "Scholarship", name: "Scholarship - MahaDBT" },
-  { category: "Scholarship", name: "Scholarship - NSP" },
-  { category: "Government Job", name: "Government Job Application" },
-  {
-    category: "Certificate / Other Service",
-    name: "Certificate / Other Service"
-  }
-];
-
-function updateFormOptions() {
-  const category = $("ymCategory").value;
-  const search = $("ymSearch").value.trim().toLowerCase();
-
-  const matches = formOptions.filter(item =>
-    (!category || item.category === category) &&
-    item.name.toLowerCase().includes(search)
-  );
-
-  const select = $("ymForm");
-  select.replaceChildren();
-
-  if (matches.length === 0) {
-    const option = document.createElement("option");
-    option.value = "";
-    option.textContent = "Koi form nahi mila";
-    select.appendChild(option);
-  } else {
-    for (const item of matches) {
-      const option = document.createElement("option");
-      option.value = item.name;
-      option.textContent = item.name;
-      select.appendChild(option);
-    }
-  }
-
-  $("ymSelectionMessage").textContent = matches.length
-    ? "Selected form: " + select.value
-    : "Is search ke liye form nahi mila.";
+function applyLanguage(next) {
+ language = translations[next] ? next : "hi";
+ document.documentElement.lang = language;
+ document.querySelectorAll("[data-i18n]").forEach(el => {
+  const key = el.dataset.i18n;
+  if (tr(key)) el.textContent = tr(key);
+ });
+ document.querySelectorAll("[data-placeholder]").forEach(el => {
+  el.placeholder = tr(el.dataset.placeholder);
+ });
 }
+$("ymLanguage").addEventListener("change", e => applyLanguage(e.target.value));
 
-$("ymCategory").addEventListener("change", updateFormOptions);
-$("ymSearch").addEventListener("input", updateFormOptions);
-
-$("ymForm").addEventListener("change", () => {
-  $("ymSelectionMessage").textContent = $("ymForm").value
-    ? "Selected form: " + $("ymForm").value
-    : "Is search ke liye form nahi mila.";
+/* Global search only filters cards; it does not invent search results. */
+function runSearch() {
+ const term = $("ymGlobalSearch").value.trim().toLowerCase();
+ let count = 0;
+ document.querySelectorAll("[data-search]").forEach(card => {
+  const haystack = (card.dataset.search + " " + card.textContent).toLowerCase();
+  const matches = !term || haystack.includes(term);
+  card.hidden = !matches;
+  if (matches) count++;
+ });
+ $("ymSearchMessage").textContent = term
+  ? (count ? count + " — " + tr("searchResults") : tr("noSearch"))
+  : "";
+}
+$("ymSearchBtn").addEventListener("click", runSearch);
+$("ymGlobalSearch").addEventListener("keydown", e => {
+ if (e.key === "Enter") runSearch();
 });
 
-function showAdminPanel(isAdmin) {
-  $("ymAdminPanel").hidden = !isAdmin;
-  $("ymLogout").hidden = !isAdmin;
-  $("ymLogin").hidden = isAdmin;
-  $("ymEmail").hidden = isAdmin;
-  $("ymPassword").hidden = isAdmin;
+/*
+ REAL AI BACKEND REQUIRED.
+ Keep this empty until you deploy a trusted HTTPS backend.
+ Expected backend request: POST JSON { question, language }
+ Expected response: JSON { answer: "..." }
+ The backend must authenticate/rate-limit requests and keep its AI API key
+ on the server. Do not paste a secret key here.
+*/
+const AI_API_ENDPOINT = "";
+
+$("ymAskAI").addEventListener("click", async () => {
+ const question = $("ymAiQuestion").value.trim();
+ const output = $("ymAiAnswer");
+
+ if (!question) {
+  output.textContent = tr("questionLabel");
+  return;
+ }
+ if (!AI_API_ENDPOINT) {
+  output.textContent = tr("aiMissing");
+  return;
+ }
+
+ $("ymAskAI").disabled = true;
+ output.textContent = tr("aiWorking");
+
+ try {
+  const response = await fetch(AI_API_ENDPOINT, {
+   method: "POST",
+   headers: {"Content-Type":"application/json"},
+   body: JSON.stringify({question, language})
+  });
+  if (!response.ok) throw new Error("HTTP " + response.status);
+  const data = await response.json();
+  if (typeof data.answer !== "string" || !data.answer.trim()) {
+   throw new Error("Empty or invalid response");
+  }
+  output.textContent = data.answer;
+ } catch (error) {
+  console.error("AI backend error:", error);
+  output.textContent = tr("aiFailed") + error.message;
+ } finally {
+  $("ymAskAI").disabled = false;
+ }
+});
+$("ymClearAI").addEventListener("click", () => {
+ $("ymAiQuestion").value = "";
+ $("ymAiAnswer").textContent = tr("aiNotReady");
+});
+
+/* Firebase admin + customer records */
+const FIREBASE_CONFIG = {
+ apiKey: "AIzaSyCZfopqHRTX_BvDdA3TvRUj2odwea6_cwA",
+ authDomain: "yojanamitraai.firebaseapp.com",
+ projectId: "yojanamitraai",
+ storageBucket: "yojanamitraai.firebasestorage.app",
+ messagingSenderId: "868498347281",
+ appId: "1:868498347281:web:c78bdb845970123372a8b0"
+};
+const ADMIN_EMAIL = "varmapratik818@gmail.com";
+
+let auth = null;
+let db = null;
+let firebaseReady = false;
+let authBusy = false;
+let recordsBusy = false;
+
+function status(message) {
+ $("ymStatus").textContent = message;
+}
+function isAdmin(user) {
+ return !!user &&
+  user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+}
+function showAdminPanel(allowed) {
+ $("ymAdminPanel").hidden = !allowed;
+ $("ymLogout").hidden = !allowed;
+ $("ymLogin").hidden = allowed;
+ $("ymEmail").hidden = allowed;
+ $("ymPassword").hidden = allowed;
+}
+function showSignedOut() {
+ showAdminPanel(false);
+ $("ymVerify").hidden = true;
+ $("ymRefreshAuth").hidden = true;
 }
 
 async function refreshAuthStatus() {
+ if (!firebaseReady || authBusy) return;
+ authBusy = true;
+
+ try {
   const user = auth.currentUser;
-
   if (!user) {
-    showAdminPanel(false);
-    $("ymVerify").hidden = true;
-    $("ymRefreshAuth").hidden = true;
-    status("Admin login karein.");
-    return;
+   showSignedOut();
+   status(tr("loginPrompt"));
+   return;
   }
 
-  if (user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    showAdminPanel(false);
-    $("ymVerify").hidden = true;
-    $("ymRefreshAuth").hidden = true;
-    status("Is email ko admin access nahi diya gaya hai.");
-    await signOut(auth);
-    return;
+  if (!isAdmin(user)) {
+   showSignedOut();
+   status(tr("wrongAdmin"));
+   await signOut(auth);
+   return;
   }
 
-  try {
-    await reload(user);
-    await user.getIdToken(true);
-  } catch (error) {
-    status("Account status check nahi hua: " + error.message);
-    return;
+  await reload(user);
+  const current = auth.currentUser;
+
+  if (!isAdmin(current)) {
+   showSignedOut();
+   status(tr("wrongAdmin"));
+   return;
   }
 
-  if (!auth.currentUser?.emailVerified) {
-    showAdminPanel(false);
-    $("ymVerify").hidden = false;
-    $("ymRefreshAuth").hidden = false;
-
-    status(
-      "Email abhi verified nahi hai. Verification Email Bhejein dabayein. " +
-      "Email ke link par click karne ke baad wapas aakar check karein."
-    );
-    return;
+  if (!current.emailVerified) {
+   showAdminPanel(false);
+   $("ymVerify").hidden = false;
+   $("ymRefreshAuth").hidden = false;
+   status(tr("verifyNeeded"));
+   return;
   }
 
   $("ymVerify").hidden = true;
   $("ymRefreshAuth").hidden = false;
   showAdminPanel(true);
-  status("Admin login successful. Email verified hai.");
+  status(tr("loginOK"));
+ } catch (error) {
+  console.error("Auth status error:", error);
+  status("Firebase: " + error.code + " — " + error.message);
+ } finally {
+  authBusy = false;
+ }
+}
+
+function loadFirebase() {
+ return Promise.all([
+  import("https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"),
+  import("https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js"),
+  import("https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js")
+ ]).then(([appSDK, authSDK, storeSDK]) => {
+  const app = appSDK.initializeApp(FIREBASE_CONFIG);
+  auth = authSDK.getAuth(app);
+  db = storeSDK.getFirestore(app);
+
+  window.ymFirebaseSDK = {authSDK, storeSDK};
+  firebaseReady = true;
+
+  authSDK.onAuthStateChanged(auth, () => refreshAuthStatus());
+ }).catch(error => {
+  console.error("Firebase initialization failed:", error);
+  showSignedOut();
+  status("Firebase initialize nahi hua: " + error.message +
+   ". Internet, Web API key aur Firebase configuration check karein.");
+ });
 }
 
 $("ymLogin").addEventListener("click", async () => {
-  const email = $("ymEmail").value.trim().toLowerCase();
-  const password = $("ymPassword").value;
+ if (!firebaseReady) {
+  status("Firebase abhi ready nahi hai. Page refresh karke dobara try karein.");
+  return;
+ }
 
-  if (email !== ADMIN_EMAIL.toLowerCase()) {
-    status("Is email ko admin access nahi diya gaya hai.");
-    return;
-  }
+ const email = $("ymEmail").value.trim().toLowerCase();
+ const password = $("ymPassword").value;
 
-  if (!password) {
-    status("Password bharein.");
-    return;
-  }
+ if (email !== ADMIN_EMAIL.toLowerCase()) {
+  status(tr("wrongAdmin"));
+  return;
+ }
+ if (!password) {
+  status(tr("enterPassword"));
+  return;
+ }
 
-  $("ymLogin").disabled = true;
-  status("Login ho raha hai...");
+ $("ymLogin").disabled = true;
+ status(tr("loggingIn"));
 
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    $("ymPassword").value = "";
-    await refreshAuthStatus();
-  } catch (error) {
-    console.error("Firebase login error:", error);
-    status("Login fail hua: " + error.code + " — " + error.message);
-  } finally {
-    $("ymLogin").disabled = false;
-  }
+ try {
+  const sdk = window.ymFirebaseSDK.authSDK;
+  await sdk.signInWithEmailAndPassword(auth, email, password);
+  $("ymPassword").value = "";
+  await refreshAuthStatus();
+ } catch (error) {
+  console.error("Login error:", error);
+  status(tr("loginFailed") + error.code + " — " + error.message);
+ } finally {
+  $("ymLogin").disabled = false;
+ }
 });
 
 $("ymVerify").addEventListener("click", async () => {
-  const user = auth.currentUser;
+ if (!firebaseReady || !isAdmin(auth.currentUser)) {
+  status(tr("loginFirst"));
+  return;
+ }
 
-  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    status("Pehle admin login karein.");
-    return;
+ $("ymVerify").disabled = true;
+ try {
+  await reload(auth.currentUser);
+
+  if (auth.currentUser.emailVerified) {
+   await refreshAuthStatus();
+   return;
   }
 
-  try {
-    await reload(user);
-
-    if (auth.currentUser?.emailVerified) {
-      await auth.currentUser.getIdToken(true);
-      await refreshAuthStatus();
-      return;
-    }
-
-    await sendEmailVerification(user);
-
-    status(
-      "Verification email bhej diya gaya hai. Apna email inbox kholein, " +
-      "Firebase ka verification link click karein, phir yahan wapas aayein."
-    );
-  } catch (error) {
-    console.error("Email verification error:", error);
-    status(
-      "Verification email nahi bheja gaya: " +
-      error.code + " — " + error.message
-    );
-  }
+  await window.ymFirebaseSDK.authSDK.sendEmailVerification(auth.currentUser);
+  status(tr("verifySent"));
+ } catch (error) {
+  console.error("Verification error:", error);
+  status(tr("verifyFailed") + error.code + " — " + error.message);
+ } finally {
+  $("ymVerify").disabled = false;
+ }
 });
 
 $("ymRefreshAuth").addEventListener("click", refreshAuthStatus);
 
 $("ymLogout").addEventListener("click", async () => {
-  try {
-    await signOut(auth);
-    $("ymRecords").replaceChildren();
-    status("Logout successful.");
-  } catch (error) {
-    status("Logout error: " + error.message);
-  }
+ if (!firebaseReady) return;
+ try {
+  await window.ymFirebaseSDK.authSDK.signOut(auth);
+  $("ymRecords").replaceChildren();
+  status(tr("logoutOK"));
+ } catch (error) {
+  status("Logout failed: " + error.message);
+ }
 });
 
-onAuthStateChanged(auth, async () => {
+async function ensureVerifiedAdmin() {
+ if (!firebaseReady || !isAdmin(auth.currentUser)) {
+  status(tr("loginFirst"));
+  return false;
+ }
+ try {
+  await reload(auth.currentUser);
+ } catch (error) {
+  status("Account check failed: " + error.message);
+  return false;
+ }
+
+ if (!isAdmin(auth.currentUser) || !auth.currentUser.emailVerified) {
+  status(tr("verifyNeeded"));
   await refreshAuthStatus();
-});
+  return false;
+ }
+ return true;
+}
 
 $("ymApplicationForm").addEventListener("submit", async event => {
-  event.preventDefault();
+ event.preventDefault();
+ if (!await ensureVerifiedAdmin()) return;
 
-  const user = auth.currentUser;
+ const customerName = $("ymCustomerName").value.trim();
+ const formName = $("ymAdminForm").value.trim();
 
-  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    status("Pehle authorized admin login karein.");
-    return;
-  }
+ if (!customerName || !formName) {
+  status(tr("nameRequired"));
+  return;
+ }
 
-  try {
-    await reload(user);
-    await user.getIdToken(true);
-  } catch (error) {
-    status("Login status check nahi hua: " + error.message);
-    return;
-  }
+ $("ymSave").disabled = true;
+ status(tr("saveWorking"));
 
-  if (!auth.currentUser?.emailVerified) {
-    status("Pehle admin email verify karein.");
-    return;
-  }
+ try {
+  const sdk = window.ymFirebaseSDK.storeSDK;
+  await sdk.addDoc(sdk.collection(db, "customerApplications"), {
+   customerName,
+   customerPhone: $("ymPhone").value.trim(),
+   category: $("ymAdminCategory").value,
+   formName,
+   details: $("ymDetails").value.trim(),
+   applicationStatus: $("ymApplicationStatus").value,
+   createdAt: sdk.serverTimestamp(),
+   createdBy: auth.currentUser.uid
+  });
 
-  const name = $("ymCustomerName").value.trim();
-  const selectedForm = $("ymAdminForm").value.trim();
-
-  if (!name || !selectedForm) {
-    status("Customer name aur application form zaroori hain.");
-    return;
-  }
-
-  $("ymSave").disabled = true;
-  status("Application save ho rahi hai...");
-
-  try {
-    await addDoc(collection(db, "customerApplications"), {
-      customerName: name,
-      customerPhone: $("ymPhone").value.trim(),
-      category: $("ymAdminCategory").value,
-      formName: selectedForm,
-      details: $("ymDetails").value.trim(),
-      applicationStatus: $("ymApplicationStatus").value,
-      createdAt: serverTimestamp(),
-      createdBy: user.uid
-    });
-
-    status("Application save ho gayi.");
-    $("ymApplicationForm").reset();
-    await loadRecords();
-  } catch (error) {
-    console.error("Firestore save error:", error);
-    status("Save nahi hua: " + error.code + " — " + error.message);
-  } finally {
-    $("ymSave").disabled = false;
-  }
+  status(tr("saveOK"));
+  $("ymApplicationForm").reset();
+  await loadRecords();
+ } catch (error) {
+  console.error("Save error:", error);
+  status(tr("saveFailed") + error.code + " — " + error.message);
+ } finally {
+  $("ymSave").disabled = false;
+ }
 });
 
 async function loadRecords() {
-  const user = auth.currentUser;
+ if (recordsBusy) return;
+ if (!await ensureVerifiedAdmin()) return;
 
-  if (!user || user.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    status("Records dekhne ke liye admin login zaroori hai.");
-    return;
+ recordsBusy = true;
+ $("ymLoadRecords").disabled = true;
+ status(tr("loadWorking"));
+
+ try {
+  const sdk = window.ymFirebaseSDK.storeSDK;
+  const q = sdk.query(
+   sdk.collection(db, "customerApplications"),
+   sdk.orderBy("createdAt", "desc")
+  );
+  const snapshot = await sdk.getDocs(q);
+  const container = $("ymRecords");
+  container.replaceChildren();
+
+  if (snapshot.empty) {
+   const empty = document.createElement("div");
+   empty.className = "empty";
+   empty.textContent = tr("loadNone");
+   container.appendChild(empty);
+   status(tr("loadNone"));
+   return;
   }
 
-  try {
-    await reload(user);
-    await user.getIdToken(true);
+  snapshot.forEach(docSnap => {
+   const data = docSnap.data();
+   const article = document.createElement("article");
+   article.className = "record";
 
-    if (!auth.currentUser?.emailVerified) {
-      status("Records dekhne se pehle admin email verify karein.");
-      return;
-    }
+   const heading = document.createElement("h3");
+   heading.textContent = data.customerName || "Unnamed customer";
 
-    const recordsQuery = query(
-      collection(db, "customerApplications"),
-      orderBy("createdAt", "desc")
-    );
+   const details = document.createElement("p");
+   details.textContent =
+    "Form: " + (data.formName || "") +
+    "\nCategory: " + (data.category || "") +
+    "\nStatus: " + (data.applicationStatus || "") +
+    "\nPhone: " + (data.customerPhone || "") +
+    "\nDetails: " + (data.details || "");
 
-    const snapshot = await getDocs(recordsQuery);
-    const container = $("ymRecords");
-    container.replaceChildren();
+   article.append(heading, details);
+   container.appendChild(article);
+  });
 
-    if (snapshot.empty) {
-      container.textContent = "Abhi koi saved record nahi hai.";
-      status("Koi saved record nahi mila.");
-      return;
-    }
-
-    snapshot.forEach(docSnap => {
-      const data = docSnap.data();
-      const article = document.createElement("article");
-      const heading = document.createElement("strong");
-      const details = document.createElement("p");
-
-      heading.textContent = data.customerName || "Unnamed customer";
-
-      details.textContent =
-        "Form: " + (data.formName || "") +
-        " | Category: " + (data.category || "") +
-        " | Status: " + (data.applicationStatus || "") +
-        " | Phone: " + (data.customerPhone || "") +
-        " | Details: " + (data.details || "");
-
-      article.append(heading, details);
-      container.appendChild(article);
-    });
-
-    status("Saved customer records load ho gaye.");
-  } catch (error) {
-    console.error("Firestore read error:", error);
-    status("Records load nahi hue: " + error.code + " — " + error.message);
-  }
+  status(tr("loadOK"));
+ } catch (error) {
+  console.error("Records error:", error);
+  status(tr("loadFailed") + error.code + " — " + error.message);
+ } finally {
+  recordsBusy = false;
+  $("ymLoadRecords").disabled = false;
+ }
 }
-
 $("ymLoadRecords").addEventListener("click", loadRecords);
+$("ymPrint").addEventListener("click", () => window.print());
 
-$("ymPrint").addEventListener("click", () => {
-  window.print();
-});
-
-updateFormOptions();
+applyLanguage("hi");
+showSignedOut();
+status("Firebase connect ho raha hai...");
+loadFirebase();
 </script>
 </body>
 </html>
