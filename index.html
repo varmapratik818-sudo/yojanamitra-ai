@@ -3,103 +3,129 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080d19">
-<meta name="description" content="YojanaMitra AI: Government schemes, jobs, scholarships, ration card, Samagra ID and citizen services.">
-<title>YojanaMitra AI | Premium Government Guide</title>
+<meta name="description" content="YojanaMitra AI - Government schemes, jobs, scholarships, ration card, Samagra and citizen services.">
+<title>YojanaMitra AI | Premium Citizen Services</title>
 <style>
-:root {
-  --bg:#080d19;--panel:#111a2a;--panel2:#172338;
-  --gold:#e7c47a;--gold2:#f6e4b5;--ink:#f6f3ec;
-  --muted:#aab5c7;--line:#2a374d;--green:#78d7a1;
+:root{
+ --bg:#080d19;--panel:#111a2b;--panel2:#18253a;
+ --gold:#e8c779;--gold2:#f8e8bb;--text:#f7f5ef;
+ --muted:#acb8ca;--line:#2b3950;--green:#87d9a7;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,Arial,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--text);
+ font:15px system-ui,-apple-system,Arial,sans-serif}
 a{color:inherit;text-decoration:none}
 button,input,select{font:inherit}
 button{cursor:pointer}
-.wrap{width:min(1150px,calc(100% - 28px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#080d19f5;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 0}
+.wrap{width:min(1160px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:#080d19f5;
+ backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.header{display:flex;align-items:center;justify-content:space-between;
+ gap:14px;flex-wrap:wrap;padding:12px 0}
 .brand{display:flex;align-items:center;gap:10px}
-.logo{display:grid;place-items:center;width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,#f8e6b5,#b68b43);color:#14131a;font-size:25px}
+.logo{display:grid;place-items:center;width:46px;height:46px;
+ border-radius:15px;background:linear-gradient(135deg,#fff0bf,#b58a3e);
+ color:#17120b;font-size:25px;box-shadow:0 5px 25px #e8c77918}
 .brand strong{font-size:19px;letter-spacing:-.5px}
 .brand strong span{color:var(--gold)}
-.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:2px}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{font-size:12px;color:#d2d9e6}
+.brand small{display:block;color:var(--muted);font-size:9px;
+ letter-spacing:1.7px;margin-top:3px}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{font-size:12px;color:#d4dbea}
 nav a:hover,.link:hover{color:var(--gold)}
-select,input{color:var(--ink);background:#111a2a;border:1px solid var(--line);border-radius:11px;padding:11px;max-width:100%}
-.hero{margin-top:22px;padding:clamp(22px,5vw,48px);border-radius:26px;border:1px solid #e7c47a30;background:radial-gradient(ellipse at 80% 20%,#e7c47a1b,transparent 38%),linear-gradient(135deg,#17243a,#0b1220 70%,#1c1828);overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:22px}
-.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800}
-h1{font-size:clamp(36px,6vw,63px);line-height:1.06;letter-spacing:-1.8px;margin:15px 0}
+select,input{color:var(--text);background:var(--panel);
+ border:1px solid var(--line);border-radius:11px;padding:11px;max-width:100%}
+.hero{margin-top:23px;padding:clamp(20px,5vw,48px);border-radius:27px;
+ border:1px solid #e8c77942;
+ background:radial-gradient(ellipse at 80% 10%,#e8c77920,transparent 36%),
+ linear-gradient(135deg,#1a2941,#0b1220 68%,#211a2a);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;
+ align-items:center;gap:28px}
+.eyebrow{color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:850}
+h1{font-size:clamp(36px,6vw,63px);line-height:1.06;
+ letter-spacing:-1.8px;margin:14px 0}
 .gold{color:var(--gold2)}
 p{color:var(--muted);line-height:1.75;font-size:13px}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;padding:12px 16px;border-radius:11px;background:#1a263b;border:1px solid var(--line);color:var(--ink);font-size:12px;font-weight:800}
-.btn.gold-btn{background:linear-gradient(130deg,#f5dfa3,#c39a51);color:#17120b;border:0}
-.actions{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}
-.guides{display:flex;align-items:end;justify-content:center;gap:8px;min-height:245px}
-.person{position:relative;width:46%;max-width:170px;height:215px;border-radius:100px 100px 20px 20px;background:linear-gradient(160deg,#30405a,#121b2b);border:1px solid #e7c47a55;animation:float 4s ease-in-out infinite;overflow:hidden}
-.person:nth-child(2){height:248px;animation-delay:-2s}
-.hair{position:absolute;top:19px;left:50%;transform:translateX(-50%);width:78px;height:75px;border-radius:45% 45% 35% 35%;background:#261c1b}
-.girl .hair{width:88px;height:105px}
-.face{position:absolute;top:32px;left:50%;transform:translateX(-50%);width:57px;height:69px;border-radius:44% 44% 48% 48%;background:linear-gradient(100deg,#edc09b,#bc805d)}
-.girl .face{top:35px}
-.eye{position:absolute;top:30px;width:5px;height:6px;border-radius:50%;background:#35231e}
-.eye:first-child{left:12px}.eye:nth-child(2){right:12px}
-.nose{position:absolute;top:38px;left:27px;width:5px;height:10px;border-right:1px solid #945d48}
-.mouth{position:absolute;top:53px;left:23px;width:13px;height:5px;border-bottom:2px solid #914c48;border-radius:50%}
-.neck{position:absolute;top:94px;left:calc(50% - 10px);width:20px;height:18px;background:#c58b67}
-.clothes{position:absolute;top:107px;left:50%;transform:translateX(-50%);width:115px;height:115px;border-radius:42px 42px 0 0;background:linear-gradient(90deg,#a47a3f,#f4d99a,#9b7039)}
-.girl .clothes{background:linear-gradient(90deg,#633e82,#c0a1d6,#754d91)}
-.clothes:after{content:"";position:absolute;left:43%;top:0;width:17%;height:54px;background:#fff0d0;clip-path:polygon(0 0,100% 0,50% 100%)}
-.girl .clothes:after{background:#f6d8ed}
-.person-label{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:var(--gold2);font-size:9px;letter-spacing:1px}
-@keyframes float{50%{transform:translateY(-7px)}}
-.searchbar{display:flex;gap:8px;margin-top:20px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin:19px 0}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;
+ padding:12px 15px;border-radius:11px;background:#1a263b;
+ border:1px solid var(--line);color:var(--text);font-size:12px;font-weight:800}
+.btn.gold-btn{background:linear-gradient(130deg,#f7e5ae,#c49b50);
+ color:#17120b;border:0}
+.btn:hover{filter:brightness(1.09)}
+.portraits{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:12px}
+.portrait{position:relative;border:1px solid #e8c77966;border-radius:90px 90px 20px 20px;
+ overflow:hidden;min-width:0;background:var(--panel2);box-shadow:0 14px 35px #0005}
+.portrait:first-child{height:255px}
+.portrait:last-child{height:295px}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.portrait:after{content:"";position:absolute;inset:40% 0 0;
+ background:linear-gradient(transparent,#080d19eF)}
+.portrait-label{position:absolute;z-index:2;bottom:13px;left:4px;right:4px;
+ text-align:center;font-size:9px;letter-spacing:1px;color:var(--gold2);font-weight:800}
+.searchbar{display:flex;gap:8px;margin-top:22px}
 .searchbar input{flex:1;min-width:0;padding:14px}
-section{margin:39px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:17px}
-h2{font-size:clamp(23px,4vw,31px);margin:0 0 6px;letter-spacing:-.7px}
+.trust{border:1px solid #e8c77935;border-radius:12px;padding:12px;
+ color:#d8cdaF;font-size:11px;line-height:1.7;background:#e8c77908}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:17px}
+.stat{padding:13px;border:1px solid var(--line);border-radius:13px;background:#101a2a}
+.stat strong{display:block;color:var(--gold2);font-size:19px}
+.stat span{font-size:10px;color:var(--muted)}
+section{margin:40px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;
+ gap:12px;margin-bottom:17px}
+h2{font-size:clamp(23px,4vw,31px);margin:5px 0;letter-spacing:-.7px}
 .section-head p{margin:0}
-.pill{font-size:10px;letter-spacing:1px;color:var(--gold2);border:1px solid #e7c47a55;border-radius:30px;padding:7px 10px;white-space:nowrap}
-.filters{display:flex;gap:8px;overflow:auto;padding:2px 0 14px}
-.filter{flex-shrink:0;border:1px solid var(--line);border-radius:30px;padding:9px 14px;background:var(--panel);color:#d5ddeb;font-size:12px}
-.filter.active{background:var(--gold);color:#17120a;border-color:var(--gold)}
+.pill{font-size:9px;letter-spacing:1px;color:var(--gold2);
+ border:1px solid #e8c77955;border-radius:30px;padding:7px 10px;white-space:nowrap}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
-.card{padding:18px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#141f32,#0e1523);min-width:0;transition:.2s}
-.card:hover{border-color:#e7c47a88;transform:translateY(-2px)}
-.card-icon{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#e7c47a10;border:1px solid #e7c47a35;font-size:25px}
-.card h3{font-size:16px;margin:13px 0 6px}
+.card{padding:18px;border:1px solid var(--line);border-radius:17px;
+ background:linear-gradient(145deg,#141f32,#0e1523);min-width:0;transition:.2s}
+.card:hover{border-color:#e8c77988;transform:translateY(-2px)}
+.card-icon{display:grid;place-items:center;width:47px;height:47px;
+ border-radius:14px;background:#e8c77910;border:1px solid #e8c77935;font-size:24px}
+.card h3{font-size:16px;margin:12px 0 6px}
 .card p{font-size:12px;margin:7px 0 13px}
-.card .category{font-size:10px;letter-spacing:1px;color:var(--gold);font-weight:800;text-transform:uppercase}
+.category{font-size:9px;letter-spacing:1px;color:var(--gold);
+ font-weight:800;text-transform:uppercase;display:block;margin-top:12px}
 .card-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
 .link{color:var(--gold2);font-size:12px;font-weight:800}
-.folder{background:radial-gradient(ellipse at top right,#e7c47a12,transparent 50%),linear-gradient(145deg,#17243a,#0c1421);border-color:#b8944c55}
-.folder .card-icon{width:58px;height:58px;font-size:30px}
+.folder{background:radial-gradient(ellipse at top right,#e8c77915,transparent 50%),
+ linear-gradient(145deg,#192740,#0c1421);border-color:#b8944c70}
+.folder .card-icon{width:57px;height:57px;font-size:29px}
 .folder h3{font-size:20px}
 .folder-list{list-style:none;margin:14px 0;padding:0;display:grid;gap:8px}
-.folder-list li{font-size:12px;color:#c5cedd;line-height:1.55;padding-left:19px;position:relative}
+.folder-list li{font-size:12px;color:#c8d1df;line-height:1.55;padding-left:19px;position:relative}
 .folder-list li:before{content:"✦";position:absolute;left:0;color:var(--gold)}
 .folder-button{width:100%;margin-top:10px}
-.detail{margin-top:16px;padding-top:15px;border-top:1px solid var(--line)}
-.detail h4{color:var(--gold2);font-size:14px;margin:13px 0 5px}
+.detail{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.detail h4{color:var(--gold2);font-size:14px;margin:14px 0 5px}
 .detail ol,.detail ul{padding-left:19px;color:#c4cedd;font-size:12px;line-height:1.9}
 .detail p{font-size:12px}
-.note{padding:12px;border:1px solid #a988473b;border-radius:11px;background:#e7c47a09;font-size:11px;color:#d5c8a7;line-height:1.7}
-.assistant{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding:22px;border:1px solid #e7c47a40;border-radius:20px;background:var(--panel)}
-.assistant-icon{width:65px;height:65px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f6e4b5,#b68b43);font-size:31px;color:#111}
-.assistant h3{margin:0 0 5px}
-.assistant p{margin:0}
+.note{padding:12px;border:1px solid #a988473b;border-radius:11px;
+ background:#e8c77909;font-size:11px;color:#d5c8a7;line-height:1.7}
+.filters{display:flex;gap:8px;overflow:auto;padding:2px 0 14px}
+.filter{flex-shrink:0;border:1px solid var(--line);border-radius:30px;
+ padding:9px 14px;background:var(--panel);color:#d5ddeb;font-size:12px}
+.filter.active{background:var(--gold);color:#17120a;border-color:var(--gold)}
+.assistant{display:grid;grid-template-columns:65px 1fr;gap:15px;align-items:center;
+ padding:22px;border:1px solid #e8c77940;border-radius:20px;background:var(--panel)}
+.assistant-icon{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;
+ background:linear-gradient(135deg,#f6e4b5,#b68b43);font-size:29px;color:#111}
+.quick-questions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.quick-questions button{border:1px solid var(--line);background:#0c1422;color:var(--gold2);
+ border-radius:20px;padding:9px 12px;font-size:11px}
+.answer{padding:13px;margin-top:12px;background:#0b1422;border-radius:12px;
+ border:1px solid var(--line);font-size:12px;line-height:1.8;color:#dce3ef}
 .hidden{display:none!important}
 .empty{grid-column:1/-1;padding:20px;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:24px 0;margin-top:45px}
 footer p{font-size:11px}
-@media(max-width:780px){
- .hero-grid{grid-template-columns:1fr}.guides{min-height:220px}
- .person{height:190px}.person:nth-child(2){height:220px}
+@media(max-width:800px){
+ .hero-grid{grid-template-columns:1fr}.portraits{max-width:420px;margin:auto;width:100%}
  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
  nav{width:100%;order:3}
 }
@@ -108,7 +134,8 @@ footer p{font-size:11px}
  nav{gap:12px}nav a{font-size:11px}
  .grid{grid-template-columns:1fr}.hero{padding:20px 16px}
  .searchbar{flex-wrap:wrap}.searchbar input,.searchbar button{width:100%}
- .section-head{align-items:start}
+ .section-head{align-items:start}.stats{gap:6px}
+ .stat{padding:10px}.stat strong{font-size:16px}
 }
 </style>
 </head>
@@ -119,7 +146,7 @@ footer p{font-size:11px}
    <span class="logo">✦</span>
    <span><strong>Yojana<span>Mitra</span> AI</strong><small>YOUR DIGITAL GOVERNMENT GUIDE</small></span>
   </a>
-  <select id="language" aria-label="Language">
+  <select id="language" aria-label="Choose language">
    <option value="en">English</option>
    <option value="hi">हिंदी</option>
    <option value="mr">मराठी</option>
@@ -129,7 +156,7 @@ footer p{font-size:11px}
    <a href="#jobs">Jobs</a>
    <a href="#scholarships">Scholarships</a>
    <a href="#folders">Service Folders</a>
-   <a href="#services">Other Services</a>
+   <a href="#services">Services</a>
   </nav>
  </div>
 </header>
@@ -140,26 +167,31 @@ footer p{font-size:11px}
   <div>
    <span class="eyebrow">INTELLIGENT • SIMPLE • CITIZEN FIRST</span>
    <h1 data-i18n="headline">Government services.<br><span class="gold">A smarter way.</span></h1>
-   <p data-i18n="intro">Discover schemes, recruitment notices, scholarships and essential citizen services in one place. Start with a service folder or search for what you need.</p>
+   <p data-i18n="intro">Discover government schemes, jobs, scholarships and essential citizen services in one place. Open a service folder or search for what you need.</p>
    <div class="actions">
     <a class="btn gold-btn" href="#folders" data-i18n="explore">Explore Service Folders ↗</a>
     <a class="btn" href="#schemes" data-i18n="schemesbtn">Explore Schemes</a>
    </div>
-   <div class="note">Independent information guide. Government applications and decisions are handled by the relevant official portals.</div>
-  </div>
-  <div class="guides" aria-label="Decorative illustrated guides">
-   <div class="person">
-    <div class="hair"></div><div class="face"><i class="eye"></i><i class="eye"></i><i class="nose"></i><i class="mouth"></i></div>
-    <div class="neck"></div><div class="clothes"></div><div class="person-label">YOJANA GUIDE</div>
+   <div class="trust">Independent information guide. Applications and final decisions are handled by the relevant official departments.</div>
+   <div class="stats">
+    <div class="stat"><strong>01</strong><span>Scheme discovery</span></div>
+    <div class="stat"><strong>02</strong><span>Service guidance</span></div>
+    <div class="stat"><strong>03</strong><span>Official portals</span></div>
    </div>
-   <div class="person girl">
-    <div class="hair"></div><div class="face"><i class="eye"></i><i class="eye"></i><i class="nose"></i><i class="mouth"></i></div>
-    <div class="neck"></div><div class="clothes"></div><div class="person-label">SEVA GUIDE</div>
+  </div>
+  <div class="portraits" aria-label="YojanaMitra guide portraits">
+   <div class="portrait">
+    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=85" alt="Male virtual guide portrait" loading="eager">
+    <div class="portrait-label">YOJANA GUIDE</div>
+   </div>
+   <div class="portrait">
+    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=85" alt="Female virtual guide portrait" loading="eager">
+    <div class="portrait-label">SEVA GUIDE</div>
    </div>
   </div>
  </div>
  <div class="searchbar">
-  <input id="search" type="search" placeholder="Search: ration card, Samagra ID, police bharti..." aria-label="Search services">
+  <input id="search" type="search" placeholder="Search ration card, Samagra ID, police bharti..." aria-label="Search services">
   <button class="btn gold-btn" id="searchBtn" type="button">Search ↗</button>
   <button class="btn" id="resetBtn" type="button">Reset</button>
  </div>
@@ -167,81 +199,77 @@ footer p{font-size:11px}
 
 <section id="folders">
  <div class="section-head">
-  <div><span class="eyebrow">DEDICATED SERVICE CENTRE</span><h2>Explore Service Folders</h2><p>Alag folders, detailed guidance aur official portals.</p></div>
+  <div><span class="eyebrow">DEDICATED SERVICE CENTRE</span><h2>Explore Service Folders</h2><p>Detailed guidance and relevant official portals.</p></div>
   <span class="pill">2 MAIN FOLDERS</span>
  </div>
  <div class="grid">
-  <article class="card folder searchable" data-category="ration card maharashtra central food civil supplies">
+  <article class="card folder searchable" data-category="ration card maharashtra central food public distribution">
    <div class="card-icon">🪪</div><span class="category">Folder 01 · Food & Public Distribution</span>
    <h3>Ration Card Services</h3>
-   <p>Maharashtra ration card aur Central Government food distribution services ki guidance ek jagah.</p>
+   <p>Maharashtra and Central Government food distribution guidance in one place.</p>
    <ul class="folder-list">
-    <li>New ration card application guidance</li>
-    <li>Family member add / delete</li>
-    <li>Name, address and details correction</li>
-    <li>e-Ration Card and application status</li>
+    <li>New ration card application guidance</li><li>Add or remove a family member</li>
+    <li>Name, address and details correction</li><li>e-Ration Card and application status</li>
     <li>Ration entitlement, FPS shop and grievance</li>
    </ul>
-   <button class="btn gold-btn folder-button" type="button" data-toggle="rationDetails" aria-expanded="false">Open Ration Card Folder ↓</button>
+   <button class="btn gold-btn folder-button" data-toggle="rationDetails" aria-expanded="false" type="button">Open Ration Card Folder ↓</button>
    <div class="detail hidden" id="rationDetails">
     <h4>1. New Ration Card</h4>
-    <p>Check eligibility, household category, residence requirements and the applicable application process on the state portal.</p>
-    <ul><li>Identity and address proof, as specified by the department</li><li>Family member details and required declarations</li><li>Existing ration card details, if applicable</li><li>Additional documents may be requested by the authority</li></ul>
+    <p>Check eligibility, household category, residence requirements and the application route on the official state portal.</p>
+    <ul><li>Identity and address proof as specified by the department</li><li>Family member details and required declarations</li><li>Existing ration card information, if applicable</li><li>Additional documents may be required</li></ul>
     <h4>2. Add or Remove a Family Member</h4>
-    <p>Choose the appropriate member addition or deletion service. Keep the existing ration card and supporting family documents available. Requirements depend on the reason for the change.</p>
-    <h4>3. Correction of Name or Address</h4>
-    <p>Check the correction service and supporting evidence accepted by the issuing authority. Submit only through an official channel.</p>
+    <p>Choose the relevant service and keep the existing card and supporting family documents ready. Requirements depend on the reason for the change.</p>
+    <h4>3. Name or Address Correction</h4>
+    <p>Check which correction service is available and which supporting evidence the issuing authority accepts.</p>
     <h4>4. e-Ration Card / Download</h4>
-    <p>Look for the available download or print option on the relevant official portal. Availability and login requirements may vary.</p>
+    <p>Look for the available download or print option on the official portal. Login requirements may vary.</p>
     <h4>5. Application Status</h4>
     <p>Use the acknowledgement or application reference number on the official status page, if provided.</p>
     <h4>6. Ration Shop and Entitlement</h4>
-    <p>Check applicable entitlement, fair-price shop details and distribution information using the relevant state or national service.</p>
+    <p>Check applicable entitlement, fair-price shop details and distribution information through the relevant state or national service.</p>
     <h4>7. Complaint or Grievance</h4>
-    <p>Use the department's official grievance channel for card errors, distribution issues or other complaints. Keep your complaint reference number.</p>
+    <p>Use the department's grievance channel for card errors, distribution issues or other complaints. Keep your complaint reference.</p>
     <h4>Official links</h4>
     <div class="card-actions">
      <a class="link" href="https://mahafood.gov.in/" target="_blank" rel="noopener">Maharashtra Food Department ↗</a>
-     <a class="link" href="https://nfsa.gov.in/" target="_blank" rel="noopener">National Food Security Portal ↗</a>
+     <a class="link" href="https://nfsa.gov.in/" target="_blank" rel="noopener">National Food Security ↗</a>
      <a class="link" href="https://pdsportal.nic.in/" target="_blank" rel="noopener">PDS Portal ↗</a>
     </div>
-    <p class="note">Exact services, eligibility, documents, fees and processing times can change. Verify them on the official portal before applying.</p>
+    <p class="note">Verify current eligibility, documents, fees and processing times on the official portal before applying.</p>
    </div>
   </article>
 
-  <article class="card folder searchable" data-category="samagra samagra id family id madhya pradesh ekyc">
+  <article class="card folder searchable" data-category="samagra samagra id family id member id madhya pradesh ekyc">
    <div class="card-icon">👨‍👩‍👧‍👦</div><span class="category">Folder 02 · Madhya Pradesh</span>
    <h3>Samagra Portal</h3>
-   <p>Samagra Family ID, Member ID aur Madhya Pradesh Samagra social-security services ki guidance.</p>
+   <p>Samagra Family ID, Member ID and Madhya Pradesh social-security service guidance.</p>
    <ul class="folder-list">
-    <li>Samagra Family ID information</li>
-    <li>Samagra Member ID search</li>
-    <li>New family / member registration guidance</li>
-    <li>Member details update and correction</li>
+    <li>Samagra Family ID information</li><li>Samagra Member ID search</li>
+    <li>New family or member registration guidance</li><li>Member details update and correction</li>
     <li>e-KYC and Aadhaar-related guidance</li>
    </ul>
-   <button class="btn gold-btn folder-button" type="button" data-toggle="samagraDetails" aria-expanded="false">Open Samagra Folder ↓</button>
+   <button class="btn gold-btn folder-button" data-toggle="samagraDetails" aria-expanded="false" type="button">Open Samagra Folder ↓</button>
    <div class="detail hidden" id="samagraDetails">
     <h4>1. Samagra Family ID</h4>
-    <p>Samagra is a Madhya Pradesh state family and member database. Use the official portal to find available family ID search and family-related services.</p>
+    <p>Samagra is a Madhya Pradesh state family and member database. Use the official portal for available family ID search services.</p>
     <h4>2. Samagra Member ID</h4>
-    <p>Use the member search service, if available, and enter only the information requested by the official portal.</p>
+    <p>Use the member search service, if available, and enter only the details requested by the official portal.</p>
     <h4>3. New Family or Member Registration</h4>
-    <p>Check the current eligibility, registration route and required supporting documents. Do not assume every registration is available online.</p>
+    <p>Check current eligibility, registration options and required documents. Not every registration may be available online.</p>
     <h4>4. Member Details Correction</h4>
-    <p>Follow the correction option available for the particular field. Supporting documents and verification may be required.</p>
+    <p>Follow the official correction process. Supporting documents and verification may be required.</p>
     <h4>5. e-KYC / Aadhaar Linkage</h4>
-    <p>Check the current e-KYC process and status options on the official portal. Never share your OTP, password or Aadhaar authentication codes with an unofficial helper.</p>
+    <p>Check the current e-KYC process on the official portal. Never share OTPs, passwords or authentication codes with unofficial helpers.</p>
     <h4>6. Family Member Add / Remove</h4>
-    <p>Choose the appropriate official service and follow the applicable verification process. A change may require approval by the responsible authority.</p>
+    <p>Choose the applicable service and follow the verification process. Changes may require approval by the responsible authority.</p>
     <h4>7. Status and Assistance</h4>
-    <p>Keep your application or request reference number if one is issued. Use the official help or grievance route for unresolved issues.</p>
-    <h4>Official link</h4>
+    <p>Keep your application reference number, if issued. Use the official help or grievance route for unresolved issues.</p>
+    <h4>Official links</h4>
     <div class="card-actions">
      <a class="link" href="https://samagra.gov.in/" target="_blank" rel="noopener">Samagra Official Portal ↗</a>
      <a class="link" href="https://mp.gov.in/" target="_blank" rel="noopener">Madhya Pradesh Government ↗</a>
     </div>
-    <p class="note">Samagra is for Madhya Pradesh; it is not Maharashtra's ration card or citizen-service database. Verify current steps and eligibility on the official portal.</p>
+    <p class="note">Samagra is for Madhya Pradesh, not Maharashtra's ration-card database. Verify current steps on the official portal.</p>
    </div>
   </article>
  </div>
@@ -258,13 +286,13 @@ footer p{font-size:11px}
  </div>
  <div class="grid">
   <article class="card searchable" data-category="farmer schemes pm kisan">
-   <div class="card-icon">🌾</div><span class="category">Farmer Support</span><h3>PM-KISAN</h3><p>Farmer scheme information, beneficiary services and official updates.</p><a class="link" href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+   <div class="card-icon">🌾</div><span class="category">Farmer Support</span><h3>PM-KISAN</h3><p>Farmer scheme information and beneficiary services.</p><a class="link" href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
   </article>
   <article class="card searchable" data-category="health schemes ayushman">
-   <div class="card-icon">🏥</div><span class="category">Health</span><h3>Ayushman Bharat</h3><p>Health scheme information and official PM-JAY services.</p><a class="link" href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+   <div class="card-icon">🏥</div><span class="category">Health</span><h3>Ayushman Bharat</h3><p>Health scheme information and PM-JAY services.</p><a class="link" href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
   </article>
   <article class="card searchable" data-category="housing schemes pmay">
-   <div class="card-icon">🏠</div><span class="category">Housing</span><h3>PM Awas Yojana</h3><p>Housing scheme information. Select the applicable rural or urban programme.</p><a class="link" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal ↗</a>
+   <div class="card-icon">🏠</div><span class="category">Housing</span><h3>PM Awas Yojana</h3><p>Housing information; select the applicable rural or urban programme.</p><a class="link" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal ↗</a>
   </article>
   <article class="card searchable" data-category="women schemes ladki bahin">
    <div class="card-icon">👩</div><span class="category">Maharashtra · Women</span><h3>Majhi Ladki Bahin</h3><p>Maharashtra scheme information and official notices.</p><a class="link" href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
@@ -273,7 +301,7 @@ footer p{font-size:11px}
    <div class="card-icon">🛠️</div><span class="category">Artisans</span><h3>PM Vishwakarma</h3><p>Programme information for eligible traditional artisans.</p><a class="link" href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
   </article>
   <article class="card searchable" data-category="schemes all india">
-   <div class="card-icon">🔎</div><span class="category">Scheme Discovery</span><h3>myScheme</h3><p>Explore government schemes and check eligibility information.</p><a class="link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes ↗</a>
+   <div class="card-icon">🔎</div><span class="category">Scheme Discovery</span><h3>myScheme</h3><p>Explore government schemes and eligibility information.</p><a class="link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes ↗</a>
   </article>
  </div>
 </section>
@@ -282,13 +310,13 @@ footer p{font-size:11px}
  <div class="section-head"><div><span class="eyebrow">CAREER OPPORTUNITIES</span><h2>Government Jobs</h2><p>Recruitment portals and department information.</p></div><span class="pill">CAREERS</span></div>
  <div class="grid">
   <article class="card searchable" data-category="jobs maharashtra pwd zilla parishad">
-   <div class="card-icon">🏢</div><h3>Maharashtra Departments</h3><p>Zilla Parishad, PWD, Nagar Parishad, Water Supply and Jalsampada department notices.</p><a class="link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener">Government Portal ↗</a>
+   <div class="card-icon">🏢</div><h3>Maharashtra Departments</h3><p>Zilla Parishad, PWD, Nagar Parishad, Water Supply and Jalsampada notices.</p><a class="link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener">Government Portal ↗</a>
   </article>
   <article class="card searchable" data-category="jobs majhe naukri maharashtra">
-   <div class="card-icon">📣</div><h3>Majhe Naukri Search</h3><p>Find recruitment updates. Confirm every vacancy with the recruiting department.</p><a class="link" href="https://www.google.com/search?q=Majhe+Naukri+Maharashtra" target="_blank" rel="noopener">Find Updates ↗</a>
+   <div class="card-icon">📣</div><h3>Majhe Naukri Search</h3><p>Find recruitment updates and verify each vacancy with its department.</p><a class="link" href="https://www.google.com/search?q=Majhe+Naukri+Maharashtra" target="_blank" rel="noopener">Find Updates ↗</a>
   </article>
   <article class="card searchable" data-category="jobs ssc central">
-   <div class="card-icon">📝</div><h3>SSC</h3><p>Central government examination notifications and recruitment information.</p><a class="link" href="https://ssc.gov.in/" target="_blank" rel="noopener">SSC Official ↗</a>
+   <div class="card-icon">📝</div><h3>SSC</h3><p>Central government examination notifications.</p><a class="link" href="https://ssc.gov.in/" target="_blank" rel="noopener">SSC Official ↗</a>
   </article>
   <article class="card searchable" data-category="jobs upsc central">
    <div class="card-icon">🇮🇳</div><h3>UPSC</h3><p>Civil services and other Union Public Service Commission examinations.</p><a class="link" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC Official ↗</a>
@@ -306,7 +334,7 @@ footer p{font-size:11px}
    <div class="card-icon">🏦</div><h3>Bank Recruitment</h3><p>Bank examination notifications and recruitment updates.</p><a class="link" href="https://www.ibps.in/" target="_blank" rel="noopener">IBPS Official ↗</a>
   </article>
   <article class="card searchable" data-category="jobs railway rrb">
-   <div class="card-icon">🚆</div><h3>Railway Recruitment</h3><p>Railway recruitment notices. Choose the correct regional RRB.</p><a class="link" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">RRB Chandigarh ↗</a>
+   <div class="card-icon">🚆</div><h3>Railway Recruitment</h3><p>Railway recruitment notices; choose the correct regional RRB.</p><a class="link" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">RRB Chandigarh ↗</a>
   </article>
  </div>
  <p class="note">Vacancy dates, fees, eligibility and deadlines must be verified in the latest official notification. This guide does not guarantee selection.</p>
@@ -319,7 +347,7 @@ footer p{font-size:11px}
    <div class="card-icon">🎓</div><h3>National Scholarship Portal</h3><p>Central scholarship schemes and student application information.</p><a class="link" href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP Portal ↗</a>
   </article>
   <article class="card searchable" data-category="scholarships mahadbt maharashtra">
-   <div class="card-icon">📚</div><h3>MahaDBT</h3><p>Maharashtra scholarship, benefit schemes and application services.</p><a class="link" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">MahaDBT ↗</a>
+   <div class="card-icon">📚</div><h3>MahaDBT</h3><p>Maharashtra scholarships, benefit schemes and application services.</p><a class="link" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">MahaDBT ↗</a>
   </article>
  </div>
 </section>
@@ -339,19 +367,29 @@ footer p{font-size:11px}
   <article class="card searchable" data-category="services digilocker documents">
    <div class="card-icon">📂</div><h3>DigiLocker</h3><p>Digital documents and available certificate services.</p><a class="link" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">DigiLocker ↗</a>
   </article>
-  <article class="card searchable" data-category="services land records 7/12 satbara">
+  <article class="card searchable" data-category="services land records satbara">
    <div class="card-icon">🗺️</div><h3>Mahabhulekh</h3><p>Maharashtra land records and 7/12 information.</p><a class="link" href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener">Land Records ↗</a>
   </article>
   <article class="card searchable" data-category="services crop survey e peek pahani farmer">
-   <div class="card-icon">🌱</div><h3>e-Peek Pahani</h3><p>Maharashtra crop survey portal and crop registration information.</p><a class="link" href="https://mhdcs.agristack.gov.in/crop-survey-mh/#/" target="_blank" rel="noopener">Official Portal ↗</a>
+   <div class="card-icon">🌱</div><h3>e-Peek Pahani</h3><p>Maharashtra crop survey and crop registration information.</p><a class="link" href="https://mhdcs.agristack.gov.in/crop-survey-mh/#/" target="_blank" rel="noopener">Official Portal ↗</a>
   </article>
  </div>
 </section>
 
-<section>
+<section id="guide">
  <div class="assistant">
   <div class="assistant-icon">✦</div>
-  <div><h3>YojanaMitra AI Guide</h3><p>Choose a service folder, search for a scheme or open an official portal. The guides shown here are decorative illustrations; live AI conversation is not connected in this version.</p></div>
+  <div>
+   <h3>YojanaMitra Quick Guide</h3>
+   <p>Choose a question for basic guidance. This built-in demo guide is not a connected live AI assistant.</p>
+   <div class="quick-questions">
+    <button type="button" data-question="ration">Ration Card Documents</button>
+    <button type="button" data-question="samagra">Samagra ID Help</button>
+    <button type="button" data-question="jobs">Government Jobs</button>
+    <button type="button" data-question="scholarship">Scholarships</button>
+   </div>
+   <div class="answer hidden" id="guideAnswer" role="status"></div>
+  </div>
  </div>
 </section>
 </main>
@@ -359,10 +397,11 @@ footer p{font-size:11px}
 <footer>
  <div class="wrap">
   <div class="brand"><span class="logo">✦</span><span><strong>Yojana<span>Mitra</span> AI</strong><small>GOVERNMENT INFORMATION GUIDE</small></span></div>
-  <p>Independent information service. Not a government website. Official departments control applications, eligibility, document requirements, fees, deadlines and final decisions. Never share passwords, OTPs, UPI PINs or other authentication secrets with unofficial parties.</p>
+  <p>Independent information service; not a government website. Official departments control eligibility, document requirements, fees, deadlines and final decisions. Never share passwords, OTPs, UPI PINs or authentication secrets with unofficial parties.</p>
   <p>© <span id="year"></span> YojanaMitra AI</p>
  </div>
 </footer>
+
 <script>
 document.getElementById("year").textContent=new Date().getFullYear();
 
@@ -380,29 +419,27 @@ document.querySelectorAll("[data-toggle]").forEach(button=>{
 const search=document.getElementById("search");
 function doSearch(){
  const q=search.value.trim().toLowerCase();
- let shown=0;
  document.querySelectorAll(".searchable").forEach(card=>{
-  const match=!q||(card.innerText+" "+(card.dataset.category||"")).toLowerCase().includes(q);
-  card.classList.toggle("hidden",!match);
-  if(match)shown++;
+  card.classList.toggle("hidden",!!q&&
+   !(card.innerText+" "+(card.dataset.category||"")).toLowerCase().includes(q));
  });
- let old=document.getElementById("noResults");
- if(old)old.remove();
- if(q&&shown===0){
-  const msg=document.createElement("p");
-  msg.id="noResults";msg.className="empty";
-  msg.textContent="No matching services found. Try a different keyword.";
-  document.getElementById("folders").appendChild(msg);
- }
+ document.querySelectorAll("[data-filter-group] .filter").forEach(b=>{
+  b.classList.toggle("active",b.dataset.filter==="all");
+ });
+ let msg=document.getElementById("noResults");
+ const count=[...document.querySelectorAll(".searchable")].filter(c=>!c.classList.contains("hidden")).length;
+ if(q&&count===0){
+  if(!msg){msg=document.createElement("p");msg.id="noResults";msg.className="empty";document.getElementById("folders").appendChild(msg)}
+  msg.textContent="No matching services found. Try another keyword.";
+ }else if(msg)msg.remove();
 }
 document.getElementById("searchBtn").addEventListener("click",doSearch);
 search.addEventListener("keydown",e=>{if(e.key==="Enter")doSearch()});
 document.getElementById("resetBtn").addEventListener("click",()=>{
  search.value="";
- document.querySelectorAll(".searchable").forEach(card=>card.classList.remove("hidden"));
- const old=document.getElementById("noResults");
- if(old)old.remove();
+ document.querySelectorAll(".searchable").forEach(c=>c.classList.remove("hidden"));
  document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter==="all"));
+ const msg=document.getElementById("noResults");if(msg)msg.remove();
 });
 
 document.querySelectorAll("[data-filter-group]").forEach(group=>{
@@ -421,16 +458,42 @@ document.querySelectorAll("[data-filter-group]").forEach(group=>{
  });
 });
 
+const answers={
+ ration:"Ration Card: Maharashtra ke official Food Department portal par new card, correction, family member changes aur status ke available options check karein. Identity/address proof aur family documents maange ja sakte hain. Exact list: https://mahafood.gov.in/",
+ samagra:"Samagra ID: Yeh Madhya Pradesh ka family/member database hai. Family ID search, Member ID aur e-KYC ke liye official portal dekhein: https://samagra.gov.in/ . OTP kisi ko na batayein.",
+ jobs:"Government Jobs: SSC, UPSC, Maharashtra Police aur recruiting department ke official notifications check karein. Eligibility, fees aur last date notification se verify karein. SSC: https://ssc.gov.in/ | UPSC: https://upsc.gov.in/",
+ scholarship:"Scholarships: National Scholarship Portal aur Maharashtra MahaDBT par scheme eligibility, required documents aur application dates check karein. NSP: https://scholarships.gov.in/ | MahaDBT: https://mahadbt.maharashtra.gov.in/"
+};
+document.querySelectorAll("[data-question]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const answer=document.getElementById("guideAnswer");
+  answer.textContent=answers[button.dataset.question]||"Official portal par current details verify karein.";
+  answer.classList.remove("hidden");
+ });
+});
+
 const translations={
- en:{headline:'Government services.<br><span class="gold">A smarter way.</span>',intro:'Discover schemes, recruitment notices, scholarships and essential citizen services in one place. Start with a service folder or search for what you need.',explore:'Explore Service Folders ↗',schemesbtn:'Explore Schemes'},
- hi:{headline:'सरकारी सेवाएँ।<br><span class="gold">अब और आसान।</span>',intro:'सरकारी योजनाएँ, नौकरियाँ, छात्रवृत्तियाँ और नागरिक सेवाएँ एक जगह खोजें। सेवा फोल्डर खोलें या अपनी जरूरत खोजें।',explore:'सेवा फोल्डर देखें ↗',schemesbtn:'योजनाएँ देखें'},
- mr:{headline:'सरकारी सेवा.<br><span class="gold">आता अधिक सोप्या.</span>',intro:'सरकारी योजना, नोकरी, शिष्यवृत्ती आणि नागरिक सेवा एकाच ठिकाणी शोधा. सेवा फोल्डर उघडा किंवा आवश्यक सेवा शोधा.',explore:'सेवा फोल्डर पहा ↗',schemesbtn:'योजना पहा'}
+ en:{
+  headline:'Government services.<br><span class="gold">A smarter way.</span>',
+  intro:'Discover government schemes, jobs, scholarships and essential citizen services in one place. Open a service folder or search for what you need.',
+  explore:'Explore Service Folders ↗',schemesbtn:'Explore Schemes'
+ },
+ hi:{
+  headline:'सरकारी सेवाएँ।<br><span class="gold">अब और आसान।</span>',
+  intro:'सरकारी योजनाएँ, नौकरियाँ, छात्रवृत्तियाँ और नागरिक सेवाएँ एक जगह खोजें। सेवा फोल्डर खोलें या अपनी जरूरत खोजें।',
+  explore:'सेवा फोल्डर देखें ↗',schemesbtn:'योजनाएँ देखें'
+ },
+ mr:{
+  headline:'सरकारी सेवा.<br><span class="gold">आता अधिक सोप्या.</span>',
+  intro:'सरकारी योजना, नोकरी, शिष्यवृत्ती आणि नागरिक सेवा एकाच ठिकाणी शोधा. सेवा फोल्डर उघडा किंवा आवश्यक सेवा शोधा.',
+  explore:'सेवा फोल्डर पहा ↗',schemesbtn:'योजना पहा'
+ }
 };
 document.getElementById("language").addEventListener("change",e=>{
  const t=translations[e.target.value]||translations.en;
  document.querySelectorAll("[data-i18n]").forEach(el=>{
-  const key=el.dataset.i18n;
-  if(t[key])el.innerHTML=t[key];
+  const value=t[el.dataset.i18n];
+  if(value)el.innerHTML=value;
  });
 });
 </script>
