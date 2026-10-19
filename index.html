@@ -1,571 +1,437 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b2341">
-<meta name="description" content="YojanaMitra AI: government schemes, jobs, scholarships and citizen services.">
-<title>YojanaMitra AI | Government Guide</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d19">
+<meta name="description" content="YojanaMitra AI: Government schemes, jobs, scholarships, ration card, Samagra ID and citizen services.">
+<title>YojanaMitra AI | Premium Government Guide</title>
 <style>
-:root{--navy:#0b2341;--blue:#1769b2;--sky:#eaf5ff;--orange:#ff9933;--green:#16834f;--ink:#183653;--muted:#61758b;--line:#d9e8f6}
+:root {
+  --bg:#080d19;--panel:#111a2a;--panel2:#172338;
+  --gold:#e7c47a;--gold2:#f6e4b5;--ink:#f6f3ec;
+  --muted:#aab5c7;--line:#2a374d;--green:#78d7a1;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font:15px Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#edf7ff,#f8fbff 45%,#fff)}
-header{position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(12px);padding:12px 14px;border-bottom:1px solid var(--line);z-index:10}
-.wrap{max-width:1100px;margin:auto;padding:15px}
-.brand{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:900;letter-spacing:-.5px;background:linear-gradient(90deg,#1769b2,#ff9933,#138808);color:transparent;background-clip:text}
-.chakra{width:40px;height:40px;flex-shrink:0;animation:spin 14s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-nav{display:flex;gap:13px;flex-wrap:wrap;margin-top:10px}
-nav a{font-size:12px;font-weight:bold;color:var(--blue);text-decoration:none}
-nav a:hover{text-decoration:underline}
-.hero,.card,.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:14px;box-shadow:0 8px 25px #1456a010}
-.hero{position:relative;overflow:hidden;background:linear-gradient(130deg,#fff,#e0f1ff 58%,#fff2e4);padding:clamp(22px,5vw,38px)}
-.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-55px;top:-65px;border:22px solid #1769b20b;pointer-events:none}
-.eyebrow{color:var(--blue);font-weight:bold;font-size:12px;letter-spacing:1px}
-h1{font-size:clamp(32px,6vw,54px);line-height:1.08;margin:12px 0;letter-spacing:-1.4px}
-.gradient{background:linear-gradient(90deg,#1769b2,#ff9933);color:transparent;background-clip:text}
-h2{font-size:clamp(22px,4vw,29px);margin:0 0 14px}
-h3{font-size:17px;margin:8px 0}
-p{color:var(--muted);line-height:1.65;font-size:13px}
-.btn,button{display:inline-block;border:0;border-radius:10px;padding:11px 14px;background:var(--blue);color:white;font-weight:bold;cursor:pointer;text-decoration:none;font-size:13px}
-.btn:hover,button:hover{filter:brightness(.95)}
-.light{background:#e6f3ff;color:var(--blue)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
-.card{margin:0;transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-2px);box-shadow:0 12px 28px #1456a018}
-.icon{font-size:28px}
-.card a{color:var(--blue);font-weight:bold;font-size:12px;text-decoration:none}
-.card a:hover{text-decoration:underline}
-input,select,textarea{width:100%;padding:12px;border:1px solid #d1e1ef;border-radius:10px;margin:5px 0 12px;font:inherit;background:white;color:var(--ink)}
-input:focus,select:focus,textarea:focus{outline:2px solid #9acdf8;border-color:var(--blue)}
-label{font-weight:bold;font-size:12px}
-section{scroll-margin-top:115px;margin:27px 0}
-.status{font-size:12px;overflow-wrap:anywhere;line-height:1.6}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.wrap{width:min(1150px,calc(100% - 28px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:#080d19f5;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{display:grid;place-items:center;width:45px;height:45px;border-radius:15px;background:linear-gradient(135deg,#f8e6b5,#b68b43);color:#14131a;font-size:25px}
+.brand strong{font-size:19px;letter-spacing:-.5px}
+.brand strong span{color:var(--gold)}
+.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:2px;margin-top:2px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{font-size:12px;color:#d2d9e6}
+nav a:hover,.link:hover{color:var(--gold)}
+select,input{color:var(--ink);background:#111a2a;border:1px solid var(--line);border-radius:11px;padding:11px;max-width:100%}
+.hero{margin-top:22px;padding:clamp(22px,5vw,48px);border-radius:26px;border:1px solid #e7c47a30;background:radial-gradient(ellipse at 80% 20%,#e7c47a1b,transparent 38%),linear-gradient(135deg,#17243a,#0b1220 70%,#1c1828);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:22px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(36px,6vw,63px);line-height:1.06;letter-spacing:-1.8px;margin:15px 0}
+.gold{color:var(--gold2)}
+p{color:var(--muted);line-height:1.75;font-size:13px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:7px;padding:12px 16px;border-radius:11px;background:#1a263b;border:1px solid var(--line);color:var(--ink);font-size:12px;font-weight:800}
+.btn.gold-btn{background:linear-gradient(130deg,#f5dfa3,#c39a51);color:#17120b;border:0}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0}
+.guides{display:flex;align-items:end;justify-content:center;gap:8px;min-height:245px}
+.person{position:relative;width:46%;max-width:170px;height:215px;border-radius:100px 100px 20px 20px;background:linear-gradient(160deg,#30405a,#121b2b);border:1px solid #e7c47a55;animation:float 4s ease-in-out infinite;overflow:hidden}
+.person:nth-child(2){height:248px;animation-delay:-2s}
+.hair{position:absolute;top:19px;left:50%;transform:translateX(-50%);width:78px;height:75px;border-radius:45% 45% 35% 35%;background:#261c1b}
+.girl .hair{width:88px;height:105px}
+.face{position:absolute;top:32px;left:50%;transform:translateX(-50%);width:57px;height:69px;border-radius:44% 44% 48% 48%;background:linear-gradient(100deg,#edc09b,#bc805d)}
+.girl .face{top:35px}
+.eye{position:absolute;top:30px;width:5px;height:6px;border-radius:50%;background:#35231e}
+.eye:first-child{left:12px}.eye:nth-child(2){right:12px}
+.nose{position:absolute;top:38px;left:27px;width:5px;height:10px;border-right:1px solid #945d48}
+.mouth{position:absolute;top:53px;left:23px;width:13px;height:5px;border-bottom:2px solid #914c48;border-radius:50%}
+.neck{position:absolute;top:94px;left:calc(50% - 10px);width:20px;height:18px;background:#c58b67}
+.clothes{position:absolute;top:107px;left:50%;transform:translateX(-50%);width:115px;height:115px;border-radius:42px 42px 0 0;background:linear-gradient(90deg,#a47a3f,#f4d99a,#9b7039)}
+.girl .clothes{background:linear-gradient(90deg,#633e82,#c0a1d6,#754d91)}
+.clothes:after{content:"";position:absolute;left:43%;top:0;width:17%;height:54px;background:#fff0d0;clip-path:polygon(0 0,100% 0,50% 100%)}
+.girl .clothes:after{background:#f6d8ed}
+.person-label{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:var(--gold2);font-size:9px;letter-spacing:1px}
+@keyframes float{50%{transform:translateY(-7px)}}
+.searchbar{display:flex;gap:8px;margin-top:20px}
+.searchbar input{flex:1;min-width:0;padding:14px}
+section{margin:39px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:17px}
+h2{font-size:clamp(23px,4vw,31px);margin:0 0 6px;letter-spacing:-.7px}
+.section-head p{margin:0}
+.pill{font-size:10px;letter-spacing:1px;color:var(--gold2);border:1px solid #e7c47a55;border-radius:30px;padding:7px 10px;white-space:nowrap}
+.filters{display:flex;gap:8px;overflow:auto;padding:2px 0 14px}
+.filter{flex-shrink:0;border:1px solid var(--line);border-radius:30px;padding:9px 14px;background:var(--panel);color:#d5ddeb;font-size:12px}
+.filter.active{background:var(--gold);color:#17120a;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.card{padding:18px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,#141f32,#0e1523);min-width:0;transition:.2s}
+.card:hover{border-color:#e7c47a88;transform:translateY(-2px)}
+.card-icon{display:grid;place-items:center;width:47px;height:47px;border-radius:14px;background:#e7c47a10;border:1px solid #e7c47a35;font-size:25px}
+.card h3{font-size:16px;margin:13px 0 6px}
+.card p{font-size:12px;margin:7px 0 13px}
+.card .category{font-size:10px;letter-spacing:1px;color:var(--gold);font-weight:800;text-transform:uppercase}
+.card-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.link{color:var(--gold2);font-size:12px;font-weight:800}
+.folder{background:radial-gradient(ellipse at top right,#e7c47a12,transparent 50%),linear-gradient(145deg,#17243a,#0c1421);border-color:#b8944c55}
+.folder .card-icon{width:58px;height:58px;font-size:30px}
+.folder h3{font-size:20px}
+.folder-list{list-style:none;margin:14px 0;padding:0;display:grid;gap:8px}
+.folder-list li{font-size:12px;color:#c5cedd;line-height:1.55;padding-left:19px;position:relative}
+.folder-list li:before{content:"✦";position:absolute;left:0;color:var(--gold)}
+.folder-button{width:100%;margin-top:10px}
+.detail{margin-top:16px;padding-top:15px;border-top:1px solid var(--line)}
+.detail h4{color:var(--gold2);font-size:14px;margin:13px 0 5px}
+.detail ol,.detail ul{padding-left:19px;color:#c4cedd;font-size:12px;line-height:1.9}
+.detail p{font-size:12px}
+.note{padding:12px;border:1px solid #a988473b;border-radius:11px;background:#e7c47a09;font-size:11px;color:#d5c8a7;line-height:1.7}
+.assistant{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding:22px;border:1px solid #e7c47a40;border-radius:20px;background:var(--panel)}
+.assistant-icon{width:65px;height:65px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f6e4b5,#b68b43);font-size:31px;color:#111}
+.assistant h3{margin:0 0 5px}
+.assistant p{margin:0}
 .hidden{display:none!important}
-.record{padding:12px;margin:8px 0;border:1px solid var(--line);border-radius:10px;background:#f8fbff;font-size:12px;overflow-wrap:anywhere}
-.notice{background:#fff8eb;border:1px solid #ffe0b1;border-radius:12px;padding:12px;color:#744b14;font-size:12px;line-height:1.6}
-.feature-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:18px}
-.feature{border:1px solid #d9e8f6;background:#ffffffc9;border-radius:13px;padding:12px}
-.feature strong{display:block;margin:5px 0;font-size:13px}
-.feature span{font-size:12px;color:var(--muted)}
-footer{text-align:center;color:var(--muted);padding:25px 15px;font-size:12px}
-@media(max-width:500px){.brand{font-size:21px}.chakra{width:34px;height:34px}nav{gap:10px}.hero{padding:22px}.card,.panel{padding:16px}}
-@media print{header,.no-print,#application,#adminLogin,footer,.notice{display:none!important}body *{visibility:hidden}#records,#records *{visibility:visible}#records{position:absolute;top:0;left:0;width:100%}}
+.empty{grid-column:1/-1;padding:20px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:24px 0;margin-top:45px}
+footer p{font-size:11px}
+@media(max-width:780px){
+ .hero-grid{grid-template-columns:1fr}.guides{min-height:220px}
+ .person{height:190px}.person:nth-child(2){height:220px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ nav{width:100%;order:3}
+}
+@media(max-width:480px){
+ .wrap{width:calc(100% - 22px)}.brand strong{font-size:17px}
+ nav{gap:12px}nav a{font-size:11px}
+ .grid{grid-template-columns:1fr}.hero{padding:20px 16px}
+ .searchbar{flex-wrap:wrap}.searchbar input,.searchbar button{width:100%}
+ .section-head{align-items:start}
+}
 </style>
 </head>
 <body>
-
 <header>
-<div class="wrap" style="padding:0">
-<div class="brand">
-<svg class="chakra" viewBox="0 0 100 100" aria-label="Ashoka Chakra">
-<circle cx="50" cy="50" r="40" fill="none" stroke="#1769b2" stroke-width="4"/>
-<g id="spokes" stroke="#1769b2" stroke-width="2"></g>
-<circle cx="50" cy="50" r="5" fill="#1769b2"/>
-</svg>
-YojanaMitra AI
-</div>
-<nav>
-<a href="#schemes">Yojana</a>
-<a href="#jobs">Jobs</a>
-<a href="#scholarships">Scholarships</a>
-<a href="#services">Services</a>
-<a href="#application">Apply Help</a>
-<a href="#admin">Admin</a>
-</nav>
-</div>
+ <div class="wrap header">
+  <a class="brand" href="#home">
+   <span class="logo">✦</span>
+   <span><strong>Yojana<span>Mitra</span> AI</strong><small>YOUR DIGITAL GOVERNMENT GUIDE</small></span>
+  </a>
+  <select id="language" aria-label="Language">
+   <option value="en">English</option>
+   <option value="hi">हिंदी</option>
+   <option value="mr">मराठी</option>
+  </select>
+  <nav>
+   <a href="#schemes">Yojana</a>
+   <a href="#jobs">Jobs</a>
+   <a href="#scholarships">Scholarships</a>
+   <a href="#folders">Service Folders</a>
+   <a href="#services">Other Services</a>
+  </nav>
+ </div>
 </header>
 
 <main class="wrap">
-
 <section class="hero" id="home">
-<span class="eyebrow">YOUR DIGITAL GOVERNMENT GUIDE</span>
-<h1>Government schemes.<br><span class="gradient">Simplified for you.</span></h1>
-<p>Explore government schemes, recruitment links, scholarships and citizen services in one place. YojanaMitra AI is an independent information guide, not a government website. Always verify eligibility, documents, fees and deadlines on official portals.</p>
-<a class="btn" href="#schemes">Explore Schemes ↗</a>
-<a class="btn light" href="#application">Application Help</a>
-<div style="margin-top:20px">
-<label for="search">Search schemes, jobs and services</label>
-<input id="search" placeholder="Try: e-Peek Pahani, scholarship, police..." autocomplete="off">
-<button class="light" id="reset" type="button">Reset Search</button>
-</div>
-<div class="feature-row">
-<div class="feature"><span>🌾 Farmer support</span><strong>Schemes & crop services</strong><span>Find official portals</span></div>
-<div class="feature"><span>📰 Career updates</span><strong>Jobs & recruitment</strong><span>Verify official notices</span></div>
-<div class="feature"><span>🧾 Citizen help</span><strong>Online services</strong><span>Application assistance</span></div>
-</div>
+ <div class="hero-grid">
+  <div>
+   <span class="eyebrow">INTELLIGENT • SIMPLE • CITIZEN FIRST</span>
+   <h1 data-i18n="headline">Government services.<br><span class="gold">A smarter way.</span></h1>
+   <p data-i18n="intro">Discover schemes, recruitment notices, scholarships and essential citizen services in one place. Start with a service folder or search for what you need.</p>
+   <div class="actions">
+    <a class="btn gold-btn" href="#folders" data-i18n="explore">Explore Service Folders ↗</a>
+    <a class="btn" href="#schemes" data-i18n="schemesbtn">Explore Schemes</a>
+   </div>
+   <div class="note">Independent information guide. Government applications and decisions are handled by the relevant official portals.</div>
+  </div>
+  <div class="guides" aria-label="Decorative illustrated guides">
+   <div class="person">
+    <div class="hair"></div><div class="face"><i class="eye"></i><i class="eye"></i><i class="nose"></i><i class="mouth"></i></div>
+    <div class="neck"></div><div class="clothes"></div><div class="person-label">YOJANA GUIDE</div>
+   </div>
+   <div class="person girl">
+    <div class="hair"></div><div class="face"><i class="eye"></i><i class="eye"></i><i class="nose"></i><i class="mouth"></i></div>
+    <div class="neck"></div><div class="clothes"></div><div class="person-label">SEVA GUIDE</div>
+   </div>
+  </div>
+ </div>
+ <div class="searchbar">
+  <input id="search" type="search" placeholder="Search: ration card, Samagra ID, police bharti..." aria-label="Search services">
+  <button class="btn gold-btn" id="searchBtn" type="button">Search ↗</button>
+  <button class="btn" id="resetBtn" type="button">Reset</button>
+ </div>
+</section>
+
+<section id="folders">
+ <div class="section-head">
+  <div><span class="eyebrow">DEDICATED SERVICE CENTRE</span><h2>Explore Service Folders</h2><p>Alag folders, detailed guidance aur official portals.</p></div>
+  <span class="pill">2 MAIN FOLDERS</span>
+ </div>
+ <div class="grid">
+  <article class="card folder searchable" data-category="ration card maharashtra central food civil supplies">
+   <div class="card-icon">🪪</div><span class="category">Folder 01 · Food & Public Distribution</span>
+   <h3>Ration Card Services</h3>
+   <p>Maharashtra ration card aur Central Government food distribution services ki guidance ek jagah.</p>
+   <ul class="folder-list">
+    <li>New ration card application guidance</li>
+    <li>Family member add / delete</li>
+    <li>Name, address and details correction</li>
+    <li>e-Ration Card and application status</li>
+    <li>Ration entitlement, FPS shop and grievance</li>
+   </ul>
+   <button class="btn gold-btn folder-button" type="button" data-toggle="rationDetails" aria-expanded="false">Open Ration Card Folder ↓</button>
+   <div class="detail hidden" id="rationDetails">
+    <h4>1. New Ration Card</h4>
+    <p>Check eligibility, household category, residence requirements and the applicable application process on the state portal.</p>
+    <ul><li>Identity and address proof, as specified by the department</li><li>Family member details and required declarations</li><li>Existing ration card details, if applicable</li><li>Additional documents may be requested by the authority</li></ul>
+    <h4>2. Add or Remove a Family Member</h4>
+    <p>Choose the appropriate member addition or deletion service. Keep the existing ration card and supporting family documents available. Requirements depend on the reason for the change.</p>
+    <h4>3. Correction of Name or Address</h4>
+    <p>Check the correction service and supporting evidence accepted by the issuing authority. Submit only through an official channel.</p>
+    <h4>4. e-Ration Card / Download</h4>
+    <p>Look for the available download or print option on the relevant official portal. Availability and login requirements may vary.</p>
+    <h4>5. Application Status</h4>
+    <p>Use the acknowledgement or application reference number on the official status page, if provided.</p>
+    <h4>6. Ration Shop and Entitlement</h4>
+    <p>Check applicable entitlement, fair-price shop details and distribution information using the relevant state or national service.</p>
+    <h4>7. Complaint or Grievance</h4>
+    <p>Use the department's official grievance channel for card errors, distribution issues or other complaints. Keep your complaint reference number.</p>
+    <h4>Official links</h4>
+    <div class="card-actions">
+     <a class="link" href="https://mahafood.gov.in/" target="_blank" rel="noopener">Maharashtra Food Department ↗</a>
+     <a class="link" href="https://nfsa.gov.in/" target="_blank" rel="noopener">National Food Security Portal ↗</a>
+     <a class="link" href="https://pdsportal.nic.in/" target="_blank" rel="noopener">PDS Portal ↗</a>
+    </div>
+    <p class="note">Exact services, eligibility, documents, fees and processing times can change. Verify them on the official portal before applying.</p>
+   </div>
+  </article>
+
+  <article class="card folder searchable" data-category="samagra samagra id family id madhya pradesh ekyc">
+   <div class="card-icon">👨‍👩‍👧‍👦</div><span class="category">Folder 02 · Madhya Pradesh</span>
+   <h3>Samagra Portal</h3>
+   <p>Samagra Family ID, Member ID aur Madhya Pradesh Samagra social-security services ki guidance.</p>
+   <ul class="folder-list">
+    <li>Samagra Family ID information</li>
+    <li>Samagra Member ID search</li>
+    <li>New family / member registration guidance</li>
+    <li>Member details update and correction</li>
+    <li>e-KYC and Aadhaar-related guidance</li>
+   </ul>
+   <button class="btn gold-btn folder-button" type="button" data-toggle="samagraDetails" aria-expanded="false">Open Samagra Folder ↓</button>
+   <div class="detail hidden" id="samagraDetails">
+    <h4>1. Samagra Family ID</h4>
+    <p>Samagra is a Madhya Pradesh state family and member database. Use the official portal to find available family ID search and family-related services.</p>
+    <h4>2. Samagra Member ID</h4>
+    <p>Use the member search service, if available, and enter only the information requested by the official portal.</p>
+    <h4>3. New Family or Member Registration</h4>
+    <p>Check the current eligibility, registration route and required supporting documents. Do not assume every registration is available online.</p>
+    <h4>4. Member Details Correction</h4>
+    <p>Follow the correction option available for the particular field. Supporting documents and verification may be required.</p>
+    <h4>5. e-KYC / Aadhaar Linkage</h4>
+    <p>Check the current e-KYC process and status options on the official portal. Never share your OTP, password or Aadhaar authentication codes with an unofficial helper.</p>
+    <h4>6. Family Member Add / Remove</h4>
+    <p>Choose the appropriate official service and follow the applicable verification process. A change may require approval by the responsible authority.</p>
+    <h4>7. Status and Assistance</h4>
+    <p>Keep your application or request reference number if one is issued. Use the official help or grievance route for unresolved issues.</p>
+    <h4>Official link</h4>
+    <div class="card-actions">
+     <a class="link" href="https://samagra.gov.in/" target="_blank" rel="noopener">Samagra Official Portal ↗</a>
+     <a class="link" href="https://mp.gov.in/" target="_blank" rel="noopener">Madhya Pradesh Government ↗</a>
+    </div>
+    <p class="note">Samagra is for Madhya Pradesh; it is not Maharashtra's ration card or citizen-service database. Verify current steps and eligibility on the official portal.</p>
+   </div>
+  </article>
+ </div>
 </section>
 
 <section id="schemes">
-<h2>🇮🇳 Government Schemes</h2>
-<div class="grid">
-
-<article class="card searchable">
-<div class="icon">🌾</div><h3>PM-KISAN</h3>
-<p>Farmer scheme information and official services.</p>
-<a href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🏥</div><h3>Ayushman Bharat / PM-JAY</h3>
-<p>Health coverage scheme information.</p>
-<a href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🛠️</div><h3>PM Vishwakarma</h3>
-<p>Programme information for eligible traditional artisans.</p>
-<a href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🏠</div><h3>PM Awas Yojana</h3>
-<p>Housing scheme information. Check the relevant rural or urban portal.</p>
-<a href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">👩</div><h3>Mukhyamantri Majhi Ladki Bahin</h3>
-<p>Maharashtra scheme information and updates.</p>
-<a href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🔎</div><h3>myScheme</h3>
-<p>Discover government schemes and eligibility information.</p>
-<a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes ↗</a>
-</article>
-
-</div>
+ <div class="section-head"><div><span class="eyebrow">BENEFITS & OPPORTUNITIES</span><h2>Government Schemes</h2><p>Popular official scheme portals.</p></div><span class="pill">SCHEMES</span></div>
+ <div class="filters" data-filter-group="schemes">
+  <button class="filter active" data-filter="all">All</button>
+  <button class="filter" data-filter="farmer">Farmers</button>
+  <button class="filter" data-filter="health">Health</button>
+  <button class="filter" data-filter="housing">Housing</button>
+  <button class="filter" data-filter="women">Women</button>
+ </div>
+ <div class="grid">
+  <article class="card searchable" data-category="farmer schemes pm kisan">
+   <div class="card-icon">🌾</div><span class="category">Farmer Support</span><h3>PM-KISAN</h3><p>Farmer scheme information, beneficiary services and official updates.</p><a class="link" href="https://pmkisan.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="health schemes ayushman">
+   <div class="card-icon">🏥</div><span class="category">Health</span><h3>Ayushman Bharat</h3><p>Health scheme information and official PM-JAY services.</p><a class="link" href="https://pmjay.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="housing schemes pmay">
+   <div class="card-icon">🏠</div><span class="category">Housing</span><h3>PM Awas Yojana</h3><p>Housing scheme information. Select the applicable rural or urban programme.</p><a class="link" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener">Urban Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="women schemes ladki bahin">
+   <div class="card-icon">👩</div><span class="category">Maharashtra · Women</span><h3>Majhi Ladki Bahin</h3><p>Maharashtra scheme information and official notices.</p><a class="link" href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="schemes artisan pm vishwakarma">
+   <div class="card-icon">🛠️</div><span class="category">Artisans</span><h3>PM Vishwakarma</h3><p>Programme information for eligible traditional artisans.</p><a class="link" href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="schemes all india">
+   <div class="card-icon">🔎</div><span class="category">Scheme Discovery</span><h3>myScheme</h3><p>Explore government schemes and check eligibility information.</p><a class="link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener">Find Schemes ↗</a>
+  </article>
+ </div>
 </section>
 
 <section id="jobs">
-<h2>📰 Government Jobs</h2>
-<div class="grid">
-
-<article class="card searchable">
-<div class="icon">🏢</div><h3>Maharashtra Departments</h3>
-<p>Zilla Parishad, PWD, Nagar Parishad, Water Supply and Jalsampada recruitment notices.</p>
-<a href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener">Maharashtra Government ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📣</div><h3>Majhe Naukri Updates</h3>
-<p>Search recruitment updates; confirm each vacancy with the recruiting department.</p>
-<a href="https://www.google.com/search?q=Majhe+Naukri+Maharashtra" target="_blank" rel="noopener">Find Updates ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📝</div><h3>SSC</h3>
-<p>Central government examination notifications.</p>
-<a href="https://ssc.gov.in/" target="_blank" rel="noopener">SSC Official ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🇮🇳</div><h3>UPSC</h3>
-<p>Civil services examinations and official notices.</p>
-<a href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC Official ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">👮</div><h3>Maharashtra Police</h3>
-<p>Police recruitment and department announcements.</p>
-<a href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener">Police Website ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📮</div><h3>India Post</h3>
-<p>Postal recruitment and citizen services.</p>
-<a href="https://www.indiapost.gov.in/" target="_blank" rel="noopener">India Post ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🌳</div><h3>Maharashtra Forest Department</h3>
-<p>Forest department notices and recruitment information.</p>
-<a href="https://mahaforest.gov.in/" target="_blank" rel="noopener">Forest Website ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🏦</div><h3>IBPS</h3>
-<p>Bank recruitment examinations and notices.</p>
-<a href="https://www.ibps.in/" target="_blank" rel="noopener">IBPS Official ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🚆</div><h3>Railway Recruitment</h3>
-<p>Railway recruitment notifications. Check the correct regional RRB.</p>
-<a href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">RRB Chandigarh ↗</a>
-</article>
-
-</div>
-<p>Vacancy dates, fees, eligibility and deadlines must be verified in the latest official notification. This site does not guarantee a job or selection.</p>
+ <div class="section-head"><div><span class="eyebrow">CAREER OPPORTUNITIES</span><h2>Government Jobs</h2><p>Recruitment portals and department information.</p></div><span class="pill">CAREERS</span></div>
+ <div class="grid">
+  <article class="card searchable" data-category="jobs maharashtra pwd zilla parishad">
+   <div class="card-icon">🏢</div><h3>Maharashtra Departments</h3><p>Zilla Parishad, PWD, Nagar Parishad, Water Supply and Jalsampada department notices.</p><a class="link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener">Government Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs majhe naukri maharashtra">
+   <div class="card-icon">📣</div><h3>Majhe Naukri Search</h3><p>Find recruitment updates. Confirm every vacancy with the recruiting department.</p><a class="link" href="https://www.google.com/search?q=Majhe+Naukri+Maharashtra" target="_blank" rel="noopener">Find Updates ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs ssc central">
+   <div class="card-icon">📝</div><h3>SSC</h3><p>Central government examination notifications and recruitment information.</p><a class="link" href="https://ssc.gov.in/" target="_blank" rel="noopener">SSC Official ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs upsc central">
+   <div class="card-icon">🇮🇳</div><h3>UPSC</h3><p>Civil services and other Union Public Service Commission examinations.</p><a class="link" href="https://upsc.gov.in/" target="_blank" rel="noopener">UPSC Official ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs police bharti maharashtra">
+   <div class="card-icon">👮</div><h3>Maharashtra Police</h3><p>Police department announcements and recruitment information.</p><a class="link" href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener">Police Website ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs post office india post">
+   <div class="card-icon">📮</div><h3>India Post</h3><p>Postal recruitment and official service information.</p><a class="link" href="https://www.indiapost.gov.in/" target="_blank" rel="noopener">India Post ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs forest van vibhag">
+   <div class="card-icon">🌳</div><h3>Forest Department</h3><p>Maharashtra forest department information and notices.</p><a class="link" href="https://mahaforest.gov.in/" target="_blank" rel="noopener">Forest Website ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs bank ibps">
+   <div class="card-icon">🏦</div><h3>Bank Recruitment</h3><p>Bank examination notifications and recruitment updates.</p><a class="link" href="https://www.ibps.in/" target="_blank" rel="noopener">IBPS Official ↗</a>
+  </article>
+  <article class="card searchable" data-category="jobs railway rrb">
+   <div class="card-icon">🚆</div><h3>Railway Recruitment</h3><p>Railway recruitment notices. Choose the correct regional RRB.</p><a class="link" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener">RRB Chandigarh ↗</a>
+  </article>
+ </div>
+ <p class="note">Vacancy dates, fees, eligibility and deadlines must be verified in the latest official notification. This guide does not guarantee selection.</p>
 </section>
 
 <section id="scholarships">
-<h2>🎓 Scholarships</h2>
-<div class="grid">
-
-<article class="card searchable">
-<div class="icon">🎓</div><h3>National Scholarship Portal</h3>
-<p>Central scholarship schemes and student applications.</p>
-<a href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📚</div><h3>MahaDBT</h3>
-<p>Maharashtra scholarship and benefit scheme resources.</p>
-<a href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">MahaDBT ↗</a>
-</article>
-
-</div>
+ <div class="section-head"><div><span class="eyebrow">STUDENT SUPPORT</span><h2>Scholarships</h2><p>Central and Maharashtra scholarship resources.</p></div><span class="pill">EDUCATION</span></div>
+ <div class="grid">
+  <article class="card searchable" data-category="scholarships education nsp">
+   <div class="card-icon">🎓</div><h3>National Scholarship Portal</h3><p>Central scholarship schemes and student application information.</p><a class="link" href="https://scholarships.gov.in/" target="_blank" rel="noopener">NSP Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="scholarships mahadbt maharashtra">
+   <div class="card-icon">📚</div><h3>MahaDBT</h3><p>Maharashtra scholarship, benefit schemes and application services.</p><a class="link" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener">MahaDBT ↗</a>
+  </article>
+ </div>
 </section>
 
 <section id="services">
-<h2>🧾 Online Citizen Services</h2>
-<div class="grid">
-
-<article class="card searchable">
-<div class="icon">🌾</div><h3>ई-पीक पाहणी सहाय्यक</h3>
-<p>महाराष्ट्रातील पीक नोंदणी, शेतातील फोटो, GPS लोकेशन आणि पीक सर्वेक्षण प्रक्रियेबद्दल अधिकृत माहिती.</p>
-<a href="https://mhdcs.agristack.gov.in/crop-survey-mh/#/" target="_blank" rel="noopener">अधिकृत ई-पीक पाहणी पोर्टल ↗</a>
-<p>सहाय्यक नोंदणी किंवा निवड उपलब्ध आहे का, हे अधिकृत सूचनेत तपासा.</p>
-<a href="https://digitalsatbara.mahabhumi.gov.in/aaplichawdi/" target="_blank" rel="noopener">आपली चावडी / सहाय्यक यादी ↗</a>
-<p><a href="https://bhumiabhilekh.maharashtra.gov.in/" target="_blank" rel="noopener">भूमी अभिलेख विभाग ↗</a></p>
-</article>
-
-<article class="card searchable">
-<div class="icon">🪪</div><h3>Aadhaar / UIDAI</h3>
-<p>Aadhaar services and official information.</p>
-<a href="https://uidai.gov.in/" target="_blank" rel="noopener">UIDAI ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🛂</div><h3>Passport Seva</h3>
-<p>Passport applications, appointments and instructions.</p>
-<a href="https://www.passportindia.gov.in/" target="_blank" rel="noopener">Passport Portal ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📂</div><h3>DigiLocker</h3>
-<p>Digital documents and certificates.</p>
-<a href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">DigiLocker ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🏛️</div><h3>Aaple Sarkar</h3>
-<p>Maharashtra citizen services and certificate applications.</p>
-<a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener">Aaple Sarkar ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">🗺️</div><h3>Mahabhulekh</h3>
-<p>Maharashtra land records information.</p>
-<a href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener">Land Records ↗</a>
-</article>
-
-<article class="card searchable">
-<div class="icon">📑</div><h3>Digital Satbara / Aapli Chawdi</h3>
-<p>Check official land record services and published notices.</p>
-<a href="https://digitalsatbara.mahabhumi.gov.in/aaplichawdi/" target="_blank" rel="noopener">Open Portal ↗</a>
-</article>
-
-</div>
+ <div class="section-head"><div><span class="eyebrow">CITIZEN ESSENTIALS</span><h2>Other Online Services</h2><p>Useful government portals in one place.</p></div><span class="pill">SERVICES</span></div>
+ <div class="grid">
+  <article class="card searchable" data-category="services aaple sarkar certificate">
+   <div class="card-icon">🏛️</div><h3>Aaple Sarkar</h3><p>Maharashtra certificates and citizen service applications.</p><a class="link" href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="services aadhaar uidai">
+   <div class="card-icon">🆔</div><h3>Aadhaar / UIDAI</h3><p>Aadhaar services, updates and official information.</p><a class="link" href="https://uidai.gov.in/" target="_blank" rel="noopener">UIDAI ↗</a>
+  </article>
+  <article class="card searchable" data-category="services passport">
+   <div class="card-icon">🛂</div><h3>Passport Seva</h3><p>Passport application information and appointments.</p><a class="link" href="https://www.passportindia.gov.in/" target="_blank" rel="noopener">Passport Portal ↗</a>
+  </article>
+  <article class="card searchable" data-category="services digilocker documents">
+   <div class="card-icon">📂</div><h3>DigiLocker</h3><p>Digital documents and available certificate services.</p><a class="link" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener">DigiLocker ↗</a>
+  </article>
+  <article class="card searchable" data-category="services land records 7/12 satbara">
+   <div class="card-icon">🗺️</div><h3>Mahabhulekh</h3><p>Maharashtra land records and 7/12 information.</p><a class="link" href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener">Land Records ↗</a>
+  </article>
+  <article class="card searchable" data-category="services crop survey e peek pahani farmer">
+   <div class="card-icon">🌱</div><h3>e-Peek Pahani</h3><p>Maharashtra crop survey portal and crop registration information.</p><a class="link" href="https://mhdcs.agristack.gov.in/crop-survey-mh/#/" target="_blank" rel="noopener">Official Portal ↗</a>
+  </article>
+ </div>
 </section>
 
-<section id="application">
-<h2>📝 Customer Application Form</h2>
-<p>Take the customer's permission before recording details. Never ask for passwords, OTPs, ATM PINs or UPI PINs. Explain any service fee before providing assistance.</p>
-<div class="panel">
-<form id="customerForm">
-<label for="customerName">Customer Name *</label>
-<input id="customerName" required maxlength="100" autocomplete="name">
-
-<label for="customerPhone">Mobile Number *</label>
-<input id="customerPhone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel">
-
-<label for="customerService">Required Service *</label>
-<select id="customerService" required>
-<option value="">Select service</option>
-<option>PM-KISAN</option>
-<option>Ayushman Bharat</option>
-<option>PM Vishwakarma</option>
-<option>PM Awas Yojana</option>
-<option>Ladki Bahin Yojana</option>
-<option>MahaDBT Scholarship</option>
-<option>National Scholarship Portal</option>
-<option>Government Job Application</option>
-<option>Police / Forest Bharti</option>
-<option>e-Peek Pahani Information</option>
-<option>e-Peek Pahani Assistant Information</option>
-<option>7/12 / 8A / Land Record</option>
-<option>Certificate / Aaple Sarkar</option>
-<option>Aadhaar / Passport / DigiLocker</option>
-<option>Other Service</option>
-</select>
-
-<label for="visitDate">Preferred Date</label>
-<input id="visitDate" type="date">
-
-<label for="customerNotes">Notes (do not enter passwords or OTPs)</label>
-<textarea id="customerNotes" maxlength="1000" rows="3"></textarea>
-
-<label style="display:flex;gap:8px;align-items:flex-start;font-weight:normal;margin:0 0 12px">
-<input id="customerConsent" type="checkbox" required style="width:auto;margin:2px 0 0">
-I have permission to submit these customer details for service assistance.
-</label>
-
-<button type="submit">Save Application</button>
-<div id="formStatus" class="status" role="status" aria-live="polite"></div>
-</form>
-</div>
+<section>
+ <div class="assistant">
+  <div class="assistant-icon">✦</div>
+  <div><h3>YojanaMitra AI Guide</h3><p>Choose a service folder, search for a scheme or open an official portal. The guides shown here are decorative illustrations; live AI conversation is not connected in this version.</p></div>
+ </div>
 </section>
-
-<section id="admin">
-<h2>🔐 Admin Login & Records</h2>
-<div class="panel" id="adminLogin">
-<form id="loginForm">
-<label for="adminEmail">Admin Email</label>
-<input id="adminEmail" type="email" required autocomplete="username">
-<label for="adminPassword">Password</label>
-<input id="adminPassword" type="password" required autocomplete="current-password">
-<button type="submit">Admin Login</button>
-<div id="loginStatus" class="status" role="status" aria-live="polite"></div>
-</form>
-</div>
-
-<div class="panel hidden" id="dashboard">
-<h3>Customer Records</h3>
-<div id="adminStatus" class="status" role="status" aria-live="polite"></div>
-<button type="button" id="refresh">Refresh Records</button>
-<button type="button" id="print">Print / Save PDF</button>
-<button type="button" id="logout">Logout</button>
-<div id="records"></div>
-</div>
-
-<div class="notice">Admin records are intended to be accessible only to the authenticated administrator. Configure and test restrictive Firestore security rules before collecting real customer data. Do not store sensitive identity documents in this form.</div>
-</section>
-
 </main>
 
 <footer>
-© <span id="year"></span> YojanaMitra AI. Independent information guide; not a government website. Official portals control their own services, notices and deadlines.
+ <div class="wrap">
+  <div class="brand"><span class="logo">✦</span><span><strong>Yojana<span>Mitra</span> AI</strong><small>GOVERNMENT INFORMATION GUIDE</small></span></div>
+  <p>Independent information service. Not a government website. Official departments control applications, eligibility, document requirements, fees, deadlines and final decisions. Never share passwords, OTPs, UPI PINs or other authentication secrets with unofficial parties.</p>
+  <p>© <span id="year"></span> YojanaMitra AI</p>
+ </div>
 </footer>
-
 <script>
-const spokes=document.getElementById("spokes");
-for(let i=0;i<24;i++){
- const a=i*Math.PI/12;
- const l=document.createElementNS("http://www.w3.org/2000/svg","line");
- l.setAttribute("x1",50+7*Math.sin(a));
- l.setAttribute("y1",50-7*Math.cos(a));
- l.setAttribute("x2",50+38*Math.sin(a));
- l.setAttribute("y2",50-38*Math.cos(a));
- spokes.appendChild(l);
-}
-
 document.getElementById("year").textContent=new Date().getFullYear();
-const search=document.getElementById("search");
 
-function filter(){
- const q=search.value.toLowerCase().trim();
- document.querySelectorAll(".searchable").forEach(c=>{
-  c.classList.toggle("hidden",!c.innerText.toLowerCase().includes(q));
+document.querySelectorAll("[data-toggle]").forEach(button=>{
+ button.addEventListener("click",()=>{
+  const target=document.getElementById(button.dataset.toggle);
+  const opening=target.classList.contains("hidden");
+  target.classList.toggle("hidden");
+  button.setAttribute("aria-expanded",String(opening));
+  button.textContent=opening?"Close Folder ↑":
+   (button.dataset.toggle==="rationDetails"?"Open Ration Card Folder ↓":"Open Samagra Folder ↓");
  });
+});
+
+const search=document.getElementById("search");
+function doSearch(){
+ const q=search.value.trim().toLowerCase();
+ let shown=0;
+ document.querySelectorAll(".searchable").forEach(card=>{
+  const match=!q||(card.innerText+" "+(card.dataset.category||"")).toLowerCase().includes(q);
+  card.classList.toggle("hidden",!match);
+  if(match)shown++;
+ });
+ let old=document.getElementById("noResults");
+ if(old)old.remove();
+ if(q&&shown===0){
+  const msg=document.createElement("p");
+  msg.id="noResults";msg.className="empty";
+  msg.textContent="No matching services found. Try a different keyword.";
+  document.getElementById("folders").appendChild(msg);
+ }
 }
-search.addEventListener("input",filter);
-document.getElementById("reset").addEventListener("click",()=>{
+document.getElementById("searchBtn").addEventListener("click",doSearch);
+search.addEventListener("keydown",e=>{if(e.key==="Enter")doSearch()});
+document.getElementById("resetBtn").addEventListener("click",()=>{
  search.value="";
- filter();
+ document.querySelectorAll(".searchable").forEach(card=>card.classList.remove("hidden"));
+ const old=document.getElementById("noResults");
+ if(old)old.remove();
+ document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.dataset.filter==="all"));
 });
 
-/*
-IMPORTANT:
-Firebase Console > Project settings > General > Your apps
-Replace apiKey and appId below with the REAL values.
-Do not paste your Firebase password or other private credentials here.
-*/
-const firebaseConfig={
- apiKey:"PASTE_REAL_FIREBASE_API_KEY",
- authDomain:"yojanamitraai.firebaseapp.com",
- projectId:"yojanamitraai",
- storageBucket:"yojanamitraai.firebasestorage.app",
- messagingSenderId:"868498347281",
- appId:"PASTE_REAL_FIREBASE_APP_ID"
-};
-
-const ADMIN_EMAIL="varmapratik818@gmail.com";
-let auth,db,authApi,fsApi,currentUser=null,ready=false;
-const $=id=>document.getElementById(id);
-
-function status(id,text,ok=false){
- $(id).textContent=text;
- $(id).style.color=ok?"#16834f":"#b42318";
-}
-function safeText(value){
- return value==null?"":String(value);
-}
-
-async function setup(){
- if(firebaseConfig.apiKey.startsWith("PASTE_")||
-    firebaseConfig.appId.startsWith("PASTE_")){
-  status("loginStatus","Firebase setup required: replace apiKey and appId with the real values.");
-  status("formStatus","Firebase is not configured yet. Add the real apiKey and appId first.");
-  return;
- }
-
- try{
-  const appApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
-  authApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
-  fsApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
-
-  const app=appApi.initializeApp(firebaseConfig);
-  auth=authApi.getAuth(app);
-  db=fsApi.getFirestore(app);
-  ready=true;
-
-  authApi.onAuthStateChanged(auth,async user=>{
-   if(user&&user.email&&user.email.toLowerCase()===ADMIN_EMAIL.toLowerCase()){
-    currentUser=user;
-    $("adminLogin").classList.add("hidden");
-    $("dashboard").classList.remove("hidden");
-    status("adminStatus","Signed in: "+user.email,true);
-    await loadRecords();
-   }else{
-    currentUser=null;
-    $("adminLogin").classList.remove("hidden");
-    $("dashboard").classList.add("hidden");
-   }
-  });
- }catch(e){
-  status("loginStatus","Firebase setup error: "+e.message);
-  status("formStatus","Firebase setup error: "+e.message);
- }
-}
-setup();
-
-$("customerForm").addEventListener("submit",async e=>{
- e.preventDefault();
-
- if(!ready){
-  status("formStatus","Firebase setup incomplete. Add the real apiKey and appId first.");
-  return;
- }
- if(!$("customerConsent").checked){
-  status("formStatus","Please confirm permission before submitting.");
-  return;
- }
-
- const phone=$("customerPhone").value.trim();
- if(!/^[0-9]{10}$/.test(phone)){
-  status("formStatus","Enter a valid 10-digit mobile number.");
-  return;
- }
-
- const submit=e.submitter;
- if(submit)submit.disabled=true;
-
- try{
-  await fsApi.addDoc(fsApi.collection(db,"customerApplications"),{
-   name:$("customerName").value.trim(),
-   phone:phone,
-   service:$("customerService").value,
-   preferredDate:$("visitDate").value,
-   notes:$("customerNotes").value.trim(),
-   status:"New",
-   createdAt:fsApi.serverTimestamp()
-  });
-
-  status("formStatus","Application saved successfully.",true);
-  e.target.reset();
-  if(currentUser)await loadRecords();
- }catch(err){
-  status("formStatus","Save failed: "+err.message);
- }finally{
-  if(submit)submit.disabled=false;
- }
-});
-
-$("loginForm").addEventListener("submit",async e=>{
- e.preventDefault();
-
- if(!ready){
-  status("loginStatus","Add the real Firebase apiKey and appId first.");
-  return;
- }
-
- const email=$("adminEmail").value.trim().toLowerCase();
- if(email!==ADMIN_EMAIL.toLowerCase()){
-  status("loginStatus","This email is not the configured administrator.");
-  return;
- }
-
- const submit=e.submitter;
- if(submit)submit.disabled=true;
-
- try{
-  await authApi.signInWithEmailAndPassword(
-   auth,email,$("adminPassword").value
-  );
-  status("loginStatus","Login successful.",true);
- }catch(err){
-  status("loginStatus","Login failed: "+err.message);
- }finally{
-  if(submit)submit.disabled=false;
- }
-});
-
-async function loadRecords(){
- if(!currentUser||!ready)return;
-
- try{
-  const q=fsApi.query(
-   fsApi.collection(db,"customerApplications"),
-   fsApi.orderBy("createdAt","desc")
-  );
-
-  const snap=await fsApi.getDocs(q);
-  const box=$("records");
-  box.replaceChildren();
-
-  if(snap.empty){
-   box.textContent="No customer records yet.";
-   status("adminStatus","No records found.",true);
-   return;
-  }
-
-  snap.forEach(doc=>{
-   const d=doc.data();
-   const card=document.createElement("div");
-   card.className="record";
-
-   const title=document.createElement("h3");
-   title.textContent=safeText(d.name)||"Unnamed customer";
-   card.appendChild(title);
-
-   [["Mobile",d.phone],["Service",d.service],
-    ["Preferred date",d.preferredDate],
-    ["Notes",d.notes],["Status",d.status]
-   ].forEach(([k,v])=>{
-    const p=document.createElement("div");
-    p.textContent=k+": "+safeText(v);
-    card.appendChild(p);
+document.querySelectorAll("[data-filter-group]").forEach(group=>{
+ group.querySelectorAll(".filter").forEach(button=>{
+  button.addEventListener("click",()=>{
+   group.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+   button.classList.add("active");
+   const category=button.dataset.filter;
+   const section=group.closest("section");
+   section.querySelectorAll(".searchable").forEach(card=>{
+    const tags=(card.dataset.category||"").toLowerCase().split(/\s+/);
+    const match=category==="all"||tags.includes(category);
+    card.classList.toggle("hidden",!match);
    });
-
-   box.appendChild(card);
   });
+ });
+});
 
-  status("adminStatus","Loaded "+snap.size+" record(s).",true);
- }catch(err){
-  status("adminStatus","Could not load records: "+err.message);
- }
-}
-
-$("refresh").addEventListener("click",loadRecords);
-$("print").addEventListener("click",()=>window.print());
-$("logout").addEventListener("click",async()=>{
- if(auth)await authApi.signOut(auth);
+const translations={
+ en:{headline:'Government services.<br><span class="gold">A smarter way.</span>',intro:'Discover schemes, recruitment notices, scholarships and essential citizen services in one place. Start with a service folder or search for what you need.',explore:'Explore Service Folders ↗',schemesbtn:'Explore Schemes'},
+ hi:{headline:'सरकारी सेवाएँ।<br><span class="gold">अब और आसान।</span>',intro:'सरकारी योजनाएँ, नौकरियाँ, छात्रवृत्तियाँ और नागरिक सेवाएँ एक जगह खोजें। सेवा फोल्डर खोलें या अपनी जरूरत खोजें।',explore:'सेवा फोल्डर देखें ↗',schemesbtn:'योजनाएँ देखें'},
+ mr:{headline:'सरकारी सेवा.<br><span class="gold">आता अधिक सोप्या.</span>',intro:'सरकारी योजना, नोकरी, शिष्यवृत्ती आणि नागरिक सेवा एकाच ठिकाणी शोधा. सेवा फोल्डर उघडा किंवा आवश्यक सेवा शोधा.',explore:'सेवा फोल्डर पहा ↗',schemesbtn:'योजना पहा'}
+};
+document.getElementById("language").addEventListener("change",e=>{
+ const t=translations[e.target.value]||translations.en;
+ document.querySelectorAll("[data-i18n]").forEach(el=>{
+  const key=el.dataset.i18n;
+  if(t[key])el.innerHTML=t[key];
+ });
 });
 </script>
 </body>
