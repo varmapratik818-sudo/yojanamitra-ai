@@ -1,771 +1,208 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10132b">
-<meta name="description" content="YojanaMitra AI helps citizens explore government schemes, jobs, scholarships and online services.">
-<title>YojanaMitra AI | Your Digital Government Guide</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YojanaMitra AI</title>
 <style>
-:root {
-  --bg: #090c1b;
-  --surface: #121831;
-  --surface2: #192142;
-  --gold: #e9c779;
-  --gold2: #fff0bd;
-  --purple: #8275ff;
-  --text: #f7f7ff;
-  --muted: #a8b0cc;
-  --line: rgba(255,255,255,.10);
-  --green: #6ee7b7;
-  --red: #fca5a5;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
-  background:
-    radial-gradient(ellipse at 15% 0%,rgba(103,83,202,.18),transparent 38%),
-    radial-gradient(ellipse at 100% 35%,rgba(220,172,92,.08),transparent 32%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.6;
-}
-a { color:inherit; text-decoration:none; }
-button,input,select,textarea { font:inherit; }
-button,a { -webkit-tap-highlight-color:transparent; }
-button { cursor:pointer; }
-button:disabled { opacity:.55; cursor:wait; }
-.hidden { display:none!important; }
-.container { width:min(1160px,92%); margin:auto; }
-header {
-  position:sticky; top:0; z-index:20;
-  background:rgba(9,12,27,.91);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
-}
-.navbar {
-  min-height:72px; display:flex; align-items:center;
-  justify-content:space-between; gap:18px;
-}
-.brand { display:flex; align-items:center; gap:10px; font-weight:850; }
-.brand-icon {
-  width:43px;height:43px;border-radius:14px;
-  display:grid;place-items:center;
-  background:linear-gradient(135deg,#f7df9e,#b58b3e);
-  color:#15162a;font-size:23px;
-  box-shadow:0 6px 24px #d3ac5730;
-}
-.brand-name { letter-spacing:-.5px; }
-.brand-name span { color:var(--gold); }
-.brand-sub { font-size:10px; color:var(--muted); letter-spacing:1.6px; }
-.nav-links { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
-.nav-links a { color:var(--muted); font-size:13px; font-weight:650; }
-.nav-links a:hover { color:var(--gold2); }
-.menu-toggle {
-  display:none; background:var(--surface); color:white;
-  border:1px solid var(--line); padding:8px 12px; border-radius:10px;
-}
-.hero { padding:54px 0 30px; }
-.hero-grid {
-  display:grid; grid-template-columns:1.25fr .75fr;
-  gap:28px; align-items:center;
-}
-.eyebrow {
-  display:inline-flex; align-items:center; gap:8px;
-  border:1px solid #e9c77945; background:#e9c7790d;
-  color:var(--gold2); border-radius:30px;
-  padding:7px 13px; font-size:11px; font-weight:800;
-  letter-spacing:1px; text-transform:uppercase;
-}
-.eyebrow:before {
-  content:""; width:7px;height:7px;border-radius:50%;
-  background:var(--green); box-shadow:0 0 12px var(--green);
-}
-h1 {
-  font-size:clamp(35px,5.6vw,65px);
-  line-height:1.08; letter-spacing:-2px;
-  margin:20px 0;
-}
-.gradient-text {
-  background:linear-gradient(100deg,#fff1bf,#e4bd6d,#a99aff);
-  -webkit-background-clip:text; background-clip:text;
-  color:transparent;
-}
-.hero p { color:var(--muted); max-width:570px; font-size:15px; }
-.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
-.btn {
-  border:1px solid var(--line); border-radius:13px;
-  padding:12px 17px; display:inline-flex; justify-content:center;
-  align-items:center; gap:8px; font-weight:800; font-size:13px;
-  transition:transform .2s,filter .2s;
-}
-.btn:hover { transform:translateY(-2px); filter:brightness(1.1); }
-.btn-gold { background:linear-gradient(120deg,#ffe7a3,#d4a64f); color:#171729; border:0; }
-.btn-dark { background:var(--surface2); color:var(--text); }
-.ai-card {
-  min-height:325px; border:1px solid #c2adff2d; border-radius:28px;
-  background:linear-gradient(145deg,#24244b,#14182e 70%);
-  padding:25px; text-align:center; position:relative; overflow:hidden;
-  box-shadow:0 22px 65px #0003;
-}
-.ai-card:before {
-  content:""; position:absolute; width:230px;height:230px;
-  left:50%;top:-115px; transform:translateX(-50%);
-  background:#9382ff22; border-radius:50%; filter:blur(18px);
-}
-.ai-orb {
-  width:124px;height:124px;margin:10px auto 20px;
-  border-radius:38px; display:grid;place-items:center;
-  font-size:57px; position:relative;
-  background:linear-gradient(145deg,#e9d6ff,#8f7bff 65%,#4d4298);
-  box-shadow:0 0 0 9px #9885ff12,0 0 50px #8575ff42;
-  animation:float 4s ease-in-out infinite;
-}
-.ai-orb:after {
-  content:"✦"; position:absolute; right:-10px;top:-12px;
-  color:var(--gold);font-size:28px;
-}
-@keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)} }
-.ai-card h3 { margin:0 0 6px; font-size:20px; }
-.ai-card p { margin:0 auto 17px; font-size:12px; }
-.ai-status { font-size:11px;color:var(--green); }
-.stats {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:12px; margin:22px 0 36px;
-}
-.stat {
-  border:1px solid var(--line); background:#ffffff04;
-  padding:16px; border-radius:17px;
-}
-.stat strong { display:block;color:var(--gold2);font-size:15px; }
-.stat span { font-size:11px;color:var(--muted); }
-.section { padding:30px 0 24px; scroll-margin-top:85px; }
-.section-heading {
-  display:flex; justify-content:space-between; align-items:end;
-  gap:16px; margin-bottom:19px;
-}
-.section-heading h2 { font-size:clamp(22px,3vw,29px); letter-spacing:-.7px; margin:0; }
-.section-heading p { color:var(--muted);font-size:12px;margin:4px 0 0; }
-.gold-line { color:var(--gold); }
-.search-box { display:flex; gap:9px; margin:20px 0; }
-.search-box input {
-  flex:1; min-width:0; padding:14px 16px;
-  background:var(--surface); color:white;
-  border:1px solid var(--line); border-radius:14px; outline:none;
-}
-input:focus,select:focus,textarea:focus { border-color:var(--purple)!important; }
-.grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px; }
-.card {
-  position:relative; min-width:0;
-  border:1px solid var(--line); border-radius:19px;
-  padding:19px; background:linear-gradient(145deg,#171d38,#10152a);
-  transition:transform .22s,border-color .22s;
-}
-.card:hover { transform:translateY(-4px);border-color:#e9c7796b; }
-.card-icon {
-  width:49px;height:49px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#e9c7791e,#8275ff19);
-  border:1px solid #ffffff0b;border-radius:15px;font-size:24px;
-  margin-bottom:15px;
-}
-.card h3 { margin:0 0 7px;font-size:16px; }
-.card p { color:var(--muted);font-size:12px;min-height:39px;margin:0 0 16px; }
-.card-link {
-  color:var(--gold2);font-size:12px;font-weight:800;
-  display:inline-flex;align-items:center;gap:5px;
-}
-.pill {
-  display:inline-block; font-size:10px; color:var(--green);
-  background:#6ee7b710;border:1px solid #6ee7b725;
-  padding:4px 8px;border-radius:20px;margin-bottom:10px;
-}
-.panel {
-  padding:23px; border:1px solid var(--line);
-  background:linear-gradient(145deg,#171d38,#10152a);
-  border-radius:22px;
-}
-.panel h3 { margin-top:0; }
-.form-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px; }
-.field { display:flex;flex-direction:column;gap:7px; }
-.field.full { grid-column:1/-1; }
-.field label { color:#e4e7f8;font-size:12px;font-weight:750; }
-.field input,.field select,.field textarea {
-  width:100%; min-width:0; color:white;
-  background:#0b1023;border:1px solid var(--line);
-  border-radius:11px;padding:12px;outline:none;
-}
-.field select option { background:#11172c; }
-.field textarea { resize:vertical; }
-.field input::placeholder,.field textarea::placeholder { color:#777f9d; }
-.form-note,.small { color:var(--muted);font-size:12px; }
-.status { margin-top:12px;font-size:12px;overflow-wrap:anywhere; }
-.status.success { color:var(--green); }
-.status.error { color:var(--red); }
-.status:empty { display:none; }
-.panel button[type=submit],#refreshRecords,#printRecords,#logoutButton {
-  margin-top:17px; border:0;border-radius:11px;padding:12px 17px;
-  background:linear-gradient(120deg,#ffe7a3,#d4a64f);
-  color:#171729;font-weight:850;
-}
-.note {
-  border:1px solid #e9c77925;background:#e9c77908;
-  border-radius:17px;padding:18px;color:var(--muted);font-size:12px;
-}
-.note strong { color:var(--gold2); }
-.admin-box { margin-top:22px;padding-top:10px; }
-.admin-actions { display:flex;flex-wrap:wrap;gap:8px; }
-.admin-actions button { margin-top:0!important; }
-.records { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:15px; }
-.record { border:1px solid var(--line);background:#0b1023;border-radius:13px;padding:14px;overflow-wrap:anywhere; }
-.record h4 { margin:0 0 9px;color:var(--gold2); }
-.record p { margin:5px 0;font-size:12px;color:var(--muted); }
-footer { margin-top:35px;border-top:1px solid var(--line);padding:28px 0 38px;text-align:center; }
-footer strong { color:var(--gold2); }
-footer p { font-size:12px;color:var(--muted);margin:5px 0; }
-hr { border:0;border-top:1px solid var(--line);margin:20px 0; }
-.empty-message { color:var(--muted);font-size:13px;padding:20px 0; }
-
-@media(max-width:760px) {
-  .navbar { min-height:65px; }
-  .menu-toggle { display:block; }
-  .nav-links {
-    display:none;position:absolute;top:65px;left:0;right:0;
-    padding:17px 5%;background:#0c1023;
-    border-bottom:1px solid var(--line);
-    flex-direction:column;align-items:stretch;gap:0;
-  }
-  .nav-links.open { display:flex; }
-  .nav-links a { padding:11px 0;border-bottom:1px solid var(--line); }
-  .hero { padding-top:34px; }
-  .hero-grid { grid-template-columns:1fr; }
-  .ai-card { min-height:280px; }
-  .stats { gap:8px; }
-  .stat { padding:12px; }
-  .grid { grid-template-columns:repeat(2,minmax(0,1fr));gap:10px; }
-  .card { padding:14px; }
-  .card h3 { font-size:14px; }
-  .card p { font-size:11px; }
-  .section-heading { align-items:start;flex-direction:column;gap:4px; }
-  .panel { padding:16px; }
-}
-@media(max-width:420px) {
-  .brand-sub { letter-spacing:.8px;font-size:9px; }
-  .brand-icon { width:38px;height:38px; }
-  .grid { grid-template-columns:1fr; }
-  .card p { min-height:0; }
-  .form-grid,.records { grid-template-columns:1fr; }
-  .stats { grid-template-columns:1fr; }
-  .stat { display:flex;justify-content:space-between;align-items:center;gap:8px; }
-  .stat strong { font-size:13px; }
-  h1 { letter-spacing:-1.3px; }
-}
-@media(prefers-reduced-motion:reduce) {
-  *,*:before,*:after { animation:none!important;scroll-behavior:auto!important;transition:none!important; }
-}
-@media print {
-  body { background:white;color:black; }
-  header,.hero,.stats,#schemes,#jobs,#scholarships,#services,
-  #application,#loginForm,.section.note,footer,.admin-actions,
-  #recordsStatus { display:none!important; }
-  #admin,#admin .panel,#admin .admin-box { display:block!important; }
-  .record { background:white;border:1px solid #aaa;break-inside:avoid; }
-  .record p,.record h4 { color:black; }
-}
+*{box-sizing:border-box}body{margin:0;font:15px Arial;color:#183653;background:#edf7ff}
+header{position:sticky;top:0;background:#ffffffef;padding:14px;border-bottom:1px solid #d9e8f6;z-index:5}
+.wrap{max-width:1050px;margin:auto;padding:15px}
+.brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:900;background:linear-gradient(90deg,#1769b2,#ff9933,#138808);color:transparent;background-clip:text}
+.chakra{width:40px;height:40px;animation:spin 10s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}nav a{font-size:12px;font-weight:bold;color:#1769b2;text-decoration:none}
+.hero,.card,.panel{background:white;border:1px solid #d9e8f6;border-radius:18px;padding:20px;margin-bottom:14px;box-shadow:0 8px 25px #1456a010}
+.hero{background:linear-gradient(130deg,#fff,#e0f1ff,#fff5e8);padding:30px}
+h1{font-size:clamp(32px,6vw,52px);margin:12px 0}
+.gradient{background:linear-gradient(90deg,#1769b2,#ff9933);color:transparent;background-clip:text}
+p{color:#61758b;line-height:1.65;font-size:13px}
+.btn,button{display:inline-block;border:0;border-radius:10px;padding:11px 14px;background:#1769b2;color:white;font-weight:bold;cursor:pointer;text-decoration:none}
+.light{background:#e6f3ff;color:#1769b2}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.icon{font-size:25px}.card h3{margin:8px 0}.card a{color:#1769b2;font-weight:bold;font-size:12px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #d1e1ef;border-radius:9px;margin:5px 0 12px;font:inherit}
+label{font-weight:bold;font-size:12px}section{scroll-margin-top:110px;margin:25px 0}
+.status{font-size:12px;overflow-wrap:anywhere}.hidden{display:none!important}
+.record{padding:12px;margin:8px 0;border:1px solid #d9e8f6;border-radius:10px;background:#f8fbff;font-size:12px;overflow-wrap:anywhere}
+footer{text-align:center;color:#61758b;padding:25px;font-size:12px}
+@media print{header,.no-print,#application,#adminLogin,footer{display:none!important}body *{visibility:hidden}#records,#records *{visibility:visible}#records{position:absolute;top:0;left:0;width:100%}}
 </style>
 </head>
-
 <body>
-<header>
-  <div class="container navbar">
-    <a class="brand" href="#home" aria-label="YojanaMitra AI home">
-      <span class="brand-icon">✦</span>
-      <span>
-        <span class="brand-name">Yojana<span>Mitra</span> AI</span>
-        <span class="brand-sub" style="display:block">YOUR DIGITAL GUIDE</span>
-      </span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false">☰ Menu</button>
-    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-      <a href="#schemes">Schemes</a>
-      <a href="#jobs">Jobs</a>
-      <a href="#scholarships">Scholarships</a>
-      <a href="#services">Services</a>
-      <a href="#application">Application Help</a>
-      <a href="#admin">Admin</a>
-    </nav>
-  </div>
-</header>
+<header><div class="wrap" style="padding:0">
+<div class="brand">
+<svg class="chakra" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="#1769b2" stroke-width="4"/><g id="spokes" stroke="#1769b2" stroke-width="2"></g><circle cx="50" cy="50" r="5" fill="#1769b2"/></svg>
+YojanaMitra AI
+</div>
+<nav><a href="#schemes">Yojana</a><a href="#jobs">Jobs</a><a href="#scholarships">Scholarships</a><a href="#services">Services</a><a href="#application">Apply Help</a><a href="#admin">Admin</a></nav>
+</div></header>
 
-<main class="container" id="home">
-  <section class="hero">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Your trusted digital guide</span>
-        <h1>Government benefits.<br><span class="gradient-text">Made simpler.</span></h1>
-        <p>Explore government schemes, recruitment notices, scholarships and citizen services — all in one convenient place.</p>
-        <div class="hero-actions">
-          <a class="btn btn-gold" href="#schemes">✦ Explore Schemes</a>
-          <a class="btn btn-dark" href="#services">Explore Services ↗</a>
-        </div>
-      </div>
-      <div class="ai-card">
-        <div class="ai-orb" aria-hidden="true">🤖</div>
-        <h3>Meet YojanaMitra AI</h3>
-        <p>Your digital companion for discovering public services and government information.</p>
-        <div class="ai-status">● INFORMATION GUIDE</div>
-      </div>
-    </div>
-  </section>
+<main class="wrap">
+<section class="hero" id="home">
+<span style="color:#1769b2;font-weight:bold">YOUR DIGITAL GOVERNMENT GUIDE</span>
+<h1>Government schemes.<br><span class="gradient">Simplified for you.</span></h1>
+<p>Explore government schemes, recruitment links, scholarships and citizen services in one place. Always verify eligibility and deadlines on official portals.</p>
+<a class="btn" href="#schemes">Explore Schemes ↗</a>
+<a class="btn light" href="#application">Application Help</a>
+<div style="margin-top:20px"><input id="search" placeholder="Search schemes, jobs or services"><button class="light" id="reset">Reset</button></div>
+</section>
 
-  <section class="stats" aria-label="App highlights">
-    <div class="stat"><strong>🇮🇳 Government</strong><span>Information & portals</span></div>
-    <div class="stat"><strong>🎓 Education</strong><span>Scholarships & support</span></div>
-    <div class="stat"><strong>💼 Careers</strong><span>Recruitment resources</span></div>
-  </section>
+<section id="schemes"><h2>🇮🇳 Government Schemes</h2><div class="grid">
+<article class="card searchable"><div class="icon">🌾</div><h3>PM-KISAN</h3><p>Farmer scheme information.</p><a href="https://pmkisan.gov.in/" target="_blank">Official Portal ↗</a></article>
+<article class="card searchable"><div class="icon">🏥</div><h3>Ayushman Bharat</h3><p>Health scheme resources.</p><a href="https://pmjay.gov.in/" target="_blank">Official Portal ↗</a></article>
+<article class="card searchable"><div class="icon">🛠️</div><h3>PM Vishwakarma</h3><p>Artisan programme information.</p><a href="https://pmvishwakarma.gov.in/" target="_blank">Official Portal ↗</a></article>
+<article class="card searchable"><div class="icon">🏠</div><h3>PM Awas Yojana</h3><p>Housing scheme information.</p><a href="https://pmay-urban.gov.in/" target="_blank">Official Portal ↗</a></article>
+<article class="card searchable"><div class="icon">👩</div><h3>Ladki Bahin Yojana</h3><p>Maharashtra scheme portal.</p><a href="https://ladakibahin.maharashtra.gov.in/" target="_blank">Official Portal ↗</a></article>
+<article class="card searchable"><div class="icon">🔎</div><h3>myScheme</h3><p>Explore schemes and eligibility.</p><a href="https://www.myscheme.gov.in/" target="_blank">Find Schemes ↗</a></article>
+</div></section>
 
-  <section class="section">
-    <div class="section-heading">
-      <div><h2>Find what you need</h2><p>Search schemes, jobs and online services.</p></div>
-    </div>
-    <div class="search-box">
-      <input id="siteSearch" type="search" placeholder="Search schemes, jobs, Aadhaar..." aria-label="Search services">
-      <button class="btn btn-gold" id="guideSearchButton" type="button">Search</button>
-    </div>
-  </section>
+<section id="jobs"><h2>📰 Government Jobs</h2><div class="grid">
+<article class="card searchable"><div class="icon">🏢</div><h3>Maharashtra Departments</h3><p>Zilla Parishad, PWD, Nagar Parishad and Jalsampada.</p><a href="https://www.maharashtra.gov.in/" target="_blank">Government Portal ↗</a></article>
+<article class="card searchable"><div class="icon">📣</div><h3>Majhe Naukri</h3><p>Find job updates; confirm notices with official departments.</p><a href="https://www.google.com/search?q=Majhe+Naukri+Maharashtra" target="_blank">Find Updates ↗</a></article>
+<article class="card searchable"><div class="icon">📝</div><h3>SSC</h3><p>Central government examinations.</p><a href="https://ssc.gov.in/" target="_blank">SSC Official ↗</a></article>
+<article class="card searchable"><div class="icon">🇮🇳</div><h3>UPSC</h3><p>Civil service examinations and notices.</p><a href="https://upsc.gov.in/" target="_blank">UPSC Official ↗</a></article>
+<article class="card searchable"><div class="icon">👮</div><h3>Maharashtra Police</h3><p>Police recruitment information.</p><a href="https://www.mahapolice.gov.in/" target="_blank">Police Website ↗</a></article>
+<article class="card searchable"><div class="icon">📮</div><h3>India Post</h3><p>Postal recruitment and services.</p><a href="https://www.indiapost.gov.in/" target="_blank">India Post ↗</a></article>
+<article class="card searchable"><div class="icon">🌳</div><h3>Forest Department</h3><p>Forest notices and recruitment information.</p><a href="https://mahaforest.gov.in/" target="_blank">Forest Website ↗</a></article>
+<article class="card searchable"><div class="icon">🏦</div><h3>IBPS</h3><p>Bank recruitment examinations.</p><a href="https://www.ibps.in/" target="_blank">IBPS Official ↗</a></article>
+<article class="card searchable"><div class="icon">🚆</div><h3>Railway Recruitment</h3><p>Railway board recruitment notices.</p><a href="https://www.rrbcdg.gov.in/" target="_blank">RRB Website ↗</a></article>
+</div><p>Verify vacancy dates, fees, eligibility and deadlines on the latest official notice.</p></section>
 
-  <section class="section searchable" id="schemes">
-    <div class="section-heading"><div><h2>✦ Government <span class="gold-line">Schemes</span></h2><p>Explore official scheme information and application portals.</p></div></div>
-    <div class="grid">
-      <article class="card" data-search="pm kisan farmer agriculture">
-        <div class="card-icon">🌾</div><span class="pill">Farmers</span>
-        <h3>PM-KISAN</h3><p>Official portal for eligible farmer families.</p>
-        <a class="card-link" href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer">Official Portal ↗</a>
-      </article>
-      <article class="card" data-search="ayushman bharat health pmjay">
-        <div class="card-icon">🏥</div><span class="pill">Healthcare</span>
-        <h3>Ayushman Bharat</h3><p>Explore the official health scheme portal.</p>
-        <a class="card-link" href="https://pmjay.gov.in/" target="_blank" rel="noopener noreferrer">Official Portal ↗</a>
-      </article>
-      <article class="card" data-search="pm vishwakarma artisan skill">
-        <div class="card-icon">🛠️</div><span class="pill">Skill & Business</span>
-        <h3>PM Vishwakarma</h3><p>Information for eligible traditional artisans.</p>
-        <a class="card-link" href="https://pmvishwakarma.gov.in/" target="_blank" rel="noopener noreferrer">Official Portal ↗</a>
-      </article>
-      <article class="card" data-search="pm awas yojana housing">
-        <div class="card-icon">🏠</div><span class="pill">Housing</span>
-        <h3>PM Awas Yojana</h3><p>Explore official housing scheme resources.</p>
-        <a class="card-link" href="https://pmay-urban.gov.in/" target="_blank" rel="noopener noreferrer">Urban Portal ↗</a>
-      </article>
-      <article class="card" data-search="ladki bahin maharashtra women">
-        <div class="card-icon">👩</div><span class="pill">Maharashtra</span>
-        <h3>Mukhyamantri Majhi Ladki Bahin</h3><p>Check current scheme details on the state portal.</p>
-        <a class="card-link" href="https://ladakibahin.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Scheme Portal ↗</a>
-      </article>
-      <article class="card" data-search="myscheme all india government benefits">
-        <div class="card-icon">🇮🇳</div><span class="pill">Discover</span>
-        <h3>MyScheme</h3><p>Discover schemes and check eligibility information.</p>
-        <a class="card-link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">Explore Schemes ↗</a>
-      </article>
-    </div>
-  </section>
+<section id="scholarships"><h2>🎓 Scholarships</h2><div class="grid">
+<article class="card searchable"><div class="icon">🎓</div><h3>National Scholarship Portal</h3><p>Scholarship schemes and student applications.</p><a href="https://scholarships.gov.in/" target="_blank">NSP Portal ↗</a></article>
+<article class="card searchable"><div class="icon">📚</div><h3>MahaDBT</h3><p>Maharashtra scholarship resources.</p><a href="https://mahadbt.maharashtra.gov.in/" target="_blank">MahaDBT ↗</a></article>
+</div></section>
 
-  <section class="section searchable" id="jobs">
-    <div class="section-heading"><div><h2>💼 Latest Government <span class="gold-line">Jobs</span></h2><p>Recruitment resources. Confirm every vacancy on its official notice.</p></div></div>
-    <div class="grid">
-      <article class="card" data-search="maharashtra departments zilla parishad pwd nagar parishad jalsampada water department">
-        <div class="card-icon">🏗️</div><h3>Maharashtra Departments</h3><p>Zilla Parishad, PWD, Nagar Parishad aur Jalsampada.</p>
-        <a class="card-link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Government ↗</a>
-      </article>
-      <article class="card" data-search="majhe naukri job updates maharashtra recruitment">
-        <div class="card-icon">📰</div><h3>Majhe Naukri</h3><p>Recruitment updates; official notices verify karein.</p>
-        <a class="card-link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Government ↗</a>
-      </article>
-      <article class="card" data-search="ssc staff selection commission central government">
-        <div class="card-icon">📋</div><h3>SSC Recruitment</h3><p>Central government recruitment and notices.</p>
-        <a class="card-link" href="https://ssc.gov.in/" target="_blank" rel="noopener noreferrer">SSC Official ↗</a>
-      </article>
-      <article class="card" data-search="upsc civil services central recruitment">
-        <div class="card-icon">🏛️</div><h3>UPSC</h3><p>Civil services and other UPSC recruitment notices.</p>
-        <a class="card-link" href="https://upsc.gov.in/" target="_blank" rel="noopener noreferrer">UPSC Official ↗</a>
-      </article>
-      <article class="card" data-search="maharashtra police bharti recruitment">
-        <div class="card-icon">👮</div><h3>Police Bharti</h3><p>Check official recruitment announcements and eligibility.</p>
-        <a class="card-link" href="https://www.mahapolice.gov.in/" target="_blank" rel="noopener noreferrer">Maharashtra Police ↗</a>
-      </article>
-      <article class="card" data-search="india post office recruitment postal jobs">
-        <div class="card-icon">📮</div><h3>India Post</h3><p>Postal recruitment and official notices.</p>
-        <a class="card-link" href="https://www.indiapost.gov.in/" target="_blank" rel="noopener noreferrer">India Post ↗</a>
-      </article>
-      <article class="card" data-search="forest department van vibhag recruitment">
-        <div class="card-icon">🌳</div><h3>Forest Department</h3><p>Find department notices through official state sources.</p>
-        <a class="card-link" href="https://www.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Government ↗</a>
-      </article>
-      <article class="card" data-search="government bank jobs ibps recruitment">
-        <div class="card-icon">🏦</div><h3>Bank Recruitment</h3><p>Banking recruitment information and notices.</p>
-        <a class="card-link" href="https://www.ibps.in/" target="_blank" rel="noopener noreferrer">IBPS Official ↗</a>
-      </article>
-      <article class="card" data-search="railway recruitment board rrb jobs">
-        <div class="card-icon">🚆</div><h3>Railway Jobs</h3><p>Check railway recruitment notifications.</p>
-        <a class="card-link" href="https://www.rrbcdg.gov.in/" target="_blank" rel="noopener noreferrer">RRB Chandigarh ↗</a>
-      </article>
-    </div>
-    <p class="small">Vacancy dates, fees, eligibility and deadlines must be verified in the relevant official notification. This section does not automatically verify or update live vacancies.</p>
-  </section>
+<section id="services"><h2>🧾 Online Citizen Services</h2><div class="grid">
+<article class="card searchable"><div class="icon">🪪</div><h3>Aadhaar / UIDAI</h3><p>Aadhaar services and information.</p><a href="https://uidai.gov.in/" target="_blank">UIDAI ↗</a></article>
+<article class="card searchable"><div class="icon">🛂</div><h3>Passport Seva</h3><p>Passport applications and appointments.</p><a href="https://www.passportindia.gov.in/" target="_blank">Passport Portal ↗</a></article>
+<article class="card searchable"><div class="icon">📂</div><h3>DigiLocker</h3><p>Digital documents and certificates.</p><a href="https://www.digilocker.gov.in/" target="_blank">DigiLocker ↗</a></article>
+<article class="card searchable"><div class="icon">🏛️</div><h3>Aaple Sarkar</h3><p>Maharashtra citizen services.</p><a href="https://aaplesarkar.mahaonline.gov.in/" target="_blank">Aaple Sarkar ↗</a></article>
+<article class="card searchable"><div class="icon">🗺️</div><h3>Mahabhulekh</h3><p>Maharashtra land records.</p><a href="https://bhulekh.mahabhumi.gov.in/" target="_blank">Land Records ↗</a></article>
+</div></section>
 
-  <section class="section searchable" id="scholarships">
-    <div class="section-heading"><div><h2>🎓 <span class="gold-line">Scholarships</span></h2><p>Student scholarship resources.</p></div></div>
-    <div class="grid">
-      <article class="card" data-search="national scholarship portal nsp students central">
-        <div class="card-icon">🎓</div><h3>National Scholarship Portal</h3><p>Central scholarship applications and information.</p>
-        <a class="card-link" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">NSP ↗</a>
-      </article>
-      <article class="card" data-search="mahadbt scholarship student maharashtra">
-        <div class="card-icon">📚</div><h3>MahaDBT</h3><p>Maharashtra scholarships and benefit schemes.</p>
-        <a class="card-link" href="https://mahadbt.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">MahaDBT ↗</a>
-      </article>
-    </div>
-  </section>
+<section id="application"><h2>📝 Customer Application Form</h2><p>Use customer information only with permission. Never request passwords, OTPs or PINs.</p>
+<div class="panel"><form id="customerForm">
+<label>Customer Name *</label><input id="customerName" required maxlength="100">
+<label>Mobile Number *</label><input id="customerPhone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10">
+<label>Required Service *</label><select id="customerService" required>
+<option value="">Select service</option><option>PM-KISAN</option><option>Ayushman Bharat</option><option>PM Vishwakarma</option><option>PM Awas Yojana</option><option>Ladki Bahin Yojana</option><option>MahaDBT Scholarship</option><option>National Scholarship Portal</option><option>Government Job Application</option><option>Police / Forest Bharti</option><option>7/12 / 8A / Land Record</option><option>Certificate / Aaple Sarkar</option><option>Aadhaar / Passport / DigiLocker</option><option>Other Service</option></select>
+<label>Preferred Date</label><input id="visitDate" type="date">
+<label>Notes</label><textarea id="customerNotes" maxlength="1000"></textarea>
+<button type="submit">Save Application</button><div id="formStatus" class="status"></div>
+</form></div></section>
 
-  <section class="section searchable" id="services">
-    <div class="section-heading"><div><h2>🧾 Online <span class="gold-line">Services</span></h2><p>Official citizen service portals.</p></div></div>
-    <div class="grid">
-      <article class="card" data-search="aadhaar uidai">
-        <div class="card-icon">🪪</div><h3>Aadhaar Services</h3><p>Official Aadhaar services and information.</p>
-        <a class="card-link" href="https://uidai.gov.in/" target="_blank" rel="noopener noreferrer">UIDAI ↗</a>
-      </article>
-      <article class="card" data-search="passport seva">
-        <div class="card-icon">🛂</div><h3>Passport Seva</h3><p>Passport applications and appointments.</p>
-        <a class="card-link" href="https://www.passportindia.gov.in/" target="_blank" rel="noopener noreferrer">Passport ↗</a>
-      </article>
-      <article class="card" data-search="digilocker documents">
-        <div class="card-icon">📂</div><h3>DigiLocker</h3><p>Digital documents and certificates.</p>
-        <a class="card-link" href="https://www.digilocker.gov.in/" target="_blank" rel="noopener noreferrer">DigiLocker ↗</a>
-      </article>
-      <article class="card" data-search="aaple sarkar certificate maharashtra">
-        <div class="card-icon">🏢</div><h3>Aaple Sarkar</h3><p>Maharashtra citizen services and certificates.</p>
-        <a class="card-link" href="https://aaplesarkar.mahaonline.gov.in/" target="_blank" rel="noopener noreferrer">Aaple Sarkar ↗</a>
-      </article>
-      <article class="card" data-search="mahabhulekh 7 12 8a land record">
-        <div class="card-icon">🌾</div><h3>7/12 &amp; 8A</h3><p>Maharashtra land record resources.</p>
-        <a class="card-link" href="https://bhulekh.mahabhumi.gov.in/" target="_blank" rel="noopener noreferrer">Mahabhulekh ↗</a>
-      </article>
-      <article class="card" data-search="myscheme government schemes">
-        <div class="card-icon">🇮🇳</div><h3>MyScheme</h3><p>Explore government schemes and eligibility.</p>
-        <a class="card-link" href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">MyScheme ↗</a>
-      </article>
-    </div>
-  </section>
-
-  <section class="section" id="application">
-    <div class="section-heading"><div><h2>📝 Application <span class="gold-line">Help</span></h2><p>Request assistance with a government service.</p></div></div>
-    <div class="panel">
-      <h3>Customer Application Form</h3>
-      <p class="form-note">This form records a service request only. It does not submit an application to a government department.</p>
-      <form id="applicationForm">
-        <div class="form-grid">
-          <div class="field"><label for="customerName">Full Name *</label><input id="customerName" required maxlength="100" autocomplete="name" placeholder="Customer name"></div>
-          <div class="field"><label for="customerPhone">Mobile Number *</label><input id="customerPhone" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel" placeholder="10 digit mobile"></div>
-          <div class="field"><label for="customerService">Required Service *</label>
-            <select id="customerService" required>
-              <option value="">Select service</option>
-              <option>PM-KISAN</option><option>Ayushman Bharat</option><option>PM Vishwakarma</option><option>PM Awas Yojana</option><option>Ladki Bahin Yojana</option><option>MahaDBT Scholarship</option><option>National Scholarship Portal</option><option>Government Job Application</option><option>Police / Forest Bharti</option><option>7/12 / 8A / Land Record</option><option>Certificate / Aaple Sarkar</option><option>Aadhaar / Passport / DigiLocker</option><option>Other Service</option>
-            </select>
-          </div>
-          <div class="field"><label for="visitDate">Preferred Date</label><input id="visitDate" type="date"></div>
-          <div class="field full"><label for="customerNotes">Notes (optional)</label><textarea id="customerNotes" rows="3" maxlength="1000" placeholder="Describe the service needed. Never enter OTPs, passwords, Aadhaar or bank details."></textarea></div>
-        </div>
-        <button id="submitApplication" type="submit">Submit Service Request ↗</button>
-        <div id="applicationStatus" class="status" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
-
-  <section class="section" id="admin">
-    <div class="section-heading"><div><h2>🔐 Admin <span class="gold-line">Panel</span></h2><p>Authorized account access.</p></div></div>
-    <div class="panel">
-      <h3>Admin Login</h3>
-      <form id="loginForm">
-        <div class="form-grid">
-          <div class="field"><label for="adminEmail">Admin Email</label><input id="adminEmail" type="email" autocomplete="username" required placeholder="Admin email"></div>
-          <div class="field"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Firebase password"></div>
-        </div>
-        <button id="loginButton" type="submit">Secure Login</button>
-        <div id="loginStatus" class="status" role="status" aria-live="polite"></div>
-      </form>
-      <div id="adminDashboard" class="admin-box hidden">
-        <hr><h3>Customer Records</h3>
-        <p class="small">Signed in as <strong id="signedInEmail"></strong></p>
-        <div class="admin-actions">
-          <button id="refreshRecords" type="button">Refresh Records</button>
-          <button id="printRecords" type="button">Print / Save PDF</button>
-          <button id="logoutButton" type="button">Logout</button>
-        </div>
-        <div id="recordsStatus" class="status" role="status" aria-live="polite"></div>
-        <div id="recordsList" class="records"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="note"><strong>Important notice:</strong> YojanaMitra AI is an independent information service and is not a government website. Verify eligibility, fees, deadlines and notices on official portals. Never share OTPs, passwords, Aadhaar numbers or bank details in this form.</div>
-  </section>
+<section id="admin"><h2>🔐 Admin Login & Records</h2>
+<div class="panel" id="adminLogin"><form id="loginForm">
+<label>Admin Email</label><input id="adminEmail" type="email" required>
+<label>Password</label><input id="adminPassword" type="password" required>
+<button type="submit">Admin Login</button><div id="loginStatus" class="status"></div>
+</form></div>
+<div class="panel hidden" id="dashboard"><h3>Customer Records</h3><div id="adminStatus" class="status"></div>
+<button type="button" id="refresh">Refresh Records</button> <button type="button" id="print">Print / Save PDF</button> <button type="button" id="logout">Logout</button>
+<div id="records"></div></div>
+<p>Customer records must be protected by restrictive Firestore security rules.</p>
+</section>
 </main>
+<footer>© <span id="year"></span> YojanaMitra AI. Independent information guide; not a government website.</footer>
 
-<footer>
-  <div class="container">
-    <strong>✦ YojanaMitra AI</strong>
-    <p>Government information and application assistance.</p>
-    <p>Independent service · Not affiliated with any government department</p>
-    <p>© <span id="year"></span> YojanaMitra AI</p>
-  </div>
-</footer>
+<script>
+const spokes=document.getElementById("spokes");
+for(let i=0;i<24;i++){
+ let a=i*Math.PI/12,l=document.createElementNS("http://www.w3.org/2000/svg","line");
+ l.setAttribute("x1",50+7*Math.sin(a));l.setAttribute("y1",50-7*Math.cos(a));
+ l.setAttribute("x2",50+38*Math.sin(a));l.setAttribute("y2",50-38*Math.cos(a));spokes.appendChild(l);
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+const search=document.getElementById("search");
+function filter(){let q=search.value.toLowerCase();document.querySelectorAll(".searchable").forEach(c=>c.classList.toggle("hidden",!c.innerText.toLowerCase().includes(q)))}
+search.addEventListener("input",filter);
+document.getElementById("reset").onclick=()=>{search.value="";filter()};
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {
-  getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import {
-  getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-/* Replace apiKey and appId with the actual values from Firebase Console.
-   Do not use placeholder text in a live deployment. */
-const firebaseConfig = {
-  apiKey: "YOUR_EXISTING_FIREBASE_API_KEY",
-  authDomain: "yojanamitraai.firebaseapp.com",
-  projectId: "yojanamitraai",
-  storageBucket: "yojanamitraai.firebasestorage.app",
-  messagingSenderId: "868498347281",
-  appId: "YOUR_EXISTING_FIREBASE_APP_ID"
+/* Add the real values from Firebase Console > Project settings > Your apps. */
+const firebaseConfig={
+ apiKey:"PASTE_REAL_FIREBASE_API_KEY",
+ authDomain:"yojanamitraai.firebaseapp.com",
+ projectId:"yojanamitraai",
+ storageBucket:"yojanamitraai.firebasestorage.app",
+ messagingSenderId:"868498347281",
+ appId:"PASTE_REAL_FIREBASE_APP_ID"
 };
-
-const ADMIN_EMAIL = "varmapratik818@gmail.com";
-const $ = id => document.getElementById(id);
-$("year").textContent = new Date().getFullYear();
-
-const menuToggle = $("menuToggle");
-const navLinks = $("navLinks");
-menuToggle.addEventListener("click", () => {
-  const open = navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-});
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
+const ADMIN_EMAIL="varmapratik818@gmail.com";
+let auth,db,authApi,fsApi,currentUser=null,ready=false;
+const $=id=>document.getElementById(id);
+function status(id,text,ok=false){$(id).textContent=text;$(id).style.color=ok?"#16834f":"#b42318"}
+function safeText(value){return value==null?"":String(value)}
+async function setup(){
+ if(firebaseConfig.apiKey.startsWith("PASTE_")||firebaseConfig.appId.startsWith("PASTE_")){
+  status("loginStatus","Setup required: replace Firebase apiKey and appId with the real values.");
+  status("formStatus","Firebase is not configured. Add the real apiKey and appId first.");return;
+ }
+ try{
+  const appApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+  authApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js");
+  fsApi=await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+  const app=appApi.initializeApp(firebaseConfig);
+  auth=authApi.getAuth(app);db=fsApi.getFirestore(app);ready=true;
+  authApi.onAuthStateChanged(auth,async user=>{
+   if(user&&user.email===ADMIN_EMAIL){currentUser=user;$("adminLogin").classList.add("hidden");$("dashboard").classList.remove("hidden");status("adminStatus","Signed in: "+user.email,true);await loadRecords()}
+   else{currentUser=null;$("adminLogin").classList.remove("hidden");$("dashboard").classList.add("hidden")}
   });
-});
+ }catch(e){status("loginStatus","Firebase error: "+e.message);status("formStatus","Firebase error: "+e.message)}
+}
+setup();
 
-$("siteSearch").addEventListener("input", () => {
-  const term = $("siteSearch").value.trim().toLowerCase();
-  document.querySelectorAll(".searchable").forEach(section => {
-    let visible = 0;
-    section.querySelectorAll(".card").forEach(card => {
-      const content = (card.innerText + " " + (card.dataset.search || "")).toLowerCase();
-      const match = content.includes(term);
-      card.classList.toggle("hidden", !match);
-      if (match) visible++;
-    });
-    section.classList.toggle("hidden", visible === 0);
+$("customerForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!ready){status("formStatus","Firebase setup incomplete. Add the real config values.");return}
+ const phone=$("customerPhone").value.trim();
+ if(!/^[0-9]{10}$/.test(phone)){status("formStatus","Enter a valid 10-digit mobile number.");return}
+ try{
+  await fsApi.addDoc(fsApi.collection(db,"customerApplications"),{
+   name:$("customerName").value.trim(),phone,
+   service:$("customerService").value,preferredDate:$("visitDate").value,
+   notes:$("customerNotes").value.trim(),status:"New",
+   createdAt:fsApi.serverTimestamp()
   });
-});
-$("guideSearchButton").addEventListener("click", () => {
-  $("siteSearch").focus();
-  $("siteSearch").scrollIntoView({ behavior: "smooth", block: "center" });
-});
-
-function setStatus(id, message, type = "") {
-  const element = $(id);
-  element.textContent = message;
-  element.className = "status" + (type ? " " + type : "");
-}
-function safeText(value) { return String(value ?? ""); }
-function formatDate(value) {
-  if (!value) return "Not provided";
-  try {
-    if (typeof value.toDate === "function") return value.toDate().toLocaleString();
-    return new Date(value).toLocaleString();
-  } catch { return safeText(value); }
-}
-
-let appReady = false, auth = null, db = null;
-try {
-  if (firebaseConfig.apiKey.startsWith("YOUR_") ||
-      firebaseConfig.appId.startsWith("YOUR_")) {
-    throw new Error("Firebase API key/App ID placeholders have not been replaced.");
-  }
-  const app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-  appReady = true;
-} catch (error) {
-  console.error(error);
-  setStatus("applicationStatus", "Firebase setup incomplete. Check the Firebase web app configuration.", "error");
-  setStatus("loginStatus", "Firebase setup incomplete. Check the Firebase web app configuration.", "error");
-}
-
-$("applicationForm").addEventListener("submit", async event => {
-  event.preventDefault();
-  const button = $("submitApplication");
-  button.disabled = true;
-
-  const name = $("customerName").value.trim();
-  const phone = $("customerPhone").value.trim();
-  const service = $("customerService").value;
-  const preferredDate = $("visitDate").value;
-  const notes = $("customerNotes").value.trim();
-
-  if (!name || !/^[0-9]{10}$/.test(phone) || !service) {
-    setStatus("applicationStatus", "Enter your name, a valid 10-digit mobile number and a service.", "error");
-    button.disabled = false;
-    return;
-  }
-  if (!appReady || !db) {
-    setStatus("applicationStatus", "Firebase configuration is incomplete.", "error");
-    button.disabled = false;
-    return;
-  }
-
-  setStatus("applicationStatus", "Submitting service request...");
-  try {
-    await addDoc(collection(db, "customerApplications"), {
-      name, phone, service, preferredDate, notes,
-      status: "New",
-      createdAt: serverTimestamp()
-    });
-    $("applicationForm").reset();
-    setStatus("applicationStatus", "Service request saved successfully.", "success");
-  } catch (error) {
-    console.error(error);
-    setStatus("applicationStatus", "Save failed: " + (error.code || error.message), "error");
-  } finally {
-    button.disabled = false;
-  }
+  status("formStatus","Application saved successfully.",true);
+  e.target.reset();
+  if(currentUser)await loadRecords();
+ }catch(err){status("formStatus","Save failed: "+err.message)}
 });
 
-$("loginForm").addEventListener("submit", async event => {
-  event.preventDefault();
-  const button = $("loginButton");
-  button.disabled = true;
-  const email = $("adminEmail").value.trim().toLowerCase();
-  const password = $("adminPassword").value;
-
-  if (email !== ADMIN_EMAIL.toLowerCase()) {
-    setStatus("loginStatus", "Use the configured administrator email.", "error");
-    button.disabled = false;
-    return;
-  }
-  if (!appReady || !auth) {
-    setStatus("loginStatus", "Firebase configuration is incomplete.", "error");
-    button.disabled = false;
-    return;
-  }
-
-  setStatus("loginStatus", "Signing in...");
-  try {
-    await signInWithEmailAndPassword(auth, email, password);
-    setStatus("loginStatus", "Login successful.", "success");
-  } catch (error) {
-    console.error(error);
-    setStatus("loginStatus", "Login failed: " + (error.code || error.message), "error");
-  } finally {
-    button.disabled = false;
-  }
+$("loginForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!ready){status("loginStatus","Add your real Firebase apiKey and appId first.");return}
+ const email=$("adminEmail").value.trim().toLowerCase();
+ if(email!==ADMIN_EMAIL.toLowerCase()){status("loginStatus","This email is not the configured administrator.");return}
+ try{
+  await authApi.signInWithEmailAndPassword(auth,email,$("adminPassword").value);
+  status("loginStatus","Login successful.",true);
+ }catch(err){status("loginStatus","Login failed: "+err.message)}
 });
 
-async function loadRecords() {
-  const list = $("recordsList");
-  list.replaceChildren();
-
-  if (!auth?.currentUser ||
-      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    setStatus("recordsStatus", "Authorized admin login required.", "error");
-    return;
-  }
-  setStatus("recordsStatus", "Loading customer records...");
-  try {
-    const snapshot = await getDocs(
-      query(collection(db, "customerApplications"), orderBy("createdAt", "desc"))
-    );
-    if (snapshot.empty) {
-      setStatus("recordsStatus", "No customer records found.", "success");
-      return;
-    }
-    snapshot.forEach(docSnap => {
-      const data = docSnap.data();
-      const card = document.createElement("article");
-      card.className = "record";
-      const heading = document.createElement("h4");
-      heading.textContent = safeText(data.name) || "Unnamed customer";
-      card.appendChild(heading);
-
-      [
-        ["Phone", data.phone],
-        ["Service", data.service],
-        ["Preferred date", data.preferredDate],
-        ["Notes", data.notes],
-        ["Status", data.status || "New"],
-        ["Submitted", formatDate(data.createdAt)]
-      ].forEach(([label, value]) => {
-        const p = document.createElement("p");
-        const strong = document.createElement("strong");
-        strong.textContent = label + ": ";
-        p.appendChild(strong);
-        p.appendChild(document.createTextNode(safeText(value) || "—"));
-        card.appendChild(p);
-      });
-      list.appendChild(card);
-    });
-    setStatus("recordsStatus", "Loaded " + snapshot.size + " record(s).", "success");
-  } catch (error) {
-    console.error(error);
-    setStatus("recordsStatus", "Could not load records: " + (error.code || error.message), "error");
-  }
-}
-
-$("refreshRecords").addEventListener("click", loadRecords);
-$("logoutButton").addEventListener("click", async () => {
-  if (!auth) return;
-  try {
-    await signOut(auth);
-    setStatus("loginStatus", "Logged out.", "success");
-  } catch (error) {
-    setStatus("loginStatus", "Logout failed: " + (error.code || error.message), "error");
-  }
-});
-$("printRecords").addEventListener("click", () => {
-  if (!auth?.currentUser ||
-      auth.currentUser.email?.toLowerCase() !== ADMIN_EMAIL.toLowerCase()) {
-    setStatus("recordsStatus", "Admin login required.", "error");
-    return;
-  }
-  window.print();
-});
-
-if (appReady && auth) {
-  onAuthStateChanged(auth, async user => {
-    const isAdmin = !!user &&
-      user.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
-
-    $("adminDashboard").classList.toggle("hidden", !isAdmin);
-    $("loginForm").classList.toggle("hidden", isAdmin);
-
-    if (isAdmin) {
-      $("signedInEmail").textContent = user.email;
-      setStatus("loginStatus", "Admin signed in.", "success");
-      await loadRecords();
-    } else if (user) {
-      try { await signOut(auth); } catch (error) { console.error(error); }
-      setStatus("loginStatus", "Account not authorized for admin panel.", "error");
-    } else {
-      $("recordsList").replaceChildren();
-    }
+async function loadRecords(){
+ if(!currentUser||!ready)return;
+ try{
+  const q=fsApi.query(fsApi.collection(db,"customerApplications"),fsApi.orderBy("createdAt","desc"));
+  const snap=await fsApi.getDocs(q);const box=$("records");box.replaceChildren();
+  if(snap.empty){box.textContent="No customer records yet.";return}
+  snap.forEach(doc=>{
+   const d=doc.data(),card=document.createElement("div");card.className="record";
+   const title=document.createElement("h3");title.textContent=safeText(d.name)||"Unnamed customer";card.appendChild(title);
+   [["Mobile",d.phone],["Service",d.service],["Preferred date",d.preferredDate],["Notes",d.notes],["Status",d.status]].forEach(([k,v])=>{
+    const p=document.createElement("div");p.textContent=k+": "+safeText(v);card.appendChild(p);
+   });
+   box.appendChild(card);
   });
+  status("adminStatus","Loaded "+snap.size+" record(s).",true);
+ }catch(err){status("adminStatus","Could not load records: "+err.message)}
 }
+$("refresh").onclick=loadRecords;
+$("print").onclick=()=>window.print();
+$("logout").onclick=async()=>{if(auth)await authApi.signOut(auth)};
 </script>
 </body>
 </html>
